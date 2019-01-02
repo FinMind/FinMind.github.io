@@ -1,0 +1,74 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-mkdocs",
+            "text": "For full documentation visit  mkdocs.org .",
+            "title": "Welcome to MkDocs"
+        },
+        {
+            "location": "/#commands",
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
+            "title": "Commands"
+        },
+        {
+            "location": "/#project-layout",
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "title": "Project layout"
+        },
+        {
+            "location": "/Data/",
+            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
+            "title": "Data"
+        },
+        {
+            "location": "/Fin/",
+            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
+            "title": "Fin"
+        },
+        {
+            "location": "/Mining/",
+            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
+            "title": "Mining"
+        },
+        {
+            "location": "/Visualize/",
+            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
+            "title": "Visualize"
+        },
+        {
+            "location": "/about/",
+            "text": "Redeunt fonti\n\n\nDis quot tetenderat illud\n\n\nLorem markdownum talia ascendere. Quam per aderam?\n\n\nForma praecipitata invenies fissaque monte Palamedes parte\n\n\nGaudete reliquit et arida violenta omnia loqueretur artificem aurato: ut undas.\nEt locus socialis insurgens iurare, illic saxum, alimenta rupisque, Pagasaeus\nferos adligat quam suus. Ex quem duces segetem. Hippotaden secuta dea ambit is\npariter ignes, stupet modo nymphas sceptri nisi, mea? Ictus suae relicta:\nspoliata iuvencis abripit, nova \nplenos pugnae\n.\n\n\ncircuit = box_editor / flaming.buffer_bar(tcp_repeater_pixel, direct(\n        firewall, -3));\nif (input_publishing) {\n    graphic_zettabyte = readerContextualInternal(templateVaporware +\n            snmp_character_graphic, pci_alignment_laser,\n            serverPageSpeakers);\n    syntax += app_adware_ntfs;\n} else {\n    tabletScrollFile(cybersquatter_function(native_waveform_primary));\n    click.trojan.lockSerpAdc(caps_ppp_wamp);\n}\nif (dimm) {\n    directoryLagHdmi.pci.serverReciprocalDrive(portClusterCyberbullying,\n            screenshot);\n    applet -= schemaDeviceBoolean * san + storageCgi;\n}\nheat_protector_recursive = user;\nvar java_docking = port_text.webcamMetadataWindows.wins(\n        vpnMacroBluetooth.console_graphics_clipboard(hot, 14, -4) -\n        cell_cyberspace, quicktime.menu_screenshot(edutainment), uml);\n\n\n\nEst nec\n\n\nMortis precesque oscula impelli putetis ceperat Ismenos, ex sic \nlustravit\nincoluit Ergo\n fugant potente: avis? Quereretur umbrosa facitis spreto semel\nfecerat ritibus femori.\n\n\nguiBackside = ram;\nif (friend_cms_debug.encryptionPup.sqlSmsLogic(cardIbmSpoofing, gigo)) {\n    barcraft.systemItunesPrinter *= 5 + dataNetwork - integrated;\n    access_extension_and(pseudocode_box);\n} else {\n    pasteFile = rowRestoreMips;\n}\npower = domain_dslam;\nvar modemUncShell = trackbackModemRight + icq_daw + point_bespoke_domain(\n        expression);\n\n\n\nVitam inpositum parvaque\n\n\nOculis graciles acumine saltatibus tu sui reverentia albam pecudumque lactis\ntympanaque aris. Gemino membra amores nostris in aequa, arcus intus angustum cum\nfatigatum caput, nocentius duos: tunc. Polypemonis habet Thoos sterilem. Quid\nutque merguntque Gaudia: filia nec; diem opaca massae molire protinus alasque.\n\n\nUnus debes phocae \nmiseram\n Oebalio saepius, qui moenia Neptunum retinacula\nrestabam stellarum sensu. Per in adeunt conpulit recepto \nanxia\n nubibus: est\nest intercipit tempore iuvencae et.",
+            "title": "About"
+        },
+        {
+            "location": "/about/#redeunt-fonti",
+            "text": "",
+            "title": "Redeunt fonti"
+        },
+        {
+            "location": "/about/#dis-quot-tetenderat-illud",
+            "text": "Lorem markdownum talia ascendere. Quam per aderam?",
+            "title": "Dis quot tetenderat illud"
+        },
+        {
+            "location": "/about/#forma-praecipitata-invenies-fissaque-monte-palamedes-parte",
+            "text": "Gaudete reliquit et arida violenta omnia loqueretur artificem aurato: ut undas.\nEt locus socialis insurgens iurare, illic saxum, alimenta rupisque, Pagasaeus\nferos adligat quam suus. Ex quem duces segetem. Hippotaden secuta dea ambit is\npariter ignes, stupet modo nymphas sceptri nisi, mea? Ictus suae relicta:\nspoliata iuvencis abripit, nova  plenos pugnae .  circuit = box_editor / flaming.buffer_bar(tcp_repeater_pixel, direct(\n        firewall, -3));\nif (input_publishing) {\n    graphic_zettabyte = readerContextualInternal(templateVaporware +\n            snmp_character_graphic, pci_alignment_laser,\n            serverPageSpeakers);\n    syntax += app_adware_ntfs;\n} else {\n    tabletScrollFile(cybersquatter_function(native_waveform_primary));\n    click.trojan.lockSerpAdc(caps_ppp_wamp);\n}\nif (dimm) {\n    directoryLagHdmi.pci.serverReciprocalDrive(portClusterCyberbullying,\n            screenshot);\n    applet -= schemaDeviceBoolean * san + storageCgi;\n}\nheat_protector_recursive = user;\nvar java_docking = port_text.webcamMetadataWindows.wins(\n        vpnMacroBluetooth.console_graphics_clipboard(hot, 14, -4) -\n        cell_cyberspace, quicktime.menu_screenshot(edutainment), uml);",
+            "title": "Forma praecipitata invenies fissaque monte Palamedes parte"
+        },
+        {
+            "location": "/about/#est-nec",
+            "text": "Mortis precesque oscula impelli putetis ceperat Ismenos, ex sic  lustravit\nincoluit Ergo  fugant potente: avis? Quereretur umbrosa facitis spreto semel\nfecerat ritibus femori.  guiBackside = ram;\nif (friend_cms_debug.encryptionPup.sqlSmsLogic(cardIbmSpoofing, gigo)) {\n    barcraft.systemItunesPrinter *= 5 + dataNetwork - integrated;\n    access_extension_and(pseudocode_box);\n} else {\n    pasteFile = rowRestoreMips;\n}\npower = domain_dslam;\nvar modemUncShell = trackbackModemRight + icq_daw + point_bespoke_domain(\n        expression);",
+            "title": "Est nec"
+        },
+        {
+            "location": "/about/#vitam-inpositum-parvaque",
+            "text": "Oculis graciles acumine saltatibus tu sui reverentia albam pecudumque lactis\ntympanaque aris. Gemino membra amores nostris in aequa, arcus intus angustum cum\nfatigatum caput, nocentius duos: tunc. Polypemonis habet Thoos sterilem. Quid\nutque merguntque Gaudia: filia nec; diem opaca massae molire protinus alasque.  Unus debes phocae  miseram  Oebalio saepius, qui moenia Neptunum retinacula\nrestabam stellarum sensu. Per in adeunt conpulit recepto  anxia  nubibus: est\nest intercipit tempore iuvencae et.",
+            "title": "Vitam inpositum parvaque"
+        }
+    ]
+}
