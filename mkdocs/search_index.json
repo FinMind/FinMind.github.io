@@ -2,43 +2,88 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "text": "Welcome to FinMind\n\n\nFinMind is about Financial Data, Visualize and Mining.\n\n\nIntroduce\n\n\nStocks are financial products that most people are familiar with. \nThe stock price will be affected by many factors, \nincluding central bank interest rates, exchange rates, raw material prices, \nand international oil prices.\n\n\nSimilarly, other financial products will interact with each other. \nIf we conduct a holistic financial analysis, \nwe can not only look at a single piece of data, \nbut also extract valuable information from it.\n\n\n\n\nThe following will introduce our products.\n\n\nFinancial Data\n\n\n\n\nMore than ten kinds financial data.\n\n\n\n\nFinancial Visualize\n\n\n\n\nAt least five kinds Visualize tools on every data. ( In development )\n\n\n\n\nFinancial Mining\n\n\n\n\nHolistic financial analysis. ( In development )\n\n\n\n\n\n\nGetting started\n\n\nfrom FinMind.Data import Load\n\nstock_id_list = Load.FinDataList(dataset = 'StockPrice')\n\ndata = Load.FinData(dataset = 'StockPrice',\n                    select = stock_id_list[:2],\n                    date = '2018-10-10')\nprint( data[:5] )\n\n    Open   High    Low  Close  Adj_Close    Volume        date stock_id\n0  38.10  38.60  37.00  37.60      37.60  38528047  2018-10-11     1101\n1  37.25  39.00  37.00  39.00      39.00  16441006  2018-10-12     1101\n2  38.55  38.75  38.10  38.50      38.50  13909633  2018-10-15     1101\n3  38.40  38.40  37.80  38.20      38.20  12886506  2018-10-16     1101\n4  38.60  38.90  38.15  38.25      38.25  10478677  2018-10-17     1101\n\n\n\n\nThe parameter \ntable\n is what dataset been load.\n\nThe function \nFinDataList\n is load list of \nStockPrice\n dataset.\n\nThe function \nFinData\n is load stock prices by selecting stock_id_list[:2] and \ndate\n >= '2018-10-10'. \n\nor you can load some stock id like \n2330\n.\n\n\n\nfrom FinMind.Data import Load\n\ndata = Load.FinData(dataset = 'StockPrice',\n                    select = '2330',\n                    date = '2018-10-10')\nprint( data[:5] )\n    Open   High    Low  Close  Adj_Close    Volume        date stock_id\n0  233.5  233.5  227.0  227.5      227.5  94589657  2018-10-11     2330\n1  233.5  233.5  227.0  227.5      227.5  94589657  2018-10-11     2330\n2  231.0  237.0  229.0  237.0      237.0  47175769  2018-10-12     2330\n3  231.0  237.0  229.0  237.0      237.0  47175769  2018-10-12     2330\n4  234.0  234.0  230.5  230.5      230.5  42168280  2018-10-15     2330\n\n\n\nselect\n can been input string or list.",
             "title": "Home"
         },
         {
-            "location": "/#welcome-to-mkdocs",
-            "text": "For full documentation visit  mkdocs.org .",
-            "title": "Welcome to MkDocs"
+            "location": "/#welcome-to-finmind",
+            "text": "FinMind is about Financial Data, Visualize and Mining.",
+            "title": "Welcome to FinMind"
         },
         {
-            "location": "/#commands",
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
-            "title": "Commands"
+            "location": "/#introduce",
+            "text": "Stocks are financial products that most people are familiar with. \nThe stock price will be affected by many factors, \nincluding central bank interest rates, exchange rates, raw material prices, \nand international oil prices.  Similarly, other financial products will interact with each other. \nIf we conduct a holistic financial analysis, \nwe can not only look at a single piece of data, \nbut also extract valuable information from it.   The following will introduce our products.",
+            "title": "Introduce"
         },
         {
-            "location": "/#project-layout",
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
-            "title": "Project layout"
+            "location": "/#financial-data",
+            "text": "More than ten kinds financial data.",
+            "title": "Financial Data"
         },
         {
-            "location": "/Data/",
-            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
-            "title": "Data"
+            "location": "/#financial-visualize",
+            "text": "At least five kinds Visualize tools on every data. ( In development )",
+            "title": "Financial Visualize"
         },
         {
-            "location": "/Fin/",
-            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
-            "title": "Fin"
+            "location": "/#financial-mining",
+            "text": "Holistic financial analysis. ( In development )",
+            "title": "Financial Mining"
         },
         {
-            "location": "/Mining/",
-            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
-            "title": "Mining"
+            "location": "/#getting-started",
+            "text": "from FinMind.Data import Load\n\nstock_id_list = Load.FinDataList(dataset = 'StockPrice')\n\ndata = Load.FinData(dataset = 'StockPrice',\n                    select = stock_id_list[:2],\n                    date = '2018-10-10')\nprint( data[:5] )\n\n    Open   High    Low  Close  Adj_Close    Volume        date stock_id\n0  38.10  38.60  37.00  37.60      37.60  38528047  2018-10-11     1101\n1  37.25  39.00  37.00  39.00      39.00  16441006  2018-10-12     1101\n2  38.55  38.75  38.10  38.50      38.50  13909633  2018-10-15     1101\n3  38.40  38.40  37.80  38.20      38.20  12886506  2018-10-16     1101\n4  38.60  38.90  38.15  38.25      38.25  10478677  2018-10-17     1101  \nThe parameter  table  is what dataset been load. \nThe function  FinDataList  is load list of  StockPrice  dataset. \nThe function  FinData  is load stock prices by selecting stock_id_list[:2] and  date  >= '2018-10-10'.  \nor you can load some stock id like  2330 .  from FinMind.Data import Load\n\ndata = Load.FinData(dataset = 'StockPrice',\n                    select = '2330',\n                    date = '2018-10-10')\nprint( data[:5] )\n    Open   High    Low  Close  Adj_Close    Volume        date stock_id\n0  233.5  233.5  227.0  227.5      227.5  94589657  2018-10-11     2330\n1  233.5  233.5  227.0  227.5      227.5  94589657  2018-10-11     2330\n2  231.0  237.0  229.0  237.0      237.0  47175769  2018-10-12     2330\n3  231.0  237.0  229.0  237.0      237.0  47175769  2018-10-12     2330\n4  234.0  234.0  230.5  230.5      230.5  42168280  2018-10-15     2330  select  can been input string or list.",
+            "title": "Getting started"
         },
         {
-            "location": "/Visualize/",
-            "text": "Fin Open Data\n\n\n 1. Taiwan Stock Info\n 2. Taiwan Stock Prices \n 3. Taiwan Stock Financial Statements \n 4. Taiwan Stock Stock Dividend \n 5. Taiwan Stock Institutional Investors Buy and Sell \n 6. Crude Oil Prices\n 7. Exchange Rate\n 8. Interest Rate\n 9. Gold Price\n 10. Government bond\n 11. Energy Futures Prices\n\n\n\nFin Visualize ( Development )\n\n\nFin Predict ( Development )\n\n\n\n\nUPDATE\n\n\n2018/8/9\n\n\n\n\nGovernment bond 100%\n\n\n\u671f\u8ca8 ->>> https://www.investing.com/commodities/energies\n\n\nS&P 500\u6307\u6578\uff0c\u4e26\u722c\u53d6\u8a72 500 \u5bb6\u80a1\u7968\u80a1\u50f9 ->>>\n\n\n\n\nHistory Update",
-            "title": "Visualize"
+            "location": "/Financial Data/",
+            "text": "Introduce\n\n\n\n\nTaiwan Stock Information\n\n\nTaiwan Stock Prices \n\n\nTaiwan Stock Financial Statements \n\n\nTaiwan Stock Stock Dividend \n\n\nTaiwan Stock Institutional Investors Buy and Sell \n\n\nCrude Oil Prices\n\n\nExchange Rate\n\n\nInterest Rate\n\n\nGold Price\n\n\nGovernment bond\n\n\nEnergy Futures Prices\n\n\nGold Price\n\n\n\n\n\n\nMethods\n\n\n\n\nFinDataList\n\n\n\n\n\n\nFinDataList(dataset)\n\n\n\n\nLoad Data List from dataset.\n\n\nArguments\n\n\n\n\n\n\ndataset\n : \n    String. \n\n\n\n\nStockPrice\n : Taiwan Stock Price.\n\n\nFinancialStatements\n : Taiwan Stock Financial Statements.\n\n\nStockDividend\n : Taiwan Stock Stock Dividend.\n\n\nInstitutionalInvestors\n : Taiwan Stock Institutional Investors Buy and Sell.\n\n\nCrudeOilPrices\n : Crude Oil Prices.\n\n\nExchangeRate\n : Exchange Rate.\n\n\nInterestRate\n : Interest Rate.\n\n\nGovernmentBonds\n : Government bond.\n\n\nEnergyFuturesPrices\n : Energy Futures Prices.\n\n\n\n\nThe detail can follow Data Introduction.\n\n\n\n\n\n\n\n\nReturn : \n List.\n\n\n\n\n\n\n\nFinData\n\n\n\n\n\n\nFinData(dataset,select,date)\n\n\n\n\nLoad Data from dataset.\n\n\nArguments\n\n\n\n\n\n\ndataset\n : \n    String. \n\n\n\n\nStockInfo\n : Taiwan Stock Information.\n\n\nStockPrice\n : Taiwan Stock Price.\n\n\nFinancialStatements\n : Taiwan Stock Financial Statements.\n\n\nStockDividend\n : Taiwan Stock Stock Dividend.\n\n\nInstitutionalInvestors\n : Taiwan Stock Institutional Investors Buy and Sell.\n\n\nCrudeOilPrices\n : Crude Oil Prices.\n\n\nExchangeRate\n : Exchange Rate.\n\n\nInterestRate\n : Interest Rate.\n\n\nGovernmentBonds\n : Government bond.\n\n\nEnergyFuturesPrices\n : Energy Futures Prices.\n\n\nGoldPrice\n : Gold Price.\n\n\n\n\nThe detail can follow Data Introduction.\n\n\n\n\n\n\nselect\n : \n    String or List. \n    Only been input element from \nFinDataList\n.\n\n\n\n\n\n\ndate\n : \n    String. \n    Input type : 'year-month-days' ( e.g : '2017-03-05' )\n\n\n\n\n\n\n\n\nReturn : \n DataFrame.\n\n\n\n\n\nData Introduction\n\n\n\n\n\n\nStockInfo\n : \nMore than 1000 stock.\n Columns ~stock_id~ stock_name, kinds.\n\n\n\n\n\n\nStockPrice\n : \nAll of stock price of stockinfo. The date started in 1992.\n\nColumns : date, Trading_Volume, Trading_money, open, max, min, close, spread, Trading_turnover.\n\n\n\n\n\n\nFinancialStatements\n : \nAll of Financial Statements of stockinfo.\n\n\n\n\nREV : Gross Revenue \n\n\nCOST : Cost of Goods Sold or Manufacturing\n\n\nPRO : Gross Profit \n\n\nGM : Gross margin \n\n\nOE : Operating Expenses \n\n\nOI : Operating Income \n\n\nOIM( Operating Profit Margin \n\n\nBTAX( Income before Tax\n\n\nBTAXM( Income before Tax Margin \n\n\nTAX( Income Tax Expense \n\n\nNI( Net Income \n\n\nNIM( Net Profit Margin\n\n\nEPS( Earnings Per Share \n\n\n\n\n\n\n\n\nstock_id, year, quar, date.\n\n\n\n\n\n\nStockDividend\n : \nContaining all of Stock Dividend of stockinfo.\n\n\n\n\n\n\nInstitutionalInvestors\n : \n\n\n\n\n\n\nCrudeOilPrices\n : \n\n\n\n\n\n\nExchangeRate\n : \n\n\n\n\n\n\nInterestRate\n : \n\n\n\n\n\n\nGovernmentBonds\n : \n\n\n\n\n\n\nEnergyFuturesPrices\n : \n\n\n\n\n\n\nGoldPrice\n :",
+            "title": "Financial Data"
+        },
+        {
+            "location": "/Financial Data/#introduce",
+            "text": "Taiwan Stock Information  Taiwan Stock Prices   Taiwan Stock Financial Statements   Taiwan Stock Stock Dividend   Taiwan Stock Institutional Investors Buy and Sell   Crude Oil Prices  Exchange Rate  Interest Rate  Gold Price  Government bond  Energy Futures Prices  Gold Price",
+            "title": "Introduce"
+        },
+        {
+            "location": "/Financial Data/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/Financial Data/#findatalist",
+            "text": "FinDataList(dataset)  \nLoad Data List from dataset.  Arguments    dataset  : \n    String.    StockPrice  : Taiwan Stock Price.  FinancialStatements  : Taiwan Stock Financial Statements.  StockDividend  : Taiwan Stock Stock Dividend.  InstitutionalInvestors  : Taiwan Stock Institutional Investors Buy and Sell.  CrudeOilPrices  : Crude Oil Prices.  ExchangeRate  : Exchange Rate.  InterestRate  : Interest Rate.  GovernmentBonds  : Government bond.  EnergyFuturesPrices  : Energy Futures Prices.   The detail can follow Data Introduction.     Return :   List.",
+            "title": "FinDataList"
+        },
+        {
+            "location": "/Financial Data/#findata",
+            "text": "FinData(dataset,select,date)  \nLoad Data from dataset.  Arguments    dataset  : \n    String.    StockInfo  : Taiwan Stock Information.  StockPrice  : Taiwan Stock Price.  FinancialStatements  : Taiwan Stock Financial Statements.  StockDividend  : Taiwan Stock Stock Dividend.  InstitutionalInvestors  : Taiwan Stock Institutional Investors Buy and Sell.  CrudeOilPrices  : Crude Oil Prices.  ExchangeRate  : Exchange Rate.  InterestRate  : Interest Rate.  GovernmentBonds  : Government bond.  EnergyFuturesPrices  : Energy Futures Prices.  GoldPrice  : Gold Price.   The detail can follow Data Introduction.    select  : \n    String or List. \n    Only been input element from  FinDataList .    date  : \n    String. \n    Input type : 'year-month-days' ( e.g : '2017-03-05' )     Return :   DataFrame.",
+            "title": "FinData"
+        },
+        {
+            "location": "/Financial Data/#data-introduction",
+            "text": "StockInfo  : \nMore than 1000 stock.  Columns ~stock_id~ stock_name, kinds.    StockPrice  : \nAll of stock price of stockinfo. The date started in 1992. \nColumns : date, Trading_Volume, Trading_money, open, max, min, close, spread, Trading_turnover.    FinancialStatements  : \nAll of Financial Statements of stockinfo.   REV : Gross Revenue   COST : Cost of Goods Sold or Manufacturing  PRO : Gross Profit   GM : Gross margin   OE : Operating Expenses   OI : Operating Income   OIM( Operating Profit Margin   BTAX( Income before Tax  BTAXM( Income before Tax Margin   TAX( Income Tax Expense   NI( Net Income   NIM( Net Profit Margin  EPS( Earnings Per Share      stock_id, year, quar, date.    StockDividend  : \nContaining all of Stock Dividend of stockinfo.    InstitutionalInvestors  :     CrudeOilPrices  :     ExchangeRate  :     InterestRate  :     GovernmentBonds  :     EnergyFuturesPrices  :     GoldPrice  :",
+            "title": "Data Introduction"
+        },
+        {
+            "location": "/Financial Mining/",
+            "text": "Financial Mining",
+            "title": "Financial Mining"
+        },
+        {
+            "location": "/Financial Mining/#financial-mining",
+            "text": "",
+            "title": "Financial Mining"
+        },
+        {
+            "location": "/Financial Visualize/",
+            "text": "Financial Visualize",
+            "title": "Financial Visualize"
+        },
+        {
+            "location": "/Financial Visualize/#financial-visualize",
+            "text": "",
+            "title": "Financial Visualize"
         },
         {
             "location": "/about/",

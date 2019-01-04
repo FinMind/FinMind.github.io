@@ -4,39 +4,31 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2019-01-02</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/Data/</loc>
-     <lastmod>2019-01-02</lastmod>
+     <loc>None/Financial Data/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/Fin/</loc>
-     <lastmod>2019-01-02</lastmod>
+     <loc>None/Financial Mining/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/Mining/</loc>
-     <lastmod>2019-01-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Visualize/</loc>
-     <lastmod>2019-01-02</lastmod>
+     <loc>None/Financial Visualize/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -44,7 +36,7 @@
     
     <url>
      <loc>None/about/</loc>
-     <lastmod>2019-01-02</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

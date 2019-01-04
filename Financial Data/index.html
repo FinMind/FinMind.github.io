@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Financial Data - FinMind Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Financial Data";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> FinMind Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Financial Data</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#introduce">Introduce</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#methods">Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#findatalist">FinDataList</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#findata">FinData</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#data-introduction">Data Introduction</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Financial Mining/">Financial Mining</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Financial Visualize/">Financial Visualize</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">FinMind Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Financial Data</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduce">Introduce</h1>
+<ul>
+<li>Taiwan Stock Information</li>
+<li>Taiwan Stock Prices </li>
+<li>Taiwan Stock Financial Statements </li>
+<li>Taiwan Stock Stock Dividend </li>
+<li>Taiwan Stock Institutional Investors Buy and Sell </li>
+<li>Crude Oil Prices</li>
+<li>Exchange Rate</li>
+<li>Interest Rate</li>
+<li>Gold Price</li>
+<li>Government bond</li>
+<li>Energy Futures Prices</li>
+<li>Gold Price</li>
+</ul>
+<hr />
+<h1 id="methods">Methods</h1>
+<p><font size="1"></p>
+<h1 id="findatalist">FinDataList</h1>
+<p></font></p>
+<p><font size="3"></p>
+<pre><code>FinDataList(dataset)
+</code></pre>
+<p></font>
+Load Data List from dataset.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>
+<p><strong>dataset</strong> : 
+    String. </p>
+<ul>
+<li><code>StockPrice</code> : Taiwan Stock Price.</li>
+<li><code>FinancialStatements</code> : Taiwan Stock Financial Statements.</li>
+<li><code>StockDividend</code> : Taiwan Stock Stock Dividend.</li>
+<li><code>InstitutionalInvestors</code> : Taiwan Stock Institutional Investors Buy and Sell.</li>
+<li><code>CrudeOilPrices</code> : Crude Oil Prices.</li>
+<li><code>ExchangeRate</code> : Exchange Rate.</li>
+<li><code>InterestRate</code> : Interest Rate.</li>
+<li><code>GovernmentBonds</code> : Government bond.</li>
+<li><code>EnergyFuturesPrices</code> : Energy Futures Prices.</li>
+</ul>
+<p>The detail can follow Data Introduction.</p>
+</li>
+</ul>
+<p><font size="3"></p>
+<p><strong>Return : </strong> List.
+</font></p>
+<hr />
+<p><font size="1"></p>
+<h1 id="findata">FinData</h1>
+<p></font></p>
+<p><font size="3"></p>
+<pre><code>FinData(dataset,select,date)
+</code></pre>
+<p></font>
+Load Data from dataset.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>
+<p><strong>dataset</strong> : 
+    String. </p>
+<ul>
+<li><code>StockInfo</code> : Taiwan Stock Information.</li>
+<li><code>StockPrice</code> : Taiwan Stock Price.</li>
+<li><code>FinancialStatements</code> : Taiwan Stock Financial Statements.</li>
+<li><code>StockDividend</code> : Taiwan Stock Stock Dividend.</li>
+<li><code>InstitutionalInvestors</code> : Taiwan Stock Institutional Investors Buy and Sell.</li>
+<li><code>CrudeOilPrices</code> : Crude Oil Prices.</li>
+<li><code>ExchangeRate</code> : Exchange Rate.</li>
+<li><code>InterestRate</code> : Interest Rate.</li>
+<li><code>GovernmentBonds</code> : Government bond.</li>
+<li><code>EnergyFuturesPrices</code> : Energy Futures Prices.</li>
+<li><code>GoldPrice</code> : Gold Price.</li>
+</ul>
+<p>The detail can follow Data Introduction.</p>
+</li>
+<li>
+<p><strong>select</strong> : 
+    String or List. 
+    Only been input element from <b>FinDataList</b>.</p>
+</li>
+<li>
+<p><strong>date</strong> : 
+    String. 
+    Input type : 'year-month-days' ( e.g : '2017-03-05' )</p>
+</li>
+</ul>
+<p><font size="3"></p>
+<p><strong>Return : </strong> DataFrame.
+</font></p>
+<hr />
+<h1 id="data-introduction">Data Introduction</h1>
+<ul>
+<li>
+<p><b>StockInfo</b> : 
+More than 1000 stock.<br> Columns ~stock_id~ stock_name, kinds.</p>
+</li>
+<li>
+<p><b>StockPrice</b> : 
+All of stock price of stockinfo. The date started in 1992.<br>
+Columns : date, Trading_Volume, Trading_money, open, max, min, close, spread, Trading_turnover.</p>
+</li>
+<li>
+<p><b>FinancialStatements</b> : 
+All of Financial Statements of stockinfo.<br></p>
+<ul>
+<li>REV : Gross Revenue </li>
+<li>COST : Cost of Goods Sold or Manufacturing</li>
+<li>PRO : Gross Profit </li>
+<li>GM : Gross margin </li>
+<li>OE : Operating Expenses </li>
+<li>OI : Operating Income </li>
+<li>OIM( Operating Profit Margin </li>
+<li>BTAX( Income before Tax</li>
+<li>BTAXM( Income before Tax Margin </li>
+<li>TAX( Income Tax Expense </li>
+<li>NI( Net Income </li>
+<li>NIM( Net Profit Margin</li>
+<li>EPS( Earnings Per Share </li>
+</ul>
+</li>
+</ul>
+<p>stock_id, year, quar, date.</p>
+<ul>
+<li>
+<p><b>StockDividend</b> : 
+Containing all of Stock Dividend of stockinfo.</p>
+</li>
+<li>
+<p><b>InstitutionalInvestors</b> : </p>
+</li>
+<li>
+<p><b>CrudeOilPrices</b> : </p>
+</li>
+<li>
+<p><b>ExchangeRate</b> : </p>
+</li>
+<li>
+<p><b>InterestRate</b> : </p>
+</li>
+<li>
+<p><b>GovernmentBonds</b> : </p>
+</li>
+<li>
+<p><b>EnergyFuturesPrices</b> : </p>
+</li>
+<li>
+<p><b>GoldPrice</b> : </p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Financial Mining/" class="btn btn-neutral float-right" title="Financial Mining"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Financial Mining/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
