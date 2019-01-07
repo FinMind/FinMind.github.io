@@ -196,23 +196,27 @@ Load Data from dataset.</p>
 <li><code>StockDividend</code> : Taiwan Stock Stock Dividend.</li>
 <li><code>InstitutionalInvestors</code> : Taiwan Stock Institutional Investors Buy and Sell.</li>
 <li><code>CrudeOilPrices</code> : Crude Oil Prices.</li>
-<li><code>ExchangeRate</code> : Exchange Rate.</li>
-<li><code>InterestRate</code> : Interest Rate.</li>
-<li><code>GovernmentBonds</code> : Government bond.</li>
+<li><code>ExchangeRate</code> : Exchange Rate. ( contains G7 )</li>
+<li><code>InterestRate</code> : Interest Rate. ( contains G7 )</li>
+<li><code>GovernmentBonds</code> : Government bond. ( contains G7 )</li>
 <li><code>EnergyFuturesPrices</code> : Energy Futures Prices.</li>
 <li><code>GoldPrice</code> : Gold Price.</li>
 </ul>
-<p>The detail can follow Data Introduction.</p>
+<p>The detail can follow Data Introduction.<br><br></p>
 </li>
 <li>
 <p><strong>select</strong> : 
-    String or List. 
-    Only been input element from <b>FinDataList</b>.</p>
+    String or List. </p>
+<ul>
+<li>Only been input element from <b>FinDataList</b>.<br><br></li>
+</ul>
 </li>
 <li>
 <p><strong>date</strong> : 
-    String. 
-    Input type : 'year-month-days' ( e.g : '2017-03-05' )</p>
+    String. </p>
+<ul>
+<li>Input type : 'yyyy-mm-dd' ( e.g : '2017-03-05' )<br><br></li>
+</ul>
 </li>
 </ul>
 <p><font size="3"></p>
@@ -223,60 +227,87 @@ Load Data from dataset.</p>
 <ul>
 <li>
 <p><b>StockInfo</b> : 
-More than 1000 stock.</p>
+More than 1000 Taiwan stocks.<br>
+Column <code>stock_id</code>, <code>stock_name</code>, <code>kinds</code>.<br><br></p>
 </li>
 <li>
 <p><b>StockPrice</b> : 
 All of stock price of stockinfo. The date started in 1992.<br>
-Cotain <code>date, Trading_Volume, Trading_money, open, max, min, close, spread, Trading_turnover.</code></p>
+Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
 </li>
 <li>
 <p><b>FinancialStatements</b> : 
-All of Financial Statements of stockinfo.<br></p>
+All of Financial Statements of stockinfo.<br>
+Column :</p>
 <ul>
-<li>REV : Gross Revenue </li>
-<li>COST : Cost of Goods Sold or Manufacturing</li>
-<li>PRO : Gross Profit </li>
-<li>GM : Gross margin </li>
-<li>OE : Operating Expenses </li>
-<li>OI : Operating Income </li>
-<li>OIM( Operating Profit Margin </li>
-<li>BTAX( Income before Tax</li>
-<li>BTAXM( Income before Tax Margin </li>
-<li>TAX( Income Tax Expense </li>
-<li>NI( Net Income </li>
-<li>NIM( Net Profit Margin</li>
-<li>EPS( Earnings Per Share </li>
+<li><code>REV</code> : Gross Revenue.</li>
+<li><code>COST</code> : Cost of Goods Sold or Manufacturing.</li>
+<li><code>PRO</code> : Gross Profit.</li>
+<li><code>GM</code> : Gross margin.</li>
+<li><code>OE</code> : Operating Expenses.</li>
+<li><code>OI</code> : Operating Income.</li>
+<li><code>OIM</code> : Operating Profit Margin.</li>
+<li><code>BTAX</code> : Income before Tax.</li>
+<li><code>BTAXM</code> : Income before Tax Margin.</li>
+<li><code>TAX</code> : Income Tax Expense.</li>
+<li><code>NI</code> : Net Income.</li>
+<li><code>NIM</code> : Net Profit Margin.</li>
+<li><code>EPS</code> : Earnings Per Share.</li>
+<li><code>stock_id</code> : Stock id. (e.g : 2330)</li>
+<li><code>year</code> : year.</li>
+<li><code>quar</code> : quar.</li>
+<li><code>date</code> : date.
+<br><br></li>
 </ul>
 </li>
+<li><b>StockDividend</b> : 
+Containing all of Stock Dividend of stockinfo.<br>
+Column :<ul>
+<li><code>date</code> : date.</li>
+<li><code>Retained_Earnings</code> : Retained Earnings.</li>
+<li><code>Capital_Reserve</code> : Capital Reserve.</li>
+<li><code>Ex_right_trading_day</code> : Ex_right trading_day.</li>
+<li><code>total_employee_bonus_stock_shares</code> : total employee bonus stock shares.</li>
+<li><code>Cash_dividend</code> : Cash dividend.</li>
+<li><code>Ex_dividend_transaction_day</code> : Ex dividend transaction day.</li>
+<li><code>total_employee_bonus_shares</code> : total employee bonus shares.</li>
+<li><code>Directors_remuneration</code> : Directors remuneration.</li>
+<li><code>stock_id</code> : Stock id. (e.g : 2330)
+<br><br></li>
 </ul>
-<p>stock_id, year, quar, date.</p>
-<ul>
-<li>
-<p><b>StockDividend</b> : 
-Containing all of Stock Dividend of stockinfo.</p>
 </li>
-<li>
-<p><b>InstitutionalInvestors</b> : </p>
-</li>
-<li>
-<p><b>CrudeOilPrices</b> : </p>
-</li>
-<li>
-<p><b>ExchangeRate</b> : </p>
-</li>
-<li>
-<p><b>InterestRate</b> : </p>
-</li>
-<li>
-<p><b>GovernmentBonds</b> : </p>
-</li>
-<li>
-<p><b>EnergyFuturesPrices</b> : </p>
-</li>
-<li>
-<p><b>GoldPrice</b> : </p>
-</li>
+<li><b>InstitutionalInvestors</b> : 
+Institutional Investors buy or sell. ( Dealer, Dealer Hedging, Foreign Investor, Investment Trust )<br>
+Column : <code>name</code>, <code>buy</code>, <code>sell</code>, <code>date</code>.
+<br><br></li>
+<li><b>CrudeOilPrices</b> : 
+Brent or WTI.<br>
+Column : <code>price</code>, <code>date</code>, <code>name</code>.
+<br><br></li>
+<li><b>ExchangeRate</b> : 
+Exchange Rate. US dollar as the main currency. Contain CAD, CNY, EUR, GBP, JPY, TWD.<br>
+Column : <code>InterbankRate</code>, <code>InverseInterbankRate</code>, <code>date</code>, <code>country</code>.
+<br><br></li>
+<li><b>InterestRate</b> : 
+Interest Rate. Contain BCB, BOC, BOE, BOJ, CBR, ECB, FED, PBOC, RBA, RBI, RBNZ, SNB. 
+The full name is column <code>full_country_name</code>.<br>
+Column : <code>date</code>, <code>interest_rate</code>, <code>country</code>, <code>full_country_name</code>.
+<br><br></li>
+<li><b>GovernmentBonds</b> : 
+Government Bonds. Contain Canada, China, France, Germany, Japan, Russia, Uk, Usa, Italy. 
+Minimum 1-week(Russia), Maximum 50-Year(United Kingdom).<br>
+Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>ChangePercent</code>, <code>bound_type</code>.
+<br><br></li>
+<li><b>EnergyFuturesPrices</b> : 
+Energy Futures Prices. Contain 
+Brent Oil Futures, Carbon Emissions Futures, Crude Oil WTI Futures, 
+Gasoline RBOB Futures, Heating Oil Futures, London Gas Oil Futures, Natural Gas Futures.<br>
+Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>Vol</code>, <code>ChangePercent</code>, <code>futures_type</code>.
+<br><br></li>
+<li><b>GoldPrice</b> : 
+Gold Price. After 2018/7/20, the data is minutely data.<br>
+Column : <code>date</code>, <code>Price</code>.
+<br><br></li>
 </ul>
               
             </div>
