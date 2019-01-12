@@ -76,6 +76,14 @@
             
                 <li class="toctree-l3"><a href="#data-introduction">Data Introduction</a></li>
                 
+                    <li><a class="toctree-l4" href="#taiwan">Taiwan</a></li>
+                
+                    <li><a class="toctree-l4" href="#us">US</a></li>
+                
+                    <li><a class="toctree-l4" href="#japan">Japan</a></li>
+                
+                    <li><a class="toctree-l4" href="#international-financial-data">International Financial Data</a></li>
+                
             
             </ul>
         
@@ -154,8 +162,30 @@
 <li>China (develop)</li>
 </ul>
 </li>
-<li>Taiwan Stock Financial Statements </li>
-<li>Taiwan Stock Stock Dividend </li>
+<li>Financial Statements <ul>
+<li>Taiwan</li>
+<li>US (develop)</li>
+<li>Japan (develop)</li>
+<li>UK (develop)</li>
+<li>Germany (develop)</li>
+<li>France (develop)</li>
+<li>Korea (develop)</li>
+<li>HongKong (develop)</li>
+<li>China (develop)    </li>
+</ul>
+</li>
+<li>Stock Dividend <ul>
+<li>Taiwan</li>
+<li>US (develop)</li>
+<li>Japan (develop)</li>
+<li>UK (develop)</li>
+<li>Germany (develop)</li>
+<li>France (develop)</li>
+<li>Korea (develop)</li>
+<li>HongKong (develop)</li>
+<li>China (develop)    </li>
+</ul>
+</li>
 <li>Taiwan Stock Institutional Investors Buy and Sell </li>
 <li>Crude Oil Prices</li>
 <li>Exchange Rate</li>
@@ -181,9 +211,6 @@ Load Data List from dataset.</p>
 <p><strong>dataset</strong> : 
     String. </p>
 <ul>
-<li><code>StockPrice</code> : Taiwan Stock Price.</li>
-<li><code>FinancialStatements</code> : Taiwan Stock Financial Statements.</li>
-<li><code>StockDividend</code> : Taiwan Stock Stock Dividend.</li>
 <li><code>InstitutionalInvestors</code> : Taiwan Stock Institutional Investors Buy and Sell.</li>
 <li><code>CrudeOilPrices</code> : Crude Oil Prices.</li>
 <li><code>ExchangeRate</code> : Exchange Rate.</li>
@@ -212,11 +239,24 @@ Load Data from dataset.</p>
 <p><strong>dataset</strong> : 
     String. </p>
 <ul>
-<li><code>StockInfo</code> : Taiwan Stock Information.</li>
-<li><code>StockPrice</code> : Taiwan Stock Price.</li>
-<li><code>FinancialStatements</code> : Taiwan Stock Financial Statements.</li>
-<li><code>StockDividend</code> : Taiwan Stock Stock Dividend.</li>
+<li><code>TaiwanStockInfo</code> : Taiwan Stock Information.</li>
+<li><code>TaiwanStockPrice</code> : Taiwan Stock Price. </li>
+<li><code>TaiwanStockFinancialStatements</code> : Taiwan Stock Financial Statements.</li>
+<li><code>TaiwanStockStockDividend</code> : Taiwan Stock Stock Dividend.</li>
 <li><code>InstitutionalInvestors</code> : Taiwan Stock Institutional Investors Buy and Sell.</li>
+</ul>
+<hr />
+<ul>
+<li><code>USStockInfo</code> : US Stock Information.</li>
+<li><code>USStockPrice</code> : US Stock Price.</li>
+</ul>
+<hr />
+<ul>
+<li><code>JapanStockInfo</code> : Japan Stock Information.</li>
+<li><code>JapanStockPrice</code> : Japan Stock Price.</li>
+</ul>
+<hr />
+<ul>
 <li><code>CrudeOilPrices</code> : Crude Oil Prices.</li>
 <li><code>ExchangeRate</code> : Exchange Rate. ( contains G7 )</li>
 <li><code>InterestRate</code> : Interest Rate. ( contains G7 )</li>
@@ -230,14 +270,27 @@ Load Data from dataset.</p>
 <p><strong>select</strong> : 
     String or List. </p>
 <ul>
-<li>Only been input element from <b>FinDataList</b>.<br><br></li>
+<li>Case 1 : No need input.<br><ul>
+<li><code>TaiwanStockInfo</code>, <code>USStockInfo</code>, <code>JapanStockInfo</code>.    </li>
+</ul>
+</li>
+<li>Case 2 : Input stock id from <code>TaiwanStockInfo</code> or <code>USStockInfo</code> or <code>JapanStockInfo</code>.<ul>
+<li><code>TaiwanStockPrice</code>, <code>TaiwanStockFinancialStatements</code>, <code>TaiwanStockStockDividend</code>, 
+    <code>USStockPrice</code>, <code>JapanStockPrice</code>. </li>
+</ul>
+</li>
+<li>Case 3 : Input element from <b>FinDataList</b>.<ul>
+<li><code>InstitutionalInvestors</code>, <code>CrudeOilPrices</code>, <code>ExchangeRate</code>, <code>InterestRate</code>, 
+    <code>GovernmentBonds</code>, <code>EnergyFuturesPrices</code>.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>date</strong> : 
     String. </p>
 <ul>
-<li>Input type : 'yyyy-mm-dd' ( e.g : '2017-03-05' )<br><br></li>
+<li>Input type : 'yyyy-mm-dd' ( e.g : '2017-03-05' )<br></li>
 </ul>
 </li>
 </ul>
@@ -246,62 +299,66 @@ Load Data from dataset.</p>
 </font></p>
 <hr />
 <h1 id="data-introduction">Data Introduction</h1>
+<h2 id="taiwan">Taiwan</h2>
 <ul>
 <li>
-<p><b>StockInfo</b> : 
+<p><b>TaiwanStockInfo</b> : 
 More than 1000 Taiwan stocks.<br>
 Column <code>stock_id</code>, <code>stock_name</code>, <code>kinds</code>.<br><br></p>
 </li>
 <li>
-<p><b>StockPrice</b> : 
-All of stock price of stockinfo. The date started in 1992.<br>
+<p><b>TaiwanStockPrice</b> : 
+All of Taiwan stock price of stockinfo. The date started in 1992.<br>
 Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
 </li>
 <li>
-<p><b>FinancialStatements</b> : 
-All of Financial Statements of stockinfo.<br>
-Column :</p>
-<ul>
-<li><code>REV</code> : Gross Revenue.</li>
-<li><code>COST</code> : Cost of Goods Sold or Manufacturing.</li>
-<li><code>PRO</code> : Gross Profit.</li>
-<li><code>GM</code> : Gross margin.</li>
-<li><code>OE</code> : Operating Expenses.</li>
-<li><code>OI</code> : Operating Income.</li>
-<li><code>OIM</code> : Operating Profit Margin.</li>
-<li><code>BTAX</code> : Income before Tax.</li>
-<li><code>BTAXM</code> : Income before Tax Margin.</li>
-<li><code>TAX</code> : Income Tax Expense.</li>
-<li><code>NI</code> : Net Income.</li>
-<li><code>NIM</code> : Net Profit Margin.</li>
-<li><code>EPS</code> : Earnings Per Share.</li>
-<li><code>stock_id</code> : Stock id. (e.g : 2330)</li>
-<li><code>year</code> : year.</li>
-<li><code>quar</code> : quar.</li>
-<li><code>date</code> : date.
-<br><br></li>
-</ul>
+<p><b>TaiwanStockFinancialStatements</b> : 
+All of Taiwan Stock Financial Statements of stockinfo.<br>
+Column <code>REV</code>(Gross Revenue), <code>COST</code>(Cost of Goods Sold or Manufacturing), <code>PRO</code>(Gross Profit),
+       <code>GM</code>(Gross margin), <code>OE</code>(Operating Expenses), <code>OI</code>(Operating Income), <code>OIM</code>(Operating Profit Margin),
+       <code>BTAX</code>(Income before Tax), <code>BTAXM</code>(Income before Tax Margin), <code>TAX</code>(Income Tax Expense),
+       <code>NI</code>(Net Income), <code>NIM</code>(Net Profit Margin), <code>EPS</code>(Earnings Per Share), <code>stock_id</code>,
+       <code>year</code>, <code>quar</code>, <code>date</code>.
+<br><br></p>
 </li>
-<li><b>StockDividend</b> : 
-Containing all of Stock Dividend of stockinfo.<br>
-Column :<ul>
-<li><code>date</code> : date.</li>
-<li><code>Retained_Earnings</code> : Retained Earnings.</li>
-<li><code>Capital_Reserve</code> : Capital Reserve.</li>
-<li><code>Ex_right_trading_day</code> : Ex_right trading_day.</li>
-<li><code>total_employee_bonus_stock_shares</code> : total employee bonus stock shares.</li>
-<li><code>Cash_dividend</code> : Cash dividend.</li>
-<li><code>Ex_dividend_transaction_day</code> : Ex dividend transaction day.</li>
-<li><code>total_employee_bonus_shares</code> : total employee bonus shares.</li>
-<li><code>Directors_remuneration</code> : Directors remuneration.</li>
-<li><code>stock_id</code> : Stock id. (e.g : 2330)
+<li><b>TaiwanStockStockDividend</b> : 
+Containing all of Taiwan Stock Stock Dividend of stockinfo.<br>
+Column <code>date</code>, <code>stock_id</code>, <code>Retained_Earnings</code>, <code>Capital_Reserve</code>, <code>Ex_right_trading_day</code>, 
+        <code>total_employee_bonus_stock_shares</code>, <code>Cash_dividend</code>, <code>Ex_dividend_transaction_day</code>,
+        <code>total_employee_bonus_shares</code>, <code>Directors_remuneration</code>.
 <br><br></li>
-</ul>
-</li>
 <li><b>InstitutionalInvestors</b> : 
 Institutional Investors buy or sell. ( Dealer, Dealer Hedging, Foreign Investor, Investment Trust )<br>
-Column : <code>name</code>, <code>buy</code>, <code>sell</code>, <code>date</code>.
-<br><br></li>
+Column : <code>name</code>, <code>buy</code>, <code>sell</code>, <code>date</code>.</li>
+</ul>
+<h2 id="us">US</h2>
+<ul>
+<li>
+<p><b>USStockInfo</b> : 
+More than 6200 US stocks.<br>
+Column <code>stock_id</code>, <code>name</code>, <code>Country</code>, <code>IPOYear</code>, <code>Country</code>, <code>MarketCap</code>, <code>Subsector</code>.<br><br></p>
+</li>
+<li>
+<p><b>USStockPrice</b> : 
+All of Taiwan stock price of stockinfo. The date started in 1992.<br>
+Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
+</li>
+</ul>
+<h2 id="japan">Japan</h2>
+<ul>
+<li>
+<p><b>JapanStockInfo</b> : 
+More than 2900 Japan stocks.<br>
+Column <code>stock_id</code>, <code>stock_name</code>, <code>Sector</code>, <code>Exchange</code>.<br><br></p>
+</li>
+<li>
+<p><b>JapanStockPrice</b> : 
+All of Taiwan stock price of stockinfo. The date started in 1992.<br>
+Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
+</li>
+</ul>
+<h2 id="international-financial-data">International Financial Data</h2>
+<ul>
 <li><b>CrudeOilPrices</b> : 
 Brent or WTI.<br>
 Column : <code>price</code>, <code>date</code>, <code>name</code>.
@@ -366,7 +423,7 @@ Column : <code>date</code>, <code>Price</code>.
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-      	<a href="https://github.com/linsamtw/FinMind" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      <a href="https://github.com/linsamtw/FinMind" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
