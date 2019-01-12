@@ -154,41 +154,71 @@ but also extract valuable information from it.</p>
 <hr />
 <h2 id="getting-started">Getting started</h2>
 <pre><code>from FinMind.Data import Load
+import datetime
 
-stock_id_list = Load.FinDataList(dataset = 'StockPrice')
+date = '2018-12-13'
+print('load TaiwanStockInfo')
+TaiwanStockInfo = Load.FinData(dataset = 'TaiwanStockInfo')
+print( TaiwanStockInfo[:5] )
 
-data = Load.FinData(dataset = 'StockPrice',
-                    select = stock_id_list[:2],
-                    date = '2018-10-10')
-print( data[:5] )
+load TaiwanStockInfo
+  stock_id stock_name kinds
+0     1201         味全  食品工業
+1     1203         味王  食品工業
+2     1210         大成  食品工業
+3     1213         大飲  食品工業
+4     1215         卜蜂  食品工業
 
-    Open   High    Low  Close  Adj_Close    Volume        date stock_id
-0  38.10  38.60  37.00  37.60      37.60  38528047  2018-10-11     1101
-1  37.25  39.00  37.00  39.00      39.00  16441006  2018-10-12     1101
-2  38.55  38.75  38.10  38.50      38.50  13909633  2018-10-15     1101
-3  38.40  38.40  37.80  38.20      38.20  12886506  2018-10-16     1101
-4  38.60  38.90  38.15  38.25      38.25  10478677  2018-10-17     1101
+print('load TaiwanStockPrice {} '.format(TaiwanStockInfo.loc[2,'stock_id']))
+TaiwanStockPrice = Load.FinData(
+        dataset = 'TaiwanStockPrice',
+        select = TaiwanStockInfo.loc[2,'stock_id'],
+        #select = ['1210'],
+        date = date)
+print( TaiwanStockPrice[:5] )
+
+load TaiwanStockPrice 1210 
+   Open   High    Low  Close  Adj_Close   Volume        date stock_id
+0  32.5  33.20  32.30  33.00      33.00  1668333  2018-12-13     1210
+1  33.3  35.05  33.25  33.95      33.95  3916120  2018-12-14     1210
+2  34.5  35.50  34.35  34.35      34.35  4543063  2018-12-17     1210
+3  34.4  34.85  32.80  32.80      32.80  3726316  2018-12-18     1210
+4  33.0  33.40  32.30  32.75      32.75  1887001  2018-12-19     1210
 </code></pre>
 <p><font size="2">
 The parameter <code>table</code> is what dataset been load.<br>
-The function <code>FinDataList</code> is load list of <code>StockPrice</code> dataset.<br>
-The function <code>FinData</code> is load stock prices by selecting stock_id_list[:2] and <code>date</code> &gt;= '2018-10-10'. <br><br>
-or you can load some stock id like <code>2330</code>.
+The function <code>FinData</code> is load taiwan stock prices by selecting 
+TaiwanStockInfo.loc[2,'stock_id'] and <code>date</code> &gt;= '2018-12-13',
+or you can load some stock id like <code>1210</code>.
 </font></p>
-<pre><code>from FinMind.Data import Load
+<pre><code>print('load GovernmentBonds list')
+GovernmentBonds_list = Load.FinDataList(dataset = 'GovernmentBonds')
+print( GovernmentBonds_list[:5] )
 
-data = Load.FinData(dataset = 'StockPrice',
-                    select = '2330',
-                    date = '2018-10-10')
-print( data[:5] )
-    Open   High    Low  Close  Adj_Close    Volume        date stock_id
-0  233.5  233.5  227.0  227.5      227.5  94589657  2018-10-11     2330
-1  233.5  233.5  227.0  227.5      227.5  94589657  2018-10-11     2330
-2  231.0  237.0  229.0  237.0      237.0  47175769  2018-10-12     2330
-3  231.0  237.0  229.0  237.0      237.0  47175769  2018-10-12     2330
-4  234.0  234.0  230.5  230.5      230.5  42168280  2018-10-15     2330
+print('load GovernmentBonds {}'.format(GovernmentBonds_list[3]))
+GovernmentBonds = Load.FinData(
+        dataset = 'GovernmentBonds',
+        select = GovernmentBonds_list[3],
+        date = date)
+print( GovernmentBonds[:5] )
+
+load GovernmentBonds list
+['Canada 1-Month', 'Canada 1-Year', 'Canada 10-Year', 'Canada 2-Month', 'Canada 2-Year']
+load GovernmentBonds Canada 2-Month
+         date  Price   Open   High   Low  ChangePercent      bound_type
+0  2018-12-13  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
+1  2018-12-14  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
+2  2018-12-17  1.625  1.630  1.635  1.62        -0.0031  Canada 2-Month
+3  2018-12-18  1.625  1.630  1.630  1.62         0.0000  Canada 2-Month
+4  2018-12-19  1.625  1.620  1.625  1.62         0.0000  Canada 2-Month
 </code></pre>
-<p><code>select</code> can been input string or list.</p>
+<p><font size="2">
+The function <code>FinDataList</code> is load GovernmentBonds_list.<br>
+The function <code>FinData</code> is load GovernmentBonds by selecting Canada 2-Month
+and <code>date</code> &gt;= '2018-12-13'.
+</font></p>
+<p>more can follow <a href="https://github.com/linsamtw/FinMind/blob/master/demo.py">deom.py</a> 
+in my github.</p>
               
             </div>
           </div>
@@ -234,5 +264,5 @@ print( data[:5] )
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2019-01-12 12:20:17.385539
+Build Date UTC : 2019-01-12 12:33:06.309922
 -->
