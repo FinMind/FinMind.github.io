@@ -76,11 +76,16 @@
             
                 <li class="toctree-l3"><a href="#data-introduction">Data Introduction</a></li>
                 
-                    <li><a class="toctree-l4" href="#taiwan">Taiwan</a></li>
+            
+                <li class="toctree-l3"><a href="#stockinfo">StockInfo</a></li>
                 
-                    <li><a class="toctree-l4" href="#us">US</a></li>
+            
+                <li class="toctree-l3"><a href="#stockprice">StockPrice</a></li>
                 
-                    <li><a class="toctree-l4" href="#japan">Japan</a></li>
+            
+                <li class="toctree-l3"><a href="#financialstatements">FinancialStatements</a></li>
+                
+                    <li><a class="toctree-l4" href="#taiwanstock-other-information">TaiwanStock Other Information</a></li>
                 
                     <li><a class="toctree-l4" href="#international-financial-data">International Financial Data</a></li>
                 
@@ -136,9 +141,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="introduce">Introduce</h1>
+                <h2 id="introduce">Introduce</h2>
 <ul>
-<li>Stock Information<ul>
+<li><b>Stock Information</b><ul>
 <li>Taiwan</li>
 <li>US</li>
 <li>Japan</li>
@@ -146,7 +151,7 @@
 <li>Europe</li>
 </ul>
 </li>
-<li>Stock Prices <ul>
+<li><b>Stock Prices</b> <ul>
 <li>Taiwan</li>
 <li>US</li>
 <li>Japan</li>
@@ -154,27 +159,93 @@
 <li>Europe</li>
 </ul>
 </li>
-<li>Financial Statements <ul>
+<li><b>Financial Statements </b><ul>
 <li>Taiwan</li>
+<li>US</li>
 </ul>
 </li>
-<li>Stock Dividend <ul>
-<li>Taiwan</li>
+<li><b>Taiwan Stock Stock Dividend</b></li>
+<li><b>Taiwan Stock Institutional Investors Buy and Sell </b><ul>
+<li>Chinese_Investor</li>
+<li>Foreign_Investor</li>
+<li>Investment_Trust</li>
+<li>Dealer_self</li>
+<li>Dealer_Hedging</li>
 </ul>
 </li>
-<li>Taiwan Stock Institutional Investors Buy and Sell </li>
-<li>Crude Oil Prices</li>
-<li>Exchange Rate</li>
-<li>Interest Rate</li>
-<li>Gold Price</li>
-<li>Government bond</li>
-<li>Energy Futures Prices</li>
-<li>Gold Price</li>
+<li><b>Taiwan Stock Margin Purchase Short Sale</b><ul>
+<li>MarginPurchaseBuy</li>
+<li>MarginPurchaseSell</li>
+<li>MarginPurchaseCashRepayment</li>
+<li>MarginPurchaseYesterdayBalance</li>
+<li>MarginPurchaseTodayBalance</li>
+<li>MarginPurchaseLimit</li>
+<li>ShortSaleBuy</li>
+<li>ShortSaleSell</li>
+<li>ShortSaleCashRepayment</li>
+<li>ShortSaleYesterdayBalance</li>
+<li>ShortSaleTodayBalance</li>
+<li>ShortSaleLimit</li>
+<li>OffsetLoanAndShort</li>
+</ul>
+</li>
+<li><b>Crude Oil Prices</b><ul>
+<li>Brent</li>
+<li>WTI</li>
+</ul>
+</li>
+<li><b>Exchange Rate ( vs US )</b><ul>
+<li>Canda</li>
+<li>China</li>
+<li>Euro</li>
+<li>Japan</li>
+<li>Taiwan</li>
+<li>UK </li>
+</ul>
+</li>
+<li><b>Interest Rate</b><ul>
+<li>BCB :     Central Bank of Brazil</li>
+<li>BOC : Bank of Canada</li>
+<li>BOE : Bank of England</li>
+<li>BOJ : Bank of Japan</li>
+<li>CBR : Central Bank of the Russian Federation</li>
+<li>ECB : European Central Bank</li>
+<li>FED : Federal Reserve</li>
+<li>PBOC : People's Bank of China</li>
+<li>RBA : Reserve Bank of Australia</li>
+<li>RBI : Reserve Bank of India</li>
+<li>RBNZ : Reserve Bank of New Zealand</li>
+<li>SNB :  Swiss National Bank</li>
+</ul>
+</li>
+<li><b>Gold Price</b></li>
+<li><b>Government bond</b><ul>
+<li>Canada : 1-Month ~ 30-Year</li>
+<li>China : 1-Year ~ 30-Year</li>
+<li>France : 1-Month ~ 50-Year</li>
+<li>Germany : 3-Month ~ 30-Year</li>
+<li>Italy : 1-Month ~ 50-Year</li>
+<li>Japan : 1-Month ~ 40-Year</li>
+<li>Russia : 1-Week ~ 20-Year</li>
+<li>United Kingdom : 1-Month ~ 50-Year</li>
+<li>United States : 1-Month ~ 30-Year</li>
+</ul>
+</li>
+<li><b>Energy Futures Prices</b><ul>
+<li>BrentOilFutures</li>
+<li>CarbonEmissionsFutures</li>
+<li>CrudeOilWTIFutures</li>
+<li>GasolineRBOBFutures</li>
+<li>HeatingOilFutures</li>
+<li>LondonGasOilFutures</li>
+<li>NaturalGasFutures</li>
+</ul>
+</li>
 </ul>
 <hr />
-<h1 id="methods">Methods</h1>
+<h2 id="methods">Methods</h2>
 <p><font size="1"></p>
-<h1 id="findatalist">FinDataList</h1>
+<h2 id="findatalist">FinDataList</h2>
 <p></font></p>
 <p><font size="3"></p>
 <pre><code>FinDataList(dataset)
@@ -202,7 +273,7 @@ Load Data List from dataset.</p>
 </font></p>
 <hr />
 <p><font size="1"></p>
-<h1 id="findata">FinData</h1>
+<h2 id="findata">FinData</h2>
 <p></font></p>
 <p><font size="3"></p>
 <pre><code>FinData(dataset,select,date)
@@ -216,33 +287,36 @@ Load Data from dataset.</p>
     String. </p>
 <ul>
 <li><code>TaiwanStockInfo</code> : Taiwan Stock Information.</li>
+<li><code>USStockInfo</code> : US Stock Information.</li>
+<li><code>UKStockInfo</code> : UK Stock Information.</li>
+<li><code>JapanStockInfo</code> : Japan Stock Information.</li>
+<li><code>EuropeStockInfo</code> : Europe Stock Information.</li>
+</ul>
+<hr />
+<ul>
 <li><code>TaiwanStockPrice</code> : Taiwan Stock Price. </li>
-<li><code>TaiwanStockFinancialStatements</code> : Taiwan Stock Financial Statements.</li>
+<li><code>USStockPrice</code> : US Stock Price.</li>
+<li><code>UKStockPrice</code> : UK Stock Price.</li>
+<li><code>JapanStockPrice</code> : Japan Stock Price.</li>
+<li><code>EuropeStockPrice</code> : Europe Stock Price.</li>
+</ul>
+<hr />
+<ul>
+<li><code>FinancialStatements</code> : Taiwan Stock &amp; US Stock Financial Statements.</li>
 <li><code>TaiwanStockStockDividend</code> : Taiwan Stock Stock Dividend.</li>
-<li>
-<p><code>InstitutionalInvestors</code> : Taiwan Stock Institutional Investors Buy and Sell.</p>
-</li>
-<li>
-<p><code>USStockInfo</code> : US Stock Information.</p>
-</li>
-<li>
-<p><code>USStockPrice</code> : US Stock Price.</p>
-</li>
-<li>
-<p><code>JapanStockInfo</code> : Japan Stock Information.</p>
-</li>
-<li>
-<p><code>JapanStockPrice</code> : Japan Stock Price.</p>
-</li>
-<li>
-<p><code>CrudeOilPrices</code> : Crude Oil Prices.</p>
-</li>
+<li><code>InstitutionalInvestorsBuySell</code> : Taiwan Stock Institutional Investors Buy and Sell.</li>
+<li><code>TaiwanStockMarginPurchaseShortSale</code> : Taiwan Stock Margin Purchase Short Sale.</li>
+</ul>
+<hr />
+<ul>
+<li><code>CrudeOilPrices</code> : Crude Oil Prices.</li>
 <li><code>ExchangeRate</code> : Exchange Rate. ( contains G7 )</li>
 <li><code>InterestRate</code> : Interest Rate. ( contains G7 )</li>
 <li><code>GovernmentBonds</code> : Government bond. ( contains G7 )</li>
 <li><code>EnergyFuturesPrices</code> : Energy Futures Prices.</li>
 <li><code>GoldPrice</code> : Gold Price.</li>
 </ul>
+<hr />
 <p>The detail can follow Data Introduction.<br><br></p>
 </li>
 <li>
@@ -250,15 +324,17 @@ Load Data from dataset.</p>
     String or List. </p>
 <ul>
 <li>Case 1 : No need input.<br><ul>
-<li><code>TaiwanStockInfo</code>, <code>USStockInfo</code>, <code>JapanStockInfo</code>.    </li>
+<li><code>TaiwanStockInfo</code>, <code>USStockInfo</code>, <code>UKStockInfo</code>, <code>JapanStockInfo</code>, <code>EuropeStockInfo</code>.    </li>
 </ul>
 </li>
-<li>Case 2 : Input stock id from <code>TaiwanStockInfo</code> or <code>USStockInfo</code> or <code>JapanStockInfo</code>.<ul>
-<li><code>TaiwanStockPrice</code>, <code>TaiwanStockFinancialStatements</code>, <code>TaiwanStockStockDividend</code>, 
-    <code>USStockPrice</code>, <code>JapanStockPrice</code>. </li>
+<li>Case 2 : Input stock id from <code>TaiwanStockInfo</code>, <code>USStockInfo</code>, 
+<code>UKStockInfo</code>, <code>JapanStockInfo</code>, <code>EuropeStockInfo</code>.<ul>
+<li><code>TaiwanStockPrice</code>, <code>USStockPrice</code>, <code>UKStockPrice</code>, <code>JapanStockPrice</code>,  <code>EuropeStockPrice</code>, 
+<code>FinancialStatements</code>, <code>TaiwanStockStockDividend</code>, 
+<code>InstitutionalInvestorsBuySell</code>, <code>TaiwanStockMarginPurchaseShortSale</code>.</li>
 </ul>
 </li>
-<li>Case 3 : Input element from <b>FinDataList</b>.<ul>
+<li>Case 3 : Input element from function <b>FinDataList</b>.<ul>
 <li><code>InstitutionalInvestors</code>, <code>CrudeOilPrices</code>, <code>ExchangeRate</code>, <code>InterestRate</code>, 
     <code>GovernmentBonds</code>, <code>EnergyFuturesPrices</code>.</li>
 </ul>
@@ -277,31 +353,47 @@ Load Data from dataset.</p>
 <p><strong>Return : </strong> DataFrame.
 </font></p>
 <hr />
-<h1 id="data-introduction">Data Introduction</h1>
-<h2 id="taiwan">Taiwan</h2>
+<h2 id="data-introduction">Data Introduction</h2>
+<p><font size="1"></p>
+<h1 id="stockinfo">StockInfo</h1>
+<p></font></p>
 <ul>
 <li>
 <p><b>TaiwanStockInfo</b> : 
-More than 1000 Taiwan stocks.<br>
-Column <code>stock_id</code>, <code>stock_name</code>, <code>kinds</code>.<br><br></p>
+Column <code>stock_id</code>, <code>stock_name</code>, <code>kinds</code>.<br></p>
 </li>
 <li>
-<p><b>TaiwanStockPrice</b> : 
-All of Taiwan stock price of stockinfo. The date started in 1992.<br>
-Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
+<p><b>USStockInfo</b> : 
+Column <code>stock_id</code>, <code>stock_name</code>, <code>Country</code>, <code>IPOYear</code>, <code>Country</code>, <code>MarketCap</code>, <code>Subsector</code>.<br></p>
 </li>
 <li>
-<p><b>TaiwanStockFinancialStatements</b> : 
-All of Taiwan Stock Financial Statements of stockinfo.<br>
-Column <code>REV</code>(Gross Revenue), <code>COST</code>(Cost of Goods Sold or Manufacturing), <code>PRO</code>(Gross Profit),
-       <code>GM</code>(Gross margin), <code>OE</code>(Operating Expenses), <code>OI</code>(Operating Income), <code>OIM</code>(Operating Profit Margin),
-       <code>BTAX</code>(Income before Tax), <code>BTAXM</code>(Income before Tax Margin), <code>TAX</code>(Income Tax Expense),
-       <code>NI</code>(Net Income), <code>NIM</code>(Net Profit Margin), <code>EPS</code>(Earnings Per Share), <code>stock_id</code>,
-       <code>year</code>, <code>quar</code>, <code>date</code>.
-<br><br></p>
+<p><b>JapanStockInfo</b> : 
+Column <code>stock_id</code>, <code>stock_name</code>, <code>Sector</code>, <code>Exchange</code>.<br></p>
 </li>
+<li>
+<p><b>UKStockInfo</b> : 
+Column <code>stock_id</code>, <code>stock_name</code>, <code>Country</code>.<br></p>
+</li>
+<li>
+<p><b>EuropeStockInfo</b> : 
+Column <code>stock_id</code>, <code>stock_name</code>, <code>Market</code>.<br></p>
+</li>
+</ul>
+<p><font size="1"></p>
+<h1 id="stockprice">StockPrice</h1>
+<p></font>
+Column <code>date</code>, <code>Volume</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>Close</code>, <code>Adj_Close</code>.<br></p>
+<p><font size="1"></p>
+<h1 id="financialstatements">FinancialStatements</h1>
+<p></font>
+Column <code>Revenue</code>, <code>CostOfGoodsSold</code>, <code>GrossProfit</code>, <code>OperatingExpenses</code>,
+       <code>OperatingIncome</code>, <code>NonOperatingIncome</code>, <code>NonOperatingExpense</code>,
+       <code>PreTaxIncome</code>, <code>TAX</code>, <code>IncomeAfterTaxes</code>, <code>EPS</code>, <code>stock_id</code>, <code>date</code>,
+       <code>country</code>.<br></p>
+<hr />
+<h2 id="taiwanstock-other-information">TaiwanStock Other Information</h2>
+<ul>
 <li><b>TaiwanStockStockDividend</b> : 
-Containing all of Taiwan Stock Stock Dividend of stockinfo.<br>
 Column <code>date</code>, <code>stock_id</code>, <code>Retained_Earnings</code>, <code>Capital_Reserve</code>, <code>Ex_right_trading_day</code>, 
         <code>total_employee_bonus_stock_shares</code>, <code>Cash_dividend</code>, <code>Ex_dividend_transaction_day</code>,
         <code>total_employee_bonus_shares</code>, <code>Directors_remuneration</code>.
@@ -310,62 +402,27 @@ Column <code>date</code>, <code>stock_id</code>, <code>Retained_Earnings</code>,
 Institutional Investors buy or sell. ( Dealer, Dealer Hedging, Foreign Investor, Investment Trust )<br>
 Column : <code>name</code>, <code>buy</code>, <code>sell</code>, <code>date</code>.</li>
 </ul>
-<h2 id="us">US</h2>
-<ul>
-<li>
-<p><b>USStockInfo</b> : 
-More than 6200 US stocks.<br>
-Column <code>stock_id</code>, <code>name</code>, <code>Country</code>, <code>IPOYear</code>, <code>Country</code>, <code>MarketCap</code>, <code>Subsector</code>.<br><br></p>
-</li>
-<li>
-<p><b>USStockPrice</b> : 
-All of Taiwan stock price of stockinfo. The date started in 1992.<br>
-Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
-</li>
-</ul>
-<h2 id="japan">Japan</h2>
-<ul>
-<li>
-<p><b>JapanStockInfo</b> : 
-More than 2900 Japan stocks.<br>
-Column <code>stock_id</code>, <code>stock_name</code>, <code>Sector</code>, <code>Exchange</code>.<br><br></p>
-</li>
-<li>
-<p><b>JapanStockPrice</b> : 
-All of Taiwan stock price of stockinfo. The date started in 1992.<br>
-Column <code>date</code>, <code>Trading_Volume</code>, <code>Trading_money</code>, <code>open</code>, <code>max</code>, <code>min</code>, <code>close</code>, <code>spread</code>, <code>Trading_turnover</code>.<br><br></p>
-</li>
-</ul>
+<hr />
 <h2 id="international-financial-data">International Financial Data</h2>
 <ul>
 <li><b>CrudeOilPrices</b> : 
-Brent or WTI.<br>
 Column : <code>price</code>, <code>date</code>, <code>name</code>.
-<br><br></li>
+<br></li>
 <li><b>ExchangeRate</b> : 
-Exchange Rate. US dollar as the main currency. Contain CAD, CNY, EUR, GBP, JPY, TWD.<br>
 Column : <code>InterbankRate</code>, <code>InverseInterbankRate</code>, <code>date</code>, <code>country</code>.
-<br><br></li>
+<br></li>
 <li><b>InterestRate</b> : 
-Interest Rate. Contain BCB, BOC, BOE, BOJ, CBR, ECB, FED, PBOC, RBA, RBI, RBNZ, SNB. 
-The full name is column <code>full_country_name</code>.<br>
 Column : <code>date</code>, <code>interest_rate</code>, <code>country</code>, <code>full_country_name</code>.
-<br><br></li>
+<br></li>
 <li><b>GovernmentBonds</b> : 
-Government Bonds. Contain Canada, China, France, Germany, Japan, Russia, Uk, Usa, Italy. 
-Minimum 1-week(Russia), Maximum 50-Year(United Kingdom).<br>
 Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>ChangePercent</code>, <code>bound_type</code>.
-<br><br></li>
+<br></li>
 <li><b>EnergyFuturesPrices</b> : 
-Energy Futures Prices. Contain 
-Brent Oil Futures, Carbon Emissions Futures, Crude Oil WTI Futures, 
-Gasoline RBOB Futures, Heating Oil Futures, London Gas Oil Futures, Natural Gas Futures.<br>
 Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>Vol</code>, <code>ChangePercent</code>, <code>futures_type</code>.
-<br><br></li>
+<br></li>
 <li><b>GoldPrice</b> : 
-Gold Price. After 2018/7/20, the data is minutely data.<br>
 Column : <code>date</code>, <code>Price</code>.
-<br><br></li>
+<br></li>
 </ul>
               
             </div>
@@ -402,7 +459,7 @@ Column : <code>date</code>, <code>Price</code>.
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-      	<a href="https://github.com/linsamtw/FinMind" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      <a href="https://github.com/linsamtw/FinMind" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
