@@ -164,31 +164,6 @@
 <li>US</li>
 </ul>
 </li>
-<li><b>Taiwan Stock Stock Dividend</b></li>
-<li><b>Taiwan Stock Institutional Investors Buy and Sell </b><ul>
-<li>Chinese_Investor</li>
-<li>Foreign_Investor</li>
-<li>Investment_Trust</li>
-<li>Dealer_self</li>
-<li>Dealer_Hedging</li>
-</ul>
-</li>
-<li><b>Taiwan Stock Margin Purchase Short Sale</b><ul>
-<li>MarginPurchaseBuy</li>
-<li>MarginPurchaseSell</li>
-<li>MarginPurchaseCashRepayment</li>
-<li>MarginPurchaseYesterdayBalance</li>
-<li>MarginPurchaseTodayBalance</li>
-<li>MarginPurchaseLimit</li>
-<li>ShortSaleBuy</li>
-<li>ShortSaleSell</li>
-<li>ShortSaleCashRepayment</li>
-<li>ShortSaleYesterdayBalance</li>
-<li>ShortSaleTodayBalance</li>
-<li>ShortSaleLimit</li>
-<li>OffsetLoanAndShort</li>
-</ul>
-</li>
 <li><b>Crude Oil Prices</b><ul>
 <li>Brent</li>
 <li>WTI</li>
@@ -218,7 +193,6 @@
 <li>SNB :  Swiss National Bank</li>
 </ul>
 </li>
-<li><b>Gold Price</b></li>
 <li><b>Government bond</b><ul>
 <li>Canada : 1-Month ~ 30-Year</li>
 <li>China : 1-Year ~ 30-Year</li>
@@ -241,6 +215,10 @@
 <li>NaturalGasFutures</li>
 </ul>
 </li>
+<li><b>Taiwan Stock Stock Dividend</b></li>
+<li><b>Taiwan Stock Institutional Investors Buy and Sell </b></li>
+<li><b>Taiwan Stock Margin Purchase Short Sale</b></li>
+<li><b>Gold Price</b></li>
 </ul>
 <hr />
 <h2 id="methods">Methods</h2>
@@ -393,34 +371,48 @@ Column <code>Revenue</code>, <code>CostOfGoodsSold</code>, <code>GrossProfit</co
 <hr />
 <h2 id="taiwanstock-other-information">TaiwanStock Other Information</h2>
 <ul>
-<li><b>TaiwanStockStockDividend</b> : 
-Column <code>date</code>, <code>stock_id</code>, <code>Retained_Earnings</code>, <code>Capital_Reserve</code>, <code>Ex_right_trading_day</code>, 
+<li><b>Taiwan Stock Stock Dividend</b> : 
+Column : <code>date</code>, <code>stock_id</code>, <code>Retained_Earnings</code>, <code>Capital_Reserve</code>, <code>Ex_right_trading_day</code>, 
         <code>total_employee_bonus_stock_shares</code>, <code>Cash_dividend</code>, <code>Ex_dividend_transaction_day</code>,
         <code>total_employee_bonus_shares</code>, <code>Directors_remuneration</code>.
 <br><br></li>
-<li><b>InstitutionalInvestors</b> : 
+<li>
+<p><b>Institutional Investors</b> : 
 Institutional Investors buy or sell. ( Dealer, Dealer Hedging, Foreign Investor, Investment Trust )<br>
-Column : <code>name</code>, <code>buy</code>, <code>sell</code>, <code>date</code>.</li>
+Column : <code>name</code>, <code>buy</code>, <code>sell</code>, <code>date</code>.</p>
+</li>
+<li>
+<p><b>Taiwan Stock Margin Purchase Short Sale</b> :
+Column : <code>stock_id</code>, <code>stock_name</code>, <code>MarginPurchaseBuy</code>, <code>MarginPurchaseSell</code>,
+<code>MarginPurchaseCashRepayment</code>, <code>MarginPurchaseYesterdayBalance</code>,
+<code>MarginPurchaseTodayBalance</code>, <code>MarginPurchaseLimit</code>, <code>ShortSaleBuy</code>,
+<code>ShortSaleSell</code>, <code>ShortSaleCashRepayment</code>, <code>ShortSaleYesterdayBalance</code>,
+<code>ShortSaleTodayBalance</code>, <code>ShortSaleLimit</code>, <code>OffsetLoanAndShort</code>, <code>Note</code>,
+<code>date</code>.</p>
+</li>
+<li><b>Taiwan Stock Institutional Investors Buy and Sell </b> :
+Column : <code>Chinese_Investor</code>,<code>Foreign_Investor</code>,<code>Investment_Trust</code>,<code>Dealer_self</code>,
+<code>Dealer_Hedging</code>.</li>
 </ul>
 <hr />
 <h2 id="international-financial-data">International Financial Data</h2>
 <ul>
-<li><b>CrudeOilPrices</b> : 
+<li><b>Crude Oil Prices</b> : 
 Column : <code>price</code>, <code>date</code>, <code>name</code>.
 <br></li>
-<li><b>ExchangeRate</b> : 
+<li><b>Exchange Rate</b> : 
 Column : <code>InterbankRate</code>, <code>InverseInterbankRate</code>, <code>date</code>, <code>country</code>.
 <br></li>
-<li><b>InterestRate</b> : 
+<li><b>Interest Rate</b> : 
 Column : <code>date</code>, <code>interest_rate</code>, <code>country</code>, <code>full_country_name</code>.
 <br></li>
-<li><b>GovernmentBonds</b> : 
+<li><b>Government Bonds</b> : 
 Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>ChangePercent</code>, <code>bound_type</code>.
 <br></li>
-<li><b>EnergyFuturesPrices</b> : 
+<li><b>Energy Futures Prices</b> : 
 Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>Vol</code>, <code>ChangePercent</code>, <code>futures_type</code>.
 <br></li>
-<li><b>GoldPrice</b> : 
+<li><b>Gold Price</b> : 
 Column : <code>date</code>, <code>Price</code>.
 <br></li>
 </ul>
