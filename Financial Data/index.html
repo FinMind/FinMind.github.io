@@ -215,7 +215,11 @@
 <li>NaturalGasFutures</li>
 </ul>
 </li>
+<li><b>Raw Material Futures Prices</b></li>
 <li><b>Taiwan Stock Stock Dividend</b></li>
+<li><b>Taiwan Stock Balance Sheet</b></li>
+<li><b>Taiwan Stock Holding Shares Per</b></li>
+<li><b>Taiwan Stock Shareholding</b></li>
 <li><b>Taiwan Stock Institutional Investors Buy and Sell </b></li>
 <li><b>Taiwan Stock Margin Purchase Short Sale</b></li>
 <li><b>Gold Price</b></li>
@@ -295,6 +299,13 @@ Load Data from dataset.</p>
 <li><code>GoldPrice</code> : Gold Price.</li>
 </ul>
 <hr />
+<ul>
+<li><code>BalanceSheet</code> : Taiwan Stock Balance Sheet.</li>
+<li><code>HoldingSharesPer</code> : Taiwan Stock Holding Shares Per.</li>
+<li><code>Shareholding</code> : Taiwan Stock Shareholding.</li>
+<li><code>RawMaterialFuturesPrices </code> : Raw Material Futures Prices. ( meats, grains, energies, softs, metals) </li>
+</ul>
+<hr />
 <p>The detail can follow Data Introduction.<br><br></p>
 </li>
 <li>
@@ -364,10 +375,7 @@ Column <code>date</code>, <code>Volume</code>, <code>Open</code>, <code>High</co
 <p><font size="1"></p>
 <h1 id="financialstatements">FinancialStatements</h1>
 <p></font>
-Column <code>Revenue</code>, <code>CostOfGoodsSold</code>, <code>GrossProfit</code>, <code>OperatingExpenses</code>,
-       <code>OperatingIncome</code>, <code>NonOperatingIncome</code>, <code>NonOperatingExpense</code>,
-       <code>PreTaxIncome</code>, <code>TAX</code>, <code>IncomeAfterTaxes</code>, <code>EPS</code>, <code>stock_id</code>, <code>date</code>,
-       <code>country</code>.<br></p>
+Column <code>date</code>,<code>stock_id</code>,<code>type</code>,<code>value</code>.</p>
 <hr />
 <h2 id="taiwanstock-other-information">TaiwanStock Other Information</h2>
 <ul>
@@ -393,6 +401,16 @@ Column : <code>stock_id</code>, <code>stock_name</code>, <code>MarginPurchaseBuy
 <li><b>Taiwan Stock Institutional Investors Buy and Sell </b> :
 Column : <code>Chinese_Investor</code>,<code>Foreign_Investor</code>,<code>Investment_Trust</code>,<code>Dealer_self</code>,
 <code>Dealer_Hedging</code>.</li>
+<li><b>Balance Sheet  </b> :
+Column <code>date</code>,<code>stock_id</code>,<code>type</code>,<code>value</code>.</p>
+<li><b>Holding Shares Per </b> :
+Column : <code>HoldingSharesLevel</code>,<code>people</code>,<code>unit</code>,<code>percent</code>,
+<code>stock_id</code>,<code>date</code>.</li>
+<li><b>Shareholding</b> :
+Column : <code>stock_id</code>,<code>stock_name</code>,<code>InternationalCode</code>,<code>NumberOfSharesIssued</code>,
+<code>ForeignInvestmentRemainingShares</code>,<code>ForeignInvestmentShares</code>,
+<code>ForeignInvestmentUpperLimitRatio</code>,<code>ChineseInvestmentUpperLimitRatio</code>,
+<code></code>,<code>RecentlyDeclareDate</code>,<code>date</code>.</li>
 </ul>
 <hr />
 <h2 id="international-financial-data">International Financial Data</h2>
@@ -414,6 +432,11 @@ Column : <code>date</code>, <code>Price</code>, <code>Open</code>, <code>High</c
 <br></li>
 <li><b>Gold Price</b> : 
 Column : <code>date</code>, <code>Price</code>.
+<br></li>
+<li><b>Raw Material Futures Prices </b> : 
+Column : <code>date</code>, <code>Price</code>,
+<code>Open</code>, <code>High</code>,<code>Low</code>, <code>Vol</code>, <code>ChangePercent</code>, 
+<code>futures_type</code>.
 <br></li>
 </ul>
               
