@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    <url>
-     <loc>None/</loc>
-     <lastmod>2019-02-12</lastmod>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>https://finmind.github.io/FinMindDoc/</loc>
+     <lastmod>2020-03-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://finmind.github.io/FinMindDoc/tutor/data/</loc>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>None/Financial Data/</loc>
-     <lastmod>2019-02-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Financial Mining/</loc>
-     <lastmod>2019-02-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Financial Visualize/</loc>
-     <lastmod>2019-02-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
 </urlset>

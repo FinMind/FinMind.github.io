@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Sam">
+  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/welcome/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Welcome to FinMind - FinMind</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Welcome to FinMind";
+    var mkdocs_page_input_path = "welcome.md";
+    var mkdocs_page_url = "/FinMindDoc/welcome/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> FinMind</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Data</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tutor/data/">dataset</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">FinMind</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Welcome to FinMind</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome-to-finmind">Welcome to FinMind</h1>
+<p>FinMind is about Financial Data, Visualize and Mining.</p>
+<h3 id="introduce">Introduce</h3>
+<p>Stocks are financial products that most people are familiar with. The stock price will be affected by many factors, including central bank interest rates, exchange rates, raw material prices, and international oil prices.</p>
+<p>Similarly, other financial products will interact with each other. If we conduct a holistic financial analysis, we can not only look at a single piece of data, but also extract valuable information from it.</p>
+<p>The following will introduce our products.</p>
+<h3 id="financial-data">Financial Data</h3>
+<p>More than ten kinds financial data. Every day update.
+Financial Visualize
+At least five kinds Visualize tools on every data. (In development)
+Financial Mining
+Holistic financial analysis. (In development)</p>
+<h3 id="getting-started">Getting started</h3>
+<pre><code class="python">from FinMind.Data import Load
+import datetime
+
+date = '2018-12-13'
+print('load TaiwanStockInfo')
+TaiwanStockInfo = Load.FinData(dataset = 'TaiwanStockInfo')
+print( TaiwanStockInfo[:5] )
+
+load TaiwanStockInfo
+stock_id stock_name kinds
+0     1201         味全  食品工業
+1     1203         味王  食品工業
+2     1210         大成  食品工業
+3     1213         大飲  食品工業
+4     1215         卜蜂  食品工業
+
+print('load TaiwanStockPrice {} '.format(TaiwanStockInfo.loc[2,'stock_id']))
+TaiwanStockPrice = Load.FinData(
+        dataset = 'TaiwanStockPrice',
+        select = TaiwanStockInfo.loc[2,'stock_id'],
+        #select = ['1210'],
+        date = date)
+print( TaiwanStockPrice[:5] )
+
+load TaiwanStockPrice 1210 
+Open   High    Low  Close  Adj_Close   Volume        date stock_id
+0  32.5  33.20  32.30  33.00      33.00  1668333  2018-12-13     1210
+1  33.3  35.05  33.25  33.95      33.95  3916120  2018-12-14     1210
+2  34.5  35.50  34.35  34.35      34.35  4543063  2018-12-17     1210
+3  34.4  34.85  32.80  32.80      32.80  3726316  2018-12-18     1210
+4  33.0  33.40  32.30  32.75      32.75  1887001  2018-12-19     1210
+</code></pre>
+
+<p>The parameter <code>table</code> is what dataset been load.<br>
+The function <code>FinData</code> is load taiwan stock prices by selecting TaiwanStockInfo.loc[2,'stock_id'] and <code>date</code> &gt;= '2018-12-13', or you can load some stock id like <code>1210</code>.</p>
+<pre><code class="python">print('load GovernmentBonds list')
+GovernmentBonds_list = Load.FinDataList(dataset = 'GovernmentBonds')
+print( GovernmentBonds_list[:5] )
+
+print('load GovernmentBonds {}'.format(GovernmentBonds_list[3]))
+GovernmentBonds = Load.FinData(
+        dataset = 'GovernmentBonds',
+        select = GovernmentBonds_list[3],
+        date = date)
+print( GovernmentBonds[:5] )
+</code></pre>
+
+<pre><code class="python">
+load GovernmentBonds list
+['Canada 1-Month', 'Canada 1-Year', 'Canada 10-Year', 'Canada 2-Month', 'Canada 2-Year']
+load GovernmentBonds Canada 2-Month
+        date  Price   Open   High   Low  ChangePercent      bound_type
+0  2018-12-13  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
+1  2018-12-14  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
+2  2018-12-17  1.625  1.630  1.635  1.62        -0.0031  Canada 2-Month
+3  2018-12-18  1.625  1.630  1.630  1.62         0.0000  Canada 2-Month
+4  2018-12-19  1.625  1.620  1.625  1.62         0.0000  Canada 2-Month
+</code></pre>
+
+<p>The function FinDataList is load GovernmentBonds_list.
+The function FinData is load GovernmentBonds by selecting Canada 2-Month and date &gt;= '2018-12-13'.</p>
+<p>more can follow deom.py in my github.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
