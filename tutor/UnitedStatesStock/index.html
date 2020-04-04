@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Sam">
-  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/data/">
+  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/UnitedStatesStock/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Data - FinMind</title>
+  <title>UnitedStatesStock - FinMind</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Data";
-    var mkdocs_page_input_path = "tutor/data.md";
-    var mkdocs_page_url = "/FinMindDoc/tutor/data/";
+    var mkdocs_page_name = "UnitedStatesStock";
+    var mkdocs_page_input_path = "tutor/UnitedStatesStock.md";
+    var mkdocs_page_url = "/FinMindDoc/tutor/UnitedStatesStock/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -56,12 +56,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Data</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Stock</a>
-    <ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Stock</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../TaiwanStock/">TaiwanStock</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../UnitedStatesStock/">UnitedStatesStock</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">UnitedStatesStock</a>
+    <ul class="current">
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="" href="../EuropeStock.md">EuropeStock</a>
                 </li>
@@ -96,8 +98,16 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Stock &raquo;</li>
+        
+      
+        
+          <li>Data &raquo;</li>
+        
+      
     
-    <li>Data</li>
+    <li>UnitedStatesStock</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -108,79 +118,67 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="financial-data">Financial Data</h3>
-<p>More than ten kinds financial data. Every day update.
-Financial Visualize
-At least five kinds Visualize tools on every data. (In development)
-Financial Mining
-Holistic financial analysis. (In development)</p>
-<h3 id="getting-started">Getting started</h3>
-<pre><code class="python">from FinMind.Data import Load
-import datetime
+                <p>在美國股票市場，我們擁有 1 種資料集，如下:</p>
+<ul>
+<li><a href="https://finmind.github.io/tutor/UnitedStatesStock/#美國股價1分資料表-USStockPriceMinute">美國股價1分資料表 USStockPriceMinute</a></li>
+</ul>
+<p>另外針對資料集整理出的列表如下:</p>
+<ul>
+<li><a href="https://finmind.github.io/tutor/TaiwanStock/#美國股票清單列表-USStockInfo">美國股票清單列表 USStockInfo</a></li>
+</ul>
+<p>根據上述資料表逐一說明怎麼使用，另外具體資料表 schemas 請參考 <a href="http://finmindapi.servebeer.com/docs#/default/method_api_v2_data_get">finmindapi</a></p>
+<h4 id="usstockinfo">美國股票清單列表 USStockInfo</h4>
+<ul>
+<li>這張資料表主要是列出美國所有上市上櫃的股票名稱，代碼和產業類別</li>
+</ul>
+<pre><code class="python">import requests
+import pandas as pd
 
-date = '2018-12-13'
-print('load TaiwanStockInfo')
-TaiwanStockInfo = Load.FinData(dataset = 'TaiwanStockInfo')
-print( TaiwanStockInfo[:5] )
+url = 'http://finmindapi.servebeer.com/api/v2/data?dataset=USStockInfo'
+data = requests.get(url)
+data = data.json()
+data = pd.DataFrame(data['data'])
+print(data.head())
 
-load TaiwanStockInfo
-stock_id stock_name kinds
-0     1201         味全  食品工業
-1     1203         味王  食品工業
-2     1210         大成  食品工業
-3     1213         大飲  食品工業
-4     1215         卜蜂  食品工業
-
-print('load TaiwanStockPrice {} '.format(TaiwanStockInfo.loc[2,'stock_id']))
-TaiwanStockPrice = Load.FinData(
-        dataset = 'TaiwanStockPrice',
-        select = TaiwanStockInfo.loc[2,'stock_id'],
-        #select = ['1210'],
-        date = date)
-print( TaiwanStockPrice[:5] )
-
-load TaiwanStockPrice 1210 
-Open   High    Low  Close  Adj_Close   Volume        date stock_id
-0  32.5  33.20  32.30  33.00      33.00  1668333  2018-12-13     1210
-1  33.3  35.05  33.25  33.95      33.95  3916120  2018-12-14     1210
-2  34.5  35.50  34.35  34.35      34.35  4543063  2018-12-17     1210
-3  34.4  34.85  32.80  32.80      32.80  3726316  2018-12-18     1210
-4  33.0  33.40  32.30  32.75      32.75  1887001  2018-12-19     1210
+# FIXME:
+  industry_category stock_id stock_name  type
+0               ETF     0050     元大台灣50     1
+1               ETF     0051    元大中型100     1
+2               ETF     0052       富邦科技     1
+3               ETF     0053       元大電子     1
+4               ETF     0054     元大台商50     1
 </code></pre>
 
-<p>The parameter <code>table</code> is what dataset been load.<br>
-The function <code>FinData</code> is load taiwan stock prices by selecting TaiwanStockInfo.loc[2,'stock_id'] and <code>date</code> &gt;= '2018-12-13', or you can load some stock id like <code>1210</code>.</p>
-<pre><code class="python">print('load GovernmentBonds list')
-GovernmentBonds_list = Load.FinDataList(dataset = 'GovernmentBonds')
-print( GovernmentBonds_list[:5] )
+<h4 id="1-usstockpriceminute">美國股價1分資料表 USStockPriceMinute</h4>
+<pre><code class="python">import requests
+import pandas as pd
 
-print('load GovernmentBonds {}'.format(GovernmentBonds_list[3]))
-GovernmentBonds = Load.FinData(
-        dataset = 'GovernmentBonds',
-        select = GovernmentBonds_list[3],
-        date = date)
-print( GovernmentBonds[:5] )
+url = 'http://finmindapi.servebeer.com/api/v2/data?dataset=USStockPriceMinute&amp;stock_id=^DJI&amp;date=2019-01-01'
+data = requests.get(url)
+data = data.json()
+data = pd.DataFrame(data['data'])
+print(data.head())
+
+                  date stock_id    close   ...        low     open  volume
+0  2020-02-13 20:02:00     ^DJI  29491.0   ...    29491.0  29510.4  708882
+1  2020-02-13 20:03:00     ^DJI  29490.5   ...    29477.4  29483.9  766202
+2  2020-02-13 20:04:00     ^DJI  29468.7   ...    29467.3  29490.0  577330
+3  2020-02-13 20:05:00     ^DJI  29474.1   ...    29465.8  29468.0  439754
+4  2020-02-13 20:06:00     ^DJI  29473.3   ...    29473.3  29474.7  412897
 </code></pre>
-
-<pre><code class="python">
-load GovernmentBonds list
-['Canada 1-Month', 'Canada 1-Year', 'Canada 10-Year', 'Canada 2-Month', 'Canada 2-Year']
-load GovernmentBonds Canada 2-Month
-        date  Price   Open   High   Low  ChangePercent      bound_type
-0  2018-12-13  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
-1  2018-12-14  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
-2  2018-12-17  1.625  1.630  1.635  1.62        -0.0031  Canada 2-Month
-3  2018-12-18  1.625  1.630  1.630  1.62         0.0000  Canada 2-Month
-4  2018-12-19  1.625  1.620  1.625  1.62         0.0000  Canada 2-Month
-</code></pre>
-
-<p>The function FinDataList is load GovernmentBonds_list.
-The function FinData is load GovernmentBonds by selecting Canada 2-Month and date &gt;= '2018-12-13'.</p>
-<p>more can follow deom.py in my github.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ExchangeRate/" class="btn btn-neutral float-right" title="ExchangeRate">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../TaiwanStock/" class="btn btn-neutral" title="TaiwanStock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -206,6 +204,10 @@ The function FinData is load GovernmentBonds by selecting Canada 2-Month and dat
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../TaiwanStock/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ExchangeRate/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

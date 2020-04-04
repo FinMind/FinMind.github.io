@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Sam">
-  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/data/">
+  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/ExchangeRate/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Data - FinMind</title>
+  <title>ExchangeRate - FinMind</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Data";
-    var mkdocs_page_input_path = "tutor/data.md";
-    var mkdocs_page_url = "/FinMindDoc/tutor/data/";
+    var mkdocs_page_name = "ExchangeRate";
+    var mkdocs_page_input_path = "tutor/ExchangeRate.md";
+    var mkdocs_page_url = "/FinMindDoc/tutor/ExchangeRate/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -56,7 +56,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Data</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="#">Stock</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../TaiwanStock/">TaiwanStock</a>
@@ -71,7 +71,9 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ExchangeRate/">ExchangeRate</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">ExchangeRate</a>
+    <ul class="current">
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../InterestRate/">InterestRate</a>
                     </li>
@@ -96,8 +98,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Data &raquo;</li>
+        
+      
     
-    <li>Data</li>
+    <li>ExchangeRate</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -108,79 +114,68 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="financial-data">Financial Data</h3>
-<p>More than ten kinds financial data. Every day update.
-Financial Visualize
-At least five kinds Visualize tools on every data. (In development)
-Financial Mining
-Holistic financial analysis. (In development)</p>
-<h3 id="getting-started">Getting started</h3>
-<pre><code class="python">from FinMind.Data import Load
-import datetime
+                <p>在匯率市場，我們擁有 1 種資料集，如下:</p>
+<ul>
+<li><a href="https://finmind.github.io/tutor/TaiwanStock/#外幣對台幣資料表-TaiwanExchangeRate">外幣對台幣資料表 TaiwanExchangeRate</a></li>
+</ul>
+<p>另外針對資料集整理出外幣兌換清單，目前共有 19 種幣別</p>
+<ul>
+<li><a href="https://finmind.github.io/tutor/TaiwanStock/#外幣對台幣列表-TaiwanExchangeRate">外幣對台幣列表 TaiwanExchangeRate</a></li>
+</ul>
+<h4 id="taiwanexchangerate">外幣對台幣列表 TaiwanExchangeRate</h4>
+<ul>
+<li>這張資料表主要是列出目前外幣兌換台幣的幣別清單</li>
+</ul>
+<pre><code class="python">import requests
+import pandas as pd
 
-date = '2018-12-13'
-print('load TaiwanStockInfo')
-TaiwanStockInfo = Load.FinData(dataset = 'TaiwanStockInfo')
-print( TaiwanStockInfo[:5] )
+url = &quot;http://finmindapi.servebeer.com/api/v2/datalist?dataset=TaiwanExchangeRate&quot;
+data = requests.get(url)
+data = data.json()
+data = pd.DataFrame(data['data'])
+print(data.head())
 
-load TaiwanStockInfo
-stock_id stock_name kinds
-0     1201         味全  食品工業
-1     1203         味王  食品工業
-2     1210         大成  食品工業
-3     1213         大飲  食品工業
-4     1215         卜蜂  食品工業
-
-print('load TaiwanStockPrice {} '.format(TaiwanStockInfo.loc[2,'stock_id']))
-TaiwanStockPrice = Load.FinData(
-        dataset = 'TaiwanStockPrice',
-        select = TaiwanStockInfo.loc[2,'stock_id'],
-        #select = ['1210'],
-        date = date)
-print( TaiwanStockPrice[:5] )
-
-load TaiwanStockPrice 1210 
-Open   High    Low  Close  Adj_Close   Volume        date stock_id
-0  32.5  33.20  32.30  33.00      33.00  1668333  2018-12-13     1210
-1  33.3  35.05  33.25  33.95      33.95  3916120  2018-12-14     1210
-2  34.5  35.50  34.35  34.35      34.35  4543063  2018-12-17     1210
-3  34.4  34.85  32.80  32.80      32.80  3726316  2018-12-18     1210
-4  33.0  33.40  32.30  32.75      32.75  1887001  2018-12-19     1210
+     0
+0  AUD
+1  CAD
+2  CHF
+3  CNY
+4  EUR
 </code></pre>
 
-<p>The parameter <code>table</code> is what dataset been load.<br>
-The function <code>FinData</code> is load taiwan stock prices by selecting TaiwanStockInfo.loc[2,'stock_id'] and <code>date</code> &gt;= '2018-12-13', or you can load some stock id like <code>1210</code>.</p>
-<pre><code class="python">print('load GovernmentBonds list')
-GovernmentBonds_list = Load.FinDataList(dataset = 'GovernmentBonds')
-print( GovernmentBonds_list[:5] )
+<h4 id="taiwanexchangerate_1">外幣對台幣資料表 TaiwanExchangeRate</h4>
+<ul>
+<li>針對 USD 做示範</li>
+</ul>
+<pre><code class="python">import requests
+import pandas as pd
 
-print('load GovernmentBonds {}'.format(GovernmentBonds_list[3]))
-GovernmentBonds = Load.FinData(
-        dataset = 'GovernmentBonds',
-        select = GovernmentBonds_list[3],
-        date = date)
-print( GovernmentBonds[:5] )
+url = &quot;http://finmindapi.servebeer.com/api/v2/data?dataset=TaiwanExchangeRate&amp;data_id=USD&quot;
+data = requests.get(url)
+data = data.json()
+data = pd.DataFrame(data['data'])
+print(data.head())
+
+         date currency  cash_buy  cash_sell  spot_buy  spot_sell
+0  2006-01-02      USD    32.470     33.005   -99.000    -99.000
+1  2006-01-03      USD    32.295     32.830    32.595     32.695
+2  2006-01-04      USD    31.985     32.520    32.285     32.385
+3  2006-01-05      USD    31.670     32.205    31.970     32.070
+4  2006-01-06      USD    31.830     32.372    32.130     32.230
 </code></pre>
-
-<pre><code class="python">
-load GovernmentBonds list
-['Canada 1-Month', 'Canada 1-Year', 'Canada 10-Year', 'Canada 2-Month', 'Canada 2-Year']
-load GovernmentBonds Canada 2-Month
-        date  Price   Open   High   Low  ChangePercent      bound_type
-0  2018-12-13  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
-1  2018-12-14  1.630  1.625  1.630  1.62         0.0000  Canada 2-Month
-2  2018-12-17  1.625  1.630  1.635  1.62        -0.0031  Canada 2-Month
-3  2018-12-18  1.625  1.630  1.630  1.62         0.0000  Canada 2-Month
-4  2018-12-19  1.625  1.620  1.625  1.62         0.0000  Canada 2-Month
-</code></pre>
-
-<p>The function FinDataList is load GovernmentBonds_list.
-The function FinData is load GovernmentBonds by selecting Canada 2-Month and date &gt;= '2018-12-13'.</p>
-<p>more can follow deom.py in my github.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../InterestRate/" class="btn btn-neutral float-right" title="InterestRate">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../UnitedStatesStock/" class="btn btn-neutral" title="UnitedStatesStock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -206,6 +201,10 @@ The function FinData is load GovernmentBonds by selecting Canada 2-Month and dat
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../UnitedStatesStock/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../InterestRate/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
