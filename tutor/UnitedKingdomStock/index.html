@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Sam">
-  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/UnitedStatesStock/">
+  <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/UnitedKingdomStock/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>UnitedStatesStock - FinMind</title>
+  <title>UnitedKingdomStock - FinMind</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "UnitedStatesStock";
-    var mkdocs_page_input_path = "tutor/UnitedStatesStock.md";
-    var mkdocs_page_url = "/FinMindDoc/tutor/UnitedStatesStock/";
+    var mkdocs_page_name = "UnitedKingdomStock";
+    var mkdocs_page_input_path = "tutor/UnitedKingdomStock.md";
+    var mkdocs_page_url = "/FinMindDoc/tutor/UnitedKingdomStock/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -61,15 +61,15 @@
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../TaiwanStock/">TaiwanStock</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">UnitedStatesStock</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../UnitedStatesStock/">UnitedStatesStock</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../EuropeStock/">EuropeStock</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../JapanStock/">JapanStock</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../UnitedKingdomStock/">UnitedKingdomStock</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">UnitedKingdomStock</a>
+    <ul class="current">
+    </ul>
                 </li>
     </ul>
                     </li>
@@ -107,7 +107,7 @@
         
       
     
-    <li>UnitedStatesStock</li>
+    <li>UnitedKingdomStock</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -118,52 +118,52 @@
           <div role="main">
             <div class="section">
               
-                <p>在美國股票市場，我們擁有 1 種資料集，如下:</p>
+                <p>在英國股票市場，我們擁有 1 種資料集，如下:</p>
 <ul>
-<li><a href="https://finmind.github.io/tutor/UnitedStatesStock/#美國股價1分資料表-USStockPriceMinute">美國股價1分資料表 USStockPriceMinute</a></li>
+<li><a href="https://finmind.github.io/tutor/UnitedKingdomStock/#英國股價資料表-USStockPriceMinute">英國股價資料表 USStockPriceMinute</a></li>
 </ul>
 <p>另外針對資料集整理出的列表如下:</p>
 <ul>
-<li><a href="https://finmind.github.io/tutor/UnitedStatesStock/#美國股票清單列表-USStockInfo">美國股票清單列表 USStockInfo</a></li>
+<li><a href="https://finmind.github.io/tutor/UnitedKingdomStock/#英國股票清單列表-UKStockInfo">英國股票清單列表 UKStockInfo</a></li>
 </ul>
 <p>根據上述資料表逐一說明怎麼使用，另外具體資料表 schemas 請參考 <a href="http://finmindapi.servebeer.com/docs#/default/method_api_v2_data_get">finmindapi</a></p>
-<h4 id="usstockinfo">美國股票清單列表 USStockInfo<a class="headerlink" href="#usstockinfo" title="Permanent link">&para;</a></h4>
+<h4 id="ukstockinfo">英國股票清單列表 UKStockInfo<a class="headerlink" href="#ukstockinfo" title="Permanent link">&para;</a></h4>
 <ul>
-<li>這張資料表主要是列出美國所有上市上櫃的股票名稱，代碼和產業類別</li>
+<li>這張資料表主要是列出英國所有上市上櫃的股票名稱，代碼和產業類別</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://finmindapi.servebeer.com/api/v2/data?dataset=USStockInfo&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://finmindapi.servebeer.com/api/v2/data?dataset=UKStockInfo&#39;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-        <span class="n">date</span>              <span class="o">...</span>                                 <span class="n">stock_name</span>
-<span class="mi">0</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>              <span class="o">...</span>               <span class="n">Dow</span> <span class="n">Jones</span> <span class="n">Industrial</span> <span class="n">Average</span>
-<span class="mi">1</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">10</span>              <span class="o">...</span>                                      <span class="n">sp500</span>
-<span class="mi">2</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>              <span class="o">...</span>                           <span class="n">NASDAQ</span> <span class="n">Composite</span>
-<span class="mi">3</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>              <span class="o">...</span>                         <span class="n">PHLX</span> <span class="n">Semiconductor</span>
-<span class="mi">4</span>        <span class="kc">None</span>              <span class="o">...</span>                      <span class="n">CBOE</span> <span class="n">Volatility</span> <span class="n">Index</span>
+<span class="n">date</span> <span class="n">stock_id</span> <span class="n">Country</span>   <span class="n">stock_name</span>
+<span class="mi">0</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">17</span><span class="n">MA</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>  <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span> <span class="mi">22</span>
+<span class="mi">1</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">44</span><span class="n">CI</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>  <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span> <span class="mi">21</span>
+<span class="mi">2</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">47</span><span class="n">HF</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>   <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span><span class="mi">21</span>
+<span class="mi">3</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">58</span><span class="n">MF</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>   <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span><span class="mi">21</span>
+<span class="mi">4</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">59</span><span class="n">FK</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>  <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span> <span class="mi">20</span>
 </code></pre></div>
 
-<h4 id="1-usstockpriceminute">美國股價1分資料表 USStockPriceMinute<a class="headerlink" href="#1-usstockpriceminute" title="Permanent link">&para;</a></h4>
+<h4 id="usstockpriceminute">英國股價資料表 USStockPriceMinute<a class="headerlink" href="#usstockpriceminute" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://finmindapi.servebeer.com/api/v2/data?dataset=USStockPriceMinute&amp;stock_id=^DJI&amp;date=2019-01-01&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://finmindapi.servebeer.com/api/v2/data?dataset=UKStockPrice&amp;stock_id=BP.L&amp;date=2019-01-01&#39;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-                  <span class="n">date</span> <span class="n">stock_id</span>    <span class="n">close</span>   <span class="o">...</span>        <span class="n">low</span>     <span class="nb">open</span>  <span class="n">volume</span>
-<span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29491.0</span>   <span class="o">...</span>    <span class="mf">29491.0</span>  <span class="mf">29510.4</span>  <span class="mi">708882</span>
-<span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29490.5</span>   <span class="o">...</span>    <span class="mf">29477.4</span>  <span class="mf">29483.9</span>  <span class="mi">766202</span>
-<span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29468.7</span>   <span class="o">...</span>    <span class="mf">29467.3</span>  <span class="mf">29490.0</span>  <span class="mi">577330</span>
-<span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29474.1</span>   <span class="o">...</span>    <span class="mf">29465.8</span>  <span class="mf">29468.0</span>  <span class="mi">439754</span>
-<span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29473.3</span>   <span class="o">...</span>    <span class="mf">29473.3</span>  <span class="mf">29474.7</span>  <span class="mi">412897</span>
+   <span class="n">Adj_Close</span>  <span class="n">Close</span>   <span class="n">High</span>    <span class="o">...</span>       <span class="n">Volume</span>        <span class="n">date</span>  <span class="n">stock_id</span>
+<span class="mi">0</span>    <span class="mf">497.866</span>  <span class="mf">507.3</span>  <span class="mf">509.6</span>    <span class="o">...</span>     <span class="mi">33397201</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
+<span class="mi">1</span>    <span class="mf">499.240</span>  <span class="mf">508.7</span>  <span class="mf">514.4</span>    <span class="o">...</span>     <span class="mi">38347439</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
+<span class="mi">2</span>    <span class="mf">511.115</span>  <span class="mf">520.8</span>  <span class="mf">524.5</span>    <span class="o">...</span>     <span class="mi">34897489</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
+<span class="mi">3</span>    <span class="mf">511.115</span>  <span class="mf">520.8</span>  <span class="mf">524.4</span>    <span class="o">...</span>     <span class="mi">32659884</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
+<span class="mi">4</span>    <span class="mf">510.134</span>  <span class="mf">519.8</span>  <span class="mf">528.2</span>    <span class="o">...</span>     <span class="mi">28449464</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">08</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
 </code></pre></div>
               
             </div>
@@ -172,10 +172,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../EuropeStock/" class="btn btn-neutral float-right" title="EuropeStock">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ExchangeRate/" class="btn btn-neutral float-right" title="ExchangeRate">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../TaiwanStock/" class="btn btn-neutral" title="TaiwanStock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../JapanStock/" class="btn btn-neutral" title="JapanStock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -203,10 +203,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../TaiwanStock/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../JapanStock/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../EuropeStock/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ExchangeRate/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
