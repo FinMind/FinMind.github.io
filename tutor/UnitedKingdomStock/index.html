@@ -15,7 +15,7 @@
         <meta name="author" content="Sam">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
       
       
     
@@ -428,7 +428,7 @@
 <ul>
 <li><a href="https://finmind.github.io/tutor/UnitedKingdomStock/#ukstockinfo">英國股票清單列表 UKStockInfo</a></li>
 </ul>
-<p>根據上述資料表逐一說明怎麼使用，另外具體資料表 schemas 請參考 <a href="http://finmindapi.servebeer.com/docs#/default/method_api_v2_data_get">finmindapi</a></p>
+<p>根據上述資料表逐一說明怎麼使用，另外具體資料表 schemas 請參考 <a href="http://api.finmindtrade.com/docs#/default/method_api_v2_data_get">finmindapi</a></p>
 <h4 id="ukstockinfo">英國股票清單列表 UKStockInfo<a class="headerlink" href="#ukstockinfo" title="Permanent link">&para;</a></h4>
 <ul>
 <li>這張資料表主要是列出英國所有上市上櫃的股票名稱，代碼和產業類別</li>
@@ -436,7 +436,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://finmindapi.servebeer.com/api/v2/data?dataset=UKStockInfo&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.finmindtrade.com/api/v2/data?dataset=UKStockInfo&#39;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
@@ -454,7 +454,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://finmindapi.servebeer.com/api/v2/data?dataset=UKStockPrice&amp;stock_id=BP.L&amp;date=2019-01-01&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.finmindtrade.com/api/v2/data?dataset=UKStockPrice&amp;stock_id=BP.L&amp;date=2019-01-01&#39;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
