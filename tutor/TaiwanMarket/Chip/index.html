@@ -293,6 +293,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#institutionalinvestors" class="md-nav__link">
+    台灣市場整體法人買賣表 InstitutionalInvestors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shareholding" class="md-nav__link">
     股東結構表 Shareholding
   </a>
@@ -321,6 +328,18 @@
   <li class="md-nav__item">
     <a href="../Derivative/" title="Derivative" class="md-nav__link">
       Derivative
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Others/" title="Others" class="md-nav__link">
+      Others
     </a>
   </li>
 
@@ -513,6 +532,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#institutionalinvestors" class="md-nav__link">
+    台灣市場整體法人買賣表 InstitutionalInvestors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shareholding" class="md-nav__link">
     股東結構表 Shareholding
   </a>
@@ -556,7 +582,7 @@
 <p><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#institutionalinvestorsbuysell">法人買賣表 InstitutionalInvestorsBuySell</a></p>
 </li>
 <li>
-<p>台灣市場整體法人買賣表 InstitutionalInvestors</p>
+<p><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#institutionalinvestors">台灣市場整體法人買賣表 InstitutionalInvestors</a></p>
 </li>
 <li>
 <p><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#shareholding">股東結構表 Shareholding</a></p>
@@ -618,6 +644,24 @@
 <span class="mi">2</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>     <span class="mi">2330</span>         <span class="mi">0</span>  <span class="n">Foreign_Dealer_Self</span>         <span class="mi">0</span>
 <span class="mi">3</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>     <span class="mi">2330</span>  <span class="mi">13633825</span>     <span class="n">Foreign_Investor</span>  <span class="mi">22365017</span>
 <span class="mi">4</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>     <span class="mi">2330</span>    <span class="mi">175000</span>     <span class="n">Investment_Trust</span>    <span class="mi">166000</span>
+</code></pre></div>
+
+<h4 id="institutionalinvestors">台灣市場整體法人買賣表 InstitutionalInvestors<a class="headerlink" href="#institutionalinvestors" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.finmindtrade.com/api/v2/data?dataset=InstitutionalInvestors&amp;stock_id=2330&amp;date=2020-04-01&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+           <span class="n">buy</span>        <span class="n">date</span>                 <span class="n">name</span>         <span class="n">sell</span>
+<span class="mi">0</span>       <span class="mi">123150</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Foreign_Dealer_Self</span>       <span class="mi">266220</span>
+<span class="mi">1</span>  <span class="mi">41269248850</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>                <span class="n">total</span>  <span class="mi">45771643971</span>
+<span class="mi">2</span>       <span class="mi">188700</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span>  <span class="n">Foreign_Dealer_Self</span>       <span class="mi">954220</span>
+<span class="mi">3</span>  <span class="mi">64348929380</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span>                <span class="n">total</span>  <span class="mi">60616673273</span>
+<span class="mi">4</span>       <span class="mi">810310</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">07</span>  <span class="n">Foreign_Dealer_Self</span>      <span class="mi">1394680</span>
 </code></pre></div>
 
 <h4 id="shareholding">股東結構表 Shareholding<a class="headerlink" href="#shareholding" title="Permanent link">&para;</a></h4>

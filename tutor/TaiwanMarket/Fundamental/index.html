@@ -294,6 +294,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockmonthrevenue" class="md-nav__link">
+    月營收表 TaiwanStockMonthRevenue
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -321,6 +328,18 @@
   <li class="md-nav__item">
     <a href="../Derivative/" title="Derivative" class="md-nav__link">
       Derivative
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Others/" title="Others" class="md-nav__link">
+      Others
     </a>
   </li>
 
@@ -526,6 +545,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockmonthrevenue" class="md-nav__link">
+    月營收表 TaiwanStockMonthRevenue
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -544,14 +570,14 @@
                 
                   <h1>Fundamental</h1>
                 
-                <p>在台灣股票基本面，我們擁有 5 種資料集，如下:</p>
+                <p>在台灣股票基本面，我們擁有 6 種資料集，如下:</p>
 <ul>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/FinancialStatements/#financialstatements">綜合損益表 FinancialStatements</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/FinancialStatements/#balancesheet">資產負債表 BalanceSheet</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#financialstatements">綜合損益表 FinancialStatements</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#balancesheet">資產負債表 BalanceSheet</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwancashflowsstatement">現金流量表 TaiwanCashFlowsStatement</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Shareholders/#stockdividend">股利政策表 StockDividend</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Shareholders/#stockdividendresult">除權除息結果表 StockDividendResult</a></li>
-<li>月營收</li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#stockdividend">股利政策表 StockDividend</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#stockdividendresult">除權除息結果表 StockDividendResult</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockmonthrevenue">月營收表 TaiwanStockMonthRevenue</a></li>
 </ul>
 <h4 id="financialstatements">綜合損益表 FinancialStatements<a class="headerlink" href="#financialstatements" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -641,6 +667,24 @@
 <span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span>     <span class="mi">2330</span>     <span class="n">max_price</span>  <span class="mf">283.00</span>
 <span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span>     <span class="mi">2330</span>     <span class="n">min_price</span>  <span class="mf">232.00</span>
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span>     <span class="mi">2330</span>    <span class="n">open_price</span>  <span class="mf">257.50</span>
+</code></pre></div>
+
+<h4 id="taiwanstockmonthrevenue">月營收表 TaiwanStockMonthRevenue<a class="headerlink" href="#taiwanstockmonthrevenue" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.finmindtrade.com/api/v2/data?dataset=TaiwanStockMonthRevenue&amp;stock_id=2330&amp;date=2019-04-01&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+         <span class="n">date</span> <span class="n">stock_id</span>      <span class="o">...</span>      <span class="n">revenue_month</span>  <span class="n">revenue_year</span>
+<span class="mi">0</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>     <span class="mi">2330</span>      <span class="o">...</span>                  <span class="mi">3</span>          <span class="mi">2019</span>
+<span class="mi">1</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span>     <span class="mi">2330</span>      <span class="o">...</span>                  <span class="mi">4</span>          <span class="mi">2019</span>
+<span class="mi">2</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>     <span class="mi">2330</span>      <span class="o">...</span>                  <span class="mi">5</span>          <span class="mi">2019</span>
+<span class="mi">3</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span>     <span class="mi">2330</span>      <span class="o">...</span>                  <span class="mi">6</span>          <span class="mi">2019</span>
+<span class="mi">4</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span>     <span class="mi">2330</span>      <span class="o">...</span>                  <span class="mi">7</span>          <span class="mi">2019</span>
 </code></pre></div>
                 
               

@@ -275,6 +275,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#perpbr-taiwanstockper" class="md-nav__link">
+    台灣個股PER、PBR資料表 TaiwanStockPER
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -314,6 +321,18 @@
   <li class="md-nav__item">
     <a href="../Derivative/" title="Derivative" class="md-nav__link">
       Derivative
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Others/" title="Others" class="md-nav__link">
+      Others
     </a>
   </li>
 
@@ -512,6 +531,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#perpbr-taiwanstockper" class="md-nav__link">
+    台灣個股PER、PBR資料表 TaiwanStockPER
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -530,24 +556,24 @@
                 
                   <h1>Technical</h1>
                 
-                <p>在台灣股票資料，我們擁有 3 種資料集，如下:</p>
+                <p>在台灣股票資料，我們擁有 4 種資料集，如下:</p>
 <ul>
 <li>
-<p><a href="https://finmind.github.io/tutor/TaiwanMarket/TaiwanStock/#taiwanstockinfo">台灣股價資料表 TaiwanStockPrice</a></p>
+<p><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfo">台灣股價資料表 TaiwanStockPrice</a></p>
 </li>
 <li>
-<p><a href="https://finmind.github.io/tutor/TaiwanMarket/TaiwanStock/#taiwanstockpriceminute">台灣股價及時資料表 TaiwanStockPriceMinute</a></p>
+<p><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceminute">台灣股價及時資料表 TaiwanStockPriceMinute</a></p>
 </li>
 <li>
 <p>台灣即時最佳五檔 TaiwanStockPriceMinuteBidAsk (dev)</p>
 </li>
 <li>
-<p>台股 PER、PBR</p>
+<p><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER</a></p>
 </li>
 </ul>
 <p>另外針對資料集整理出的列表如下:</p>
 <ul>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/TaiwanStock/#taiwanstockinfo">台灣股票清單列表 TaiwanStockInfo</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfo">台灣股票清單列表 TaiwanStockInfo</a></li>
 </ul>
 <p>根據上述資料表逐一說明怎麼使用，另外具體資料表 schemas 請參考 <a href="http://api.finmindtrade.com/docs#/default/method_api_v2_data_get">finmindapi</a></p>
 <h4 id="taiwanstockinfo">台灣股票清單列表 TaiwanStockInfo<a class="headerlink" href="#taiwanstockinfo" title="Permanent link">&para;</a></h4>
@@ -628,6 +654,22 @@
 <ul>
 <li>開發中</li>
 </ul>
+<h4 id="perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER<a class="headerlink" href="#perpbr-taiwanstockper" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPER&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
                 
               
               
