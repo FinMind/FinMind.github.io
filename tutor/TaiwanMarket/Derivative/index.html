@@ -52,7 +52,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#taiwanfutures" class="md-skip">
+        <a href="#taiwanfuturestick" class="md-skip">
           Skip to content
         </a>
       
@@ -284,15 +284,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#taiwanfutures" class="md-nav__link">
-    台灣期貨交易明細表 TaiwanFutures
+  <a href="#taiwanfuturestick" class="md-nav__link">
+    台灣期貨交易明細表 TaiwanFuturesTick
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#taiwanoption" class="md-nav__link">
-    台灣選擇權交易明細表 TaiwanOption
+  <a href="#taiwanoptiontick" class="md-nav__link">
+    台灣選擇權交易明細表 TaiwanOptionTick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#info-taiwanfutopttickinfo" class="md-nav__link">
+    台灣期貨即時報價Info TaiwanFutOptTickInfo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanfutopttick" class="md-nav__link">
+    台灣期貨即時報價 TaiwanFutOptTick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanfuturesdaily" class="md-nav__link">
+    台灣期貨 TaiwanFuturesDaily
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanoptiondaily" class="md-nav__link">
+    台灣選擇權 TaiwanOptionDaily
   </a>
   
 </li>
@@ -651,15 +679,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#taiwanfutures" class="md-nav__link">
-    台灣期貨交易明細表 TaiwanFutures
+  <a href="#taiwanfuturestick" class="md-nav__link">
+    台灣期貨交易明細表 TaiwanFuturesTick
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#taiwanoption" class="md-nav__link">
-    台灣選擇權交易明細表 TaiwanOption
+  <a href="#taiwanoptiontick" class="md-nav__link">
+    台灣選擇權交易明細表 TaiwanOptionTick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#info-taiwanfutopttickinfo" class="md-nav__link">
+    台灣期貨即時報價Info TaiwanFutOptTickInfo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanfutopttick" class="md-nav__link">
+    台灣期貨即時報價 TaiwanFutOptTick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanfuturesdaily" class="md-nav__link">
+    台灣期貨 TaiwanFuturesDaily
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanoptiondaily" class="md-nav__link">
+    台灣選擇權 TaiwanOptionDaily
   </a>
   
 </li>
@@ -684,32 +740,85 @@
                 
                 <p>在台灣股票衍生性商品資料，我們擁有 2 種資料集，如下:</p>
 <ul>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutures">台灣期貨交易明細表 TaiwanFutures</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoption">台灣選擇權交易明細表 TaiwanOption</a></li>
-<li>台股期貨、選擇權即時報價 (dev)</li>
-<li>台股期貨 daily 交易資料 (dev)</li>
-<li>台股選擇權 daily 交易資料 (dev)</li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick">台灣期貨交易明細表 TaiwanFuturesTick</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiontick">台灣選擇權交易明細表 TaiwanOptionTIck</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutopttickinfo">台股期貨、選擇權即時報價 Info TaiwanFutOptTickInfo</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutopttick">台股期貨、選擇權即時報價 TaiwanFutOptTick</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdaily">台股期貨 daily 交易資料 TaiwanFuturesDaily</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondaily">台股選擇權 daily 交易資料 TaiwanOptionDaily</a></li>
 </ul>
-<h4 id="taiwanfutures">台灣期貨交易明細表 TaiwanFutures<a class="headerlink" href="#taiwanfutures" title="Permanent link">&para;</a></h4>
+<h4 id="taiwanfuturestick">台灣期貨交易明細表 TaiwanFuturesTick<a class="headerlink" href="#taiwanfuturestick" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，只提供 date 當天 data)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFutures&quot;</span><span class="p">,</span> <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;MTX&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-02&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesTick&quot;</span><span class="p">,</span> <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;MTX&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-02&quot;</span><span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 
-<h4 id="taiwanoption">台灣選擇權交易明細表 TaiwanOption<a class="headerlink" href="#taiwanoption" title="Permanent link">&para;</a></h4>
+<h4 id="taiwanoptiontick">台灣選擇權交易明細表 TaiwanOptionTick<a class="headerlink" href="#taiwanoptiontick" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，只提供 date 當天 data)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOption&quot;</span><span class="p">,</span> <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OCO&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-05&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionTick&quot;</span><span class="p">,</span> <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OCO&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-05&quot;</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+
+<h4 id="info-taiwanfutopttickinfo">台灣期貨即時報價Info TaiwanFutOptTickInfo<a class="headerlink" href="#info-taiwanfutopttickinfo" title="Permanent link">&para;</a></h4>
+<p>(由於資料量過大，只提供 date 當天 data)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFutOptTickInfo&quot;</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+
+<h4 id="taiwanfutopttick">台灣期貨即時報價 TaiwanFutOptTick<a class="headerlink" href="#taiwanfutopttick" title="Permanent link">&para;</a></h4>
+<p>(由於資料量過大，只提供 date 當天 data)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFutOptTick&quot;</span><span class="p">,</span><span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TXFE0&quot;</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+
+<h4 id="taiwanfuturesdaily">台灣期貨 TaiwanFuturesDaily<a class="headerlink" href="#taiwanfuturesdaily" title="Permanent link">&para;</a></h4>
+<p>(由於資料量過大，只提供 date 當天 data)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span> <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TX&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span> <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-10&quot;</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+
+<h4 id="taiwanoptiondaily">台灣選擇權 TaiwanOptionDaily<a class="headerlink" href="#taiwanoptiondaily" title="Permanent link">&para;</a></h4>
+<p>(由於資料量過大，只提供 date 當天 data)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span> <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span> <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-10&quot;</span><span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
