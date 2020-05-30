@@ -784,7 +784,7 @@
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockprice">台灣股價資料表 TaiwanStockPrice</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceminute">台灣股價及時資料表 TaiwanStockPriceMinute</a></li>
-<li>台灣即時最佳五檔 TaiwanStockPriceMinuteBidAsk (dev)</li>
+<li><a href="(https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceminutebidask)">台灣即時最佳五檔 TaiwanStockPriceMinuteBidAsk</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#StatisticsOfOrderBookAndTrade">每5秒委託成交統計 StatisticsOfOrderBookAndTrade</a></li>
 </ul>
@@ -917,8 +917,7 @@
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceMinute&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -937,19 +936,17 @@
 <input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://api.finmindtrade.com/api/v2/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
                     <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
                     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPriceMinute&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span> <span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2020-01-02&quot;</span>
+                    <span class="n">stock_id</span><span class="o">=</span> <span class="s">&quot;2330&quot;</span>
                     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span>
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
         <span class="n">date</span> <span class="n">stock_id</span> <span class="n">deal_price</span> <span class="n">volume</span>               <span class="n">Time</span>
@@ -965,13 +962,38 @@
 </div>
 </div>
 <h4 id="taiwanstockpriceminutebidask">台灣即時最佳五檔 TaiwanStockPriceMinuteBidAsk<a class="headerlink" href="#taiwanstockpriceminutebidask" title="Permanent link">&para;</a></h4>
-<ul>
-<li>開發中</li>
-</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceMinuteBidAsk&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]:</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">stock_id</span>                             <span class="n">AskPrice</span>                  <span class="n">AskVolume</span>                             <span class="n">BidPrice</span>                    <span class="n">BidVolume</span>             <span class="n">Time</span>
+<span class="mi">0</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1109</span><span class="p">,</span> <span class="mi">1505</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.559711</span>
+<span class="mi">1</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1112</span><span class="p">,</span> <span class="mi">1505</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.568170</span>
+<span class="mi">2</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1114</span><span class="p">,</span> <span class="mi">1505</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.592893</span>
+<span class="mi">3</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1114</span><span class="p">,</span> <span class="mi">1506</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.598656</span>
+<span class="mi">4</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1116</span><span class="p">,</span> <span class="mi">1506</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.907709</span>
+</code></pre></div>
+
+</div>
+</div>
+</div>
 <h4 id="perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER<a class="headerlink" href="#perpbr-taiwanstockper" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
@@ -993,7 +1015,7 @@
 </code></pre></div>
 
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">R</label><div class="tabbed-content">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://api.finmindtrade.com/api/v2/data&#39;</span>
@@ -1027,7 +1049,7 @@
 <p>(由於資料量過大，只提供 date 當天 data)</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://api.finmindtrade.com/api/v2/data&quot;</span>
@@ -1042,7 +1064,7 @@
 </code></pre></div>
 
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://api.finmindtrade.com/api/v2/data&#39;</span>
