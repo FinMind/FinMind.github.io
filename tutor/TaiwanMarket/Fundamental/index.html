@@ -807,19 +807,20 @@
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;FinancialStatements&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
-                    <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;FinancialStatements&quot;</span><span class="p">,</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
+<span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
         <span class="n">date</span> <span class="n">stock_id</span>            <span class="n">type</span>          <span class="n">value</span>                                  <span class="n">origin_name</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2019-03-31</span>     <span class="m">2330</span>            <span class="n">ASSO</span>    <span class="m">433491000.0</span> 採用權益法認列之關聯企業及合資損益之份額淨額
@@ -862,20 +863,22 @@
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;BalanceSheet&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
-                    <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;BalanceSheet&quot;</span><span class="p">,</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
+<span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
         <span class="n">date</span> <span class="n">stock_id</span>                                           <span class="n">type</span>         <span class="n">value</span>          <span class="n">origin_name</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2019-03-31</span>     <span class="m">2330</span>                                <span class="n">AccountsPayable</span> <span class="m">27100909000.0</span>             應付帳款
 <span class="m">2</span><span class="o">:</span> <span class="m">2019-03-31</span>     <span class="m">2330</span>                            <span class="n">AccountsPayable_per</span>           <span class="m">1.0</span>             應付帳款
@@ -917,20 +920,22 @@
 <input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanCashFlowsStatement&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
-                    <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanCashFlowsStatement&quot;</span><span class="p">,</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
+<span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
         <span class="n">date</span> <span class="n">stock_id</span>                          <span class="n">type</span>          <span class="n">value</span>                      <span class="n">origin_name</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2019-03-31</span>     <span class="m">2330</span>               <span class="n">AccountsPayable</span>   <span class="m">6105110000.0</span>               應付帳款增加<span class="p">(</span>減少<span class="p">)</span>
 <span class="m">2</span><span class="o">:</span> <span class="m">2019-03-31</span>     <span class="m">2330</span>           <span class="n">AmortizationExpense</span>   <span class="m">1355340000.0</span>                         攤銷費用
@@ -972,20 +977,22 @@
 <input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;StockDividend&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
-                    <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;StockDividend&quot;</span><span class="p">,</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
+<span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
         <span class="n">date</span> <span class="n">stock_id</span>       <span class="n">year</span> <span class="n">StockEarningsDistribution</span> <span class="n">StockStatutorySurplus</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2019-06-30</span>     <span class="m">2330</span>      <span class="m">107</span>年                      <span class="n">None</span>                  <span class="n">None</span>
 <span class="m">2</span><span class="o">:</span> <span class="m">2019-09-25</span>     <span class="m">2330</span> <span class="m">108</span>年第<span class="m">1</span>季                      <span class="n">None</span>                  <span class="n">None</span>
@@ -1069,20 +1076,22 @@
 <input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;StockDividendResult&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
-                    <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;StockDividendResult&quot;</span><span class="p">,</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
+<span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
         <span class="n">date</span> <span class="n">stock_id</span>            <span class="n">type</span>  <span class="n">value</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2019-06-24</span>     <span class="m">2330</span>     <span class="n">after_price</span> <span class="m">240.50</span>
 <span class="m">2</span><span class="o">:</span> <span class="m">2019-06-24</span>     <span class="m">2330</span>    <span class="n">before_price</span> <span class="m">248.50</span>
@@ -1124,20 +1133,22 @@
 <input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;StockDividendResult&quot;</span><span class="p">,</span>
-                    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
-                    <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;StockDividendResult&quot;</span><span class="p">,</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-01-02&quot;</span>
+<span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">data.table</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">),</span> 
-                    <span class="n">nrow</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">[</span><span class="m">1</span><span class="p">]))</span>
-<span class="p">))</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
         <span class="n">date</span> <span class="n">stock_id</span> <span class="n">country</span>     <span class="n">revenue</span> <span class="n">revenue_month</span> <span class="n">revenue_year</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2019-02-01</span>     <span class="m">2330</span>  <span class="n">Taiwan</span> <span class="m">78093827000</span>             <span class="m">1</span>         <span class="m">2019</span>
 <span class="m">2</span><span class="o">:</span> <span class="m">2019-03-01</span>     <span class="m">2330</span>  <span class="n">Taiwan</span> <span class="m">60889055000</span>             <span class="m">2</span>         <span class="m">2019</span>
