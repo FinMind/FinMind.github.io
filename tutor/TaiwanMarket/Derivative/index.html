@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/TaiwanMarket/Derivative/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.75751829.min.css">
         
       
     
@@ -362,8 +362,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一次拿特定日期，所有資料(未來將只限贊助會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#taiwanoptiondaily" class="md-nav__link">
     選擇權日成交資訊 TaiwanOptionDaily
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一次拿特定日期，所有資料(未來將只限贊助會員使用)
   </a>
   
 </li>
@@ -672,31 +686,18 @@
 
 
 
-  <li class="md-nav__item">
-    <a href="../../Macroeconomy/" class="md-nav__link">
-      債券
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-
   
   <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
     
-    <label class="md-nav__link" for="nav-12">
+    <label class="md-nav__link" for="nav-11">
       Versions
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Versions" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-11">
         <span class="md-nav__icon md-icon"></span>
         Versions
       </label>
@@ -737,7 +738,20 @@
 
   <li class="md-nav__item">
     <a href="https://finmind.github.io/" class="md-nav__link">
-      v3 (Latest)
+      v4 (Latest)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="https://finmind.github.io/v3" class="md-nav__link">
+      v3
     </a>
   </li>
 
@@ -837,8 +851,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一次拿特定日期，所有資料(未來將只限贊助會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#taiwanoptiondaily" class="md-nav__link">
     選擇權日成交資訊 TaiwanOptionDaily
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一次拿特定日期，所有資料(未來將只限贊助會員使用)
   </a>
   
 </li>
@@ -892,7 +920,7 @@
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFutOptTickInfo&quot;</span><span class="p">,</span>
 <span class="p">}</span>
@@ -912,7 +940,7 @@
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
@@ -936,27 +964,27 @@
 </div>
 </div>
 <h4 id="taiwanfutopttick">期貨、選擇權即時報價 TaiwanFutOptTick<a class="headerlink" href="#taiwanfutopttick" title="Permanent link">&para;</a></h4>
-<p>(由於資料量過大，只提供 date 當天 data)</p>
+<p>由於資料量過大，只提供 date 當天 data</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFutOptTick&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TXFE0&quot;</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXFA1&quot;</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
         <span class="n">date</span>             <span class="n">Time</span>      <span class="n">Close</span> <span class="n">Volume</span> <span class="n">futopt_id</span>  <span class="n">TickType</span>
-<span class="mi">0</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">04</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mf">01.867000</span>  <span class="p">[</span><span class="mf">10737.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFE0</span>         <span class="mi">1</span>
-<span class="mi">1</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mf">21.057000</span>  <span class="p">[</span><span class="mf">10714.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFE0</span>         <span class="mi">2</span>
-<span class="mi">2</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mf">44.173000</span>  <span class="p">[</span><span class="mf">10724.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFE0</span>         <span class="mi">2</span>
-<span class="mi">3</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mf">05.424000</span>  <span class="p">[</span><span class="mf">10727.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFE0</span>         <span class="mi">1</span>
-<span class="mi">4</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mf">48.422000</span>  <span class="p">[</span><span class="mf">10729.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFE0</span>         <span class="mi">2</span>
+<span class="mi">0</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">04</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mf">01.867000</span>  <span class="p">[</span><span class="mf">10737.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFA1</span>         <span class="mi">1</span>
+<span class="mi">1</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mf">21.057000</span>  <span class="p">[</span><span class="mf">10714.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFA1</span>         <span class="mi">2</span>
+<span class="mi">2</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mf">44.173000</span>  <span class="p">[</span><span class="mf">10724.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFA1</span>         <span class="mi">2</span>
+<span class="mi">3</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mf">05.424000</span>  <span class="p">[</span><span class="mf">10727.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFA1</span>         <span class="mi">1</span>
+<span class="mi">4</span>  <span class="mi">2020</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mf">48.422000</span>  <span class="p">[</span><span class="mf">10729.0</span><span class="p">]</span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="n">TXFA1</span>         <span class="mi">2</span>
 </code></pre></div>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">R</label><div class="tabbed-content">
@@ -964,23 +992,23 @@
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
                     <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
                     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFutOptTick&quot;</span><span class="p">,</span>
-                    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXFE0&quot;</span>
+                    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXFA1&quot;</span>
                     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">response</span> <span class="o">%&gt;%</span> <span class="n">content</span>
 <span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span><span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
         <span class="n">date</span>            <span class="n">Time</span>  <span class="n">Close</span> <span class="n">Volume</span> <span class="n">futopt_id</span> <span class="n">TickType</span>
-<span class="m">1</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">04</span><span class="o">:</span><span class="m">58</span><span class="o">:</span><span class="m">01.867000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFE0</span>        <span class="m">1</span>
-<span class="m">2</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">57</span><span class="o">:</span><span class="m">21.057000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFE0</span>        <span class="m">2</span>
-<span class="m">3</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">44</span><span class="o">:</span><span class="m">44.173000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFE0</span>        <span class="m">2</span>
-<span class="m">4</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">02</span><span class="o">:</span><span class="m">05.424000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFE0</span>        <span class="m">1</span>
-<span class="m">5</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">04</span><span class="o">:</span><span class="m">48.422000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFE0</span>        <span class="m">2</span>
-<span class="m">6</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">38.929000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFE0</span>        <span class="m">2</span>
+<span class="m">1</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">04</span><span class="o">:</span><span class="m">58</span><span class="o">:</span><span class="m">01.867000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFA1</span>        <span class="m">1</span>
+<span class="m">2</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">57</span><span class="o">:</span><span class="m">21.057000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFA1</span>        <span class="m">2</span>
+<span class="m">3</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">44</span><span class="o">:</span><span class="m">44.173000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFA1</span>        <span class="m">2</span>
+<span class="m">4</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">02</span><span class="o">:</span><span class="m">05.424000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFA1</span>        <span class="m">1</span>
+<span class="m">5</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">04</span><span class="o">:</span><span class="m">48.422000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFA1</span>        <span class="m">2</span>
+<span class="m">6</span><span class="o">:</span> <span class="m">2020</span><span class="o">/</span><span class="m">05</span><span class="o">/</span><span class="m">16</span> <span class="m">00</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">38.929000</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>     <span class="n">TXFA1</span>        <span class="m">2</span>
 </code></pre></div>
 </div>
 </div>
@@ -991,7 +1019,7 @@
 <div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionFutureInfo&quot;</span><span class="p">,</span>
 <span class="p">}</span>
@@ -1012,7 +1040,7 @@
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
                     <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
                     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionFutureInfo&quot;</span>
@@ -1038,11 +1066,11 @@
 <div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TX&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1061,12 +1089,12 @@
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
                     <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
                     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
                     <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TX&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2020-04-01&quot;</span>
+                    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-04-01&quot;</span>
                     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">response</span> <span class="o">%&gt;%</span> <span class="n">content</span>
@@ -1090,17 +1118,73 @@
 </div>
 </div>
 </div>
-<h4 id="taiwanoptiondaily">選擇權日成交資訊 TaiwanOptionDaily<a class="headerlink" href="#taiwanoptiondaily" title="Permanent link">&para;</a></h4>
+<h4 id="_1">一次拿特定日期，所有資料(未來將只限贊助會員使用)<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+        <span class="n">date</span> <span class="n">futures_id</span>  <span class="n">contract_date</span>   <span class="nb">open</span>    <span class="nb">max</span>    <span class="nb">min</span>  <span class="n">close</span>  <span class="n">spread</span>  <span class="n">spread_per</span>  <span class="n">volume</span>  <span class="n">settlement_price</span>  <span class="n">open_interest</span> <span class="n">trading_session</span>
+<span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>        <span class="n">BRF</span>         <span class="mi">202005</span>  <span class="mf">690.0</span>  <span class="mf">704.0</span>  <span class="mf">681.0</span>  <span class="mf">681.0</span>    <span class="o">-</span><span class="mf">9.0</span>       <span class="o">-</span><span class="mf">1.30</span>      <span class="mi">45</span>               <span class="mf">0.0</span>              <span class="mi">0</span>    <span class="n">after_market</span>
+<span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>        <span class="n">BRF</span>         <span class="mi">202006</span>  <span class="mf">818.0</span>  <span class="mf">833.0</span>  <span class="mf">789.5</span>  <span class="mf">791.0</span>   <span class="o">-</span><span class="mf">13.0</span>       <span class="o">-</span><span class="mf">1.62</span>      <span class="mi">77</span>               <span class="mf">0.0</span>              <span class="mi">0</span>    <span class="n">after_market</span>
+<span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>        <span class="n">BRF</span>         <span class="mi">202006</span>  <span class="mf">795.0</span>  <span class="mf">799.0</span>  <span class="mf">774.0</span>  <span class="mf">774.0</span>   <span class="o">-</span><span class="mf">30.0</span>       <span class="o">-</span><span class="mf">3.73</span>      <span class="mi">63</span>             <span class="mf">774.0</span>            <span class="mi">435</span>        <span class="n">position</span>
+<span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>        <span class="n">BRF</span>  <span class="mi">202006</span><span class="o">/</span><span class="mi">202007</span>  <span class="mf">100.0</span>  <span class="mf">100.0</span>  <span class="mf">100.0</span>  <span class="mf">100.0</span>     <span class="mf">0.0</span>        <span class="mf">0.00</span>       <span class="mi">1</span>               <span class="mf">0.0</span>              <span class="mi">0</span>    <span class="n">after_market</span>
+<span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>        <span class="n">BRF</span>         <span class="mi">202007</span>  <span class="mf">910.5</span>  <span class="mf">910.5</span>  <span class="mf">910.5</span>  <span class="mf">910.5</span>    <span class="mf">43.0</span>        <span class="mf">4.96</span>       <span class="mi">2</span>               <span class="mf">0.0</span>              <span class="mi">0</span>    <span class="n">after_market</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
+                    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-04-01&quot;</span>
+                    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span> <span class="o">%&gt;%</span> <span class="n">content</span>
+<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="n">date</span> <span class="n">futures_id</span> <span class="n">contract_date</span>  <span class="n">open</span>   <span class="n">max</span>   <span class="n">min</span> <span class="n">close</span> <span class="n">spread</span> <span class="n">spread_per</span>
+<span class="m">1</span><span class="o">:</span> <span class="m">2020-04-01</span>        <span class="n">BRF</span>        <span class="m">202005</span>   <span class="m">690</span>   <span class="m">704</span>   <span class="m">681</span>   <span class="m">681</span>     <span class="m">-9</span>       <span class="m">-1.3</span>
+<span class="m">2</span><span class="o">:</span> <span class="m">2020-04-01</span>        <span class="n">BRF</span>        <span class="m">202006</span>   <span class="m">818</span>   <span class="m">833</span> <span class="m">789.5</span>   <span class="m">791</span>    <span class="m">-13</span>      <span class="m">-1.62</span>
+<span class="m">3</span><span class="o">:</span> <span class="m">2020-04-01</span>        <span class="n">BRF</span>        <span class="m">202006</span>   <span class="m">795</span>   <span class="m">799</span>   <span class="m">774</span>   <span class="m">774</span>    <span class="m">-30</span>      <span class="m">-3.73</span>
+<span class="m">4</span><span class="o">:</span> <span class="m">2020-04-01</span>        <span class="n">BRF</span> <span class="m">202006</span><span class="o">/</span><span class="m">202007</span>   <span class="m">100</span>   <span class="m">100</span>   <span class="m">100</span>   <span class="m">100</span>      <span class="m">0</span>          <span class="m">0</span>
+<span class="m">5</span><span class="o">:</span> <span class="m">2020-04-01</span>        <span class="n">BRF</span>        <span class="m">202007</span> <span class="m">910.5</span> <span class="m">910.5</span> <span class="m">910.5</span> <span class="m">910.5</span>     <span class="m">43</span>       <span class="m">4.96</span>
+<span class="m">6</span><span class="o">:</span> <span class="m">2020-04-01</span>        <span class="n">BRF</span>        <span class="m">202007</span>   <span class="m">881</span>   <span class="m">881</span> <span class="m">874.5</span> <span class="m">874.5</span>      <span class="m">7</span>       <span class="m">0.81</span>
+<span class="n">volume</span> <span class="n">settlement_price</span> <span class="n">open_interest</span> <span class="n">trading_session</span>
+<span class="m">1</span><span class="o">:</span>     <span class="m">45</span>                <span class="m">0</span>             <span class="m">0</span>    <span class="n">after_market</span>
+<span class="m">2</span><span class="o">:</span>     <span class="m">77</span>                <span class="m">0</span>             <span class="m">0</span>    <span class="n">after_market</span>
+<span class="m">3</span><span class="o">:</span>     <span class="m">63</span>              <span class="m">774</span>           <span class="m">435</span>        <span class="n">position</span>
+<span class="m">4</span><span class="o">:</span>      <span class="m">1</span>                <span class="m">0</span>             <span class="m">0</span>    <span class="n">after_market</span>
+<span class="m">5</span><span class="o">:</span>      <span class="m">2</span>                <span class="m">0</span>             <span class="m">0</span>    <span class="n">after_market</span>
+<span class="m">6</span><span class="o">:</span>      <span class="m">3</span>            <span class="m">874.5</span>             <span class="m">3</span>        <span class="n">position</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="taiwanoptiondaily">選擇權日成交資訊 TaiwanOptionDaily<a class="headerlink" href="#taiwanoptiondaily" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TXO&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1114,21 +1198,21 @@
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>       <span class="n">TXO</span>        <span class="mi">202004</span>       <span class="mf">7500.0</span>     <span class="n">call</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>   <span class="mf">0.0</span>      <span class="mi">0</span>              <span class="mf">0.0</span>             <span class="mi">0</span>    <span class="n">after_market</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
                     <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
                     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span>
                     <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="p">,</span>
-                    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2020-04-01&quot;</span>
+                    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-04-01&quot;</span>
                     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">response</span> <span class="o">%&gt;%</span> <span class="n">content</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span><span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
         <span class="n">date</span> <span class="n">option_id</span> <span class="n">contract_date</span> <span class="n">strike_price</span> <span class="n">call_put</span> <span class="n">open</span> <span class="n">max</span> <span class="n">min</span> <span class="n">close</span> <span class="n">volume</span>
 <span class="m">1</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">TXO</span>        <span class="m">202004</span>       <span class="m">7300.0</span>     <span class="n">call</span>  <span class="m">0.0</span> <span class="m">0.0</span> <span class="m">0.0</span>   <span class="m">0.0</span>      <span class="m">0</span>
@@ -1148,18 +1232,74 @@
 </div>
 </div>
 </div>
-<h4 id="taiwanfuturestick">期貨交易明細表 TaiwanFuturesTick<a class="headerlink" href="#taiwanfuturestick" title="Permanent link">&para;</a></h4>
-<p>(由於資料量過大，只提供 date 當天 data)</p>
+<h4 id="_2">一次拿特定日期，所有資料(未來將只限贊助會員使用)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+        <span class="n">date</span> <span class="n">option_id</span> <span class="n">contract_date</span>  <span class="n">strike_price</span> <span class="n">call_put</span>  <span class="nb">open</span>   <span class="nb">max</span>   <span class="nb">min</span>  <span class="n">close</span>  <span class="n">volume</span>  <span class="n">settlement_price</span>  <span class="n">open_interest</span> <span class="n">trading_session</span>
+<span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>       <span class="n">CAO</span>        <span class="mi">202004</span>          <span class="mf">55.0</span>      <span class="n">put</span>  <span class="mf">2.22</span>  <span class="mf">2.22</span>  <span class="mf">2.22</span>   <span class="mf">2.22</span>       <span class="mi">5</span>              <span class="mf">2.48</span>             <span class="mi">15</span>        <span class="n">position</span>
+<span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>       <span class="n">CCO</span>        <span class="mi">202004</span>          <span class="mf">12.0</span>     <span class="n">call</span>  <span class="mf">1.74</span>  <span class="mf">1.74</span>  <span class="mf">1.74</span>   <span class="mf">1.74</span>       <span class="mi">5</span>              <span class="mf">1.80</span>              <span class="mi">5</span>        <span class="n">position</span>
+<span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>       <span class="n">CCO</span>        <span class="mi">202004</span>          <span class="mf">12.0</span>      <span class="n">put</span>  <span class="mf">0.04</span>  <span class="mf">0.04</span>  <span class="mf">0.04</span>   <span class="mf">0.04</span>       <span class="mi">3</span>              <span class="mf">0.01</span>              <span class="mi">3</span>        <span class="n">position</span>
+<span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>       <span class="n">CCO</span>        <span class="mi">202004</span>          <span class="mf">13.0</span>      <span class="n">put</span>  <span class="mf">0.24</span>  <span class="mf">0.24</span>  <span class="mf">0.24</span>   <span class="mf">0.24</span>       <span class="mi">1</span>              <span class="mf">0.03</span>             <span class="mi">10</span>        <span class="n">position</span>
+<span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>       <span class="n">CCO</span>        <span class="mi">202004</span>          <span class="mf">14.0</span>      <span class="n">put</span>  <span class="mf">0.65</span>  <span class="mf">0.65</span>  <span class="mf">0.65</span>   <span class="mf">0.65</span>       <span class="mi">2</span>              <span class="mf">0.37</span>              <span class="mi">8</span>        <span class="n">position</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+                    <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+                    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span>
+                    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-04-01&quot;</span>
+                    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span> <span class="o">%&gt;%</span> <span class="n">content</span>
+<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="n">date</span> <span class="n">option_id</span> <span class="n">contract_date</span> <span class="n">strike_price</span> <span class="n">call_put</span> <span class="n">open</span>  <span class="n">max</span>  <span class="n">min</span> <span class="n">close</span>
+<span class="m">1</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">CAO</span>        <span class="m">202004</span>           <span class="m">55</span>      <span class="n">put</span> <span class="m">2.22</span> <span class="m">2.22</span> <span class="m">2.22</span>  <span class="m">2.22</span>
+<span class="m">2</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">CCO</span>        <span class="m">202004</span>           <span class="m">12</span>     <span class="n">call</span> <span class="m">1.74</span> <span class="m">1.74</span> <span class="m">1.74</span>  <span class="m">1.74</span>
+<span class="m">3</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">CCO</span>        <span class="m">202004</span>           <span class="m">12</span>      <span class="n">put</span> <span class="m">0.04</span> <span class="m">0.04</span> <span class="m">0.04</span>  <span class="m">0.04</span>
+<span class="m">4</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">CCO</span>        <span class="m">202004</span>           <span class="m">13</span>      <span class="n">put</span> <span class="m">0.24</span> <span class="m">0.24</span> <span class="m">0.24</span>  <span class="m">0.24</span>
+<span class="m">5</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">CCO</span>        <span class="m">202004</span>           <span class="m">14</span>      <span class="n">put</span> <span class="m">0.65</span> <span class="m">0.65</span> <span class="m">0.65</span>  <span class="m">0.65</span>
+<span class="m">6</span><span class="o">:</span> <span class="m">2020-04-01</span>       <span class="n">CCO</span>        <span class="m">202004</span>         <span class="m">14.5</span>      <span class="n">put</span> <span class="m">1.01</span> <span class="m">1.01</span> <span class="m">1.01</span>  <span class="m">1.01</span>
+<span class="n">volume</span> <span class="n">settlement_price</span> <span class="n">open_interest</span> <span class="n">trading_session</span>
+<span class="m">1</span><span class="o">:</span>      <span class="m">5</span>             <span class="m">2.48</span>            <span class="m">15</span>        <span class="n">position</span>
+<span class="m">2</span><span class="o">:</span>      <span class="m">5</span>              <span class="m">1.8</span>             <span class="m">5</span>        <span class="n">position</span>
+<span class="m">3</span><span class="o">:</span>      <span class="m">3</span>             <span class="m">0.01</span>             <span class="m">3</span>        <span class="n">position</span>
+<span class="m">4</span><span class="o">:</span>      <span class="m">1</span>             <span class="m">0.03</span>            <span class="m">10</span>        <span class="n">position</span>
+<span class="m">5</span><span class="o">:</span>      <span class="m">2</span>             <span class="m">0.37</span>             <span class="m">8</span>        <span class="n">position</span>
+<span class="m">6</span><span class="o">:</span>      <span class="m">5</span>             <span class="m">0.75</span>            <span class="m">14</span>        <span class="n">position</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="taiwanfuturestick">期貨交易明細表 TaiwanFuturesTick<a class="headerlink" href="#taiwanfuturestick" title="Permanent link">&para;</a></h4>
+<p>由於資料量過大，只提供 date 當天 data</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesTick&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;MTX&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;MTX&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1173,17 +1313,17 @@
 <span class="mi">4</span>   <span class="mi">202004</span>       <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">02</span>        <span class="n">MTX</span>  <span class="mf">9640.0</span>      <span class="mi">2</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">R</label><div class="tabbed-content">
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesTick&quot;</span><span class="p">,</span>
-    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;MTX&quot;</span><span class="p">,</span>
-    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2020-01-02&quot;</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;MTX&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-01-02&quot;</span>
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
@@ -1204,17 +1344,17 @@
 </div>
 </div>
 <h4 id="taiwanoptiontick">選擇權交易明細表 TaiwanOptionTick<a class="headerlink" href="#taiwanoptiontick" title="Permanent link">&para;</a></h4>
-<p>(由於資料量過大，只提供 date 當天 data)</p>
+<p>由於資料量過大，只提供 date 當天 data</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionTick&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OCO&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-05&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OCO&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-05&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1222,17 +1362,17 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">R</label><div class="tabbed-content">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v3/data&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionTick&quot;</span><span class="p">,</span>
-    <span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;OCO&quot;</span><span class="p">,</span>
-    <span class="n">date</span><span class="o">=</span> <span class="s">&quot;2019-09-05&quot;</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;OCO&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2019-09-05&quot;</span>
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
@@ -1314,8 +1454,8 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

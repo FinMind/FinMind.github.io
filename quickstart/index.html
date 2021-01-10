@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/quickstart/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
         
       
     
@@ -248,7 +248,7 @@
       
         <li class="md-nav__item">
   <a href="#finmind-data-api-api" class="md-nav__link">
-    FinMind data api 主要有三種類型 API
+    FinMind data api 主要有四種類型 API
   </a>
   
 </li>
@@ -260,6 +260,13 @@
   
     <nav class="md-nav" aria-label="API 描述">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    login
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#api_1" class="md-nav__link">
@@ -666,31 +673,18 @@
 
 
 
-  <li class="md-nav__item">
-    <a href="../tutor/Macroeconomy/" class="md-nav__link">
-      債券
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-
   
   <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
     
-    <label class="md-nav__link" for="nav-12">
+    <label class="md-nav__link" for="nav-11">
       Versions
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Versions" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-11">
         <span class="md-nav__icon md-icon"></span>
         Versions
       </label>
@@ -731,7 +725,20 @@
 
   <li class="md-nav__item">
     <a href="https://finmind.github.io/" class="md-nav__link">
-      v3 (Latest)
+      v4 (Latest)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="https://finmind.github.io/v3" class="md-nav__link">
+      v3
     </a>
   </li>
 
@@ -806,7 +813,7 @@
       
         <li class="md-nav__item">
   <a href="#finmind-data-api-api" class="md-nav__link">
-    FinMind data api 主要有三種類型 API
+    FinMind data api 主要有四種類型 API
   </a>
   
 </li>
@@ -818,6 +825,13 @@
   
     <nav class="md-nav" aria-label="API 描述">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    login
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#api_1" class="md-nav__link">
@@ -868,15 +882,21 @@
 <li>
 <p><img alt="⚠️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" title=":warning:" /> note 流量限制</p>
 <p>限制 request 上限 : 600/hour。Limit amount of request, 600/hour. <br>
-至 <a href="https://finmindtrade.com/analysis/#/account/register">FinMind</a> 註冊並驗證信箱後，request api add user_id, password 參數，使用上限可提高到 1500/hr。</p>
+至 <a href="https://finmindtrade.com/register.html">FinMind</a> 註冊並驗證信箱後，request api add user_id, password 參數，使用上限可提高到 1500/hr。</p>
 </li>
 </ul>
-<h2 id="finmind-data-api-api">FinMind data api 主要有三種類型 API<a class="headerlink" href="#finmind-data-api-api" title="Permanent link">&para;</a></h2>
+<h2 id="finmind-data-api-api">FinMind data api 主要有四種類型 API<a class="headerlink" href="#finmind-data-api-api" title="Permanent link">&para;</a></h2>
 <ul>
+<li>
+<p>登入 API</p>
+<p>登入獲得 token，並在拿取資料時，帶 token，可增加使用限制</p>
+<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v4/login
+</code></pre></div>
+</li>
 <li>
 <p>獲取資料 API</p>
 <p>根據你想使用的資料集來獲取資料，例如想要查詢台灣股票市場個股的價格，就可以透過 TaiwanStockPrice 資料集來查詢</p>
-<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v3/data
+<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v4/data
 </code></pre></div>
 </li>
 <li>
@@ -884,20 +904,50 @@
 <p>每個資料集都會有一些參數需要作選擇，如果不知道參數數值有哪些可以做選擇，
 可以使用這個 API 來幫助你了解，例如你不知道匯率資料有哪些幣別，
 只要資料集選擇 TaiwanExchangeRate 就可以透過這 API 來查詢目前跟台幣兌換的幣別</p>
-<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v3/datalist
+<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v4/datalist
 </code></pre></div>
 </li>
 <li>
 <p>查詢欄位名稱中英對照 API</p>
 <p>有些資料集欄位名稱可能只有英文而且名稱相對複雜難懂，可以透過這 API 來查詢其中文名稱，
 例如資產負債表中 <strong>AccountsPayable</strong>，透過這 API 得知中文叫 <strong>應付帳款</strong> ，藉此來幫助你了解資料 </p>
-<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v3/translation
+<div class="highlight"><pre><span></span><code>https://api.finmindtrade.com/api/v4/translation
 </code></pre></div>
 </li>
 </ul>
 <h2 id="api">API 描述<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h4 id="login">login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>POST: https://api.finmindtrade.com/api/v4/login
+</code></pre></div>
+<p>請求參數:</p>
+<table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th align="center">參數型別</th>
+<th align="right">必填</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td align="center">str</td>
+<td align="right">N</td>
+<td>使用者 id ，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
+</tr>
+<tr>
+<td>password</td>
+<td align="center">str</td>
+<td align="right">N</td>
+<td>使用者密碼，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>response: token
+</code></pre></div>
 <h4 id="api_1">獲取資料 API<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>GET: https://api.finmindtrade.com/api/v3/data
+<div class="highlight"><pre><span></span><code>GET: https://api.finmindtrade.com/api/v4/data
 </code></pre></div>
 <p>請求參數:</p>
 <table>
@@ -917,45 +967,33 @@
 <td>資料集名稱</td>
 </tr>
 <tr>
-<td>stock_id</td>
-<td align="center">str</td>
-<td align="right">Y</td>
-<td>股票代碼</td>
-</tr>
-<tr>
 <td>data_id</td>
 <td align="center">str</td>
 <td align="right">N</td>
-<td>非股票代碼以外的代碼，例如:匯率幣別，利率央行...等</td>
+<td>資料代碼</td>
 </tr>
 <tr>
-<td>date</td>
+<td>start_date</td>
 <td align="center">str</td>
 <td align="right">N</td>
-<td>起始時間，如果跟 end_date 一起使用，會輸出 date 到 end_date 時間的資料，反之會輸出到最新的資料，date 和 end_date 至少則一使用</td>
+<td>起始時間，如果跟 end_date 一起使用，會輸出 start_date 到 end_date 時間的資料，反之會輸出到最新的資料，start_date 和 end_date 至少則一使用</td>
 </tr>
 <tr>
 <td>end_date</td>
 <td align="center">str</td>
 <td align="right">N</td>
-<td>結束時間，如果跟 date  一起使用，會輸出 date 到 end_date 時間的資料，反之會輸出到 end_date 的資料，date 和 end_date 至少則一使用</td>
+<td>結束時間，如果跟 start_date  一起使用，會輸出 start_date 到 end_date 時間的資料，反之會輸出到 end_date 的資料，start_date 和 end_date 至少則一使用</td>
 </tr>
 <tr>
-<td>user_id</td>
+<td>token</td>
 <td align="center">str</td>
 <td align="right">N</td>
-<td>使用者 id ，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
-</tr>
-<tr>
-<td>password</td>
-<td align="center">str</td>
-<td align="right">N</td>
-<td>使用者密碼，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
+<td>使用者 token，請先登入拿到 token</td>
 </tr>
 </tbody>
 </table>
 <h4 id="api_2">查詢資料參數清單 API<a class="headerlink" href="#api_2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>GET: https://api.finmindtrade.com/api/v3/datalist?
+<div class="highlight"><pre><span></span><code>GET: https://api.finmindtrade.com/api/v4/datalist?
 </code></pre></div>
 <p>請求參數:</p>
 <table>
@@ -989,7 +1027,7 @@
 </tbody>
 </table>
 <h4 id="api_3">查詢欄位名稱中英對照 API<a class="headerlink" href="#api_3" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>GET: https://api.finmindtrade.com/api/v3/translation?
+<div class="highlight"><pre><span></span><code>GET: https://api.finmindtrade.com/api/v4/translation?
 </code></pre></div>
 <p>請求參數:</p>
 <table>
@@ -1092,8 +1130,8 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
