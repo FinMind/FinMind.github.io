@@ -918,7 +918,6 @@
 <p class="admonition-title">設計策略</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ShortSaleMarginPurchaseRatio</span><span class="p">(</span><span class="n">Strategy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    url: &quot;https://blog.above.tw/2018/08/15/%E7%B1%8C%E7%A2%BC%E9%9D%A2%E7%9A%84%E9%97%9C%E9%8D%B5%E6%8C%87%E6%A8%99%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/&quot;</span>
 <span class="sd">    summary:</span>
 <span class="sd">        策略概念: 券資比越高代表散戶看空，法人買超股票會上漲，這時候賣可以跟大部分散戶進行相反的操作，反之亦然</span>
 <span class="sd">        策略規則: 券資比&gt;=30% 且法人買超股票, 賣</span>
@@ -928,9 +927,9 @@
     <span class="n">ShortSaleMarginPurchaseTodayRatioThreshold</span> <span class="o">=</span> <span class="mf">0.3</span>
 
     <span class="k">def</span> <span class="nf">load_taiwan_stock_margin_purchase_short_sale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">TaiwanStockMarginPurchaseShortSale</span> <span class="o">=</span> <span class="n">Load</span><span class="o">.</span><span class="n">FinData</span><span class="p">(</span>
-</span>            <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;TaiwanStockMarginPurchaseShortSale&quot;</span><span class="p">,</span>
-            <span class="n">select</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stock_id</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">TaiwanStockMarginPurchaseShortSale</span> <span class="o">=</span> <span class="n">Load</span><span class="o">.</span><span class="n">FinData</span><span class="p">(</span>
+<span class="hll">            <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;TaiwanStockMarginPurchaseShortSale&quot;</span><span class="p">,</span>
+</span>            <span class="n">select</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stock_id</span><span class="p">,</span>
             <span class="n">date</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span>
             <span class="n">end_date</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="p">,</span>
         <span class="p">)</span>
@@ -951,9 +950,9 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">load_institutional_investors_buy_sell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">InstitutionalInvestorsBuySell</span> <span class="o">=</span> <span class="n">Load</span><span class="o">.</span><span class="n">FinData</span><span class="p">(</span>
-</span>            <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;InstitutionalInvestorsBuySell&quot;</span><span class="p">,</span>
-            <span class="n">select</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stock_id</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">InstitutionalInvestorsBuySell</span> <span class="o">=</span> <span class="n">Load</span><span class="o">.</span><span class="n">FinData</span><span class="p">(</span>
+<span class="hll">            <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;InstitutionalInvestorsBuySell&quot;</span><span class="p">,</span>
+</span>            <span class="n">select</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stock_id</span><span class="p">,</span>
             <span class="n">date</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span>
             <span class="n">end_date</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="p">,</span>
         <span class="p">)</span>
