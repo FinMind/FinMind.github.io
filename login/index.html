@@ -11,14 +11,14 @@
         <meta name="author" content="Sam">
       
       
-        <link rel="canonical" href="https://finmind.github.io/FinMindDoc/release/">
+        <link rel="canonical" href="https://finmind.github.io/FinMindDoc/login/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
     
     
       
-        <title>Release Note - FinMind</title>
+        <title>登入 - FinMind</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#version-122dev2-2020-09-01" class="md-skip">
+        <a href="#tokenapi-v4-token-user_idpassword-request-token" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Release Note
+              登入
             
           </span>
         </div>
@@ -235,11 +235,45 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../login/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          登入
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         登入
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tokenapi-v4-token-user_idpassword-request-token" class="md-nav__link">
+    登入獲取 token，api v4 改用 token 取代 user_id、password，每次發 request 只需要帶 token 即可。
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -683,14 +717,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
       
       <label class="md-nav__link" for="nav-6">
         Versions
@@ -719,108 +751,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Release Note
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../release/" class="md-nav__link">
         Release Note
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#version-122dev2-2020-09-01" class="md-nav__link">
-    version: 1.2.2.dev2 (2020-09-01)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-122dev0-2020-07-07" class="md-nav__link">
-    version: 1.2.2.dev0 (2020-07-07)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-121-2020-06-23" class="md-nav__link">
-    version: 1.2.1 (2020-06-23)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev6-2020-06-23" class="md-nav__link">
-    version: 1.2.0.dev6 (2020-06-23)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev5-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev5 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev4-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev4 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev3-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev3 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev2-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev2 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev1-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev1 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev0-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev0 (2020-06-17)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -926,71 +861,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#version-122dev2-2020-09-01" class="md-nav__link">
-    version: 1.2.2.dev2 (2020-09-01)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-122dev0-2020-07-07" class="md-nav__link">
-    version: 1.2.2.dev0 (2020-07-07)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-121-2020-06-23" class="md-nav__link">
-    version: 1.2.1 (2020-06-23)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev6-2020-06-23" class="md-nav__link">
-    version: 1.2.0.dev6 (2020-06-23)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev5-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev5 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev4-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev4 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev3-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev3 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev2-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev2 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev1-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev1 (2020-06-17)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-120dev0-2020-06-17" class="md-nav__link">
-    version: 1.2.0.dev0 (2020-06-17)
+  <a href="#tokenapi-v4-token-user_idpassword-request-token" class="md-nav__link">
+    登入獲取 token，api v4 改用 token 取代 user_id、password，每次發 request 只需要帶 token 即可。
   </a>
   
 </li>
@@ -1007,73 +879,85 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FinMind/FinMind/edit/master/docs/release.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FinMind/FinMind/edit/master/docs/login.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Release Note</h1>
+                  <h1>登入</h1>
                 
-                <h2 id="version-122dev2-2020-09-01">version: 1.2.2.dev2 (2020-09-01)<a class="headerlink" href="#version-122dev2-2020-09-01" title="Permanent link">&para;</a></h2>
-<ul>
-<li>feat: add Strategies path</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: b41a18d5</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-09-01 06:03:37.810</p>
-<h2 id="version-122dev0-2020-07-07">version: 1.2.2.dev0 (2020-07-07)<a class="headerlink" href="#version-122dev0-2020-07-07" title="Permanent link">&para;</a></h2>
-<ul>
-<li>add strategies</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 7ca74fd8</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-07-07 06:54:03.595</p>
-<h2 id="version-121-2020-06-23">version: 1.2.1 (2020-06-23)<a class="headerlink" href="#version-121-2020-06-23" title="Permanent link">&para;</a></h2>
-<ul>
-<li>release</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 18ffdd5d</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-23 14:13:49.596</p>
-<h2 id="version-120dev6-2020-06-23">version: 1.2.0.dev6 (2020-06-23)<a class="headerlink" href="#version-120dev6-2020-06-23" title="Permanent link">&para;</a></h2>
-<ul>
-<li>fix: version</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: bcbbd3c9</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-23 08:10:32.177</p>
-<h2 id="version-120dev5-2020-06-17">version: 1.2.0.dev5 (2020-06-17)<a class="headerlink" href="#version-120dev5-2020-06-17" title="Permanent link">&para;</a></h2>
-<ul>
-<li>add "requests", "importlib_metadata", "matplotlib", "pandas" to setup install_requires</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 0eafefee</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-17 15:07:22.178</p>
-<h2 id="version-120dev4-2020-06-17">version: 1.2.0.dev4 (2020-06-17)<a class="headerlink" href="#version-120dev4-2020-06-17" title="Permanent link">&para;</a></h2>
-<ul>
-<li>fix CD to auto upload github</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 7f4c94c9</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-17 14:41:39.133</p>
-<h2 id="version-120dev3-2020-06-17">version: 1.2.0.dev3 (2020-06-17)<a class="headerlink" href="#version-120dev3-2020-06-17" title="Permanent link">&para;</a></h2>
-<ul>
-<li>add CD to auto upload github</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 379d8613</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-17 09:02:31.455</p>
-<h2 id="version-120dev2-2020-06-17">version: 1.2.0.dev2 (2020-06-17)<a class="headerlink" href="#version-120dev2-2020-06-17" title="Permanent link">&para;</a></h2>
-<ul>
-<li>add cd to auto update github</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 379d8613</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-17 08:55:23.648</p>
-<h2 id="version-120dev1-2020-06-17">version: 1.2.0.dev1 (2020-06-17)<a class="headerlink" href="#version-120dev1-2020-06-17" title="Permanent link">&para;</a></h2>
-<ul>
-<li>add backtesting</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: 9fc4dafb</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-17 08:16:00.402</p>
-<h2 id="version-120dev0-2020-06-17">version: 1.2.0.dev0 (2020-06-17)<a class="headerlink" href="#version-120dev0-2020-06-17" title="Permanent link">&para;</a></h2>
-<ul>
-<li>add backtesting</li>
-</ul>
-<p><img alt=":octocat:" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" /> commit_id: f31ad7f5</p>
-<p><img alt="⚡️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png" title=":zap:" /> release_at: 2020-06-17 08:13:06.617</p>
+                <h4 id="tokenapi-v4-token-user_idpassword-request-token">登入獲取 token，api v4 改用 token 取代 user_id、password，每次發 request 只需要帶 token 即可。<a class="headerlink" href="#tokenapi-v4-token-user_idpassword-request-token" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>POST: https://api.finmindtrade.com/api/v4/login
+</code></pre></div>
+<p>請求參數:</p>
+<table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th align="center">參數型別</th>
+<th align="right">必填</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td align="center">str</td>
+<td align="right">N</td>
+<td>使用者 id ，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
+</tr>
+<tr>
+<td>password</td>
+<td align="center">str</td>
+<td align="right">N</td>
+<td>使用者密碼，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>response: token
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/login&quot;</span>
+<span class="n">parload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">parload</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="p">{</span><span class="s1">&#39;msg&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">:</span> <span class="s1">&#39;7777777777777777777777777&#39;</span><span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/login&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">POST</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">body</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s">&quot;user_id&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span> <span class="s">&quot;password&quot;</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="o">$</span><span class="n">msg</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;success&quot;</span>
+
+<span class="o">$</span><span class="n">status</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">200</span>
+
+<span class="o">$</span><span class="n">token</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;777777777777777777777777&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
                 
               
               
@@ -1092,7 +976,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../WhatIsNew/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../quickstart/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1101,19 +985,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                What's New
+                快速開始
               </div>
             </div>
           </a>
         
         
-          <a href="../Contact/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../tutor/TaiwanMarket/DataList/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                聯絡我們
+                總覽
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
