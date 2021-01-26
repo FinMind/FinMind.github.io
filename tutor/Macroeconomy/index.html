@@ -614,6 +614,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Others/" class="md-nav__link">
+        其他
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -906,6 +918,8 @@
 </tbody>
 </table>
 <h4 id="currencycirculation">各國貨幣發行量表 CurrencyCirculation<a class="headerlink" href="#currencycirculation" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
@@ -919,13 +933,16 @@
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-  <span class="n">country</span>        <span class="n">date</span>     <span class="nb">type</span>      <span class="n">value</span>
+<span class="n">country</span>        <span class="n">date</span>     <span class="nb">type</span>      <span class="n">value</span>
 <span class="mi">0</span>      <span class="n">US</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Monthly</span>  <span class="mf">1798.984</span><span class="n">B</span>
 <span class="mi">1</span>      <span class="n">US</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Monthly</span>  <span class="mf">1795.990</span><span class="n">B</span>
 <span class="mi">2</span>      <span class="n">US</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Monthly</span>  <span class="mf">1826.102</span><span class="n">B</span>
 <span class="mi">3</span>      <span class="n">US</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>  <span class="n">Monthly</span>  <span class="mf">1876.878</span><span class="n">B</span>
 </code></pre></div>
+</div>
 <h4 id="governmentbondsyield">政府公債殖利率表 GovernmentBondsYield<a class="headerlink" href="#governmentbondsyield" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -940,13 +957,14 @@
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-         <span class="n">date</span>                  <span class="n">name</span>  <span class="n">value</span>
+     <span class="n">date</span>                  <span class="n">name</span>  <span class="n">value</span>
 <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">3</span><span class="o">-</span><span class="n">Year</span>   <span class="mf">1.59</span>
 <span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">3</span><span class="o">-</span><span class="n">Year</span>   <span class="mf">1.54</span>
 <span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">06</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">3</span><span class="o">-</span><span class="n">Year</span>   <span class="mf">1.56</span>
 <span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">3</span><span class="o">-</span><span class="n">Year</span>   <span class="mf">1.55</span>
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">08</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">3</span><span class="o">-</span><span class="n">Year</span>   <span class="mf">1.61</span>
 </code></pre></div>
+</div>
                 
               
               

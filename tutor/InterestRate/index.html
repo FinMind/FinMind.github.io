@@ -650,6 +650,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Others/" class="md-nav__link">
+        其他
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -932,13 +944,16 @@
 <ul>
 <li>針對 FED 做示範</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;InterestRate&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;FED&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1982-01-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;InterestRate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;FED&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1982-01-01&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>

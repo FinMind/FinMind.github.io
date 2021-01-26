@@ -666,6 +666,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/" class="md-nav__link">
+        其他
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -949,6 +961,8 @@
 <span class="mi">4</span>        <span class="kc">None</span>              <span class="o">...</span>                      <span class="n">CBOE</span> <span class="n">Volatility</span> <span class="n">Index</span>
 </code></pre></div>
 <h4 id="minute-usstockpriceminute">美國股價 minute 資料表 USStockPriceMinute<a class="headerlink" href="#minute-usstockpriceminute" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -958,14 +972,17 @@
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-                  <span class="n">date</span> <span class="n">stock_id</span>    <span class="n">close</span>   <span class="o">...</span>        <span class="n">low</span>     <span class="nb">open</span>  <span class="n">volume</span>
+                <span class="n">date</span> <span class="n">stock_id</span>    <span class="n">close</span>   <span class="o">...</span>        <span class="n">low</span>     <span class="nb">open</span>  <span class="n">volume</span>
 <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29491.0</span>   <span class="o">...</span>    <span class="mf">29491.0</span>  <span class="mf">29510.4</span>  <span class="mi">708882</span>
 <span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29490.5</span>   <span class="o">...</span>    <span class="mf">29477.4</span>  <span class="mf">29483.9</span>  <span class="mi">766202</span>
 <span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29468.7</span>   <span class="o">...</span>    <span class="mf">29467.3</span>  <span class="mf">29490.0</span>  <span class="mi">577330</span>
 <span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29474.1</span>   <span class="o">...</span>    <span class="mf">29465.8</span>  <span class="mf">29468.0</span>  <span class="mi">439754</span>
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29473.3</span>   <span class="o">...</span>    <span class="mf">29473.3</span>  <span class="mf">29474.7</span>  <span class="mi">412897</span>
 </code></pre></div>
+</div>
 <h4 id="daily-usstockprice">美國股價 daily 資料表 USStockPrice<a class="headerlink" href="#daily-usstockprice" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -981,6 +998,7 @@
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
+</div>
                 
               
               
