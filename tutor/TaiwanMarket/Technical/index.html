@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/TaiwanMarket/Technical/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -357,15 +357,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#taiwanstockpriceminute" class="md-nav__link">
-    即時股價 TaiwanStockPriceMinute
+  <a href="#taiwanstockpricetick" class="md-nav__link">
+    即時股價 TaiwanStockPriceTick
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#taiwanstockpriceminutebidask" class="md-nav__link">
-    即時最佳五檔 TaiwanStockPriceMinuteBidAsk
+  <a href="#taiwanstockpricebidask" class="md-nav__link">
+    即時最佳五檔 TaiwanStockPriceBidAsk
   </a>
   
 </li>
@@ -938,15 +938,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#taiwanstockpriceminute" class="md-nav__link">
-    即時股價 TaiwanStockPriceMinute
+  <a href="#taiwanstockpricetick" class="md-nav__link">
+    即時股價 TaiwanStockPriceTick
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#taiwanstockpriceminutebidask" class="md-nav__link">
-    即時最佳五檔 TaiwanStockPriceMinuteBidAsk
+  <a href="#taiwanstockpricebidask" class="md-nav__link">
+    即時最佳五檔 TaiwanStockPriceBidAsk
   </a>
   
 </li>
@@ -994,8 +994,8 @@
                 <p>在台股技術面，我們擁有 6 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockprice">台灣股價資料表 TaiwanStockPrice</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceminute">台灣股價及時資料表 TaiwanStockPriceMinute</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceminutebidask">台灣即時最佳五檔 TaiwanStockPriceMinuteBidAsk</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricetick">台灣股價及時資料表 TaiwanStockPriceTick</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricebidask">台灣即時最佳五檔 TaiwanStockPriceBidAsk</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#5-taiwanstockstatisticsoforderbookandtrade">每5秒委託成交統計 TaiwanStockStatisticsOfOrderBookAndTrade</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanvariousindicators5seconds">台股加權指數 TaiwanVariousIndicators5Seconds</a></li>
@@ -1175,7 +1175,7 @@
 </div>
 </div>
 </div>
-<h4 id="taiwanstockpriceminute">即時股價 TaiwanStockPriceMinute<a class="headerlink" href="#taiwanstockpriceminute" title="Permanent link">&para;</a></h4>
+<h4 id="taiwanstockpricetick">即時股價 TaiwanStockPriceTick<a class="headerlink" href="#taiwanstockpricetick" title="Permanent link">&para;</a></h4>
 <ul>
 <li>輸入 dataset、stock_id 參數，會回傳當天最近 100 筆即時資料。</li>
 <li>輸入 dataset、stock_id、date，會回傳 date 當天 data。</li>
@@ -1190,6 +1190,7 @@
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceTick&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;streaming_all_data&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="c1"># 拿取當天所有即時資料</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -1215,6 +1216,7 @@
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
     <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPriceMinute&quot;</span><span class="p">,</span>
     <span class="n">data_id</span><span class="o">=</span> <span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">streaming_all_data</span><span class="o">=</span> <span class="n">true</span><span class="p">,</span><span class="c1"># 拿取當天所有即時資料</span>
     <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
 <span class="p">)</span>
@@ -1234,7 +1236,7 @@
 </div>
 </div>
 </div>
-<h4 id="taiwanstockpriceminutebidask">即時最佳五檔 TaiwanStockPriceMinuteBidAsk<a class="headerlink" href="#taiwanstockpriceminutebidask" title="Permanent link">&para;</a></h4>
+<h4 id="taiwanstockpricebidask">即時最佳五檔 TaiwanStockPriceBidAsk<a class="headerlink" href="#taiwanstockpricebidask" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
@@ -1243,7 +1245,7 @@
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceMinuteBidAsk&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceBidAsk&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
@@ -1477,8 +1479,8 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

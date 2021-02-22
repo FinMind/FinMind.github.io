@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/WhatIsNew/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2021-01-26" class="md-skip">
+        <a href="#2021-02-22" class="md-skip">
           Skip to content
         </a>
       
@@ -742,6 +742,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2021-02-22" class="md-nav__link">
+    2021-02-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2021-01-26" class="md-nav__link">
     2021-01-26
   </a>
@@ -1039,6 +1046,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2021-02-22" class="md-nav__link">
+    2021-02-22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2021-01-26" class="md-nav__link">
     2021-01-26
   </a>
@@ -1237,10 +1251,14 @@
                 
                   <h1>What's New</h1>
                 
-                <h4 id="2021-01-26">2021-01-26<a class="headerlink" href="#2021-01-26" title="Permanent link">&para;</a></h4>
+                <h4 id="2021-02-22">2021-02-22<a class="headerlink" href="#2021-02-22" title="Permanent link">&para;</a></h4>
+<ul>
+<li>新增 <code>streaming_all_data</code> 參數，可拿取即時資料(tick)，開盤到當下所有 data。</li>
+</ul>
+<h4 id="2021-01-26">2021-01-26<a class="headerlink" href="#2021-01-26" title="Permanent link">&para;</a></h4>
 <ul>
 <li>新增<a href="https://finmind.github.io/tutor/Others/#cnnfeargreedindex">CnnFearGreedIndex 恐懼與貪婪指數</a></li>
-<li>註冊會員突破500人</li>
+<li>註冊會員突破500人。</li>
 </ul>
 <h4 id="2021-01-25">2021-01-25<a class="headerlink" href="#2021-01-25" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1315,14 +1333,14 @@ e.g : </p>
 <li>
 <p>add function <code>Mind.RSV</code>, <br>
 e.g : </p>
-<div class="codehilite"><pre><span></span><code><span class="err">Mind.RSV(_2330.StockPrice,days = 5)</span>
+<div class="codehilite"><pre><span></span><code>Mind.RSV(_2330.StockPrice,days = 5)
 </code></pre></div>
 
 </li>
 <li>
 <p>add function <code>Mind.BIAS</code>, <br>
 e.g : </p>
-<div class="codehilite"><pre><span></span><code><span class="err">Mind.BIAS(_2330.StockPrice,days = 5)</span>
+<div class="codehilite"><pre><span></span><code>Mind.BIAS(_2330.StockPrice,days = 5)
 </code></pre></div>
 
 </li>
@@ -1365,8 +1383,8 @@ e.g : </p>
 <span class="n">s</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">TaiwanStockFinancialStatements</span> <span class="o">=</span> <span class="n">Load</span><span class="o">.</span><span class="n">FinData</span><span class="p">(</span><span class="n">dataset</span> <span class="o">=</span> <span class="s1">&#39;FinancialStatements&#39;</span><span class="p">,</span><span class="n">select</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">TaiwanStockInfo</span><span class="p">[</span><span class="s1">&#39;stock_id&#39;</span><span class="p">]),</span><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2018-12-01&#39;</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">s</span>
-<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="mi">0</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mf">01.861724</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">01.861724</span>
 </code></pre></div>
 
 </li>
@@ -1386,18 +1404,18 @@ e.g : </p>
 </ul>
 <h4 id="201885">2018/8/5<a class="headerlink" href="#201885" title="Permanent link">&para;</a></h4>
 <ol>
-<li>央行利率 100% ( 13 Countrys, Contains G8 )<div class="codehilite"><pre><span></span><code><span class="err">  FED Federal Reserve System 美國</span>
-<span class="err">  ECB European Central Bank 歐洲</span>
-<span class="err">  BOE Bank of England 英國</span>
-<span class="err">  SNB Swiss National Bank 瑞士</span>
-<span class="err">  RBA Reserve Bank of Australia 澳洲</span>
-<span class="err">  BOC Bank of Canada 加拿大</span>
-<span class="err">  RBNZ Reserve Bank of New Zealand 紐西蘭</span>
-<span class="err">  BOJ Bank of Japan 日本</span>
-<span class="err">  CBR The Central Bank of the Russian Federation 俄羅斯</span>
-<span class="err">  RBI Reserve Bank of India 印度</span>
-<span class="err">  PBOC People&#39;s Bank of China  中國</span>
-<span class="err">  BCB Banco Central do Brasil 巴西</span>
+<li>央行利率 100% ( 13 Countrys, Contains G8 )<div class="codehilite"><pre><span></span><code>  <span class="nv">FED</span> <span class="nv">Federal</span> <span class="nv">Reserve</span> <span class="nv">System</span> 美國
+  <span class="nv">ECB</span> <span class="nv">European</span> <span class="nv">Central</span> <span class="nv">Bank</span> 歐洲
+  <span class="nv">BOE</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">England</span> 英國
+  <span class="nv">SNB</span> <span class="nv">Swiss</span> <span class="nv">National</span> <span class="nv">Bank</span> 瑞士
+  <span class="nv">RBA</span> <span class="nv">Reserve</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">Australia</span> 澳洲
+  <span class="nv">BOC</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">Canada</span> 加拿大
+  <span class="nv">RBNZ</span> <span class="nv">Reserve</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">New</span> <span class="nv">Zealand</span> 紐西蘭
+  <span class="nv">BOJ</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">Japan</span> 日本
+  <span class="nv">CBR</span> <span class="nv">The</span> <span class="nv">Central</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">Russian</span> <span class="nv">Federation</span> 俄羅斯
+  <span class="nv">RBI</span> <span class="nv">Reserve</span> <span class="nv">Bank</span> <span class="nv">of</span> <span class="nv">India</span> 印度
+  <span class="nv">PBOC</span> <span class="nv">People</span><span class="s1">&#39;</span><span class="s">s Bank of China  中國</span>
+  <span class="nv">BCB</span> <span class="nv">Banco</span> <span class="nv">Central</span> <span class="k">do</span> <span class="nv">Brasil</span> 巴西
 </code></pre></div>
 
 <ol>
@@ -1492,8 +1510,8 @@ e.g : </p>
       
     </div>
     
-      <script src="../assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
