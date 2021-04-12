@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/quickstart/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -986,8 +986,9 @@
 <ul>
 <li>
 <p><img alt="⚠️" class="gemoji" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" title=":warning:" /> note 流量限制</p>
-<p>限制 request 上限 : 600/hour。Limit amount of request, 600/hour. (4/11後，300/hr)<br>
-至 <a href="https://finmindtrade.com/register.html">FinMind</a> 註冊並驗證信箱後，request api add user_id, password 參數，使用上限可提高到 1500/hr。(4/11後，600/hr)</p>
+<p>限制 request 上限 : 600/hour。Limit amount of request, 300/hour.<br>
+至 <a href="https://finmindtrade.com/register.html">FinMind</a> 註冊並驗證信箱後，API 的 Request 加上 <code>token</code> 參數可以提高使用上限到 600/hr。<br>
+token 獲取方法，可在<a href="https://finmindtrade.com/analysis/#/account/login">官網</a>登入後獲取。</p>
 </li>
 </ul>
 <h2 id="finmind-data-api-api">FinMind data api 主要有四種類型 API<a class="headerlink" href="#finmind-data-api-api" title="Permanent link">&para;</a></h2>
@@ -1240,7 +1241,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
+      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
       
     
   </body>
