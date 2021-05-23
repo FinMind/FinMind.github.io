@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/TaiwanMarket/Chip/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -425,6 +425,20 @@
       
         <li class="md-nav__item">
   <a href="#backersponsor_4" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwandailyshortsalebalances" class="md-nav__link">
+    融券借券賣出 TaiwanDailyShortSaleBalances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_5" class="md-nav__link">
     一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
   </a>
   
@@ -1052,6 +1066,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwandailyshortsalebalances" class="md-nav__link">
+    融券借券賣出 TaiwanDailyShortSaleBalances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_5" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1071,7 +1099,7 @@
                 
                   <h1>籌碼面</h1>
                 
-                <p>在台股籌碼面，我們擁有 7 種資料集，如下:</p>
+                <p>在台股籌碼面，我們擁有 8 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -1080,6 +1108,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockshareholding">外資持股表 TaiwanStockShareholding</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockholdingsharesper">股權持股分級表 TaiwanStockHoldingSharesPer</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocksecuritieslending">借券成交明細 TaiwanStockSecuritiesLending</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwandailyshortsalebalances">融券借券賣出表 TaiwanDailyShortSaleBalances</a></li>
 </ul>
 <h4 id="taiwanstockmarginpurchaseshortsale">融資融劵表 TaiwanStockMarginPurchaseShortSale<a class="headerlink" href="#taiwanstockmarginpurchaseshortsale" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
@@ -1867,6 +1896,192 @@
 </div>
 </div>
 </div>
+<h4 id="taiwandailyshortsalebalances">融券借券賣出 TaiwanDailyShortSaleBalances<a class="headerlink" href="#taiwandailyshortsalebalances" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanDailyShortSaleBalances&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+        <span class="n">stock_id</span>  <span class="n">MarginShortSalesPreviousDayBalance</span>  <span class="n">MarginShortSalesShortSales</span>  <span class="o">...</span>  <span class="n">SBLShortSalesQuota</span>  <span class="n">SBLShortSalesShortCovering</span>        <span class="n">date</span>
+<span class="mi">0</span>           <span class="mi">2330</span>                             <span class="mi">1975000</span>                           <span class="mi">0</span>  <span class="o">...</span>             <span class="mi">7526895</span>                           <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">01</span>
+<span class="mi">1</span>           <span class="mi">2330</span>                               <span class="mi">24000</span>                           <span class="mi">0</span>  <span class="o">...</span>             <span class="mi">7563083</span>                           <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span>
+<span class="mi">2</span>           <span class="mi">2330</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>             <span class="mi">7635835</span>                           <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">07</span>
+<span class="mi">3</span>           <span class="mi">2330</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>             <span class="mi">7688249</span>                           <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">08</span>
+<span class="mi">4</span>           <span class="mi">2330</span>                                   <span class="mi">0</span>                      <span class="mi">398000</span>  <span class="o">...</span>             <span class="mi">7642682</span>                           <span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanDailyShortSaleBalances&quot;</span><span class="p">,</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-01-02&quot;</span><span class="p">,</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+        <span class="n">stock_id</span> <span class="n">MarginShortSalesPreviousDayBalance</span> <span class="n">MarginShortSalesShortSales</span>
+<span class="m">1</span><span class="o">:</span>          <span class="m">2330</span>                             <span class="m">326000</span>                     <span class="m">132000</span>
+<span class="m">2</span><span class="o">:</span>          <span class="m">2330</span>                             <span class="m">445000</span>                     <span class="m">161000</span>
+<span class="m">3</span><span class="o">:</span>          <span class="m">2330</span>                             <span class="m">571000</span>                      <span class="m">19000</span>
+<span class="m">4</span><span class="o">:</span>          <span class="m">2330</span>                             <span class="m">344000</span>                      <span class="m">82000</span>
+<span class="m">5</span><span class="o">:</span>          <span class="m">2330</span>                             <span class="m">351000</span>                     <span class="m">222000</span>
+<span class="m">6</span><span class="o">:</span>          <span class="m">2330</span>                             <span class="m">532000</span>                     <span class="m">147000</span>
+<span class="n">MarginShortSalesShortCovering</span> <span class="n">MarginShortSalesStockRedemption</span>
+<span class="m">1</span><span class="o">:</span>                      <span class="m">13000</span>                               <span class="m">0</span>
+<span class="m">2</span><span class="o">:</span>                      <span class="m">35000</span>                               <span class="m">0</span>
+<span class="m">3</span><span class="o">:</span>                     <span class="m">246000</span>                               <span class="m">0</span>
+<span class="m">4</span><span class="o">:</span>                      <span class="m">75000</span>                               <span class="m">0</span>
+<span class="m">5</span><span class="o">:</span>                      <span class="m">41000</span>                               <span class="m">0</span>
+<span class="m">6</span><span class="o">:</span>                      <span class="m">37000</span>                               <span class="m">0</span>
+<span class="n">MarginShortSalesCurrentDayBalance</span> <span class="n">MarginShortSalesQuota</span>
+<span class="m">1</span><span class="o">:</span>                         <span class="m">445000</span>           <span class="m">-2107339478</span>
+<span class="m">2</span><span class="o">:</span>                         <span class="m">571000</span>           <span class="m">-2107339478</span>
+<span class="m">3</span><span class="o">:</span>                         <span class="m">344000</span>           <span class="m">-2107339478</span>
+<span class="m">4</span><span class="o">:</span>                         <span class="m">351000</span>           <span class="m">-2107339478</span>
+<span class="m">5</span><span class="o">:</span>                         <span class="m">532000</span>           <span class="m">-2107339478</span>
+<span class="m">6</span><span class="o">:</span>                         <span class="m">642000</span>           <span class="m">-2107339478</span>
+<span class="n">SBLShortSalesPreviousDayBalance</span> <span class="n">SBLShortSalesShortSales</span> <span class="n">SBLShortSalesReturns</span>
+<span class="m">1</span><span class="o">:</span>                     <span class="m">19385310</span>                       <span class="m">0</span>                    <span class="m">0</span>
+<span class="m">2</span><span class="o">:</span>                     <span class="m">19385310</span>                    <span class="m">9000</span>                    <span class="m">0</span>
+<span class="m">3</span><span class="o">:</span>                     <span class="m">19394310</span>                  <span class="m">103000</span>               <span class="m">555000</span>
+<span class="m">4</span><span class="o">:</span>                     <span class="m">18942310</span>                    <span class="m">2000</span>                    <span class="m">0</span>
+<span class="m">5</span><span class="o">:</span>                     <span class="m">18944310</span>                  <span class="m">192000</span>               <span class="m">361000</span>
+<span class="m">6</span><span class="o">:</span>                     <span class="m">18775310</span>                  <span class="m">325000</span>                    <span class="m">0</span>
+<span class="n">SBLShortSalesAdjustments</span> <span class="n">SBLShortSalesCurrentDayBalance</span> <span class="n">SBLShortSalesQuota</span>
+<span class="m">1</span><span class="o">:</span>                     <span class="m">0</span>                       <span class="m">19385310</span>           <span class="m">10204355</span>
+<span class="m">2</span><span class="o">:</span>                     <span class="m">0</span>                       <span class="m">19394310</span>           <span class="m">10322949</span>
+<span class="m">3</span><span class="o">:</span>                     <span class="m">0</span>                       <span class="m">18942310</span>           <span class="m">10514790</span>
+<span class="m">4</span><span class="o">:</span>                     <span class="m">0</span>                       <span class="m">18944310</span>           <span class="m">10833700</span>
+<span class="m">5</span><span class="o">:</span>                     <span class="m">0</span>                       <span class="m">18775310</span>           <span class="m">10193671</span>
+<span class="m">6</span><span class="o">:</span>                     <span class="m">0</span>                       <span class="m">19100310</span>           <span class="m">10332370</span>
+<span class="n">SBLShortSalesShortCovering</span>       <span class="n">date</span>
+<span class="m">1</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+<span class="m">2</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-03</span>
+<span class="m">3</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-06</span>
+<span class="m">4</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-07</span>
+<span class="m">5</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-08</span>
+<span class="m">6</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-09</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="backersponsor_5">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_5" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanDailyShortSaleBalances&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-20&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">stock_id</span>  <span class="n">MarginShortSalesPreviousDayBalance</span>  <span class="n">MarginShortSalesShortSales</span>  <span class="o">...</span>  <span class="n">SBLShortSalesQuota</span>  <span class="n">SBLShortSalesShortCovering</span>        <span class="n">date</span>
+<span class="mi">0</span>           <span class="mi">0050</span>                              <span class="mi">164000</span>                       <span class="mi">61000</span>  <span class="o">...</span>             <span class="mi">3478376</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">1</span>           <span class="mi">0051</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>               <span class="mi">46797</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">2</span>           <span class="mi">0052</span>                                <span class="mi">7000</span>                           <span class="mi">0</span>  <span class="o">...</span>              <span class="mi">399362</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">3</span>           <span class="mi">0053</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>                <span class="mi">8548</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">4</span>           <span class="mi">0054</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>                <span class="mi">4085</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="o">...</span>          <span class="o">...</span>                                 <span class="o">...</span>                         <span class="o">...</span>  <span class="o">...</span>                 <span class="o">...</span>                         <span class="o">...</span>         <span class="o">...</span>
+<span class="mi">1850</span>        <span class="mi">9951</span>                                <span class="mi">1000</span>                           <span class="mi">0</span>  <span class="o">...</span>              <span class="mi">250293</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">1851</span>        <span class="mi">9955</span>                               <span class="mi">18000</span>                           <span class="mi">0</span>  <span class="o">...</span>              <span class="mi">720416</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">1852</span>        <span class="mi">9958</span>                              <span class="mi">157000</span>                       <span class="mi">34000</span>  <span class="o">...</span>             <span class="mi">2026204</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">1853</span>        <span class="mi">9960</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>               <span class="mi">18944</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+<span class="mi">1854</span>        <span class="mi">9962</span>                                   <span class="mi">0</span>                           <span class="mi">0</span>  <span class="o">...</span>              <span class="mi">302372</span>                           <span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">20</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanDailyShortSaleBalances&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2020-01-02&quot;</span><span class="p">,</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+        <span class="n">stock_id</span> <span class="n">MarginShortSalesPreviousDayBalance</span> <span class="n">MarginShortSalesShortSales</span>
+<span class="m">1</span><span class="o">:</span>          <span class="m">0050</span>                             <span class="m">171000</span>                       <span class="m">2000</span>
+<span class="m">2</span><span class="o">:</span>          <span class="m">0051</span>                                  <span class="m">0</span>                          <span class="m">0</span>
+<span class="m">3</span><span class="o">:</span>          <span class="m">0052</span>                                  <span class="m">0</span>                          <span class="m">0</span>
+<span class="m">4</span><span class="o">:</span>          <span class="m">0053</span>                               <span class="m">4000</span>                          <span class="m">0</span>
+<span class="m">5</span><span class="o">:</span>          <span class="m">0054</span>                                  <span class="m">0</span>                          <span class="m">0</span>
+<span class="m">6</span><span class="o">:</span>          <span class="m">0055</span>                               <span class="m">1000</span>                          <span class="m">0</span>
+<span class="n">MarginShortSalesShortCovering</span> <span class="n">MarginShortSalesStockRedemption</span>
+<span class="m">1</span><span class="o">:</span>                        <span class="m">1000</span>                               <span class="m">0</span>
+<span class="m">2</span><span class="o">:</span>                           <span class="m">0</span>                               <span class="m">0</span>
+<span class="m">3</span><span class="o">:</span>                           <span class="m">0</span>                               <span class="m">0</span>
+<span class="m">4</span><span class="o">:</span>                           <span class="m">0</span>                               <span class="m">0</span>
+<span class="m">5</span><span class="o">:</span>                           <span class="m">0</span>                               <span class="m">0</span>
+<span class="m">6</span><span class="o">:</span>                           <span class="m">0</span>                               <span class="m">0</span>
+<span class="n">MarginShortSalesCurrentDayBalance</span> <span class="n">MarginShortSalesQuota</span>
+<span class="m">1</span><span class="o">:</span>                         <span class="m">172000</span>             <span class="m">171750000</span>
+<span class="m">2</span><span class="o">:</span>                              <span class="m">0</span>               <span class="m">2375000</span>
+<span class="m">3</span><span class="o">:</span>                              <span class="m">0</span>               <span class="m">8250000</span>
+<span class="m">4</span><span class="o">:</span>                           <span class="m">4000</span>               <span class="m">1372000</span>
+<span class="m">5</span><span class="o">:</span>                              <span class="m">0</span>               <span class="m">2531000</span>
+<span class="m">6</span><span class="o">:</span>                           <span class="m">1000</span>               <span class="m">9163500</span>
+<span class="n">SBLShortSalesPreviousDayBalance</span> <span class="n">SBLShortSalesShortSales</span> <span class="n">SBLShortSalesReturns</span>
+<span class="m">1</span><span class="o">:</span>                      <span class="m">4686000</span>                  <span class="m">327000</span>                    <span class="m">0</span>
+<span class="m">2</span><span class="o">:</span>                         <span class="m">1000</span>                       <span class="m">0</span>                    <span class="m">0</span>
+<span class="m">3</span><span class="o">:</span>                        <span class="m">53000</span>                   <span class="m">36000</span>                    <span class="m">0</span>
+<span class="m">4</span><span class="o">:</span>                            <span class="m">0</span>                       <span class="m">0</span>                    <span class="m">0</span>
+<span class="m">5</span><span class="o">:</span>                            <span class="m">0</span>                       <span class="m">0</span>                    <span class="m">0</span>
+<span class="m">6</span><span class="o">:</span>                        <span class="m">16000</span>                       <span class="m">0</span>                    <span class="m">0</span>
+<span class="n">SBLShortSalesAdjustments</span> <span class="n">SBLShortSalesCurrentDayBalance</span> <span class="n">SBLShortSalesQuota</span>
+<span class="m">1</span><span class="o">:</span>                     <span class="m">0</span>                        <span class="m">5013000</span>            <span class="m">1006197</span>
+<span class="m">2</span><span class="o">:</span>                     <span class="m">0</span>                           <span class="m">1000</span>               <span class="m">9236</span>
+<span class="m">3</span><span class="o">:</span>                     <span class="m">0</span>                          <span class="m">89000</span>              <span class="m">36563</span>
+<span class="m">4</span><span class="o">:</span>                     <span class="m">0</span>                              <span class="m">0</span>               <span class="m">4213</span>
+<span class="m">5</span><span class="o">:</span>                     <span class="m">0</span>                              <span class="m">0</span>               <span class="m">2949</span>
+<span class="m">6</span><span class="o">:</span>                     <span class="m">0</span>                          <span class="m">16000</span>              <span class="m">20919</span>
+<span class="n">SBLShortSalesShortCovering</span>       <span class="n">date</span>
+<span class="m">1</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+<span class="m">2</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+<span class="m">3</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+<span class="m">4</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+<span class="m">5</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+<span class="m">6</span><span class="o">:</span>                       <span class="m">0</span> <span class="m">2020-01-02</span>
+</code></pre></div>
+</div>
+</div>
+</div>
                 
               
               
@@ -1939,10 +2154,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
     
   </body>
