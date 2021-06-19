@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/analysis/Backtesting/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -42,10 +42,19 @@
     
     
       
-        
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-142214222-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-142214222-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -920,18 +929,23 @@
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">初始化，設定回測股票代碼、時間區間</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">FinMind</span> <span class="kn">import</span> <span class="n">strategies</span>
+<span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">FinMind.strategies.base</span> <span class="kn">import</span> <span class="n">Strategy</span>
 <span class="kn">from</span> <span class="nn">ta.momentum</span> <span class="kn">import</span> <span class="n">StochasticOscillator</span>
-<span class="kn">from</span> <span class="nn">FinMind.BackTestSystem.BaseClass</span> <span class="kn">import</span> <span class="n">Strategy</span>
-<span class="kn">from</span> <span class="nn">FinMind.BackTestSystem</span> <span class="kn">import</span> <span class="n">BackTest</span>
 
-<span class="n">obj</span> <span class="o">=</span> <span class="n">BackTest</span><span class="p">(</span>
-<span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;0056&quot;</span><span class="p">,</span>
-<span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2018-01-01&quot;</span><span class="p">,</span>
-<span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2019-01-01&quot;</span><span class="p">,</span>
-<span class="n">trader_fund</span><span class="o">=</span><span class="mf">500000.0</span><span class="p">,</span>
-<span class="n">fee</span><span class="o">=</span><span class="mf">0.001425</span><span class="p">,</span>
+
+<span class="n">data_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># data_loader.login(user_id, password) # 可選</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">strategies</span><span class="o">.</span><span class="n">BackTest</span><span class="p">(</span>
+     <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;0056&quot;</span><span class="p">,</span>
+     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2018-01-01&quot;</span><span class="p">,</span>
+     <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2019-01-01&quot;</span><span class="p">,</span>
+     <span class="n">trader_fund</span><span class="o">=</span><span class="mf">500000.0</span><span class="p">,</span>
+     <span class="n">fee</span><span class="o">=</span><span class="mf">0.001425</span><span class="p">,</span>
+     <span class="n">data_loader</span><span class="o">=</span><span class="n">data_loader</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">stock_price</span>
 </code></pre></div>
@@ -955,40 +969,40 @@
 <div class="admonition info">
 <p class="admonition-title">設計策略</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Kd</span><span class="p">(</span><span class="n">Strategy</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">summary:</span>
-<span class="sd">     日KD 80 20</span>
-<span class="sd">     日K線 &lt;= 20 進場</span>
-<span class="sd">     日K線 &gt;= 80 出場</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">kdays</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="n">kd_upper</span> <span class="o">=</span> <span class="mi">80</span>
-<span class="n">kd_lower</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">def</span> <span class="nf">create_trade_sign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stock_price</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-     <span class="n">stock_price</span> <span class="o">=</span> <span class="n">stock_price</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
-     <span class="n">kd</span> <span class="o">=</span> <span class="n">StochasticOscillator</span><span class="p">(</span>
-          <span class="n">high</span><span class="o">=</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">],</span>
-          <span class="n">low</span><span class="o">=</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">],</span>
-          <span class="n">close</span><span class="o">=</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;close&quot;</span><span class="p">],</span>
-          <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kdays</span><span class="p">,</span>
-     <span class="p">)</span>
-     <span class="n">rsv_</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">stoch</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-     <span class="n">_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stock_price</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-     <span class="n">_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stock_price</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rsv_</span><span class="p">):</span>
-          <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-               <span class="n">_k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
-               <span class="n">_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
-          <span class="k">else</span><span class="p">:</span>
-               <span class="n">_k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_k</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">r</span> <span class="o">/</span> <span class="mi">3</span>
-               <span class="n">_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_d</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">_k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">3</span>
-     <span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_k</span>
-     <span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_d</span>
-     <span class="n">stock_price</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_price</span><span class="p">))</span>
-     <span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;signal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-     <span class="n">stock_price</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kd_lower</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-     <span class="n">stock_price</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kd_upper</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-     <span class="k">return</span> <span class="n">stock_price</span>
+     <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     summary:</span>
+<span class="sd">          日KD 80 20</span>
+<span class="sd">          日K線 &lt;= 20 進場</span>
+<span class="sd">          日K線 &gt;= 80 出場</span>
+<span class="sd">     &quot;&quot;&quot;</span>
+     <span class="n">kdays</span> <span class="o">=</span> <span class="mi">9</span>
+     <span class="n">kd_upper</span> <span class="o">=</span> <span class="mi">80</span>
+     <span class="n">kd_lower</span> <span class="o">=</span> <span class="mi">20</span>
+     <span class="k">def</span> <span class="nf">create_trade_sign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stock_price</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+          <span class="n">stock_price</span> <span class="o">=</span> <span class="n">stock_price</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+          <span class="n">kd</span> <span class="o">=</span> <span class="n">StochasticOscillator</span><span class="p">(</span>
+               <span class="n">high</span><span class="o">=</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">],</span>
+               <span class="n">low</span><span class="o">=</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">],</span>
+               <span class="n">close</span><span class="o">=</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;close&quot;</span><span class="p">],</span>
+               <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kdays</span><span class="p">,</span>
+          <span class="p">)</span>
+          <span class="n">rsv_</span> <span class="o">=</span> <span class="n">kd</span><span class="o">.</span><span class="n">stoch</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+          <span class="n">_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stock_price</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+          <span class="n">_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stock_price</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+          <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rsv_</span><span class="p">):</span>
+               <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">_k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+                    <span class="n">_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+               <span class="k">else</span><span class="p">:</span>
+                    <span class="n">_k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_k</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">r</span> <span class="o">/</span> <span class="mi">3</span>
+                    <span class="n">_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_d</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">_k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">3</span>
+          <span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_k</span>
+          <span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_d</span>
+          <span class="n">stock_price</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_price</span><span class="p">))</span>
+          <span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;signal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+          <span class="n">stock_price</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kd_lower</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+          <span class="n">stock_price</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stock_price</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kd_upper</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+          <span class="k">return</span> <span class="n">stock_price</span>
 </code></pre></div>
 </div>
 <div class="admonition info">
