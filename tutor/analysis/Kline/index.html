@@ -11,21 +11,21 @@
         <meta name="author" content="Sam">
       
       
-        <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/InterestRate/">
+        <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/analysis/Kline/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
-        <title>央行利率 - FinMind</title>
+        <title>K 線 - FinMind</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
         
       
     
@@ -68,7 +68,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interestrate" class="md-skip">
+        <a href="#kbar_plottingipynb" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +87,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="FinMind" class="md-header__button md-logo" aria-label="FinMind" data-md-component="logo">
+    <a href="../../.." title="FinMind" class="md-header__button md-logo" aria-label="FinMind" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              央行利率
+              K 線
             
           </span>
         </div>
@@ -184,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="FinMind" class="md-nav__button md-logo" aria-label="FinMind" data-md-component="logo">
+    <a href="../../.." title="FinMind" class="md-nav__button md-logo" aria-label="FinMind" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -216,7 +216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         總覽
       </a>
     </li>
@@ -231,7 +231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/" class="md-nav__link">
+      <a href="../../../quickstart/" class="md-nav__link">
         快速開始
       </a>
     </li>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../login/" class="md-nav__link">
+      <a href="../../../login/" class="md-nav__link">
         登入
       </a>
     </li>
@@ -259,14 +259,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         資料集
@@ -305,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TaiwanMarket/DataList/" class="md-nav__link">
+      <a href="../../TaiwanMarket/DataList/" class="md-nav__link">
         總覽
       </a>
     </li>
@@ -317,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TaiwanMarket/Technical/" class="md-nav__link">
+      <a href="../../TaiwanMarket/Technical/" class="md-nav__link">
         技術面
       </a>
     </li>
@@ -329,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TaiwanMarket/Chip/" class="md-nav__link">
+      <a href="../../TaiwanMarket/Chip/" class="md-nav__link">
         籌碼面
       </a>
     </li>
@@ -341,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TaiwanMarket/Fundamental/" class="md-nav__link">
+      <a href="../../TaiwanMarket/Fundamental/" class="md-nav__link">
         基本面
       </a>
     </li>
@@ -353,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TaiwanMarket/Derivative/" class="md-nav__link">
+      <a href="../../TaiwanMarket/Derivative/" class="md-nav__link">
         衍生性金融商品
       </a>
     </li>
@@ -365,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TaiwanMarket/Others/" class="md-nav__link">
+      <a href="../../TaiwanMarket/Others/" class="md-nav__link">
         其他
       </a>
     </li>
@@ -404,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UnitedStatesMarket/DataList/" class="md-nav__link">
+      <a href="../../UnitedStatesMarket/DataList/" class="md-nav__link">
         總覽
       </a>
     </li>
@@ -416,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UnitedStatesMarket/Technical/" class="md-nav__link">
+      <a href="../../UnitedStatesMarket/Technical/" class="md-nav__link">
         技術面
       </a>
     </li>
@@ -455,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UnitedKingdomMarket/DataList/" class="md-nav__link">
+      <a href="../../UnitedKingdomMarket/DataList/" class="md-nav__link">
         總覽
       </a>
     </li>
@@ -467,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UnitedKingdomMarket/Technical/" class="md-nav__link">
+      <a href="../../UnitedKingdomMarket/Technical/" class="md-nav__link">
         技術面
       </a>
     </li>
@@ -506,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../EuropeMarket/DataList/" class="md-nav__link">
+      <a href="../../EuropeMarket/DataList/" class="md-nav__link">
         總覽
       </a>
     </li>
@@ -518,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../EuropeMarket/Technical/" class="md-nav__link">
+      <a href="../../EuropeMarket/Technical/" class="md-nav__link">
         技術面
       </a>
     </li>
@@ -557,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../JapanMarket/DataList/" class="md-nav__link">
+      <a href="../../JapanMarket/DataList/" class="md-nav__link">
         總覽
       </a>
     </li>
@@ -569,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../JapanMarket/Technical/" class="md-nav__link">
+      <a href="../../JapanMarket/Technical/" class="md-nav__link">
         技術面
       </a>
     </li>
@@ -587,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ExchangeRate/" class="md-nav__link">
+      <a href="../../ExchangeRate/" class="md-nav__link">
         匯率
       </a>
     </li>
@@ -597,47 +595,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          央行利率
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../InterestRate/" class="md-nav__link">
         央行利率
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#interestrate" class="md-nav__link">
-    利率資料表 InterestRate
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -647,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Materials/" class="md-nav__link">
+      <a href="../../Materials/" class="md-nav__link">
         原物料市場
       </a>
     </li>
@@ -659,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Others/" class="md-nav__link">
+      <a href="../../Others/" class="md-nav__link">
         其他
       </a>
     </li>
@@ -678,12 +640,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         分析
@@ -701,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analysis/Backtesting/" class="md-nav__link">
+      <a href="../Backtesting/" class="md-nav__link">
         回測
       </a>
     </li>
@@ -713,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analysis/BacktestingOtherData/" class="md-nav__link">
+      <a href="../BacktestingOtherData/" class="md-nav__link">
         回測(引用外部 data)
       </a>
     </li>
@@ -725,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analysis/RealTimeDataSubscription/" class="md-nav__link">
+      <a href="../RealTimeDataSubscription/" class="md-nav__link">
         訂閱即時報價
       </a>
     </li>
@@ -735,11 +699,47 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../analysis/Kline/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          K 線
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         K 線
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kbar_plottingipynb" class="md-nav__link">
+    kbar_plotting.ipynb
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -749,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analysis/CustomerDashboardWebServer/" class="md-nav__link">
+      <a href="../CustomerDashboardWebServer/" class="md-nav__link">
         客製化看盤儀表板
       </a>
     </li>
@@ -791,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WhatIsNew/" class="md-nav__link">
+      <a href="../../../WhatIsNew/" class="md-nav__link">
         What's New
       </a>
     </li>
@@ -803,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../release/" class="md-nav__link">
+      <a href="../../../release/" class="md-nav__link">
         Release Note
       </a>
     </li>
@@ -848,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../StressTest/" class="md-nav__link">
+      <a href="../../../StressTest/" class="md-nav__link">
         壓力測試
       </a>
     </li>
@@ -863,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Contact/" class="md-nav__link">
+      <a href="../../../Contact/" class="md-nav__link">
         聯絡我們
       </a>
     </li>
@@ -878,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../License/" class="md-nav__link">
+      <a href="../../../License/" class="md-nav__link">
         使用條款
       </a>
     </li>
@@ -893,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Donate/" class="md-nav__link">
+      <a href="../../../Donate/" class="md-nav__link">
         贊助我們
       </a>
     </li>
@@ -939,8 +939,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interestrate" class="md-nav__link">
-    利率資料表 InterestRate
+  <a href="#kbar_plottingipynb" class="md-nav__link">
+    kbar_plotting.ipynb
   </a>
   
 </li>
@@ -957,80 +957,40 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FinMind/FinMind/edit/master/docs/tutor/InterestRate.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FinMind/FinMind/edit/master/docs/tutor/analysis/Kline.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>央行利率</h1>
+                  <h1>K 線</h1>
                 
-                <p>在利率市場，我們擁有 12 國央行資料集，如下:</p>
-<ul>
-<li><a href="https://finmind.github.io/tutor/InterestRate/#interestrate">利率資料表 InterestRate</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>data_id</th>
-<th>BOE</th>
-<th>RBA</th>
-<th>FED</th>
-<th>PBOC</th>
-<th>BOC</th>
-<th>ECB</th>
-<th>RBNZ</th>
-<th>RBI</th>
-<th>CBR</th>
-<th>BCB</th>
-<th>BOJ</th>
-<th>SNB</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>國家</td>
-<td>英格蘭銀行</td>
-<td>澳洲儲備銀行</td>
-<td>聯邦準備銀行</td>
-<td>中國人民銀行</td>
-<td>中國銀行</td>
-<td>歐洲中央銀行</td>
-<td>紐西蘭儲備銀行</td>
-<td>印度儲備銀行</td>
-<td>俄羅斯中央銀行</td>
-<td>馬來西亞商業銀行</td>
-<td>日本銀行</td>
-<td>瑞士國家銀行</td>
-</tr>
-</tbody>
-</table>
-<h4 id="interestrate">利率資料表 InterestRate<a class="headerlink" href="#interestrate" title="Permanent link">&para;</a></h4>
-<ul>
-<li>針對 FED 做示範</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;InterestRate&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;FED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1982-01-01&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+                <h4 id="kbar_plottingipynb"><a href="https://colab.research.google.com/drive/1u1cJGFNCLOeBIR0PdeKlsqgKBJSvJg_y?usp=sharing">kbar_plotting.ipynb</a><a class="headerlink" href="#kbar_plottingipynb" title="Permanent link">&para;</a></h4>
+<div class="admonition info">
+<p class="admonition-title">繪製 K 線</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 取得股價</span>
+<span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
-  <span class="n">country</span>        <span class="n">date</span> <span class="n">full_country_name</span>  <span class="n">interest_rate</span>
-<span class="mi">0</span>     <span class="n">FED</span>  <span class="mi">1982</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">27</span>   <span class="n">Federal</span> <span class="n">Reserve</span>          <span class="mf">10.25</span>
-<span class="mi">1</span>     <span class="n">FED</span>  <span class="mi">1982</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">01</span>   <span class="n">Federal</span> <span class="n">Reserve</span>          <span class="mf">10.00</span>
-<span class="mi">2</span>     <span class="n">FED</span>  <span class="mi">1982</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">07</span>   <span class="n">Federal</span> <span class="n">Reserve</span>           <span class="mf">9.50</span>
-<span class="mi">3</span>     <span class="n">FED</span>  <span class="mi">1982</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">19</span>   <span class="n">Federal</span> <span class="n">Reserve</span>           <span class="mf">9.00</span>
-<span class="mi">4</span>     <span class="n">FED</span>  <span class="mi">1982</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">14</span>   <span class="n">Federal</span> <span class="n">Reserve</span>           <span class="mf">8.50</span>
+<span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># 下載台股股價資料</span>
+<span class="n">stock_data</span> <span class="o">=</span> <span class="n">dl</span><span class="o">.</span><span class="n">taiwan_stock_daily</span><span class="p">(</span>
+<span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2609&#39;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2021-06-26&#39;</span>
+<span class="p">)</span>
+<span class="c1"># 下載三大法人資料</span>
+<span class="n">stock_data</span> <span class="o">=</span> <span class="n">dl</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">add_kline_institutional_investors</span><span class="p">(</span>
+<span class="n">stock_data</span>
+<span class="p">)</span> 
+<span class="c1"># 下載融資券資料</span>
+<span class="n">stock_data</span> <span class="o">=</span> <span class="n">dl</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">add_kline_margin_purchase_short_sale</span><span class="p">(</span>
+<span class="n">stock_data</span>
+<span class="p">)</span>
+
+<span class="c1"># 繪製k線圖</span>
+<span class="kn">from</span> <span class="nn">FinMind</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="n">plotting</span><span class="o">.</span><span class="n">kline</span><span class="p">(</span><span class="n">stock_data</span><span class="p">)</span>
 </code></pre></div>
+</div>
+<p><img alt="gif" src="https://finmind.github.io/images/kbar_plotting.gif" /></p>
                 
               
               
@@ -1050,7 +1010,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ExchangeRate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 匯率" rel="prev">
+        <a href="../RealTimeDataSubscription/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 訂閱即時報價" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1059,20 +1019,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              匯率
+              訂閱即時報價
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Materials/" class="md-footer__link md-footer__link--next" aria-label="Next: 原物料市場" rel="next">
+        <a href="../CustomerDashboardWebServer/" class="md-footer__link md-footer__link--next" aria-label="Next: 客製化看盤儀表板" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              原物料市場
+              客製化看盤儀表板
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1105,10 +1065,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
     
   </body>
