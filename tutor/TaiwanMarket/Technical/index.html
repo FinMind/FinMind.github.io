@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/TaiwanMarket/Technical/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
@@ -369,29 +369,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2000-taiwanstockticksnapshot-backersponsor" class="md-nav__link">
-    台股上市上櫃約2000檔股票，即時報價 TaiwanStockTickSnapshot (只限 backer、sponsor 會員使用)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taiwanstockpricetick-backersponsor" class="md-nav__link">
-    台灣股價即時資料表 TaiwanStockPriceTick (只限 backer、sponsor 會員使用)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#taiwanstockpricetick" class="md-nav__link">
     台灣股價歷史逐筆資料表 TaiwanStockPriceTick
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taiwanstockpricebidask-backersponsor" class="md-nav__link">
-    台股即時最佳五檔 TaiwanStockPriceBidAsk (只限 backer、sponsor 會員使用)
   </a>
   
 </li>
@@ -1053,29 +1032,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2000-taiwanstockticksnapshot-backersponsor" class="md-nav__link">
-    台股上市上櫃約2000檔股票，即時報價 TaiwanStockTickSnapshot (只限 backer、sponsor 會員使用)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taiwanstockpricetick-backersponsor" class="md-nav__link">
-    台灣股價即時資料表 TaiwanStockPriceTick (只限 backer、sponsor 會員使用)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#taiwanstockpricetick" class="md-nav__link">
     台灣股價歷史逐筆資料表 TaiwanStockPriceTick
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taiwanstockpricebidask-backersponsor" class="md-nav__link">
-    台股即時最佳五檔 TaiwanStockPriceBidAsk (只限 backer、sponsor 會員使用)
   </a>
   
 </li>
@@ -1148,14 +1106,11 @@
                 
                   <h1>技術面</h1>
                 
-                <p>在台股技術面，我們擁有 12 種資料集，如下:</p>
+                <p>在台股技術面，我們擁有 9 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfo">台股總覽 TaiwanStockInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockprice">台灣股價資料表 TaiwanStockPrice</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricetick-backersponsor">台灣股價即時資料表 TaiwanStockPriceTick</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#2000-taiwanstockticksnapshot-backersponsor">台股上市上櫃約2000檔股票，即時報價 TaiwanStockTickSnapshot</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricetick">台灣股價歷史逐筆資料表 TaiwanStockPriceTick</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricebidask-backersponsor">台股即時最佳五檔 TaiwanStockPriceBidAsk</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricebidask">歷史台股最佳五檔 TaiwanStockPriceBidAsk</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#5-taiwanstockstatisticsoforderbookandtrade">每5秒委託成交統計 TaiwanStockStatisticsOfOrderBookAndTrade</a></li>
@@ -1338,130 +1293,13 @@
 </div>
 </div>
 </div>
-<h4 id="2000-taiwanstockticksnapshot-backersponsor">台股上市上櫃約2000檔股票，即時報價 TaiwanStockTickSnapshot (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#2000-taiwanstockticksnapshot-backersponsor" title="Permanent link">&para;</a></h4>
-<ul>
-<li>台股上市上櫃約2000檔股票，即時報價</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Python</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_stock_tick_snapshot&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">}</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-    <span class="n">date</span> <span class="n">stock_id</span>  <span class="n">deal_price</span>  <span class="n">volume</span>           <span class="n">Time</span>  <span class="n">TickType</span>
-<span class="mi">0</span>         <span class="mi">00878</span>       <span class="mf">18.41</span>      <span class="mi">38</span>  <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">00.000000</span>         <span class="mi">2</span>
-<span class="mi">1</span>          <span class="mi">6752</span>       <span class="mf">62.50</span>       <span class="mi">1</span>  <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">00.000000</span>         <span class="mi">2</span>
-<span class="mi">2</span>          <span class="mi">1325</span>       <span class="mf">92.00</span>       <span class="mi">8</span>  <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">00.000000</span>         <span class="mi">2</span>
-<span class="mi">3</span>          <span class="mi">1906</span>       <span class="mf">21.70</span>       <span class="mi">3</span>  <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">00.000000</span>         <span class="mi">2</span>
-<span class="mi">4</span>          <span class="mi">3685</span>       <span class="mf">28.05</span>       <span class="mi">3</span>  <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">00.000000</span>         <span class="mi">1</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">R</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPriceTick&quot;</span><span class="p">,</span>
-    <span class="n">data_id</span><span class="o">=</span> <span class="s">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="n">streaming_all_data</span><span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span><span class="c1"># 拿取當天所有即時資料</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">)</span>
-<span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="n">data.table</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-        <span class="n">date</span> <span class="n">stock_id</span> <span class="n">deal_price</span> <span class="n">volume</span>               <span class="n">Time</span>
-<span class="m">1</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">332.5</span>    <span class="m">520</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">00.000000000</span>
-<span class="m">2</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">45</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">05.000000000</span>
-<span class="m">3</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">22</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">10.000000000</span>
-<span class="m">4</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">15</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">15.000000000</span>
-<span class="m">5</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.5</span>      <span class="m">3</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">20.000000000</span>
-<span class="m">6</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">20</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">25.000000000</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<h4 id="taiwanstockpricetick-backersponsor">台灣股價即時資料表 TaiwanStockPriceTick (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockpricetick-backersponsor" title="Permanent link">&para;</a></h4>
-<ul>
-<li>輸入 dataset、stock_id 參數，會回傳當天最近 100 筆即時資料。</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceTick&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;streaming_all_data&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="c1"># 拿取當天所有即時資料</span>
-    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">}</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-                <span class="n">date</span> <span class="n">stock_id</span>  <span class="n">deal_price</span>  <span class="n">volume</span>
-<span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>     <span class="mi">2330</span>       <span class="mf">332.5</span>     <span class="mi">520</span>
-<span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span>     <span class="mi">2330</span>       <span class="mf">333.0</span>      <span class="mi">45</span>
-<span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">10</span>     <span class="mi">2330</span>       <span class="mf">333.0</span>      <span class="mi">22</span>
-<span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">15</span>     <span class="mi">2330</span>       <span class="mf">333.0</span>      <span class="mi">15</span>
-<span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">20</span>     <span class="mi">2330</span>       <span class="mf">333.5</span>       <span class="mi">3</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPriceTick&quot;</span><span class="p">,</span>
-    <span class="n">data_id</span><span class="o">=</span> <span class="s">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="n">streaming_all_data</span><span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span><span class="c1"># 拿取當天所有即時資料</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">)</span>
-<span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="n">data.table</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-        <span class="n">date</span> <span class="n">stock_id</span> <span class="n">deal_price</span> <span class="n">volume</span>               <span class="n">Time</span>
-<span class="m">1</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">332.5</span>    <span class="m">520</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">00.000000000</span>
-<span class="m">2</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">45</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">05.000000000</span>
-<span class="m">3</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">22</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">10.000000000</span>
-<span class="m">4</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">15</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">15.000000000</span>
-<span class="m">5</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.5</span>      <span class="m">3</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">20.000000000</span>
-<span class="m">6</span><span class="o">:</span> <span class="m">2020-01-02</span>     <span class="m">2330</span>      <span class="m">333.0</span>     <span class="m">20</span> <span class="m">09</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">25.000000000</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 <h4 id="taiwanstockpricetick">台灣股價歷史逐筆資料表 TaiwanStockPriceTick<a class="headerlink" href="#taiwanstockpricetick" title="Permanent link">&para;</a></h4>
 <ul>
 <li>輸入 dataset、stock_id、start_date 參數，會回傳 start_date 當天資料。</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -1485,7 +1323,7 @@
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">20</span>     <span class="mi">2330</span>       <span class="mf">333.5</span>       <span class="mi">3</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">R</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1515,39 +1353,10 @@
 </div>
 </div>
 </div>
-<h4 id="taiwanstockpricebidask-backersponsor">台股即時最佳五檔 TaiwanStockPriceBidAsk (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockpricebidask-backersponsor" title="Permanent link">&para;</a></h4>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Python</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPriceBidAsk&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">}</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
-<span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]:</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-<span class="n">stock_id</span>                             <span class="n">AskPrice</span>                  <span class="n">AskVolume</span>                             <span class="n">BidPrice</span>                    <span class="n">BidVolume</span>             <span class="n">Time</span>
-<span class="mi">0</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1109</span><span class="p">,</span> <span class="mi">1505</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.559711</span>
-<span class="mi">1</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1112</span><span class="p">,</span> <span class="mi">1505</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.568170</span>
-<span class="mi">2</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1114</span><span class="p">,</span> <span class="mi">1505</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.592893</span>
-<span class="mi">3</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1114</span><span class="p">,</span> <span class="mi">1506</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.598656</span>
-<span class="mi">4</span>     <span class="mi">2330</span>  <span class="p">[</span><span class="mf">292.5</span><span class="p">,</span> <span class="mf">293.0</span><span class="p">,</span> <span class="mf">293.5</span><span class="p">,</span> <span class="mf">294.0</span><span class="p">,</span> <span class="mf">294.5</span><span class="p">]</span>  <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">452</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">291</span><span class="p">]</span>  <span class="p">[</span><span class="mf">292.0</span><span class="p">,</span> <span class="mf">291.5</span><span class="p">,</span> <span class="mf">291.0</span><span class="p">,</span> <span class="mf">290.5</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">]</span>  <span class="p">[</span><span class="mi">67</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">1116</span><span class="p">,</span> <span class="mi">1506</span><span class="p">,</span> <span class="mi">7097</span><span class="p">]</span>  <span class="mi">13</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">54.907709</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 <h4 id="taiwanstockpricebidask">歷史台股最佳五檔 TaiwanStockPriceBidAsk<a class="headerlink" href="#taiwanstockpricebidask" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -1577,7 +1386,7 @@
 <h4 id="perpbr-taiwanstockper">個股PER、PBR資料表 TaiwanStockPER<a class="headerlink" href="#perpbr-taiwanstockper" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1599,7 +1408,7 @@
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span>     <span class="mi">2330</span>           <span class="mf">3.36</span>  <span class="mf">21.25</span>  <span class="mf">4.53</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">R</label><div class="tabbed-content">
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1633,7 +1442,7 @@
 <p>(由於資料量過大，只提供 date 當天 data)</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1648,7 +1457,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">R</label><div class="tabbed-content">
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1673,7 +1482,7 @@
 <h4 id="taiwanvariousindicators5seconds">加權指數 TaiwanVariousIndicators5Seconds<a class="headerlink" href="#taiwanvariousindicators5seconds" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1695,7 +1504,7 @@
 <span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">20</span>  <span class="mf">11644.2</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">R</label><div class="tabbed-content">
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1721,7 +1530,7 @@
 <h4 id="taiwanstockdaytrading">當日沖銷交易標的及成交量值 TaiwanStockDayTrading<a class="headerlink" href="#taiwanstockdaytrading" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1745,7 +1554,7 @@
 <span class="mi">4</span>     <span class="mi">2330</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">10</span>            <span class="n">Y</span>  <span class="mi">1590000</span>   <span class="mi">445516000</span>   <span class="mi">444576000</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">R</label><div class="tabbed-content">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1778,7 +1587,7 @@
 <h4 id="backersponsor_1">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_1" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockDayTrading&quot;</span><span class="p">,</span>
@@ -1798,7 +1607,7 @@
 <span class="mi">4</span>     <span class="mi">0054</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">06</span>                     <span class="mi">0</span>          <span class="mi">0</span>           <span class="mi">0</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">R</label><div class="tabbed-content">
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1830,7 +1639,7 @@
 <h4 id="taiwanstocktotalreturnindex">加權、櫃買報酬指數 TaiwanStockTotalReturnIndex<a class="headerlink" href="#taiwanstocktotalreturnindex" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1855,7 +1664,7 @@
 <span class="mi">4</span>  <span class="mf">18993.95</span>    <span class="n">TAIEX</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">10</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">R</label><div class="tabbed-content">
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1960,10 +1769,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
       
     
   </body>
