@@ -356,6 +356,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#taiwanstockpriceadj" class="md-nav__link">
+    台灣還原股價資料表 TaiwanStockPriceAdj
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#taiwanstockpricetick" class="md-nav__link">
     台灣股價歷史逐筆資料表 TaiwanStockPriceTick
   </a>
@@ -1019,6 +1026,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#taiwanstockpriceadj" class="md-nav__link">
+    台灣還原股價資料表 TaiwanStockPriceAdj
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#taiwanstockpricetick" class="md-nav__link">
     台灣股價歷史逐筆資料表 TaiwanStockPriceTick
   </a>
@@ -1093,10 +1107,11 @@
                 
                   <h1>技術面</h1>
                 
-                <p>在台股技術面，我們擁有 8 種資料集，如下:</p>
+                <p>在台股技術面，我們擁有 10 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfo">台股總覽 TaiwanStockInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockprice">台灣股價資料表 TaiwanStockPrice</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceadj">台灣還原股價資料表 TaiwanStockPriceAdj</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricetick">台灣股價歷史逐筆資料表 TaiwanStockPriceTick</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwan_stock_tick_snapshot-backersponsor">台股即時資訊 taiwan_stock_tick_snapshot</a></li>
@@ -1491,6 +1506,108 @@
 <td align="right">20.03</td>
 <td align="right">0</td>
 <td align="right">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="taiwanstockpriceadj">台灣還原股價資料表 TaiwanStockPriceAdj<a class="headerlink" href="#taiwanstockpriceadj" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_daily_adj</span><span class="p">(</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-02&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-04-12&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="right">stock_id</th>
+<th align="right">Trading_Volume</th>
+<th align="right">Trading_money</th>
+<th align="right">open</th>
+<th align="right">max</th>
+<th align="right">min</th>
+<th align="right">close</th>
+<th align="right">spread</th>
+<th align="right">Trading_turnover</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2020-04-06</td>
+<td align="right">2330</td>
+<td align="right">59712754</td>
+<td align="right">16324198154</td>
+<td align="right">273</td>
+<td align="right">275.5</td>
+<td align="right">270</td>
+<td align="right">275.5</td>
+<td align="right">4</td>
+<td align="right">19971</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2020-04-07</td>
+<td align="right">2330</td>
+<td align="right">48887346</td>
+<td align="right">13817936851</td>
+<td align="right">283.5</td>
+<td align="right">284</td>
+<td align="right">280.5</td>
+<td align="right">283</td>
+<td align="right">7.5</td>
+<td align="right">24281</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2020-04-08</td>
+<td align="right">2330</td>
+<td align="right">38698826</td>
+<td align="right">11016972354</td>
+<td align="right">285</td>
+<td align="right">285.5</td>
+<td align="right">283</td>
+<td align="right">285</td>
+<td align="right">2</td>
+<td align="right">19126</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2020-04-09</td>
+<td align="right">2330</td>
+<td align="right">29276430</td>
+<td align="right">8346209654</td>
+<td align="right">287.5</td>
+<td align="right">288</td>
+<td align="right">282.5</td>
+<td align="right">283</td>
+<td align="right">-2</td>
+<td align="right">15271</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">2020-04-10</td>
+<td align="right">2330</td>
+<td align="right">28206858</td>
+<td align="right">7894277586</td>
+<td align="right">280</td>
+<td align="right">282</td>
+<td align="right">279</td>
+<td align="right">279.5</td>
+<td align="right">-3.5</td>
+<td align="right">15833</td>
 </tr>
 </tbody>
 </table>
