@@ -432,7 +432,7 @@
       
         <li class="md-nav__item">
   <a href="#taiwandailyshortsalebalances" class="md-nav__link">
-    融券借券賣出 TaiwanDailyShortSaleBalances
+    融券借券賣出表 TaiwanDailyShortSaleBalances
   </a>
   
 </li>
@@ -440,6 +440,13 @@
         <li class="md-nav__item">
   <a href="#backersponsor_5" class="md-nav__link">
     一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanstocktradingdailyreport-backersponsor" class="md-nav__link">
+    台股分點資料表 TaiwanStockTradingDailyReport (只限 backer、sponsor 會員使用)
   </a>
   
 </li>
@@ -1104,7 +1111,7 @@
       
         <li class="md-nav__item">
   <a href="#taiwandailyshortsalebalances" class="md-nav__link">
-    融券借券賣出 TaiwanDailyShortSaleBalances
+    融券借券賣出表 TaiwanDailyShortSaleBalances
   </a>
   
 </li>
@@ -1112,6 +1119,13 @@
         <li class="md-nav__item">
   <a href="#backersponsor_5" class="md-nav__link">
     一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanstocktradingdailyreport-backersponsor" class="md-nav__link">
+    台股分點資料表 TaiwanStockTradingDailyReport (只限 backer、sponsor 會員使用)
   </a>
   
 </li>
@@ -1135,7 +1149,7 @@
                 
                   <h1>籌碼面</h1>
                 
-                <p>在台股籌碼面，我們擁有 8 種資料集，如下:</p>
+                <p>在台股籌碼面，我們擁有 9 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -1145,6 +1159,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockholdingsharesper">股權持股分級表 TaiwanStockHoldingSharesPer</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocksecuritieslending">借券成交明細 TaiwanStockSecuritiesLending</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwandailyshortsalebalances">融券借券賣出表 TaiwanDailyShortSaleBalances</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktradingdailyreport-backersponsor">台股分點資料表 TaiwanStockTradingDailyReport</a></li>
 </ul>
 <h4 id="taiwanstockmarginpurchaseshortsale">融資融劵表 TaiwanStockMarginPurchaseShortSale<a class="headerlink" href="#taiwanstockmarginpurchaseshortsale" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
@@ -2743,7 +2758,7 @@
 </tbody>
 </table>
 </div>
-<h4 id="taiwandailyshortsalebalances">融券借券賣出 TaiwanDailyShortSaleBalances<a class="headerlink" href="#taiwandailyshortsalebalances" title="Permanent link">&para;</a></h4>
+<h4 id="taiwandailyshortsalebalances">融券借券賣出表 TaiwanDailyShortSaleBalances<a class="headerlink" href="#taiwandailyshortsalebalances" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Package</label><div class="tabbed-content">
@@ -3083,6 +3098,118 @@
 </tbody>
 </table>
 </div>
+<h4 id="taiwanstocktradingdailyreport-backersponsor">台股分點資料表 TaiwanStockTradingDailyReport (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstocktradingdailyreport-backersponsor" title="Permanent link">&para;</a></h4>
+<p>資料時間長度：2021-06-30 ~ now</p>
+<p>(由於資料量過大，單次請求只提供一天資料)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockTradingDailyReport&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-30&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockTradingDailyReport&quot;</span><span class="p">,</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2021-06-30&quot;</span><span class="p">,</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">token</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">securities_trader</th>
+<th align="right">price</th>
+<th align="right">buy</th>
+<th align="right">sell</th>
+<th align="right">securities_trader_id</th>
+<th align="right">stock_id</th>
+<th align="left">date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">合庫</td>
+<td align="right">595</td>
+<td align="right">1177</td>
+<td align="right">55</td>
+<td align="right">1020</td>
+<td align="right">2330</td>
+<td align="left">2021-06-30</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">合庫</td>
+<td align="right">596</td>
+<td align="right">267</td>
+<td align="right">0</td>
+<td align="right">1020</td>
+<td align="right">2330</td>
+<td align="left">2021-06-30</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">合庫</td>
+<td align="right">597</td>
+<td align="right">0</td>
+<td align="right">12000</td>
+<td align="right">1020</td>
+<td align="right">2330</td>
+<td align="left">2021-06-30</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">合庫</td>
+<td align="right">598</td>
+<td align="right">1000</td>
+<td align="right">10200</td>
+<td align="right">1020</td>
+<td align="right">2330</td>
+<td align="left">2021-06-30</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">合庫</td>
+<td align="right">599</td>
+<td align="right">0</td>
+<td align="right">3000</td>
+<td align="right">1020</td>
+<td align="right">2330</td>
+<td align="left">2021-06-30</td>
+</tr>
+</tbody>
+</table>
                 
               
               
