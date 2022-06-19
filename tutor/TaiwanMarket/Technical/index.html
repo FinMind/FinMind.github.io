@@ -2413,6 +2413,8 @@
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_stock_tick_snapshot&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="c1"># &quot;data_id&quot;: [&quot;2330&quot;, &quot;2317&quot;], # 一次拿多個</span>
+    <span class="c1"># &quot;data_id&quot;: &quot;&quot;, # 一次全部</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -2430,6 +2432,8 @@
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
     <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="c1"># data_id=c(&quot;2330&quot;, &quot;2317&quot;), # 一次拿多個</span>
+    <span class="c1"># data_id=&quot;&quot;, # 一次全部</span>
     <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
 <span class="p">)</span>
@@ -2444,7 +2448,6 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
-</div>
 <table>
 <thead>
 <tr>
@@ -2497,6 +2500,7 @@
 </tr>
 </tbody>
 </table>
+</div>
                 
               
               

@@ -995,41 +995,177 @@
 <ul>
 <li>這張資料表主要是列出美國所有上市上櫃的股票名稱，代碼和產業類別</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v3/data?dataset=USStockInfo&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;USStockInfo&quot;</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-        <span class="n">date</span>              <span class="o">...</span>                                 <span class="n">stock_name</span>
-<span class="mi">0</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>              <span class="o">...</span>               <span class="n">Dow</span> <span class="n">Jones</span> <span class="n">Industrial</span> <span class="n">Average</span>
-<span class="mi">1</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">10</span>              <span class="o">...</span>                                      <span class="n">sp500</span>
-<span class="mi">2</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>              <span class="o">...</span>                           <span class="n">NASDAQ</span> <span class="n">Composite</span>
-<span class="mi">3</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>              <span class="o">...</span>                         <span class="n">PHLX</span> <span class="n">Semiconductor</span>
-<span class="mi">4</span>        <span class="kc">None</span>              <span class="o">...</span>                      <span class="n">CBOE</span> <span class="n">Volatility</span> <span class="n">Index</span>
 </code></pre></div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="left">stock_id</th>
+<th align="left">Country</th>
+<th align="right">IPOYear</th>
+<th align="right">MarketCap</th>
+<th align="left">Subsector</th>
+<th align="left">stock_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2019-01-10</td>
+<td align="left">A</td>
+<td align="left">United States</td>
+<td align="right">1999</td>
+<td align="right">21610000000</td>
+<td align="left">Biotechnology:LaboratoryAnalyticalInstruments</td>
+<td align="left">Agilent Technologies, Inc.</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2019-01-10</td>
+<td align="left">AA</td>
+<td align="left">n/a</td>
+<td align="right">2016</td>
+<td align="right">5270000000</td>
+<td align="left">Aluminum</td>
+<td align="left">Alcoa Corporation</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2019-01-10</td>
+<td align="left">AABA</td>
+<td align="left">United States</td>
+<td align="right">0</td>
+<td align="right">36780000000</td>
+<td align="left">EDPServices</td>
+<td align="left">Altaba Inc.</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2019-01-10</td>
+<td align="left">AAC</td>
+<td align="left">United States</td>
+<td align="right">2014</td>
+<td align="right">55360000</td>
+<td align="left">MedicalSpecialities</td>
+<td align="left">AAC Holdings, Inc.</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">2019-01-10</td>
+<td align="left">AAL</td>
+<td align="left">United States</td>
+<td align="right">0</td>
+<td align="right">14930000000</td>
+<td align="left">AirFreight/DeliveryServices</td>
+<td align="left">American Airlines Group, Inc.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h4 id="minute-usstockpriceminute">美國股價 minute 資料表 USStockPriceMinute<a class="headerlink" href="#minute-usstockpriceminute" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v3/data?dataset=USStockPriceMinute&amp;stock_id=^DJI&amp;date=2020-02-13&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;USStockPriceMinute&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;^DJI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-06-16&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-                <span class="n">date</span> <span class="n">stock_id</span>    <span class="n">close</span>   <span class="o">...</span>        <span class="n">low</span>     <span class="nb">open</span>  <span class="n">volume</span>
-<span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29491.0</span>   <span class="o">...</span>    <span class="mf">29491.0</span>  <span class="mf">29510.4</span>  <span class="mi">708882</span>
-<span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29490.5</span>   <span class="o">...</span>    <span class="mf">29477.4</span>  <span class="mf">29483.9</span>  <span class="mi">766202</span>
-<span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29468.7</span>   <span class="o">...</span>    <span class="mf">29467.3</span>  <span class="mf">29490.0</span>  <span class="mi">577330</span>
-<span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29474.1</span>   <span class="o">...</span>    <span class="mf">29465.8</span>  <span class="mf">29468.0</span>  <span class="mi">439754</span>
-<span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">00</span>     <span class="o">^</span><span class="n">DJI</span>  <span class="mf">29473.3</span>   <span class="o">...</span>    <span class="mf">29473.3</span>  <span class="mf">29474.7</span>  <span class="mi">412897</span>
 </code></pre></div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="left">stock_id</th>
+<th align="right">close</th>
+<th align="right">high</th>
+<th align="right">low</th>
+<th align="right">open</th>
+<th align="right">volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2022-06-16 13:31:00</td>
+<td align="left">^DJI</td>
+<td align="right">30082.5</td>
+<td align="right">30094.9</td>
+<td align="right">30076.6</td>
+<td align="right">30091.4</td>
+<td align="right">1686944</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2022-06-16 13:32:00</td>
+<td align="left">^DJI</td>
+<td align="right">30075.6</td>
+<td align="right">30087.9</td>
+<td align="right">30069.2</td>
+<td align="right">30081.7</td>
+<td align="right">1939377</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2022-06-16 13:33:00</td>
+<td align="left">^DJI</td>
+<td align="right">30039.5</td>
+<td align="right">30085.8</td>
+<td align="right">30036.4</td>
+<td align="right">30078.1</td>
+<td align="right">1589351</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2022-06-16 13:34:00</td>
+<td align="left">^DJI</td>
+<td align="right">30001.6</td>
+<td align="right">30036.5</td>
+<td align="right">29995.9</td>
+<td align="right">30036.5</td>
+<td align="right">2127155</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">2022-06-16 13:35:00</td>
+<td align="left">^DJI</td>
+<td align="right">29996.7</td>
+<td align="right">30008</td>
+<td align="right">29984.3</td>
+<td align="right">30002.2</td>
+<td align="right">1917277</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h4 id="daily-usstockprice">美國股價 daily 資料表 USStockPrice<a class="headerlink" href="#daily-usstockprice" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
@@ -1037,18 +1173,94 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v3/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;USStockPrice&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;AAPL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;^DJI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-06-16&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-16&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
-
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="left">stock_id</th>
+<th align="right">Adj_Close</th>
+<th align="right">Close</th>
+<th align="right">High</th>
+<th align="right">Low</th>
+<th align="right">Open</th>
+<th align="right">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2020-06-16</td>
+<td align="left">^DJI</td>
+<td align="right">26290</td>
+<td align="right">26290</td>
+<td align="right">26611</td>
+<td align="right">25811.7</td>
+<td align="right">26326.7</td>
+<td align="right">489500000</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2020-06-17</td>
+<td align="left">^DJI</td>
+<td align="right">26119.6</td>
+<td align="right">26119.6</td>
+<td align="right">26400.1</td>
+<td align="right">26068.4</td>
+<td align="right">26330.5</td>
+<td align="right">328830000</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2020-06-18</td>
+<td align="left">^DJI</td>
+<td align="right">26080.1</td>
+<td align="right">26080.1</td>
+<td align="right">26154.2</td>
+<td align="right">25848.5</td>
+<td align="right">26016.5</td>
+<td align="right">328390000</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2020-06-19</td>
+<td align="left">^DJI</td>
+<td align="right">25871.5</td>
+<td align="right">25871.5</td>
+<td align="right">26451.4</td>
+<td align="right">25759.7</td>
+<td align="right">26213.1</td>
+<td align="right">669390000</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">2020-06-22</td>
+<td align="left">^DJI</td>
+<td align="right">26025</td>
+<td align="right">26025</td>
+<td align="right">26059.8</td>
+<td align="right">25667.7</td>
+<td align="right">25865.1</td>
+<td align="right">351780000</td>
+</tr>
+</tbody>
+</table>
 </div>
                 
               

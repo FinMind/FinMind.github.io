@@ -980,39 +980,167 @@
 <ul>
 <li>這張資料表主要是列出英國所有上市上櫃的股票名稱，代碼和產業類別</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v3/data?dataset=UKStockInfo&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;UKStockInfo&quot;</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-<span class="n">date</span> <span class="n">stock_id</span> <span class="n">Country</span>   <span class="n">stock_name</span>
-<span class="mi">0</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">17</span><span class="n">MA</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>  <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span> <span class="mi">22</span>
-<span class="mi">1</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">44</span><span class="n">CI</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>  <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span> <span class="mi">21</span>
-<span class="mi">2</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">47</span><span class="n">HF</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>   <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="mf">.21</span>
-<span class="mi">3</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">58</span><span class="n">MF</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>   <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="mf">.21</span>
-<span class="mi">4</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span>   <span class="mi">59</span><span class="n">FK</span><span class="o">.</span><span class="n">L</span>     <span class="n">AMD</span>  <span class="n">EURO</span><span class="o">.</span><span class="n">BK</span><span class="o">.</span> <span class="mi">20</span>
 </code></pre></div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="left">stock_id</th>
+<th align="left">Country</th>
+<th align="left">stock_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2019-01-31</td>
+<td align="left">01IC.L</td>
+<td align="left">USD</td>
+<td align="left">QUEBEC FRN20</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2019-01-31</td>
+<td align="left">01IE.L</td>
+<td align="left">USD</td>
+<td align="left">ROY.BK.SCOTSERB</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2019-01-31</td>
+<td align="left">01KG.L</td>
+<td align="left">GBP</td>
+<td align="left">SCOT.AMER.8%DB.</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2019-01-31</td>
+<td align="left">01LQ.L</td>
+<td align="left">GBP</td>
+<td align="left">SCOT.PWR.UK6T23</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">2019-01-31</td>
+<td align="left">01LT.L</td>
+<td align="left">GBP</td>
+<td align="left">RES.MORT.4CTBRA</td>
+</tr>
+</tbody>
+</table>
 <h4 id="ukstockprice">英國股價資料表 UKStockPrice<a class="headerlink" href="#ukstockprice" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v3/data?dataset=UKStockPrice&amp;stock_id=BP.L&amp;date=2019-01-01&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;UKStockPrice&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;BP.L&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-06-16&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-16&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-   <span class="n">Adj_Close</span>  <span class="n">Close</span>   <span class="n">High</span>    <span class="o">...</span>       <span class="n">Volume</span>        <span class="n">date</span>  <span class="n">stock_id</span>
-<span class="mi">0</span>    <span class="mf">497.866</span>  <span class="mf">507.3</span>  <span class="mf">509.6</span>    <span class="o">...</span>     <span class="mi">33397201</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
-<span class="mi">1</span>    <span class="mf">499.240</span>  <span class="mf">508.7</span>  <span class="mf">514.4</span>    <span class="o">...</span>     <span class="mi">38347439</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
-<span class="mi">2</span>    <span class="mf">511.115</span>  <span class="mf">520.8</span>  <span class="mf">524.5</span>    <span class="o">...</span>     <span class="mi">34897489</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
-<span class="mi">3</span>    <span class="mf">511.115</span>  <span class="mf">520.8</span>  <span class="mf">524.4</span>    <span class="o">...</span>     <span class="mi">32659884</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
-<span class="mi">4</span>    <span class="mf">510.134</span>  <span class="mf">519.8</span>  <span class="mf">528.2</span>    <span class="o">...</span>     <span class="mi">28449464</span>  <span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">08</span>      <span class="n">BP</span><span class="o">.</span><span class="n">L</span>
 </code></pre></div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="left">stock_id</th>
+<th align="right">Adj_Close</th>
+<th align="right">Close</th>
+<th align="right">High</th>
+<th align="right">Low</th>
+<th align="right">Open</th>
+<th align="right">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2020-06-16</td>
+<td align="left">BP.L</td>
+<td align="right">290.26</td>
+<td align="right">321.65</td>
+<td align="right">331.8</td>
+<td align="right">318.65</td>
+<td align="right">322.15</td>
+<td align="right">55470516</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2020-06-17</td>
+<td align="left">BP.L</td>
+<td align="right">285.84</td>
+<td align="right">316.75</td>
+<td align="right">328.35</td>
+<td align="right">315.1</td>
+<td align="right">322.85</td>
+<td align="right">38005133</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2020-06-18</td>
+<td align="left">BP.L</td>
+<td align="right">284.13</td>
+<td align="right">314.85</td>
+<td align="right">316.7</td>
+<td align="right">308.9</td>
+<td align="right">313.9</td>
+<td align="right">33988764</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2020-06-19</td>
+<td align="left">BP.L</td>
+<td align="right">290.08</td>
+<td align="right">321.45</td>
+<td align="right">325.95</td>
+<td align="right">315.7</td>
+<td align="right">316.8</td>
+<td align="right">95409968</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">2020-06-22</td>
+<td align="left">BP.L</td>
+<td align="right">284.67</td>
+<td align="right">315.45</td>
+<td align="right">318.9</td>
+<td align="right">311.1</td>
+<td align="right">318.15</td>
+<td align="right">58369094</td>
+</tr>
+</tbody>
+</table>
                 
               
               
