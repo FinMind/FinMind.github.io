@@ -460,6 +460,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#securitiestraderinfo" class="md-nav__link">
+    證券商資訊表 SecuritiesTraderInfo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#query-by-taiwanstocktradingdailyreport-backersponsor" class="md-nav__link">
     台股分點資料表(query by 股票代碼) TaiwanStockTradingDailyReport (只限 backer、sponsor 會員使用)
   </a>
@@ -1146,6 +1153,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#securitiestraderinfo" class="md-nav__link">
+    證券商資訊表 SecuritiesTraderInfo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#query-by-taiwanstocktradingdailyreport-backersponsor" class="md-nav__link">
     台股分點資料表(query by 股票代碼) TaiwanStockTradingDailyReport (只限 backer、sponsor 會員使用)
   </a>
@@ -1178,7 +1192,7 @@
                 
                   <h1>籌碼面</h1>
                 
-                <p>在台股籌碼面，我們擁有 9 種資料集，如下:</p>
+                <p>在台股籌碼面，我們擁有 10 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -1188,6 +1202,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockholdingsharesper">股權持股分級表 TaiwanStockHoldingSharesPer</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocksecuritieslending">借券成交明細 TaiwanStockSecuritiesLending</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwandailyshortsalebalances">融券借券賣出表 TaiwanDailyShortSaleBalances</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#securitiestraderinfo">證券商資訊表 SecuritiesTraderInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstocktradingdailyreport-backersponsor">台股分點資料表(query by 股票代碼) TaiwanStockTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstocktradingdailyreport-backersponsor_1">台股分點資料表(query by 券商代碼) TaiwanStockTradingDailyReport</a></li>
 </ul>
@@ -3128,12 +3143,110 @@
 </tbody>
 </table>
 </div>
+<h4 id="securitiestraderinfo">證券商資訊表 SecuritiesTraderInfo<a class="headerlink" href="#securitiestraderinfo" title="Permanent link">&para;</a></h4>
+<ul>
+<li>提供證券商相關資訊，用於台股分點資料表(TaiwanStockTradingDailyReport )，使用卷商代碼，查詢特定卷商所有股票進出。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;SecuritiesTraderInfo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="s">&quot;SecuritiesTraderInfo&quot;</span><span class="p">,</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="right">securities_trader_id</th>
+<th align="left">securities_trader</th>
+<th align="left">date</th>
+<th align="left">address</th>
+<th align="left">phone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">1020</td>
+<td align="left">合庫</td>
+<td align="left">2011-12-02</td>
+<td align="left">台北市大安區忠孝東路四段325號2樓(部分)、經紀部複委託科地址：台北市松山區長安東路二段225號5樓</td>
+<td align="left">02-27528000</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">1021</td>
+<td align="left">合庫- 台中</td>
+<td align="left">2011-12-02</td>
+<td align="left">台中市西區民權路91號6樓</td>
+<td align="left">04-22255141</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">1022</td>
+<td align="left">合庫-台南</td>
+<td align="left">2011-12-02</td>
+<td align="left">台南市北區成功路48號3樓</td>
+<td align="left">06-2260148</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">1023</td>
+<td align="left">合庫-高雄</td>
+<td align="left">2011-12-02</td>
+<td align="left">高雄市大勇路97號5樓</td>
+<td align="left">07-5319755</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">1024</td>
+<td align="left">合庫-嘉義</td>
+<td align="left">2011-12-02</td>
+<td align="left">嘉義市國華街279號2樓</td>
+<td align="left">05-2220016</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h4 id="query-by-taiwanstocktradingdailyreport-backersponsor">台股分點資料表(query by 股票代碼) TaiwanStockTradingDailyReport (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#query-by-taiwanstocktradingdailyreport-backersponsor" title="Permanent link">&para;</a></h4>
 <p>資料時間長度：2021-06-30 ~ now</p>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Python-request</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -3149,7 +3262,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">R</label><div class="tabbed-content">
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -3245,7 +3358,7 @@
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">Python-request</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -3261,7 +3374,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">R</label><div class="tabbed-content">
+<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
