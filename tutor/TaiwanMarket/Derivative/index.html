@@ -1261,6 +1261,9 @@
 </table>
 </div>
 <h4 id="taiwanfuturesdaily">期貨日成交資訊 TaiwanFuturesDaily<a class="headerlink" href="#taiwanfuturesdaily" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料更新時間 <strong>星期一至五 16:30</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Package</label><div class="tabbed-content">
@@ -1572,6 +1575,9 @@
 </table>
 </div>
 <h4 id="taiwanoptiondaily">選擇權日成交資訊 TaiwanOptionDaily<a class="headerlink" href="#taiwanoptiondaily" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料更新時間 <strong>星期一至五 16:30</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Package</label><div class="tabbed-content">
@@ -1883,6 +1889,9 @@
 </div>
 <h4 id="taiwanfuturestick">期貨交易明細表 TaiwanFuturesTick<a class="headerlink" href="#taiwanfuturestick" title="Permanent link">&para;</a></h4>
 <p>由於資料量過大，單次請求只提供一天資料</p>
+<ul>
+<li>資料更新時間 <strong>星期一至五 6:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Package</label><div class="tabbed-content">
@@ -1928,8 +1937,8 @@
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
@@ -1995,6 +2004,9 @@
 </div>
 <h4 id="taiwanoptiontick">選擇權交易明細表 TaiwanOptionTick<a class="headerlink" href="#taiwanoptiontick" title="Permanent link">&para;</a></h4>
 <p>由於資料量過大，單次請求只提供一天資料</p>
+<ul>
+<li>資料更新時間 <strong>星期一至五 6:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Package</label><div class="tabbed-content">
@@ -2040,8 +2052,8 @@
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
@@ -2118,6 +2130,9 @@
 </table>
 </div>
 <h4 id="taiwanfuturesinstitutionalinvestors">期貨三大法人買賣 TaiwanFuturesInstitutionalInvestors<a class="headerlink" href="#taiwanfuturesinstitutionalinvestors" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Package</label><div class="tabbed-content">
@@ -2165,8 +2180,8 @@
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
@@ -2409,6 +2424,9 @@
 </table>
 </div>
 <h4 id="taiwanoptioninstitutionalinvestors">選擇權三大法人買賣 TaiwanOptionInstitutionalInvestors<a class="headerlink" href="#taiwanoptioninstitutionalinvestors" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料更新時間 <strong>星期一至五 16:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Package</label><div class="tabbed-content">
@@ -2456,8 +2474,8 @@
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
@@ -2701,6 +2719,9 @@
 </table>
 </div>
 <h4 id="taiwanfuturesdealertradingvolumedaily">期貨各卷商每日交易 TaiwanFuturesDealerTradingVolumeDaily<a class="headerlink" href="#taiwanfuturesdealertradingvolumedaily" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料更新時間 <strong>星期一至五 19:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Package</label><div class="tabbed-content">
@@ -2748,8 +2769,8 @@
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
@@ -2932,6 +2953,9 @@
 </table>
 </div>
 <h4 id="taiwanoptiondealertradingvolumedaily">選擇權各卷商每日交易 TaiwanOptionDealerTradingVolumeDaily<a class="headerlink" href="#taiwanoptiondealertradingvolumedaily" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Package</label><div class="tabbed-content">
@@ -2979,8 +3003,8 @@
 <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span> 
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
 <span class="n">data.table</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
