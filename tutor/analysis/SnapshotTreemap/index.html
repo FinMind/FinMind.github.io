@@ -11,14 +11,14 @@
         <meta name="author" content="Sam">
       
       
-        <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/analysis/Kline/">
+        <link rel="canonical" href="https://finmind.github.io/FinMindDoc/tutor/analysis/SnapshotTreemap/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
-        <title>K 線 - FinMind</title>
+        <title>即時股市資訊 X 板塊圖 - FinMind</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kbar_plottingipynb" class="md-skip">
+        <a href="#136-html" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              K 線
+              即時股市資訊 X 板塊圖
             
           </span>
         </div>
@@ -701,47 +701,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          K 線
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Kline/" class="md-nav__link">
         K 線
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#kbar_plottingipynb" class="md-nav__link">
-    kbar_plotting.ipynb
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -761,11 +725,68 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../SnapshotTreemap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          即時股市資訊 X 板塊圖
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         即時股市資訊 X 板塊圖
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#136-html" class="md-nav__link">
+    預期執行結果如下（已在程式碼 136 行，加入 html 語法，網頁會自動更新）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    如何執行？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    程式碼如下
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    REF
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -953,8 +974,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kbar_plottingipynb" class="md-nav__link">
-    kbar_plotting.ipynb
+  <a href="#136-html" class="md-nav__link">
+    預期執行結果如下（已在程式碼 136 行，加入 html 語法，網頁會自動更新）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    如何執行？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    程式碼如下
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    REF
   </a>
   
 </li>
@@ -971,40 +1013,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FinMind/FinMind/edit/master/docs/tutor/analysis/Kline.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FinMind/FinMind/edit/master/docs/tutor/analysis/SnapshotTreemap.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>K 線</h1>
+                  <h1>即時股市資訊 X 板塊圖</h1>
                 
-                <h4 id="kbar_plottingipynb"><a href="https://colab.research.google.com/drive/1u1cJGFNCLOeBIR0PdeKlsqgKBJSvJg_y?usp=sharing">kbar_plotting.ipynb</a><a class="headerlink" href="#kbar_plottingipynb" title="Permanent link">&para;</a></h4>
-<p><img alt="gif" src="https://finmind.github.io/images/kbar_plotting.gif" /></p>
-<div class="admonition info">
-<p class="admonition-title">繪製 K 線</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 取得股價</span>
-<span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-
-<span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
-<span class="c1"># 下載台股股價資料</span>
-<span class="n">stock_data</span> <span class="o">=</span> <span class="n">dl</span><span class="o">.</span><span class="n">taiwan_stock_daily</span><span class="p">(</span>
-<span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2609&#39;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2021-06-26&#39;</span>
-<span class="p">)</span>
-<span class="c1"># 下載三大法人資料</span>
-<span class="n">stock_data</span> <span class="o">=</span> <span class="n">dl</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">add_kline_institutional_investors</span><span class="p">(</span>
-<span class="n">stock_data</span>
-<span class="p">)</span> 
-<span class="c1"># 下載融資券資料</span>
-<span class="n">stock_data</span> <span class="o">=</span> <span class="n">dl</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">add_kline_margin_purchase_short_sale</span><span class="p">(</span>
-<span class="n">stock_data</span>
-<span class="p">)</span>
-
-<span class="c1"># 繪製k線圖</span>
-<span class="kn">from</span> <span class="nn">FinMind</span> <span class="kn">import</span> <span class="n">plotting</span>
-
-<span class="n">plotting</span><span class="o">.</span><span class="n">kline</span><span class="p">(</span><span class="n">stock_data</span><span class="p">)</span>
+                <h2 id="136-html">預期執行結果如下（已在程式碼 136 行，加入 html 語法，網頁會自動更新）<a class="headerlink" href="#136-html" title="Permanent link">&para;</a></h2>
+<p><img alt="png" src="https://finmind.github.io/images/snapshot_treemap.png" /></p>
+<h2 id="_1">如何執行？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>將以下程式碼，儲存為，<code>FinMind - 台股 - 即時資訊 X 版塊圖 X flask.py</code></li>
+<li>執行以下指令</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="n">FINMIND_API_TOKEN</span><span class="o">=</span><span class="n">your_token</span> <span class="n">python</span> <span class="n">FinMind</span> <span class="o">-</span> <span class="n">台股</span> <span class="o">-</span> <span class="n">即時資訊</span> <span class="n">X</span> <span class="n">版塊圖</span> <span class="n">X</span> <span class="n">flask</span><span class="o">.</span><span class="n">py</span>
 </code></pre></div>
-</div>
+<h2 id="_2">程式碼如下<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<script src="https://gist.github.com/linsamtw/af68df2690b01469f3a0a726e67aff39.js"></script>
+
+<h2 id="ref">REF<a class="headerlink" href="#ref" title="Permanent link">&para;</a></h2>
+<p><a href="https://medium.com/finmind/python-%E5%8D%B3%E6%99%82%E8%B3%87%E6%96%99-pipeline-%E4%BB%A5%E7%89%88%E5%A1%8A%E5%9C%96x%E5%8D%B3%E6%99%82%E8%82%A1%E5%B8%82%E8%B3%87%E6%96%99%E7%82%BA%E4%BE%8B-a55de908dd5b">medium</a></p>
                 
               
               
@@ -1023,7 +1052,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../BacktestingOtherData/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../CustomerDashboardWebServer/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1032,19 +1061,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              回測(引用外部 data)
+              客製化看盤儀表板
             </div>
           </div>
         </a>
       
       
-        <a href="../CustomerDashboardWebServer/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../../WhatIsNew/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              客製化看盤儀表板
+              What's New
             </div>
           </div>
           <div class="md-footer__button md-icon">
