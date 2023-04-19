@@ -460,8 +460,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#securitiestraderinfo" class="md-nav__link">
-    證券商資訊表 SecuritiesTraderInfo
+  <a href="#taiwansecuritiestraderinfo" class="md-nav__link">
+    證券商資訊表 TaiwanSecuritiesTraderInfo
   </a>
   
 </li>
@@ -1172,8 +1172,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#securitiestraderinfo" class="md-nav__link">
-    證券商資訊表 SecuritiesTraderInfo
+  <a href="#taiwansecuritiestraderinfo" class="md-nav__link">
+    證券商資訊表 TaiwanSecuritiesTraderInfo
   </a>
   
 </li>
@@ -1228,7 +1228,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockholdingsharesper">股權持股分級表 TaiwanStockHoldingSharesPer</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocksecuritieslending">借券成交明細 TaiwanStockSecuritiesLending</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwandailyshortsalebalances">融券借券賣出表 TaiwanDailyShortSaleBalances</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#securitiestraderinfo">證券商資訊表 SecuritiesTraderInfo</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwansecuritiestraderinfo">證券商資訊表 TaiwanSecuritiesTraderInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstocktradingdailyreport-backersponsor">台股分點資料表(query by 股票代碼) TaiwanStockTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstocktradingdailyreport-backersponsor_1">台股分點資料表(query by 券商代碼) TaiwanStockTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockgovernmentbankbuysell-sponsor">台股八大行庫賣賣表 TaiwanstockGovernmentBankBuySell</a></li>
@@ -3191,7 +3191,7 @@
 </tbody>
 </table>
 </div>
-<h4 id="securitiestraderinfo">證券商資訊表 SecuritiesTraderInfo<a class="headerlink" href="#securitiestraderinfo" title="Permanent link">&para;</a></h4>
+<h4 id="taiwansecuritiestraderinfo">證券商資訊表 TaiwanSecuritiesTraderInfo<a class="headerlink" href="#taiwansecuritiestraderinfo" title="Permanent link">&para;</a></h4>
 <ul>
 <li>提供證券商相關資訊，用於台股分點資料表(TaiwanStockTradingDailyReport )，使用卷商代碼，查詢特定卷商所有股票進出。</li>
 </ul>
@@ -3202,7 +3202,7 @@
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;SecuritiesTraderInfo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanSecuritiesTraderInfo&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -3219,7 +3219,7 @@
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-    <span class="n">dataset</span> <span class="o">=</span> <span class="s">&quot;SecuritiesTraderInfo&quot;</span><span class="p">,</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="s">&quot;TaiwanSecuritiesTraderInfo&quot;</span><span class="p">,</span>
     <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
     <span class="p">)</span>
 <span class="p">)</span>
