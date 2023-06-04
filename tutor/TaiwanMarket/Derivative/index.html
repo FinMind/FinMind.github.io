@@ -490,6 +490,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwan_futures_snapshot-sponsor" class="md-nav__link">
+    台股期貨即時資訊 taiwan_futures_snapshot (只限 sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwan_options_snapshot-sponsor" class="md-nav__link">
+    台股選擇權即時資訊 taiwan_options_snapshot (只限 sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1157,6 +1171,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwan_futures_snapshot-sponsor" class="md-nav__link">
+    台股期貨即時資訊 taiwan_futures_snapshot (只限 sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwan_options_snapshot-sponsor" class="md-nav__link">
+    台股選擇權即時資訊 taiwan_options_snapshot (只限 sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1176,7 +1204,7 @@
                 
                   <h1>衍生性金融商品</h1>
                 
-                <p>在台股衍生性商品資料，我們擁有 9 種資料集，如下:</p>
+                <p>在台股衍生性商品資料，我們擁有 11 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanOptionFutureInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdaily">期貨日成交資訊 TaiwanFuturesDaily</a></li>
@@ -1187,6 +1215,8 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptioninstitutionalinvestors">選擇權三大法人買賣 TaiwanOptionInstitutionalInvestors</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdealertradingvolumedaily">期貨各卷商每日交易 TaiwanFuturesDealerTradingVolumeDaily</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondealertradingvolumedaily">選擇權各卷商每日交易 TaiwanOptionDealerTradingVolumeDaily</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwan_futures_snapshot-sponsor">台股期貨即時資訊 taiwan_futures_snapshot</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwan_options_snapshot-sponsor">台股選擇權即時資訊 taiwan_options_snapshot</a></li>
 </ul>
 <h4 id="taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanFutOptDailyInfo<a class="headerlink" href="#taiwanfutoptdailyinfo" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
@@ -3200,6 +3230,378 @@
 <td align="left">ETC</td>
 <td align="right">0</td>
 <td align="left">False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="taiwan_futures_snapshot-sponsor">台股期貨即時資訊 taiwan_futures_snapshot (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwan_futures_snapshot-sponsor" title="Permanent link">&para;</a></h4>
+<p>(目前只支援台指期、約 10 秒更新一次)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_futures_snapshot&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXF&quot;</span><span class="p">,</span> <span class="c1"># 目前只支援台指期</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://api.finmindtrade.com/api/v4/taiwan_futures_snapshot&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXF&quot;</span><span class="p">,</span> <span class="c1"># 目前只支援台指期</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="right">open</th>
+<th align="right">high</th>
+<th align="right">low</th>
+<th align="right">close</th>
+<th align="right">change_price</th>
+<th align="right">change_rate</th>
+<th align="right">average_price</th>
+<th align="right">volume</th>
+<th align="right">total_volume</th>
+<th align="right">amount</th>
+<th align="right">total_amount</th>
+<th align="right">yesterday_volume</th>
+<th align="right">buy_price</th>
+<th align="right">buy_volume</th>
+<th align="right">sell_price</th>
+<th align="right">sell_volume</th>
+<th align="right">volume_ratio</th>
+<th align="left">date</th>
+<th align="left">futures_id</th>
+<th align="right">TickType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">16720</td>
+<td align="right">16800</td>
+<td align="right">16714</td>
+<td align="right">16762</td>
+<td align="right">51</td>
+<td align="right">0.31</td>
+<td align="right">16757.2</td>
+<td align="right">1</td>
+<td align="right">52822</td>
+<td align="right">16762</td>
+<td align="right">885151394</td>
+<td align="right">46576</td>
+<td align="right">16760</td>
+<td align="right">61</td>
+<td align="right">16765</td>
+<td align="right">8</td>
+<td align="right">1.13</td>
+<td align="left">2023-06-03 04:59:59.243</td>
+<td align="left">TXFR1</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">16720</td>
+<td align="right">16800</td>
+<td align="right">16714</td>
+<td align="right">16762</td>
+<td align="right">51</td>
+<td align="right">0.31</td>
+<td align="right">16757.2</td>
+<td align="right">1</td>
+<td align="right">52822</td>
+<td align="right">16762</td>
+<td align="right">885151394</td>
+<td align="right">46576</td>
+<td align="right">16760</td>
+<td align="right">61</td>
+<td align="right">16765</td>
+<td align="right">8</td>
+<td align="right">1.13</td>
+<td align="left">2023-06-03 04:59:59.243</td>
+<td align="left">TXFF3</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">16290</td>
+<td align="right">16291</td>
+<td align="right">16290</td>
+<td align="right">16291</td>
+<td align="right">68</td>
+<td align="right">0.42</td>
+<td align="right">16290.5</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">16291</td>
+<td align="right">32581</td>
+<td align="right">3</td>
+<td align="right">16266</td>
+<td align="right">2</td>
+<td align="right">16500</td>
+<td align="right">2</td>
+<td align="right">0.67</td>
+<td align="left">2023-06-02 23:01:10.244</td>
+<td align="left">TXFC4</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">16409</td>
+<td align="right">16468</td>
+<td align="right">16400</td>
+<td align="right">16449</td>
+<td align="right">64</td>
+<td align="right">0.39</td>
+<td align="right">16431.9</td>
+<td align="right">1</td>
+<td align="right">110</td>
+<td align="right">16449</td>
+<td align="right">1807505</td>
+<td align="right">90</td>
+<td align="right">16424</td>
+<td align="right">1</td>
+<td align="right">16450</td>
+<td align="right">1</td>
+<td align="right">1.22</td>
+<td align="left">2023-06-03 03:00:34.248</td>
+<td align="left">TXFH3</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">16300</td>
+<td align="right">16373</td>
+<td align="right">16300</td>
+<td align="right">16335</td>
+<td align="right">56</td>
+<td align="right">0.34</td>
+<td align="right">16340.8</td>
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">16335</td>
+<td align="right">163408</td>
+<td align="right">8</td>
+<td align="right">16315</td>
+<td align="right">1</td>
+<td align="right">16355</td>
+<td align="right">1</td>
+<td align="right">1.25</td>
+<td align="left">2023-06-03 03:36:00.561</td>
+<td align="left">TXFL3</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="taiwan_options_snapshot-sponsor">台股選擇權即時資訊 taiwan_options_snapshot (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwan_options_snapshot-sponsor" title="Permanent link">&para;</a></h4>
+<p>(目前只支援台指選擇權、約 10 秒更新一次)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_options_snapshot&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span> <span class="c1"># 目前只支援台指選擇權</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://api.finmindtrade.com/api/v4/taiwan_options_snapshot&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="p">,</span> <span class="c1"># 目前只支援台指期</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="right">open</th>
+<th align="right">high</th>
+<th align="right">low</th>
+<th align="right">close</th>
+<th align="right">change_price</th>
+<th align="right">change_rate</th>
+<th align="right">average_price</th>
+<th align="right">volume</th>
+<th align="right">total_volume</th>
+<th align="right">amount</th>
+<th align="right">total_amount</th>
+<th align="right">yesterday_volume</th>
+<th align="right">buy_price</th>
+<th align="right">buy_volume</th>
+<th align="right">sell_price</th>
+<th align="right">sell_volume</th>
+<th align="right">volume_ratio</th>
+<th align="left">date</th>
+<th align="left">options_id</th>
+<th align="right">TickType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">46</td>
+<td align="right">46</td>
+<td align="right">45.5</td>
+<td align="right">46</td>
+<td align="right">-12</td>
+<td align="right">-20.69</td>
+<td align="right">45.75</td>
+<td align="right">17</td>
+<td align="right">40</td>
+<td align="right">782</td>
+<td align="right">1830</td>
+<td align="right">2</td>
+<td align="right">0.6</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">20</td>
+<td align="left">2023-06-02 13:07:35.299</td>
+<td align="left">TXO14300T3</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">60</td>
+<td align="right">65</td>
+<td align="right">46.5</td>
+<td align="right">46.5</td>
+<td align="right">-17.5</td>
+<td align="right">-27.34</td>
+<td align="right">58.76</td>
+<td align="right">1</td>
+<td align="right">939</td>
+<td align="right">46</td>
+<td align="right">55172</td>
+<td align="right">936</td>
+<td align="right">48.5</td>
+<td align="right">2</td>
+<td align="right">65</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="left">2023-06-03 02:07:52.807</td>
+<td align="left">TXO15400S3</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">905</td>
+<td align="right">910</td>
+<td align="right">875</td>
+<td align="right">875</td>
+<td align="right">-45</td>
+<td align="right">-4.89</td>
+<td align="right">891.25</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">875</td>
+<td align="right">3565</td>
+<td align="right">2</td>
+<td align="right">1.1</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="left">2023-06-02 20:06:14.720</td>
+<td align="left">TXO17000U3</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">695</td>
+<td align="right">695</td>
+<td align="right">695</td>
+<td align="right">695</td>
+<td align="right">25</td>
+<td align="right">3.73</td>
+<td align="right">695</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">695</td>
+<td align="right">695</td>
+<td align="right">13</td>
+<td align="right">6.3</td>
+<td align="right">1</td>
+<td align="right">1030</td>
+<td align="right">2</td>
+<td align="right">0.08</td>
+<td align="left">2023-06-02 15:29:16.150</td>
+<td align="left">TXO16400L3</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1.1</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">2023-06-04 08:30:00.000</td>
+<td align="left">TXO15000H3</td>
+<td align="right">0</td>
 </tr>
 </tbody>
 </table>
