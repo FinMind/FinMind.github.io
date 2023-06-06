@@ -433,13 +433,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#taiwan_stock_tick_snapshot-sponsor" class="md-nav__link">
-    台股即時資訊 taiwan_stock_tick_snapshot (只限 sponsor 會員使用)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -479,6 +472,18 @@
     <li class="md-nav__item">
       <a href="../Derivative/" class="md-nav__link">
         衍生性金融商品
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RealTime/" class="md-nav__link">
+        即時資料
       </a>
     </li>
   
@@ -1122,13 +1127,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#taiwan_stock_tick_snapshot-sponsor" class="md-nav__link">
-    台股即時資訊 taiwan_stock_tick_snapshot (只限 sponsor 會員使用)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1148,14 +1146,13 @@
                 
                   <h1>技術面</h1>
                 
-                <p>在台股技術面，我們擁有 10 種資料集，如下:</p>
+                <p>在台股技術面，我們擁有 9 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfo">台股總覽 TaiwanStockInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockprice">台灣股價資料表 TaiwanStockPrice</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceadj-backersponsor">台灣還原股價資料表 TaiwanStockPriceAdj</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricetick-sponsor">台灣股價歷史逐筆資料表 TaiwanStockPriceTick</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#perpbr-taiwanstockper">台灣個股PER、PBR資料表 TaiwanStockPER</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwan_stock_tick_snapshot-sponsor">台股即時資訊 taiwan_stock_tick_snapshot</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#5-taiwanstockstatisticsoforderbookandtrade">每5秒委託成交統計 TaiwanStockStatisticsOfOrderBookAndTrade</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanvariousindicators5seconds">台股加權指數 TaiwanVariousIndicators5Seconds</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockdaytrading">當日沖銷交易標的及成交量值 TaiwanStockDayTrading</a></li>
@@ -2626,104 +2623,6 @@
 <td align="right">18994</td>
 <td align="left">TAIEX</td>
 <td align="left">2020-04-10</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="taiwan_stock_tick_snapshot-sponsor">台股即時資訊 taiwan_stock_tick_snapshot (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwan_stock_tick_snapshot-sponsor" title="Permanent link">&para;</a></h4>
-<p>(約 5 秒更新一次)</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Python-request</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_stock_tick_snapshot&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="c1"># &quot;data_id&quot;: [&quot;2330&quot;, &quot;2317&quot;], # 一次拿多個</span>
-    <span class="c1"># &quot;data_id&quot;: &quot;&quot;, # 一次全部</span>
-    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">}</span>
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">R</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://api.finmindtrade.com/api/v4/taiwan_stock_tick_snapshot&quot;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
-<span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-    <span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="c1"># data_id=c(&quot;2330&quot;, &quot;2317&quot;), # 一次拿多個</span>
-    <span class="c1"># data_id=&quot;&quot;, # 一次全部</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">)</span>
-<span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">data</span> <span class="o">%&gt;%</span>
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="n">data.table</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition output">
-<p class="admonition-title">Output</p>
-<table>
-<thead>
-<tr>
-<th align="right"></th>
-<th align="right">amount</th>
-<th align="right">average_price</th>
-<th align="right">buy_price</th>
-<th align="right">buy_volume</th>
-<th align="right">change_price</th>
-<th align="right">change_rate</th>
-<th align="right">close</th>
-<th align="right">high</th>
-<th align="right">low</th>
-<th align="right">open</th>
-<th align="right">sell_price</th>
-<th align="right">sell_volume</th>
-<th align="right">total_amount</th>
-<th align="right">total_volume</th>
-<th align="right">volume</th>
-<th align="right">volume_ratio</th>
-<th align="right">yesterday_volume</th>
-<th align="left">date</th>
-<th align="right">stock_id</th>
-<th align="right">TickType</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">0</td>
-<td align="right">610000</td>
-<td align="right">611.42</td>
-<td align="right">609</td>
-<td align="right">208</td>
-<td align="right">3</td>
-<td align="right">0.49</td>
-<td align="right">610</td>
-<td align="right">614</td>
-<td align="right">608</td>
-<td align="right">614</td>
-<td align="right">610</td>
-<td align="right">821</td>
-<td align="right">5578566000</td>
-<td align="right">9124</td>
-<td align="right">1</td>
-<td align="right">0.49</td>
-<td align="right">18606</td>
-<td align="left">2021-12-08 10:31:23.098000</td>
-<td align="right">2330</td>
-<td align="right">1</td>
 </tr>
 </tbody>
 </table>
