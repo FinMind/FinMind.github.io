@@ -1217,7 +1217,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstock10year-backersponsor">台灣個股十年線資料表 TaiwanStock10Year</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#k-taiwanstockkbar-sponsor">台股分 K 資料表 TaiwanStockKBar</a></li>
 </ul>
-<p>根據上述資料表逐一說明怎麼使用，另外具體資料表 schemas 請參考 <a href="http://api.finmindtrade.com/docs#/default/method_api_v4_data_get">finmindapi</a></p>
+<hr />
 <h4 id="taiwanstockinfo">台股總覽 TaiwanStockInfo<a class="headerlink" href="#taiwanstockinfo" title="Permanent link">&para;</a></h4>
 <ul>
 <li>這張資料表主要是列出台灣所有上市上櫃的股票名稱，代碼和產業類別</li>
@@ -1326,6 +1326,7 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstockinfowithwarrant">台股總覽(含權證) TaiwanStockInfoWithWarrant<a class="headerlink" href="#taiwanstockinfowithwarrant" title="Permanent link">&para;</a></h4>
 <ul>
 <li>這張資料表主要是列出台灣所有上市上櫃的股票、權證名稱，代碼和產業類別</li>
@@ -1435,8 +1436,10 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstockprice">股價日成交資訊 TaiwanStockPrice<a class="headerlink" href="#taiwanstockprice" title="Permanent link">&para;</a></h4>
 <ul>
+<li>資料區間：1994-10-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 17:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
 <div class="admonition example">
@@ -1720,8 +1723,10 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstockpriceadj-backersponsor">台灣還原股價資料表 TaiwanStockPriceAdj (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockpriceadj-backersponsor" title="Permanent link">&para;</a></h4>
 <ul>
+<li>資料區間：1994-10-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 17:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
 <div class="admonition example">
@@ -1994,9 +1999,11 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstockpricetick-sponsor">台灣股價歷史逐筆資料表 TaiwanStockPriceTick (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockpricetick-sponsor" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <ul>
+<li>資料區間：2019-01-01 ~ now</li>
 <li>輸入 dataset、stock_id、start_date 參數，會回傳 start_date 當天資料。</li>
 <li>資料更新時間 <strong>星期一至五 15:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
@@ -2116,8 +2123,10 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="perpbr-taiwanstockper">個股PER、PBR資料表 TaiwanStockPER<a class="headerlink" href="#perpbr-taiwanstockper" title="Permanent link">&para;</a></h4>
 <ul>
+<li>資料區間：2005-10-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
 <div class="admonition example">
@@ -2229,8 +2238,12 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="5-taiwanstockstatisticsoforderbookandtrade">每5秒委託成交統計 TaiwanStockStatisticsOfOrderBookAndTrade<a class="headerlink" href="#5-taiwanstockstatisticsoforderbookandtrade" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
+<ul>
+<li>資料區間：2005-01-01 ~ now</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Package</label><div class="tabbed-content">
@@ -2362,8 +2375,12 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanvariousindicators5seconds">加權指數 TaiwanVariousIndicators5Seconds<a class="headerlink" href="#taiwanvariousindicators5seconds" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
+<ul>
+<li>資料區間：2005-01-01 ~ now</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Package</label><div class="tabbed-content">
@@ -2453,8 +2470,10 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstockdaytrading">當日沖銷交易標的及成交量值 TaiwanStockDayTrading<a class="headerlink" href="#taiwanstockdaytrading" title="Permanent link">&para;</a></h4>
 <ul>
+<li>資料區間：2014-01-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 21:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
 <div class="admonition example">
@@ -2688,8 +2707,10 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstocktotalreturnindex">加權、櫃買報酬指數 TaiwanStockTotalReturnIndex<a class="headerlink" href="#taiwanstocktotalreturnindex" title="Permanent link">&para;</a></h4>
 <ul>
+<li>資料區間：2003-01-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 16:50</strong>，實際更新時間以 API 資料為主</li>
 </ul>
 <div class="admonition example">
@@ -2795,8 +2816,10 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="taiwanstock10year-backersponsor">台灣個股十年線資料表 TaiwanStock10Year (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstock10year-backersponsor" title="Permanent link">&para;</a></h4>
 <ul>
+<li>資料區間：2011-01-24 ~ now</li>
 <li>透過2500個交易日所計算出的平均價格</li>
 <li>資料更新時間 <strong>星期一至五 20:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
@@ -2986,9 +3009,11 @@
 </tbody>
 </table>
 </div>
+<hr />
 <h4 id="k-taiwanstockkbar-sponsor">台股分 K 資料表 TaiwanStockKBar (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#k-taiwanstockkbar-sponsor" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <ul>
+<li>資料區間：2019-01-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 15:50</strong>，實際更新時間以 API 資料為主</li>
 </ul>
 <div class="admonition example">
