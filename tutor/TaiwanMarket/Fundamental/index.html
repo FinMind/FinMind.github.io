@@ -1245,6 +1245,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -1300,10 +1301,22 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    type: str,
+    value: float64,
+    origin_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="backersponsor">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -1314,7 +1327,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1329,7 +1342,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">R</label><div class="tabbed-content">
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1353,6 +1366,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -1408,6 +1422,18 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    type: str,
+    value: float64,
+    origin_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h4 id="taiwanstockbalancesheet">資產負債表 TaiwanStockBalanceSheet<a class="headerlink" href="#taiwanstockbalancesheet" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1415,7 +1441,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -1427,7 +1453,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1443,7 +1469,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">R</label><div class="tabbed-content">
+<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1468,6 +1494,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -1523,10 +1550,22 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    type: str,
+    value: float64,
+    origin_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="backersponsor_1">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_1" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -1537,7 +1576,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1552,7 +1591,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">R</label><div class="tabbed-content">
+<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1576,6 +1615,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -1631,6 +1671,18 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    type: str,
+    value: float64,
+    origin_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h4 id="taiwanstockcashflowsstatement">現金流量表 TaiwanStockCashFlowsStatement<a class="headerlink" href="#taiwanstockcashflowsstatement" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1638,7 +1690,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -1650,7 +1702,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1666,7 +1718,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">R</label><div class="tabbed-content">
+<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1691,6 +1743,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -1746,10 +1799,22 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    type: str,
+    value: float64,
+    origin_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="backersponsor_2">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_2" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -1760,7 +1825,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1775,7 +1840,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><label for="__tabbed_6_3">R</label><div class="tabbed-content">
+<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1799,6 +1864,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -1854,6 +1920,18 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    type: str,
+    value: float64,
+    origin_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h4 id="taiwanstockdividend">股利政策表 TaiwanStockDividend<a class="headerlink" href="#taiwanstockdividend" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1861,7 +1939,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -1873,7 +1951,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -1889,7 +1967,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">R</label><div class="tabbed-content">
+<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -1914,6 +1992,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2071,6 +2150,35 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    year: str,
+    StockEarningsDistribution: float64,
+    StockStatutorySurplus: float64,
+    StockExDividendTradingDate: str,
+    TotalEmployeeStockDividend: float64,
+    TotalEmployeeStockDividendAmount: float64,
+    RatioOfEmployeeStockDividendOfTotal: float64,
+    RatioOfEmployeeStockDividend: float64,
+    CashEarningsDistribution: float64,
+    CashStatutorySurplus: float64,
+    CashExDividendTradingDate: str,
+    CashDividendPaymentDate: str,
+    TotalEmployeeCashDividend: float64,
+    TotalNumberOfCashCapitalIncrease: float64,
+    CashIncreaseSubscriptionRate: float64,
+    CashIncreaseSubscriptionpRrice: float64,
+    RemunerationOfDirectorsAndSupervisors: float64,
+    ParticipateDistributionOfTotalShares: float64,
+    AnnouncementDate: str,
+    AnnouncementTime: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h4 id="taiwanstockdividendresult">除權除息結果表 TaiwanStockDividendResult<a class="headerlink" href="#taiwanstockdividendresult" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2078,7 +2186,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -2090,7 +2198,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -2106,7 +2214,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><label for="__tabbed_8_3">R</label><div class="tabbed-content">
+<input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><label for="__tabbed_15_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2131,6 +2239,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2216,10 +2325,27 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    before_price: float32,
+    after_price: float32,
+    stock_and_cache_dividend: float32,
+    stock_or_cache_dividend: float32,
+    max_price: float32,
+    min_price: float32,
+    open_price: float32,
+    reference_price: float32
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="backersponsor_3">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_3" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="17:3"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -2230,7 +2356,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -2245,7 +2371,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">R</label><div class="tabbed-content">
+<input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><label for="__tabbed_17_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2269,6 +2395,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2354,6 +2481,23 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><label for="__tabbed_18_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    before_price: float32,
+    after_price: float32,
+    stock_and_cache_dividend: float32,
+    stock_or_cache_dividend: float32,
+    max_price: float32,
+    min_price: float32,
+    open_price: float32,
+    reference_price: float32
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h4 id="taiwanstockmonthrevenue">月營收表 TaiwanStockMonthRevenue<a class="headerlink" href="#taiwanstockmonthrevenue" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2361,7 +2505,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="19:3"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -2373,7 +2517,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><label for="__tabbed_19_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -2389,7 +2533,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">R</label><div class="tabbed-content">
+<input id="__tabbed_19_3" name="__tabbed_19" type="radio" /><label for="__tabbed_19_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2414,6 +2558,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2475,10 +2620,23 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><label for="__tabbed_20_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    country: str,
+    revenue: int64,
+    revenue_month: int64,
+    revenue_year: int64
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="backersponsor_4">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_4" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="21:3"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -2489,7 +2647,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><label for="__tabbed_21_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -2504,7 +2662,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">R</label><div class="tabbed-content">
+<input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><label for="__tabbed_21_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2528,6 +2686,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2589,11 +2748,24 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><label for="__tabbed_22_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    country: str,
+    revenue: int64,
+    revenue_month: int64,
+    revenue_year: int64
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h4 id="taiwanstockcapitalreductionreferenceprice">減資恢復買賣參考價格 TaiwanStockCapitalReductionReferencePrice<a class="headerlink" href="#taiwanstockcapitalreductionreferenceprice" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Python</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><label for="__tabbed_23_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -2615,7 +2787,7 @@
 <span class="mi">3</span>  <span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">18</span>     <span class="mi">2327</span>                           <span class="mf">120.50</span>                       <span class="mf">168.13</span>   <span class="mf">184.50</span>     <span class="mf">151.50</span>                  <span class="mf">168.0</span>                   <span class="o">-</span><span class="mf">1.0</span>               <span class="n">Cash</span> <span class="n">refund</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">R</label><div class="tabbed-content">
+<input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><label for="__tabbed_23_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2652,7 +2824,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="24:3"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -2665,7 +2837,7 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><label for="__tabbed_24_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
@@ -2682,7 +2854,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">R</label><div class="tabbed-content">
+<input id="__tabbed_24_3" name="__tabbed_24" type="radio" /><label for="__tabbed_24_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2708,6 +2880,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><label for="__tabbed_25_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2751,10 +2924,20 @@
 </tbody>
 </table>
 </div>
+<input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><label for="__tabbed_25_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    market_value: int64
+}
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="backersponsor_5">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 使用)<a class="headerlink" href="#backersponsor_5" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Package</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="26:3"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><label for="__tabbed_26_1">Package</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
@@ -2765,12 +2948,12 @@
 <span class="p">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">Python-request</label><div class="tabbed-content">
+<input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><label for="__tabbed_26_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPrice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockMarketValue&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2023-01-03&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
@@ -2780,7 +2963,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><label for="__tabbed_14_3">R</label><div class="tabbed-content">
+<input id="__tabbed_26_3" name="__tabbed_26" type="radio" /><label for="__tabbed_26_3">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
@@ -2788,7 +2971,7 @@
 <span class="n">response</span> <span class="o">=</span> <span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span>
 <span class="n">query</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
-    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPrice&quot;</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockMarketValue&quot;</span><span class="p">,</span>
     <span class="n">start_date</span><span class="o">=</span> <span class="s">&quot;2023-01-03&quot;</span><span class="p">,</span>
     <span class="n">token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
@@ -2804,6 +2987,7 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><label for="__tabbed_27_1">DataFrame</label><div class="tabbed-content">
 <table>
 <thead>
 <tr>
@@ -2846,6 +3030,16 @@
 </tr>
 </tbody>
 </table>
+</div>
+<input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><label for="__tabbed_27_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    market_value: int64
+}
+</code></pre></div>
+</div>
+</div>
 </div>
                 
               

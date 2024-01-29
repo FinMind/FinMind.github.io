@@ -1005,14 +1005,58 @@
 <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">form_data</span><span class="p">)</span>
 <span class="n">temp</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
-<span class="n">data</span>
-
-        <span class="n">date</span>  <span class="n">fear_greed</span> <span class="n">fear_greed_emotion</span>
-<span class="mi">0</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span>          <span class="mi">53</span>            <span class="n">neutral</span>
-<span class="mi">1</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">05</span>          <span class="mi">52</span>            <span class="n">neutral</span>
-<span class="mi">2</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">06</span>          <span class="mi">59</span>              <span class="n">greed</span>
-<span class="mi">3</span>  <span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span>          <span class="mi">66</span>              <span class="n">greed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">date</th>
+<th align="right">fear_greed</th>
+<th align="right">fear_greed_emotion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2021-01-04</td>
+<td align="right">53</td>
+<td align="right">neutral</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2021-01-05</td>
+<td align="right">52</td>
+<td align="right">neutral</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">2021-01-06</td>
+<td align="right">59</td>
+<td align="right">greed</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">2021-01-07</td>
+<td align="right">66</td>
+<td align="right">greed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    fear_greed: int32,
+    fear_greed_emotion: str
+}
+</code></pre></div>
+</div>
+</div>
 </div>
                 
               
