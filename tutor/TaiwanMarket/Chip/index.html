@@ -528,6 +528,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwantotalexchangemarginmaintenance-backersponsor" class="md-nav__link">
+    台灣大盤融資維持率 TaiwanTotalExchangeMarginMaintenance (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1292,6 +1299,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwantotalexchangemarginmaintenance-backersponsor" class="md-nav__link">
+    台灣大盤融資維持率 TaiwanTotalExchangeMarginMaintenance (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1311,7 +1325,7 @@
                 
                   <h1>籌碼面</h1>
                 
-                <p>在台股籌碼面，我們擁有 13 種資料集，如下:</p>
+                <p>在台股籌碼面，我們擁有 14 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -1328,6 +1342,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstockwarranttradingdailyreport-sponsor">台股權證分點資料表(query by 股票代碼) TaiwanStockWarrantTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstockwarranttradingdailyreport-sponsor_1">台股權證分點資料表(query by 券商代碼) TaiwanStockWarrantTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockgovernmentbankbuysell-sponsor">台股八大行庫賣賣表 TaiwanstockGovernmentBankBuySell</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwantotalexchangemarginmaintenance-backersponsor">台灣大盤融資維持率 TaiwanTotalExchangeMarginMaintenance</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockmarginpurchaseshortsale">融資融劵表 TaiwanStockMarginPurchaseShortSale<a class="headerlink" href="#taiwanstockmarginpurchaseshortsale" title="Permanent link">&para;</a></h4>
@@ -4548,6 +4563,113 @@
     buy: int64,
     sell: int64,
     bank_name: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="taiwantotalexchangemarginmaintenance-backersponsor">台灣大盤融資維持率 TaiwanTotalExchangeMarginMaintenance (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwantotalexchangemarginmaintenance-backersponsor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2001-01-05 ~ now</li>
+<li>資料更新時間 <strong>星期一至五 21:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="45:3"><input checked="checked" id="__tabbed_45_1" name="__tabbed_45" type="radio" /><label for="__tabbed_45_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_total_exchange_margin_maintenance</span><span class="p">(</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-04-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-05-01&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_45_2" name="__tabbed_45" type="radio" /><label for="__tabbed_45_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanTotalExchangeMarginMaintenance&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_45_3" name="__tabbed_45" type="radio" /><label for="__tabbed_45_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanTotalExchangeMarginMaintenance&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-04-01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2024-05-01&#39;</span>
+<span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="46:2"><input checked="checked" id="__tabbed_46_1" name="__tabbed_46" type="radio" /><label for="__tabbed_46_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: right;">date</th>
+<th style="text-align: right;">TotalExchangeMarginMaintenance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2024-04-01</td>
+<td style="text-align: right;">166.007</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2024-04-02</td>
+<td style="text-align: right;">167.079</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2024-04-03</td>
+<td style="text-align: right;">167.085</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2024-04-08</td>
+<td style="text-align: right;">167.119</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2024-04-09</td>
+<td style="text-align: right;">167.095</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_46_2" name="__tabbed_46" type="radio" /><label for="__tabbed_46_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    TotalExchangeMarginMaintenance: float64
 }
 </code></pre></div>
 </div>
