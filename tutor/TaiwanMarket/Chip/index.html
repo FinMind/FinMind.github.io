@@ -535,13 +535,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#taiwanstocktradingdailyreportsecidagg-sponsor" class="md-nav__link">
-    台股分點統計表 TaiwanStockTradingDailyReportSecIdAgg (只限 sponsor 會員使用)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1313,13 +1306,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#taiwanstocktradingdailyreportsecidagg-sponsor" class="md-nav__link">
-    台股分點統計表 TaiwanStockTradingDailyReportSecIdAgg (只限 sponsor 會員使用)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1339,7 +1325,7 @@
                 
                   <h1>籌碼面</h1>
                 
-                <p>在台股籌碼面，我們擁有 15 種資料集，如下:</p>
+                <p>在台股籌碼面，我們擁有 14 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -1357,7 +1343,6 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#query-by-taiwanstockwarranttradingdailyreport-sponsor_1">台股權證分點資料表(query by 券商代碼) TaiwanStockWarrantTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockgovernmentbankbuysell-sponsor">台股八大行庫賣賣表 TaiwanstockGovernmentBankBuySell</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwantotalexchangemarginmaintenance-backersponsor">台灣大盤融資維持率 TaiwanTotalExchangeMarginMaintenance</a></li>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktradingdailyreportsecidagg-sponsor">台股分點統計表 TaiwanStockTradingDailyReportSecIdAgg</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockmarginpurchaseshortsale">融資融劵表 TaiwanStockMarginPurchaseShortSale<a class="headerlink" href="#taiwanstockmarginpurchaseshortsale" title="Permanent link">&para;</a></h4>
@@ -4690,159 +4675,6 @@
 </div>
 </div>
 </div>
-<h4 id="taiwanstocktradingdailyreportsecidagg-sponsor">台股分點統計表 TaiwanStockTradingDailyReportSecIdAgg (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstocktradingdailyreportsecidagg-sponsor" title="Permanent link">&para;</a></h4>
-<ul>
-<li>提供台股，上市、上櫃、興櫃，的分點資訊！</li>
-<li>資料區間：2021-06-30 ~ now</li>
-<li>資料更新時間 <strong>星期一至五 21:00</strong>，實際更新時間以 API 資料為主</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="47:3"><input checked="checked" id="__tabbed_47_1" name="__tabbed_47" type="radio" /><label for="__tabbed_47_1">Package</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
-<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_trading_daily_report_secid_agg</span><span class="p">(</span>
-    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-01-31&#39;</span><span class="p">,</span>
-    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-05-01&#39;</span>
-<span class="p">)</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><label for="__tabbed_47_2">Python-request</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stock_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-31&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-05-01&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_47_3" name="__tabbed_47" type="radio" /><label for="__tabbed_47_3">R</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
-<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
-<span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">stock_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-01-31&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2024-05-01&#39;</span>
-<span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">)</span>
-<span class="p">)</span>
-<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="n">data.table</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition output">
-<p class="admonition-title">Output</p>
-<div class="tabbed-set" data-tabs="48:2"><input checked="checked" id="__tabbed_48_1" name="__tabbed_48" type="radio" /><label for="__tabbed_48_1">DataFrame</label><div class="tabbed-content">
-<table>
-<thead>
-<tr>
-<th style="text-align: right;"></th>
-<th style="text-align: left;">securities_trader</th>
-<th style="text-align: right;">securities_trader_id</th>
-<th style="text-align: right;">stock_id</th>
-<th style="text-align: right;">date</th>
-<th style="text-align: right;">buy_volume</th>
-<th style="text-align: right;">sell_volume</th>
-<th>buy_price</th>
-<th style="text-align: left;">sell_price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">合庫桃園</td>
-<td style="text-align: right;">102E</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">17764</td>
-<td style="text-align: right;">4104</td>
-<td>630.2</td>
-<td style="text-align: left;">630.78</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">高橋龍潭</td>
-<td style="text-align: right;">5321</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">17555</td>
-<td style="text-align: right;">1000</td>
-<td>630.74</td>
-<td style="text-align: left;">628</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">高橋</td>
-<td style="text-align: right;">5320</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">33281</td>
-<td style="text-align: right;">15222</td>
-<td>630.56</td>
-<td style="text-align: left;">634.05</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">兆豐三重</td>
-<td style="text-align: right;">7008</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">15416</td>
-<td style="text-align: right;">3421</td>
-<td>629.24</td>
-<td style="text-align: left;">632.41</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">新百王</td>
-<td style="text-align: right;">6210</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">75169</td>
-<td style="text-align: right;">57050</td>
-<td>629.56</td>
-<td style="text-align: left;">628.9</td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_48_2" name="__tabbed_48" type="radio" /><label for="__tabbed_48_2">Schema</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>{
-    securities_trader: str,
-    price: float64,
-    buy: int32,
-    sell: int32,
-    securities_trader_id: str,
-    stock_id: str,
-    date: str
-}
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
                 
               
               
