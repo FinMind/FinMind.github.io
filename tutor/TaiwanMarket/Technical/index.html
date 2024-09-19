@@ -2763,7 +2763,8 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_per_pbr</span><span class="p">(</span>
     <span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-01-02&#39;</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-01-02&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-04-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -2775,6 +2776,7 @@
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPER&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -2793,6 +2795,7 @@
 <span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPER&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">data_id</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-01-02&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-12&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="w">                    </span><span class="p">)</span>
 <span class="p">)</span>

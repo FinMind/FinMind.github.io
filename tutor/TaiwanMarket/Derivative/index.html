@@ -1336,7 +1336,8 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_futures_daily</span><span class="p">(</span>
     <span class="n">futures_id</span><span class="o">=</span><span class="s1">&#39;TX&#39;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-04-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -1348,6 +1349,7 @@
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TX&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -1367,6 +1369,7 @@
 <span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TX&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-12&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="w">                    </span><span class="p">)</span>
 <span class="p">)</span>
@@ -1524,6 +1527,7 @@
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesDaily&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -1694,7 +1698,8 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_option_daily</span><span class="p">(</span>
     <span class="n">option_id</span><span class="o">=</span><span class="s1">&#39;TXO&#39;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-04-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -1706,6 +1711,7 @@
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TXO&quot;</span><span class="p">,</span>
     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -1725,6 +1731,7 @@
 <span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionDaily&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-12&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="w">                    </span><span class="p">)</span>
 <span class="p">)</span>
@@ -2327,7 +2334,8 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_futures_institutional_investors</span><span class="p">(</span>
     <span class="n">data_id</span><span class="o">=</span><span class="s1">&#39;TX&#39;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-04-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -2338,8 +2346,8 @@
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesInstitutionalInvestors&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TX&quot;</span><span class="p">,</span><span class="c1"># &quot;TXO&quot;</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-04-03&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-04-04&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -2358,8 +2366,8 @@
 <span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
 <span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesInstitutionalInvestors&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TX&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2019-04-03&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2019-04-04&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-12&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
 <span class="p">)</span>
@@ -2661,7 +2669,8 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_option_institutional_investors</span><span class="p">(</span>
     <span class="n">data_id</span><span class="o">=</span><span class="s1">&#39;TXO&#39;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-04-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-04-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -2672,8 +2681,8 @@
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionInstitutionalInvestors&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-04-03&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-04-04&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -2692,8 +2701,8 @@
 <span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
 <span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionInstitutionalInvestors&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TX&quot;</span><span class="p">,</span><span class="c1"># &quot;TXO&quot;</span>
-<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2019-04-03&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2019-04-04&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-12&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
 <span class="p">)</span>
@@ -3003,6 +3012,7 @@
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_futures_dealer_trading_volume_daily</span><span class="p">(</span>
     <span class="n">futures_id</span><span class="o">=</span><span class="s1">&#39;TX&#39;</span><span class="p">,</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-07-01&#39;</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-07-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -3266,7 +3276,8 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_option_dealer_trading_volume_daily</span><span class="p">(</span>
     <span class="n">option_id</span><span class="o">=</span><span class="s1">&#39;TXO&#39;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-07-01&#39;</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-07-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2020-07-12&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
