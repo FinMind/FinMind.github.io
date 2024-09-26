@@ -542,13 +542,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#sponsor" class="md-nav__link">
-    一次拿特定日期，所有資料(只限 sponsor 會員使用)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1323,13 +1316,6 @@
         <li class="md-nav__item">
   <a href="#taiwanstocktradingdailyreportsecidagg-sponsor" class="md-nav__link">
     當日卷商分點統計表 TaiwanStockTradingDailyReportSecIdAgg (只限 sponsor 會員使用)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sponsor" class="md-nav__link">
-    一次拿特定日期，所有資料(只限 sponsor 會員使用)
   </a>
   
 </li>
@@ -4740,8 +4726,9 @@
 <span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_trading_daily_report_secid_agg</span><span class="p">(</span>
     <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-01-31&#39;</span><span class="p">,</span>
-    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-05-01&#39;</span>
+    <span class="n">securities_trader_id</span><span class="o">=</span><span class="s2">&quot;1020&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span> <span class="s2">&quot;2024-07-01&quot;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-07-15&#39;</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -4752,8 +4739,9 @@
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-31&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-05-01&quot;</span><span class="p">,</span>
+    <span class="n">securities_trader_id</span><span class="p">:</span> <span class="s2">&quot;1020&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="p">:</span> <span class="s2">&quot;2024-07-01&quot;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="p">:</span> <span class="s1">&#39;2024-07-15&#39;</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -4772,8 +4760,9 @@
 <span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
 <span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-01-31&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2024-05-01&#39;</span>
+<span class="w">    </span><span class="n">securities_trader_id</span><span class="o">=</span><span class="s">&quot;1020&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-07-01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2024-07-15&#39;</span>
 <span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
 <span class="p">)</span>
@@ -4806,205 +4795,63 @@
 <tbody>
 <tr>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">合庫桃園</td>
-<td style="text-align: right;">102E</td>
+<td style="text-align: left;">合庫</td>
+<td style="text-align: right;">1020</td>
 <td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">17764</td>
-<td style="text-align: right;">4104</td>
-<td>630.2</td>
-<td style="text-align: left;">630.78</td>
+<td style="text-align: right;">2024-07-01</td>
+<td style="text-align: right;">12157</td>
+<td style="text-align: right;">12460</td>
+<td>968.08</td>
+<td style="text-align: left;">973.84</td>
 </tr>
 <tr>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">高橋龍潭</td>
-<td style="text-align: right;">5321</td>
+<td style="text-align: left;">合庫</td>
+<td style="text-align: right;">1020</td>
 <td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">17555</td>
-<td style="text-align: right;">1000</td>
-<td>630.74</td>
-<td style="text-align: left;">628</td>
+<td style="text-align: right;">2024-07-02</td>
+<td style="text-align: right;">12735</td>
+<td style="text-align: right;">21885</td>
+<td>964.54</td>
+<td style="text-align: left;">964.63</td>
 </tr>
 <tr>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">高橋</td>
-<td style="text-align: right;">5320</td>
+<td style="text-align: left;">合庫</td>
+<td style="text-align: right;">1020</td>
 <td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">33281</td>
-<td style="text-align: right;">15222</td>
-<td>630.56</td>
-<td style="text-align: left;">634.05</td>
+<td style="text-align: right;">2024-07-03</td>
+<td style="text-align: right;">10535</td>
+<td style="text-align: right;">29381</td>
+<td>973.16</td>
+<td style="text-align: left;">974.69</td>
 </tr>
 <tr>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">兆豐三重</td>
-<td style="text-align: right;">7008</td>
+<td style="text-align: left;">合庫</td>
+<td style="text-align: right;">1020</td>
 <td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">15416</td>
-<td style="text-align: right;">3421</td>
-<td>629.24</td>
-<td style="text-align: left;">632.41</td>
+<td style="text-align: right;">2024-07-04</td>
+<td style="text-align: right;">28107</td>
+<td style="text-align: right;">59459</td>
+<td>1001.99</td>
+<td style="text-align: left;">1000.88</td>
 </tr>
 <tr>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">新百王</td>
-<td style="text-align: right;">6210</td>
+<td style="text-align: left;">合庫</td>
+<td style="text-align: right;">1020</td>
 <td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">75169</td>
-<td style="text-align: right;">57050</td>
-<td>629.56</td>
-<td style="text-align: left;">628.9</td>
+<td style="text-align: right;">2024-07-05</td>
+<td style="text-align: right;">10435</td>
+<td style="text-align: right;">11075</td>
+<td>1004.18</td>
+<td style="text-align: left;">1004.5</td>
 </tr>
 </tbody>
 </table>
 </div>
 <input id="__tabbed_48_2" name="__tabbed_48" type="radio" /><label for="__tabbed_48_2">Schema</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>{
-    securities_trader: str,
-    securities_trader_id: str,
-    stock_id: str,
-    date: str,
-    buy_volume: int64,
-    sell_volume: int64,
-    buy_price: float,
-    sell_price: float,
-}
-</code></pre></div>
-</div>
-</div>
-</div>
-<h4 id="sponsor">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#sponsor" title="Permanent link">&para;</a></h4>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="49:3"><input checked="checked" id="__tabbed_49_1" name="__tabbed_49" type="radio" /><label for="__tabbed_49_1">Package</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
-<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_trading_daily_report_secid_agg</span><span class="p">(</span>
-    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-01-31&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_49_2" name="__tabbed_49" type="radio" /><label for="__tabbed_49_2">Python-request</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-31&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_49_3" name="__tabbed_49" type="radio" /><label for="__tabbed_49_3">R</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
-<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
-<span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-01-31&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
-<span class="p">)</span>
-<span class="p">)</span>
-<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="n">data.table</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition output">
-<p class="admonition-title">Output</p>
-<div class="tabbed-set" data-tabs="50:2"><input checked="checked" id="__tabbed_50_1" name="__tabbed_50" type="radio" /><label for="__tabbed_50_1">DataFrame</label><div class="tabbed-content">
-<table>
-<thead>
-<tr>
-<th style="text-align: right;"></th>
-<th style="text-align: left;">securities_trader</th>
-<th style="text-align: right;">securities_trader_id</th>
-<th style="text-align: right;">stock_id</th>
-<th style="text-align: right;">date</th>
-<th style="text-align: right;">buy_volume</th>
-<th style="text-align: right;">sell_volume</th>
-<th>buy_price</th>
-<th style="text-align: left;">sell_price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">合庫桃園</td>
-<td style="text-align: right;">102E</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">17764</td>
-<td style="text-align: right;">4104</td>
-<td>630.2</td>
-<td style="text-align: left;">630.78</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">高橋龍潭</td>
-<td style="text-align: right;">5321</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">17555</td>
-<td style="text-align: right;">1000</td>
-<td>630.74</td>
-<td style="text-align: left;">628</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">高橋</td>
-<td style="text-align: right;">5320</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">33281</td>
-<td style="text-align: right;">15222</td>
-<td>630.56</td>
-<td style="text-align: left;">634.05</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">兆豐三重</td>
-<td style="text-align: right;">7008</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">15416</td>
-<td style="text-align: right;">3421</td>
-<td>629.24</td>
-<td style="text-align: left;">632.41</td>
-</tr>
-<tr>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">新百王</td>
-<td style="text-align: right;">6210</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">2024-01-31</td>
-<td style="text-align: right;">75169</td>
-<td style="text-align: right;">57050</td>
-<td>629.56</td>
-<td style="text-align: left;">628.9</td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_50_2" name="__tabbed_50" type="radio" /><label for="__tabbed_50_2">Schema</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>{
     securities_trader: str,
     securities_trader_id: str,
