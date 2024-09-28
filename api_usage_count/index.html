@@ -300,6 +300,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    API 用量超出上限時
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1000,6 +1007,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    API 用量超出上限時
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1040,10 +1054,65 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition request-example">
-<p class="admonition-title">Request-example</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Python</label><div class="tabbed-content">
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">FinMindApi</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">FinMindApi</span><span class="p">()</span>
+<span class="n">api</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">api_usage_limit</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.web.finmindtrade.com/v2/user_info&quot;</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;user_count&quot;</span><span class="p">]</span>  <span class="c1"># 使用次數</span>
+<span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;api_request_limit&quot;</span><span class="p">]</span>  <span class="c1"># api 使用上限</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="api_1">API 用量超出上限時<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>GET: https://api.web.finmindtrade.com/v2/user_info
+</code></pre></div>
+<p>請求參數:</p>
+<table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th style="text-align: center;">參數型別</th>
+<th style="text-align: right;">必填</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td style="text-align: center;">str</td>
+<td style="text-align: right;">N</td>
+<td>token</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">FinMindApi</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">FinMindApi</span><span class="p">()</span>
+<span class="n">api</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">api_usage</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.web.finmindtrade.com/v2/user_info&quot;</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
