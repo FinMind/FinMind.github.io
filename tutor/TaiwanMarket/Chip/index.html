@@ -4728,20 +4728,19 @@
     <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;2330&quot;</span><span class="p">,</span>
     <span class="n">securities_trader_id</span><span class="o">=</span><span class="s2">&quot;1020&quot;</span><span class="p">,</span>
     <span class="n">start_date</span><span class="o">=</span> <span class="s2">&quot;2024-07-01&quot;</span><span class="p">,</span>
-    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-07-15&#39;</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2024-07-15&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
 <input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><label for="__tabbed_47_2">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_stock_trading_daily_report_secid_agg&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
-    <span class="n">securities_trader_id</span><span class="p">:</span> <span class="s2">&quot;1020&quot;</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="p">:</span> <span class="s2">&quot;2024-07-01&quot;</span><span class="p">,</span>
-    <span class="n">end_date</span><span class="p">:</span> <span class="s1">&#39;2024-07-15&#39;</span>
+    <span class="s2">&quot;securities_trader_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-07-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s1">&#39;2024-07-15&#39;</span><span class="p">,</span>
     <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -4762,7 +4761,7 @@
 <span class="w">    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">securities_trader_id</span><span class="o">=</span><span class="s">&quot;1020&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-07-01&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2024-07-15&#39;</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2024-07-15&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
 <span class="p">)</span>
 <span class="p">)</span>
