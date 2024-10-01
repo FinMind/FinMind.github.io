@@ -4753,11 +4753,10 @@
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/taiwan_stock_trading_daily_report_secid_agg&#39;</span>
 <span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
 <span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockTradingDailyReportSecIdAgg&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">securities_trader_id</span><span class="o">=</span><span class="s">&quot;1020&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-07-01&quot;</span><span class="p">,</span>
