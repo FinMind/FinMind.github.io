@@ -531,6 +531,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanfuturesopeninterestlargetraders" class="md-nav__link">
+    期貨大額交易人未沖銷部位 TaiwanFuturesOpenInterestLargeTraders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_8" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanoptionopeninterestlargetraders" class="md-nav__link">
+    選擇權大額交易人未沖銷部位 TaiwanOptionOpenInterestLargeTraders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_9" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1250,6 +1278,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanfuturesopeninterestlargetraders" class="md-nav__link">
+    期貨大額交易人未沖銷部位 TaiwanFuturesOpenInterestLargeTraders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_8" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanoptionopeninterestlargetraders" class="md-nav__link">
+    選擇權大額交易人未沖銷部位 TaiwanOptionOpenInterestLargeTraders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_9" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1269,7 +1325,7 @@
                 
                   <h1>衍生性金融商品</h1>
                 
-                <p>在台股衍生性商品資料，我們擁有 11 種資料集，如下:</p>
+                <p>在台股衍生性商品資料，我們擁有 13 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanOptionFutureInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdaily">期貨日成交資訊 TaiwanFuturesDaily</a></li>
@@ -1282,6 +1338,8 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptioninstitutionalinvestorsafterhours">選擇權夜盤三大法人買賣 TaiwanOptionInstitutionalInvestorsAfterHours</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdealertradingvolumedaily">期貨各卷商每日交易 TaiwanFuturesDealerTradingVolumeDaily</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondealertradingvolumedaily">選擇權各卷商每日交易 TaiwanOptionDealerTradingVolumeDaily</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesopeninterestlargetraders">期貨大額交易人未沖銷部位 TaiwanFuturesOpenInterestLargeTraders</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptionopeninterestlargetraders">選擇權大額交易人未沖銷部位 TaiwanOptionOpenInterestLargeTraders</a></li>
 </ul>
 <hr />
 <h4 id="taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanFutOptDailyInfo<a class="headerlink" href="#taiwanfutoptdailyinfo" title="Permanent link">&para;</a></h4>
@@ -4116,6 +4174,869 @@
 </div>
 </div>
 </div>
+<h4 id="taiwanfuturesopeninterestlargetraders">期貨大額交易人未沖銷部位 TaiwanFuturesOpenInterestLargeTraders<a class="headerlink" href="#taiwanfuturesopeninterestlargetraders" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：1998-07-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至五 16:30</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="39:3"><input checked="checked" id="__tabbed_39_1" name="__tabbed_39" type="radio" /><label for="__tabbed_39_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_futures_open_interest_large_traders</span><span class="p">(</span>
+    <span class="n">futures_id</span><span class="o">=</span><span class="s1">&#39;TJF&#39;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-09-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-09-02&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_39_2" name="__tabbed_39" type="radio" /><label for="__tabbed_39_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;TJF&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_39_3" name="__tabbed_39" type="radio" /><label for="__tabbed_39_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TJF&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-09-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-09-02&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="w">                    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="40:2"><input checked="checked" id="__tabbed_40_1" name="__tabbed_40" type="radio" /><label for="__tabbed_40_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">contract_type</th>
+<th style="text-align: right;">buy_top5_trader_open_interest</th>
+<th style="text-align: right;">buy_top5_trader_open_interest_per</th>
+<th style="text-align: right;">buy_top10_trader_open_interest</th>
+<th style="text-align: right;">buy_top10_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top5_trader_open_interest</th>
+<th style="text-align: right;">sell_top5_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top10_trader_open_interest</th>
+<th style="text-align: right;">sell_top10_trader_open_interest_per</th>
+<th style="text-align: right;">market_open_interest</th>
+<th style="text-align: right;">buy_top5_specific_open_interest</th>
+<th style="text-align: left;">buy_top5_specific_open_interest_per</th>
+<th style="text-align: left;">buy_top10_specific_open_interest</th>
+<th style="text-align: left;">buy_top10_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top5_specific_open_interest</th>
+<th style="text-align: left;">sell_top5_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top10_specific_open_interest</th>
+<th style="text-align: left;">sell_top10_specific_open_interest_per</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">futures_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">東證期貨</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">74.4</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">90.4</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">81.6</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">94.4</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">12.8</td>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">12.8</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">11.2</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">11.2</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">TJF</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">東證期貨</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: right;">133</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">170</td>
+<td style="text-align: right;">80.2</td>
+<td style="text-align: right;">172</td>
+<td style="text-align: right;">81.1</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">91.5</td>
+<td style="text-align: right;">212</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">7.5</td>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">7.5</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">19.8</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">19.5</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">TJF</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_40_2" name="__tabbed_40" type="radio" /><label for="__tabbed_40_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    name: str,
+    contract_type: str,
+    buy_top5_trader_open_interest: int32,
+    buy_top5_trader_open_interest_per: float32,
+    buy_top10_trader_open_interest: int32,
+    buy_top10_trader_open_interest_per: float32,
+    sell_top5_trader_open_interest: int32,
+    sell_top5_trader_open_interest_per: float32,
+    sell_top10_trader_open_interest: int32,
+    sell_top10_trader_open_interest_per: float32,
+    market_open_interest: int32,
+    buy_top5_specific_open_interest: int32,
+    buy_top5_specific_open_interest_per: float32,
+    buy_top10_specific_open_interest: int32,
+    buy_top10_specific_open_interest_per: float32,
+    sell_top5_specific_open_interest: int32,
+    sell_top5_specific_open_interest_per: float32,
+    sell_top10_specific_open_interest: int32,
+    sell_top10_specific_open_interest_per: float32,
+    date: str,
+    futures_id: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="backersponsor_8">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_8" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="41:3"><input checked="checked" id="__tabbed_41_1" name="__tabbed_41" type="radio" /><label for="__tabbed_41_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_futures_open_interest_large_traders</span><span class="p">(</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-09-02&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_41_2" name="__tabbed_41" type="radio" /><label for="__tabbed_41_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_41_3" name="__tabbed_41" type="radio" /><label for="__tabbed_41_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-09-02&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="w">                    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="42:2"><input checked="checked" id="__tabbed_42_1" name="__tabbed_42" type="radio" /><label for="__tabbed_42_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">contract_type</th>
+<th style="text-align: right;">buy_top5_trader_open_interest</th>
+<th style="text-align: right;">buy_top5_trader_open_interest_per</th>
+<th style="text-align: right;">buy_top10_trader_open_interest</th>
+<th style="text-align: right;">buy_top10_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top5_trader_open_interest</th>
+<th style="text-align: right;">sell_top5_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top10_trader_open_interest</th>
+<th style="text-align: right;">sell_top10_trader_open_interest_per</th>
+<th style="text-align: right;">market_open_interest</th>
+<th style="text-align: right;">buy_top5_specific_open_interest</th>
+<th style="text-align: left;">buy_top5_specific_open_interest_per</th>
+<th style="text-align: left;">buy_top10_specific_open_interest</th>
+<th style="text-align: left;">buy_top10_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top5_specific_open_interest</th>
+<th style="text-align: left;">sell_top5_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top10_specific_open_interest</th>
+<th style="text-align: left;">sell_top10_specific_open_interest_per</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">futures_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">布蘭特原油期貨</td>
+<td style="text-align: left;">202411</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">BRF</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">布蘭特原油期貨</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">96.9</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">75</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">75</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">BRF</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">臺灣生技期貨</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">BTF</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">臺灣生技期貨</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">BTF</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">南亞期貨</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: right;">231</td>
+<td style="text-align: right;">30.3</td>
+<td style="text-align: right;">332</td>
+<td style="text-align: right;">43.6</td>
+<td style="text-align: right;">512</td>
+<td style="text-align: right;">67.2</td>
+<td style="text-align: right;">655</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">762</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: left;">16.7</td>
+<td style="text-align: left;">127</td>
+<td style="text-align: left;">16.7</td>
+<td style="text-align: left;">438</td>
+<td style="text-align: left;">57.5</td>
+<td style="text-align: left;">532</td>
+<td style="text-align: left;">69.8</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">CA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_42_2" name="__tabbed_42" type="radio" /><label for="__tabbed_42_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    name: str,
+    contract_type: str,
+    buy_top5_trader_open_interest: int32,
+    buy_top5_trader_open_interest_per: float32,
+    buy_top10_trader_open_interest: int32,
+    buy_top10_trader_open_interest_per: float32,
+    sell_top5_trader_open_interest: int32,
+    sell_top5_trader_open_interest_per: float32,
+    sell_top10_trader_open_interest: int32,
+    sell_top10_trader_open_interest_per: float32,
+    market_open_interest: int32,
+    buy_top5_specific_open_interest: int32,
+    buy_top5_specific_open_interest_per: float32,
+    buy_top10_specific_open_interest: int32,
+    buy_top10_specific_open_interest_per: float32,
+    sell_top5_specific_open_interest: int32,
+    sell_top5_specific_open_interest_per: float32,
+    sell_top10_specific_open_interest: int32,
+    sell_top10_specific_open_interest_per: float32,
+    date: str,
+    futures_id: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanoptionopeninterestlargetraders">選擇權大額交易人未沖銷部位 TaiwanOptionOpenInterestLargeTraders<a class="headerlink" href="#taiwanoptionopeninterestlargetraders" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：1998-07-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至五 16:30</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="43:3"><input checked="checked" id="__tabbed_43_1" name="__tabbed_43" type="radio" /><label for="__tabbed_43_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_option_open_interest_large_traders</span><span class="p">(</span>
+    <span class="n">futures_id</span><span class="o">=</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-09-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2024-09-02&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_43_2" name="__tabbed_43" type="radio" /><label for="__tabbed_43_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_43_3" name="__tabbed_43" type="radio" /><label for="__tabbed_43_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;CA&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-09-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-09-02&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="w">                    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="44:2"><input checked="checked" id="__tabbed_44_1" name="__tabbed_44" type="radio" /><label for="__tabbed_44_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">contract_type</th>
+<th style="text-align: left;">buy_top5_trader_open_interest</th>
+<th style="text-align: right;">buy_top5_trader_open_interest_per</th>
+<th style="text-align: right;">buy_top10_trader_open_interest</th>
+<th style="text-align: right;">buy_top10_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top5_trader_open_interest</th>
+<th style="text-align: right;">sell_top5_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top10_trader_open_interest</th>
+<th style="text-align: right;">sell_top10_trader_open_interest_per</th>
+<th style="text-align: right;">market_open_interest</th>
+<th style="text-align: right;">buy_top5_specific_open_interest</th>
+<th style="text-align: right;">buy_top5_specific_open_interest_per</th>
+<th style="text-align: left;">buy_top10_specific_open_interest</th>
+<th style="text-align: left;">buy_top10_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top5_specific_open_interest</th>
+<th style="text-align: left;">sell_top5_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top10_specific_open_interest</th>
+<th style="text-align: left;">sell_top10_specific_open_interest_per</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">put_call</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">option_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">call</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">call</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">put</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">put</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_44_2" name="__tabbed_44" type="radio" /><label for="__tabbed_44_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    contract_type: str,
+    buy_top5_trader_open_interest: int32,
+    buy_top5_trader_open_interest_per: float32,
+    buy_top10_trader_open_interest: int32,
+    buy_top10_trader_open_interest_per: float32,
+    sell_top5_trader_open_interest: int32,
+    sell_top5_trader_open_interest_per: float32,
+    sell_top10_trader_open_interest: int32,
+    sell_top10_trader_open_interest_per: float32,
+    market_open_interest: int32,
+    buy_top5_specific_open_interest: int32,
+    buy_top5_specific_open_interest_per: float32,
+    buy_top10_specific_open_interest: int32,
+    buy_top10_specific_open_interest_per: float32,
+    sell_top5_specific_open_interest: int32,
+    sell_top5_specific_open_interest_per: float32,
+    sell_top10_specific_open_interest: int32,
+    sell_top10_specific_open_interest_per: float32,
+    date: str,
+    put_call: str,
+    name: str,
+    option_id: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="backersponsor_9">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_9" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="45:3"><input checked="checked" id="__tabbed_45_1" name="__tabbed_45" type="radio" /><label for="__tabbed_45_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_option_open_interest_large_traders</span><span class="p">(</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2024-09-02&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_45_2" name="__tabbed_45" type="radio" /><label for="__tabbed_45_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-09-02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_45_3" name="__tabbed_45" type="radio" /><label for="__tabbed_45_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionOpenInterestLargeTraders&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-09-02&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="w">                    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="46:2"><input checked="checked" id="__tabbed_46_1" name="__tabbed_46" type="radio" /><label for="__tabbed_46_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">contract_type</th>
+<th style="text-align: left;">buy_top5_trader_open_interest</th>
+<th style="text-align: right;">buy_top5_trader_open_interest_per</th>
+<th style="text-align: right;">buy_top10_trader_open_interest</th>
+<th style="text-align: right;">buy_top10_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top5_trader_open_interest</th>
+<th style="text-align: right;">sell_top5_trader_open_interest_per</th>
+<th style="text-align: right;">sell_top10_trader_open_interest</th>
+<th style="text-align: right;">sell_top10_trader_open_interest_per</th>
+<th style="text-align: right;">market_open_interest</th>
+<th style="text-align: right;">buy_top5_specific_open_interest</th>
+<th style="text-align: right;">buy_top5_specific_open_interest_per</th>
+<th style="text-align: left;">buy_top10_specific_open_interest</th>
+<th style="text-align: left;">buy_top10_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top5_specific_open_interest</th>
+<th style="text-align: left;">sell_top5_specific_open_interest_per</th>
+<th style="text-align: left;">sell_top10_specific_open_interest</th>
+<th style="text-align: left;">sell_top10_specific_open_interest_per</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">put_call</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">option_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">call</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">call</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">put</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">put</td>
+<td style="text-align: left;">南亞</td>
+<td style="text-align: left;">CA</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">202409</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2024-09-02</td>
+<td style="text-align: left;">call</td>
+<td style="text-align: left;">中鋼</td>
+<td style="text-align: left;">CB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_46_2" name="__tabbed_46" type="radio" /><label for="__tabbed_46_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    contract_type: str,
+    buy_top5_trader_open_interest: int32,
+    buy_top5_trader_open_interest_per: float32,
+    buy_top10_trader_open_interest: int32,
+    buy_top10_trader_open_interest_per: float32,
+    sell_top5_trader_open_interest: int32,
+    sell_top5_trader_open_interest_per: float32,
+    sell_top10_trader_open_interest: int32,
+    sell_top10_trader_open_interest_per: float32,
+    market_open_interest: int32,
+    buy_top5_specific_open_interest: int32,
+    buy_top5_specific_open_interest_per: float32,
+    buy_top10_specific_open_interest: int32,
+    buy_top10_specific_open_interest_per: float32,
+    sell_top5_specific_open_interest: int32,
+    sell_top5_specific_open_interest_per: float32,
+    sell_top10_specific_open_interest: int32,
+    sell_top10_specific_open_interest_per: float32,
+    date: str,
+    put_call: str,
+    name: str,
+    option_id: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
                 
               
               
