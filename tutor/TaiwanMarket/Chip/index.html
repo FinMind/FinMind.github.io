@@ -3925,10 +3925,66 @@
 <li>由於資料量過大，單次請求只提供一天資料</li>
 <li>資料更新時間 <strong>星期一至五 21:00</strong>，實際更新時間以 API 資料為主</li>
 <li>部分資料缺失，缺失日期為：2022-10-31~2022-11-03, 2023-01-11~2023-01-17</li>
+<li>開啟 Async 功能，可大幅縮短資料更新時間，colab 實測 2175 檔股票，只需 4 分 20 秒即可完成下載。</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="35:2"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><label for="__tabbed_35_1">Python-request</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="35:4"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><label for="__tabbed_35_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_trading_daily_report</span><span class="p">(</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2022-06-16&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><label for="__tabbed_35_2">Package-Async</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2024-12-20&#39;</span>
+<span class="n">taiwan_stock_price_df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_daily</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+<span class="c1"># 只拿取當天交易量大於 0 的股票</span>
+<span class="n">taiwan_stock_price_df</span> <span class="o">=</span> <span class="n">taiwan_stock_price_df</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;stock_id&quot;</span><span class="p">,</span> <span class="s2">&quot;Trading_Volume&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">taiwan_stock_price_df</span> <span class="o">=</span> <span class="n">taiwan_stock_price_df</span><span class="p">[</span>
+    <span class="n">taiwan_stock_price_df</span><span class="p">[</span><span class="s2">&quot;Trading_Volume&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="p">]</span>
+<span class="c1"># 拿取當天上市櫃，industry_category 非大盤, index, 所有證券的股票 ID</span>
+<span class="c1"># 因為這些股票沒有分點</span>
+<span class="n">stock_info_df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_info</span><span class="p">()</span>
+<span class="n">stock_info</span> <span class="o">=</span> <span class="n">stock_info_df</span><span class="p">[</span><span class="n">stock_info_df</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;twse&quot;</span><span class="p">,</span> <span class="s2">&quot;tpex&quot;</span><span class="p">])]</span>
+<span class="n">cate_mask</span> <span class="o">=</span> <span class="n">stock_info</span><span class="p">[</span><span class="s2">&quot;industry_category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;大盤&quot;</span><span class="p">,</span> <span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="s2">&quot;所有證券&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">id_mask</span> <span class="o">=</span> <span class="n">stock_info</span><span class="p">[</span><span class="s2">&quot;stock_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;TAIEX&quot;</span><span class="p">,</span> <span class="s2">&quot;TPEx&quot;</span><span class="p">])</span>
+<span class="n">stock_info</span> <span class="o">=</span> <span class="n">stock_info</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">cate_mask</span> <span class="o">|</span> <span class="n">id_mask</span><span class="p">)]</span>
+<span class="n">stock_info</span> <span class="o">=</span> <span class="n">stock_info</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">taiwan_stock_price_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;stock_id&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">stock_info</span> <span class="o">=</span> <span class="n">stock_info</span><span class="p">[</span><span class="o">~</span><span class="n">stock_info</span><span class="p">[</span><span class="s2">&quot;stock_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">taiwan_stock_price_df</span><span class="p">)]</span>
+<span class="n">stock_id_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">stock_info</span><span class="p">[</span><span class="s2">&quot;stock_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;len: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_id_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 2175</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_trading_daily_report</span><span class="p">(</span>
+    <span class="n">stock_id_list</span><span class="o">=</span><span class="n">stock_id_list</span><span class="p">,</span>
+    <span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">,</span>
+    <span class="n">use_async</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+<span class="c1"># 0:04:20.405935</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_35_3" name="__tabbed_35" type="radio" /><label for="__tabbed_35_3">Python-request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -3944,7 +4000,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><label for="__tabbed_35_2">R</label><div class="tabbed-content">
+<input id="__tabbed_35_4" name="__tabbed_35" type="radio" /><label for="__tabbed_35_4">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
