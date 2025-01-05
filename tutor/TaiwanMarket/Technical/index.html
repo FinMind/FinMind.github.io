@@ -3777,10 +3777,13 @@
 <span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="n">data_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="n">data_loader</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 
 <span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2024-12-20&#39;</span>
-<span class="n">taiwan_stock_price_df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_daily</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+<span class="n">taiwan_stock_price_df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_daily</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
 <span class="c1"># 只拿取當天交易量大於 0 的股票</span>
 <span class="n">taiwan_stock_price_df</span> <span class="o">=</span> <span class="n">taiwan_stock_price_df</span><span class="p">[</span>
     <span class="p">[</span><span class="s2">&quot;stock_id&quot;</span><span class="p">,</span> <span class="s2">&quot;Trading_Volume&quot;</span><span class="p">]</span>
@@ -3790,7 +3793,7 @@
 <span class="p">]</span>
 <span class="c1"># 拿取當天上市櫃，industry_category 非大盤, index, 所有證券的股票 ID</span>
 <span class="c1"># 因為這些股票沒有分點</span>
-<span class="n">stock_info_df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_info</span><span class="p">()</span>
+<span class="n">stock_info_df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_info</span><span class="p">()</span>
 <span class="n">stock_info</span> <span class="o">=</span> <span class="n">stock_info_df</span><span class="p">[</span><span class="n">stock_info_df</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;twse&quot;</span><span class="p">,</span> <span class="s2">&quot;tpex&quot;</span><span class="p">])]</span>
 <span class="n">cate_mask</span> <span class="o">=</span> <span class="n">stock_info</span><span class="p">[</span><span class="s2">&quot;industry_category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
     <span class="p">[</span><span class="s2">&quot;大盤&quot;</span><span class="p">,</span> <span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="s2">&quot;所有證券&quot;</span><span class="p">]</span>
