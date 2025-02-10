@@ -542,6 +542,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockdispositionsecuritiesperiod" class="md-nav__link">
+    公布處置有價證劵表 TaiwanStockDispositionSecuritiesPeriod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_7" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1320,6 +1334,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockdispositionsecuritiesperiod" class="md-nav__link">
+    公布處置有價證劵表 TaiwanStockDispositionSecuritiesPeriod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_7" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1339,7 +1367,7 @@
                 
                   <h1>籌碼面</h1>
                 
-                <p>在台股籌碼面，我們擁有 15 種資料集，如下:</p>
+                <p>在台股籌碼面，我們擁有 16 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -1358,6 +1386,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockgovernmentbankbuysell-sponsor">台股八大行庫賣賣表 TaiwanstockGovernmentBankBuySell</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwantotalexchangemarginmaintenance-backersponsor">台灣大盤融資維持率 TaiwanTotalExchangeMarginMaintenance</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktradingdailyreportsecidagg-sponsor">當日卷商分點統計表 TaiwanStockTradingDailyReportSecIdAgg</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockdispositionsecuritiesperiod">公布處置有價證劵表 TaiwanStockDispositionSecuritiesPeriod</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale<a class="headerlink" href="#taiwanstockmarginpurchaseshortsale" title="Permanent link">&para;</a></h4>
@@ -4921,6 +4950,224 @@
     sell_volume: int64,
     buy_price: float,
     sell_price: float,
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="taiwanstockdispositionsecuritiesperiod">公布處置有價證劵表 TaiwanStockDispositionSecuritiesPeriod<a class="headerlink" href="#taiwanstockdispositionsecuritiesperiod" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2001-01-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至六 20:00~23:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="49:3"><input checked="checked" id="__tabbed_49_1" name="__tabbed_49" type="radio" /><label for="__tabbed_49_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_disposition_securities_period</span><span class="p">(</span>
+    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;6477&quot;</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2025-01-01&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2025-02-01&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_49_2" name="__tabbed_49" type="radio" /><label for="__tabbed_49_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockDispositionSecuritiesPeriod&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6477&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-02-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_49_3" name="__tabbed_49" type="radio" /><label for="__tabbed_49_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockDispositionSecuritiesPeriod&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">data_id</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;6477&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2025-02-01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="50:2"><input checked="checked" id="__tabbed_50_1" name="__tabbed_50" type="radio" /><label for="__tabbed_50_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: right;">stock_name</th>
+<th style="text-align: right;">disposition_cnt</th>
+<th style="text-align: right;">condition</th>
+<th style="text-align: right;">measure</th>
+<th>period_start</th>
+<th>period_end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2025-01-09</td>
+<td style="text-align: right;">6477</td>
+<td style="text-align: right;">安集</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">連續三次及當日沖銷標準</td>
+<td style="text-align: right;">第一次處置</td>
+<td>2025-01-10</td>
+<td>2025-02-05</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_50_2" name="__tabbed_50" type="radio" /><label for="__tabbed_50_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    stock_name: str,
+    disposition_cnt: int32,
+    condition: str,
+    measure: str,
+    period_start: str,
+    period_end: str,
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="backersponsor_7">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_7" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="51:3"><input checked="checked" id="__tabbed_51_1" name="__tabbed_51" type="radio" /><label for="__tabbed_51_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_disposition_securities_period</span><span class="p">(</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2025-01-09&#39;</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="p">:</span> <span class="s2">&quot;2025-01-09&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_51_2" name="__tabbed_51" type="radio" /><label for="__tabbed_51_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockDispositionSecuritiesPeriod&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-09&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-09&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_51_3" name="__tabbed_51" type="radio" /><label for="__tabbed_51_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockDispositionSecuritiesPeriod&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2025-01-09&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_date</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;2025-01-09&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="52:2"><input checked="checked" id="__tabbed_52_1" name="__tabbed_52" type="radio" /><label for="__tabbed_52_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: right;">stock_name</th>
+<th style="text-align: right;">disposition_cnt</th>
+<th style="text-align: right;">condition</th>
+<th style="text-align: right;">measure</th>
+<th>period_start</th>
+<th>period_end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2025-01-09</td>
+<td style="text-align: right;">6477</td>
+<td style="text-align: right;">安集</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">連續三次及當日沖銷標準</td>
+<td style="text-align: right;">第一次處置</td>
+<td>2025-01-10</td>
+<td>2025-02-05</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2025-01-09</td>
+<td style="text-align: right;">9103</td>
+<td style="text-align: right;">美德醫療-DR</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">最近十個營業日已有六次</td>
+<td style="text-align: right;">第二次處置</td>
+<td>2025-01-10</td>
+<td>2025-02-03</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_52_2" name="__tabbed_52" type="radio" /><label for="__tabbed_52_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    stock_name: str,
+    disposition_cnt: int32,
+    condition: str,
+    measure: str,
+    period_start: str,
+    period_end: str,
 }
 </code></pre></div>
 </div>
