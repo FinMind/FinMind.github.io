@@ -448,6 +448,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockindustrychain-backersponsor" class="md-nav__link">
+    個體公司所屬產業鏈 TaiwanStockIndustryChain (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1012,6 +1019,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockindustrychain-backersponsor" class="md-nav__link">
+    個體公司所屬產業鏈 TaiwanStockIndustryChain (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1031,10 +1045,11 @@
                 
                   <h1>其他</h1>
                 
-                <p>在台灣股票新聞面，我們擁有 2 種資料集，如下:</p>
+                <p>在台灣股票新聞面，我們擁有 3 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Others/#taiwanstocknews">相關新聞表 TaiwanStockNews</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Others/#taiwanbusinessindicator-backersponsor">台灣每月景氣對策信號表 TaiwanBusinessIndicator</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Others/#taiwanstockindustrychain-backersponsor">個體公司所屬產業鏈 TaiwanStockIndustryChain</a></li>
 </ul>
 <h4 id="taiwanstocknews">相關新聞表 TaiwanStockNews<a class="headerlink" href="#taiwanstocknews" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
@@ -1284,6 +1299,105 @@
     lagging_notrend: float32,
     monitoring: float32,
     monitoring_color: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="taiwanstockindustrychain-backersponsor">個體公司所屬產業鏈 TaiwanStockIndustryChain (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockindustrychain-backersponsor" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockIndustryChain&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockIndustryChain&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="w">                    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: right;">industry</th>
+<th style="text-align: center;">sub_industry</th>
+<th style="text-align: center;">date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">1218</td>
+<td style="text-align: right;">食品</td>
+<td style="text-align: center;">冷凍、罐頭、脫水、醃漬食品</td>
+<td style="text-align: center;">2025-03-30</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1218</td>
+<td style="text-align: right;">食品</td>
+<td style="text-align: center;">加工食品</td>
+<td style="text-align: center;">2025-03-30</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1219</td>
+<td style="text-align: right;">食品</td>
+<td style="text-align: center;">加工食品</td>
+<td style="text-align: center;">2025-03-30</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">1219</td>
+<td style="text-align: right;">雲端運算</td>
+<td style="text-align: center;">系統整合</td>
+<td style="text-align: center;">2025-03-30</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">1236</td>
+<td style="text-align: right;">食品</td>
+<td style="text-align: center;">乳製品</td>
+<td style="text-align: center;">2025-03-30</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    stock_id: str,
+    industry: str,
+    sub_industry: str,
+    date: str
 }
 </code></pre></div>
 </div>
