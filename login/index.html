@@ -1087,11 +1087,11 @@
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/login&#39;</span>
 <span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">POST</span><span class="p">(</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
-<span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">    </span><span class="n">user_id</span><span class="o">=</span><span class="s">&quot;user_id&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">password</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;password&quot;</span>
-<span class="p">)</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">user_id</span><span class="o">=</span><span class="s">&quot;user_id&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">password</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;password&quot;</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>

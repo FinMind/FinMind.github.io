@@ -1055,26 +1055,28 @@
 <h4 id="governmentbondsyield">美國國債 GovernmentBondsYield<a class="headerlink" href="#governmentbondsyield" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
-<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;GovernmentBondsYield&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;United States 1-Month&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-          <span class="n">date</span>                   <span class="n">name</span>  <span class="n">value</span>
-<span class="mi">0</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">1</span><span class="o">-</span><span class="n">Month</span>   <span class="mf">1.53</span>
-<span class="mi">1</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">1</span><span class="o">-</span><span class="n">Month</span>   <span class="mf">1.52</span>
-<span class="mi">2</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">06</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">1</span><span class="o">-</span><span class="n">Month</span>   <span class="mf">1.54</span>
-<span class="mi">3</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">1</span><span class="o">-</span><span class="n">Month</span>   <span class="mf">1.52</span>
-<span class="mi">4</span>  <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">08</span>  <span class="n">United</span> <span class="n">States</span> <span class="mi">1</span><span class="o">-</span><span class="n">Month</span>   <span class="mf">1.50</span>
-</code></pre></div>
+<p>```python
+ import requests
+ import pandas as pd</p>
+<p>url = "https://api.finmindtrade.com/api/v4/data"
+token = "" # 參考登入，獲取金鑰
+headers = {"Authorization": f"Bearer {token}"}
+ parameter = {
+      "dataset": "GovernmentBondsYield",
+      "data_id": "United States 1-Month",
+      "start_date": "2020-01-01",
+ }
+ data = requests.get(url, headers=headers, params=parameter)
+ data = data.json()
+ data = pd.DataFrame(data['data'])
+ print(data.head())
+           date                   name  value
+ 0  2020-01-02  United States 1-Month   1.53
+ 1  2020-01-03  United States 1-Month   1.52
+ 2  2020-01-06  United States 1-Month   1.54
+ 3  2020-01-07  United States 1-Month   1.52
+ 4  2020-01-08  United States 1-Month   1.50
+ ```</p>
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
