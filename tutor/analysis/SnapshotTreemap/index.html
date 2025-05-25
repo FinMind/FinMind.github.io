@@ -1061,10 +1061,15 @@
 <p><img alt="gif" src="https://finmind.github.io/images/snapshot_treemap.gif" /></p>
 <h2 id="_1">如何執行？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>將以下程式碼，儲存為，<code>FinMind - 台股 - 即時資訊 X 版塊圖 X flask.py</code></li>
-<li>執行以下指令</li>
+<li>將以下程式碼，儲存為，<code>FinMind_tree_map_flask.py</code></li>
+<li>安裝 package</li>
 </ul>
-<div class="highlight"><pre><span></span><code>    <span class="n">FINMIND_API_TOKEN</span><span class="o">=</span><span class="n">your_token</span> <span class="n">python</span> <span class="n">FinMind</span> <span class="o">-</span> <span class="n">台股</span> <span class="o">-</span> <span class="n">即時資訊</span> <span class="n">X</span> <span class="n">版塊圖</span> <span class="n">X</span> <span class="n">flask</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">apscheduler</span> <span class="n">plotly</span> <span class="n">FinMind</span> <span class="o">-</span><span class="n">q</span>
+</code></pre></div>
+<ul>
+<li>執行以下指令 (將 your_token 改成用戶的 token)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">FINMIND_API_TOKEN</span><span class="o">=</span><span class="n">your_token</span> <span class="n">python</span> <span class="n">FinMind_tree_map_flask</span><span class="o">.</span><span class="n">py</span>
 </code></pre></div>
 <h2 id="_2">程式碼如下<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <script src="https://gist.github.com/linsamtw/af68df2690b01469f3a0a726e67aff39.js"></script>
