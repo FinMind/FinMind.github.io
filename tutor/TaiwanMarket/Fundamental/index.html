@@ -505,6 +505,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstocksplitprice" class="md-nav__link">
+    台股分割後參考價 TaiwanStockSplitPrice
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1222,6 +1229,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstocksplitprice" class="md-nav__link">
+    台股分割後參考價 TaiwanStockSplitPrice
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1241,7 +1255,7 @@
                 
                   <h1>基本面</h1>
                 
-                <p>在台股基本面，我們擁有 10 種資料集，如下:</p>
+                <p>在台股基本面，我們擁有 11 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockbalancesheet">資產負債表 TaiwanStockBalanceSheet</a></li>
@@ -1253,6 +1267,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockmarketvalue-backersponsor">台灣股價市值表 TaiwanStockMarketValue</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockdelisting">台灣股票下市櫃表 TaiwanStockDelisting</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockmarketvalueweight-backersponsor">台股市值比重表 TaiwanStockMarketValueWeight</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstocksplitprice">台股分割後參考價 TaiwanStockSplitPrice</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements<a class="headerlink" href="#taiwanstockfinancialstatements" title="Permanent link">&para;</a></h4>
@@ -3481,6 +3496,131 @@
     weight_per: float32,
     date: str,
     type: str
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanstocksplitprice">台股分割後參考價 TaiwanStockSplitPrice<a class="headerlink" href="#taiwanstocksplitprice" title="Permanent link">&para;</a></h4>
+<ul>
+<li>提供台股分割後參考價。</li>
+<li>資料更新時間-星期一至五 18:00，實際更新時間以 API 資料為主。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="34:2"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio" /><label for="__tabbed_34_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockSplitPrice&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_34_2" name="__tabbed_34" type="radio" /><label for="__tabbed_34_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockSplitPrice&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="35:2"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><label for="__tabbed_35_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: left;">type</th>
+<th style="text-align: right;">before_price</th>
+<th style="text-align: right;">after_price</th>
+<th style="text-align: right;">max_price</th>
+<th style="text-align: right;">min_price</th>
+<th style="text-align: right;">open_price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2024-12-11</td>
+<td style="text-align: left;">00632R</td>
+<td style="text-align: left;">反分割</td>
+<td style="text-align: right;">3.28</td>
+<td style="text-align: right;">22.96</td>
+<td style="text-align: right;">25.25</td>
+<td style="text-align: right;">20.67</td>
+<td style="text-align: right;">22.96</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2025-02-19</td>
+<td style="text-align: left;">00676R</td>
+<td style="text-align: left;">反分割</td>
+<td style="text-align: right;">2.04</td>
+<td style="text-align: right;">12.23</td>
+<td style="text-align: right;">13.45</td>
+<td style="text-align: right;">11.01</td>
+<td style="text-align: right;">12.23</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2025-06-11</td>
+<td style="text-align: left;">00663L</td>
+<td style="text-align: left;">分割</td>
+<td style="text-align: right;">170.15</td>
+<td style="text-align: right;">24.3</td>
+<td style="text-align: right;">29.16</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">24.3</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2025-06-18</td>
+<td style="text-align: left;">0050</td>
+<td style="text-align: left;">分割</td>
+<td style="text-align: right;">188.65</td>
+<td style="text-align: right;">47.16</td>
+<td style="text-align: right;">51.85</td>
+<td style="text-align: right;">42.45</td>
+<td style="text-align: right;">47.16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><label for="__tabbed_35_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str
+    stock_id: str
+    type: str
+    before_price: float
+    after_price: float
+    max_price: float
+    min_price: float
+    open_price: float
 }
 </code></pre></div>
 </div>
