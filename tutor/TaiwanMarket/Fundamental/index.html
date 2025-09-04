@@ -512,6 +512,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockparvaluechange" class="md-nav__link">
+    台灣股票變更面額恢復買賣參考價格 TaiwanStockParValueChange
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1236,6 +1243,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockparvaluechange" class="md-nav__link">
+    台灣股票變更面額恢復買賣參考價格 TaiwanStockParValueChange
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1255,7 +1269,7 @@
                 
                   <h1>基本面</h1>
                 
-                <p>在台股基本面，我們擁有 11 種資料集，如下:</p>
+                <p>在台股基本面，我們擁有 12 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockbalancesheet">資產負債表 TaiwanStockBalanceSheet</a></li>
@@ -1268,6 +1282,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockdelisting">台灣股票下市櫃表 TaiwanStockDelisting</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockmarketvalueweight-backersponsor">台股市值比重表 TaiwanStockMarketValueWeight</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstocksplitprice">台股分割後參考價 TaiwanStockSplitPrice</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwandtockparvaluechange">台灣股票變更面額恢復買賣參考價格 TaiwanStockParValueChange</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements<a class="headerlink" href="#taiwanstockfinancialstatements" title="Permanent link">&para;</a></h4>
@@ -3621,6 +3636,154 @@
     max_price: float
     min_price: float
     open_price: float
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanstockparvaluechange">台灣股票變更面額恢復買賣參考價格 TaiwanStockParValueChange<a class="headerlink" href="#taiwanstockparvaluechange" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2020-01-01 ~ now</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="36:3"><input checked="checked" id="__tabbed_36_1" name="__tabbed_36" type="radio" /><label for="__tabbed_36_1">Package</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="c1"># api.login(user_id=&#39;user_id&#39;,password=&#39;password&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_par_value_change</span><span class="p">(</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_36_2" name="__tabbed_36" type="radio" /><label for="__tabbed_36_2">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockParValueChange&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_36_3" name="__tabbed_36" type="radio" /><label for="__tabbed_36_3">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockParValueChange&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-01-01&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="37:2"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><label for="__tabbed_37_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: right;">stock_name</th>
+<th style="text-align: right;">before_close</th>
+<th style="text-align: right;">after_ref_close</th>
+<th style="text-align: right;">after_ref_max</th>
+<th style="text-align: right;">after_ref_min</th>
+<th style="text-align: right;">after_ref_open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2020-08-17</td>
+<td style="text-align: right;">8070</td>
+<td style="text-align: right;">長華</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">20.9</td>
+<td style="text-align: right;">17.1</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2021-10-18</td>
+<td style="text-align: right;">6531</td>
+<td style="text-align: right;">愛普</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;">375</td>
+<td style="text-align: right;">412.5</td>
+<td style="text-align: right;">337.5</td>
+<td style="text-align: right;">375</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2022-07-13</td>
+<td style="text-align: right;">6415</td>
+<td style="text-align: right;">矽力-K</td>
+<td style="text-align: right;">2485</td>
+<td style="text-align: right;">621.25</td>
+<td style="text-align: right;">683</td>
+<td style="text-align: right;">560</td>
+<td style="text-align: right;">621</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2024-11-11</td>
+<td style="text-align: right;">8476</td>
+<td style="text-align: right;">台境</td>
+<td style="text-align: right;">58.8</td>
+<td style="text-align: right;">29.4</td>
+<td style="text-align: right;">32.3</td>
+<td style="text-align: right;">26.5</td>
+<td style="text-align: right;">29.4</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2025-06-30</td>
+<td style="text-align: right;">4763</td>
+<td style="text-align: right;">材料-KY</td>
+<td style="text-align: right;">885</td>
+<td style="text-align: right;">88.5</td>
+<td style="text-align: right;">97.3</td>
+<td style="text-align: right;">79.7</td>
+<td style="text-align: right;">88.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><label for="__tabbed_37_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str,
+    stock_id: str,
+    stock_name: str,
+    before_close: float64,
+    after_ref_close: float64,
+    after_ref_max: float64,
+    after_ref_min: float64,
+    after_ref_open: float64
 }
 </code></pre></div>
 </div>
