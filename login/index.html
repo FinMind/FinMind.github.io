@@ -279,8 +279,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tokenapi-v4-token-user_idpassword-request-token" class="md-nav__link">
-    登入獲取 token，api v4 改用 token 取代 user_id、password，每次發 request 只需要帶 token 即可。
+  <a href="#api-token-finmind" class="md-nav__link">
+    在官網登入後，在使用者資訊頁面，取得 api token 金鑰，後續 FinMind 操作上，帶上。
   </a>
   
 </li>
@@ -994,8 +994,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tokenapi-v4-token-user_idpassword-request-token" class="md-nav__link">
-    登入獲取 token，api v4 改用 token 取代 user_id、password，每次發 request 只需要帶 token 即可。
+  <a href="#api-token-finmind" class="md-nav__link">
+    在官網登入後，在使用者資訊頁面，取得 api token 金鑰，後續 FinMind 操作上，帶上。
   </a>
   
 </li>
@@ -1018,51 +1018,15 @@
                 
                 
                 <h1 id="_1">登入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h4 id="tokenapi-v4-token-user_idpassword-request-token">登入獲取 token，api v4 改用 token 取代 user_id、password，每次發 request 只需要帶 token 即可。<a class="headerlink" href="#tokenapi-v4-token-user_idpassword-request-token" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>POST: https://api.finmindtrade.com/api/v4/login
-</code></pre></div>
-<p>請求參數:</p>
-<table>
-<thead>
-<tr>
-<th>參數名稱</th>
-<th style="text-align: center;">參數型別</th>
-<th style="text-align: right;">必填</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_id</td>
-<td style="text-align: center;">str</td>
-<td style="text-align: right;">N</td>
-<td>使用者 id ，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
-</tr>
-<tr>
-<td>password</td>
-<td style="text-align: center;">str</td>
-<td style="text-align: right;">N</td>
-<td>使用者密碼，申辦帳號可以使用更多用量喔，快來<a href="https://finmindtrade.com/analysis/#/account/register">申請</a>吧!</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code>response: token
-</code></pre></div>
+<h4 id="api-token-finmind">在<a href="https://finmindtrade.com/analysis/#/account/user">官網</a>登入後，在使用者資訊頁面，取得 api token 金鑰，後續 FinMind 操作上，帶上。<a class="headerlink" href="#api-token-finmind" title="Permanent link">&para;</a></h4>
 <div class="admonition package-example">
 <p class="admonition-title">Package-example</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Login by token</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Login by token</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
-<span class="n">api</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Login by password</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
-<span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">)</span>
-</code></pre></div>
+<span class="hll"><span class="n">api</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1070,40 +1034,34 @@
 <p class="admonition-title">Request-example</p>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/login&quot;</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+<span class="hll"><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+</span><span class="hll"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockPrice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-12&quot;</span><span class="p">,</span>
 <span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="p">{</span><span class="s1">&#39;msg&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">:</span> <span class="s1">&#39;7777777777777777777777777&#39;</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">R</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/login&#39;</span>
-<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">POST</span><span class="p">(</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="hll"><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+</span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
-<span class="w">    </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">        </span><span class="n">user_id</span><span class="o">=</span><span class="s">&quot;user_id&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="n">password</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;password&quot;</span>
-<span class="w">    </span><span class="p">)</span>
-<span class="p">)</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockPrice&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-01-02&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="hll"><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+</span><span class="p">)</span>
 <span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="o">$</span><span class="n">msg</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;success&quot;</span>
-
-<span class="o">$</span><span class="n">status</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">200</span>
-
-<span class="o">$</span><span class="n">token</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;777777777777777777777777&quot;</span>
 </code></pre></div>
 </div>
 </div>
