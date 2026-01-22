@@ -1570,7 +1570,8 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">FinMind.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
-<span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
+<span class="c1"># 目前只支援台指選擇權, TXO, TX1, TX2, TX3, TX4</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_options_snapshot</span><span class="p">(</span><span class="n">options_id</span><span class="o">=</span><span class="s2">&quot;TXO&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
@@ -1581,7 +1582,7 @@
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_options_snapshot&quot;</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span> <span class="c1"># 目前只支援台指選擇權</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span> <span class="c1"># 目前只支援台指選擇權, TXO, TX1, TX2, TX3, TX4</span>
 <span class="p">}</span>
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -1598,7 +1599,8 @@
 <span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
 <span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="w"> </span><span class="c1"># 目前只支援台指期</span>
+<span class="w">        </span><span class="c1"># 目前只支援台指選擇權, TXO, TX1, TX2, TX3, TX4</span>
+<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span>
 <span class="w">    </span><span class="p">),</span>
 <span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
 <span class="p">)</span>
