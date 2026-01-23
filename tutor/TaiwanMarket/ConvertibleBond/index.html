@@ -1233,7 +1233,7 @@
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily</span><span class="p">(</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily</span><span class="p">(</span>
     <span class="n">cb_id</span><span class="o">=</span><span class="s2">&quot;15131&quot;</span><span class="p">,</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
     <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2020-04-10&quot;</span><span class="p">,</span>
@@ -1437,7 +1437,7 @@
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily</span><span class="p">(</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily</span><span class="p">(</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2020-04-06&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -1637,7 +1637,7 @@
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_institutional_investors</span><span class="p">(</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_institutional_investors</span><span class="p">(</span>
     <span class="n">cb_id</span><span class="o">=</span><span class="s2">&quot;15131&quot;</span><span class="p">,</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
     <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2020-04-10&quot;</span><span class="p">,</span>
@@ -1819,7 +1819,7 @@
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_institutional_investors</span><span class="p">(</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_institutional_investors</span><span class="p">(</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2020-04-06&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -1870,118 +1870,100 @@
 <thead>
 <tr>
 <th style="text-align: right;"></th>
+<th style="text-align: right;">Foreign_Investor_Buy</th>
+<th style="text-align: right;">Foreign_Investor_Sell</th>
+<th style="text-align: right;">Foreign_Investor_Overbuy</th>
+<th style="text-align: right;">Investment_Trust_Buy</th>
+<th style="text-align: right;">Investment_Trust_Sell</th>
+<th style="text-align: right;">Investment_Trust_Overbuy</th>
+<th style="text-align: right;">Dealer_self_Buy</th>
+<th style="text-align: right;">Dealer_self_Sell</th>
+<th style="text-align: right;">Dealer_self_Overbuy</th>
+<th style="text-align: right;">Total_Overbuy</th>
 <th style="text-align: right;">cb_id</th>
 <th style="text-align: left;">cb_name</th>
-<th style="text-align: left;">transaction_type</th>
-<th style="text-align: right;">close</th>
-<th style="text-align: right;">change</th>
-<th style="text-align: right;">open</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">no_of_transactions</th>
-<th style="text-align: right;">unit</th>
-<th style="text-align: right;">trading_value</th>
-<th style="text-align: right;">avg_price</th>
-<th style="text-align: right;">next_ref_price</th>
-<th style="text-align: right;">next_max_limit</th>
-<th style="text-align: right;">next_min_limit</th>
 <th style="text-align: left;">date</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">12582</td>
-<td style="text-align: left;">其祥二KY</td>
-<td style="text-align: left;">等價</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">87.43</td>
-<td style="text-align: right;">87.2</td>
-<td style="text-align: right;">95.9</td>
-<td style="text-align: right;">78.5</td>
-<td style="text-align: left;">2020-04-06</td>
-</tr>
-<tr>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">13163</td>
-<td style="text-align: left;">上曜三</td>
-<td style="text-align: left;">等價</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">101.68</td>
-<td style="text-align: right;">102</td>
-<td style="text-align: right;">112.2</td>
-<td style="text-align: right;">91.8</td>
-<td style="text-align: left;">2020-04-06</td>
-</tr>
-<tr>
 <td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">14361</td>
 <td style="text-align: left;">華友聯一</td>
-<td style="text-align: left;">等價</td>
-<td style="text-align: right;">107</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">107</td>
-<td style="text-align: right;">107</td>
-<td style="text-align: right;">107</td>
+<td style="text-align: left;">2020-04-06</td>
+</tr>
+<tr>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">-16</td>
+<td style="text-align: right;">-16</td>
+<td style="text-align: right;">15131</td>
+<td style="text-align: left;">中興電一</td>
+<td style="text-align: left;">2020-04-06</td>
+</tr>
+<tr>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">214000</td>
-<td style="text-align: right;">107</td>
-<td style="text-align: right;">107</td>
-<td style="text-align: right;">117.7</td>
-<td style="text-align: right;">96.3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">15981</td>
+<td style="text-align: left;">岱宇一</td>
 <td style="text-align: left;">2020-04-06</td>
 </tr>
 <tr>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">14423</td>
-<td style="text-align: left;">名軒三</td>
-<td style="text-align: left;">等價</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-10</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">135</td>
-<td style="text-align: right;">135</td>
-<td style="text-align: right;">148.5</td>
-<td style="text-align: right;">121.5</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">16262</td>
+<td style="text-align: left;">艾美特二KY</td>
 <td style="text-align: left;">2020-04-06</td>
 </tr>
 <tr>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">14721</td>
-<td style="text-align: left;">三洋紡一</td>
-<td style="text-align: left;">等價</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">100.35</td>
-<td style="text-align: right;">100.35</td>
-<td style="text-align: right;">110.35</td>
-<td style="text-align: right;">90.35</td>
+<td style="text-align: right;">17333</td>
+<td style="text-align: left;">五鼎三</td>
 <td style="text-align: left;">2020-04-06</td>
 </tr>
 </tbody>
@@ -2016,7 +1998,7 @@
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily_overview</span><span class="p">(</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily_overview</span><span class="p">(</span>
     <span class="n">cb_id</span><span class="o">=</span><span class="s2">&quot;15131&quot;</span><span class="p">,</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2020-04-01&quot;</span><span class="p">,</span>
     <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2020-04-10&quot;</span><span class="p">,</span>
@@ -2268,7 +2250,7 @@
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data_loader</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily_overview</span><span class="p">(</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_daily_overview</span><span class="p">(</span>
     <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2020-04-06&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
