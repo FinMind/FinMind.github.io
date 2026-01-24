@@ -523,6 +523,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstocksuspended-backersponsor" class="md-nav__link">
+    台股暫停交易公告 TaiwanStockSuspended (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_6" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanstockdaytradingsuspension-backersponsor" class="md-nav__link">
+    暫停先賣後買當沖預告表 TaiwanStockDayTradingSuspension (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_7" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1306,6 +1334,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstocksuspended-backersponsor" class="md-nav__link">
+    台股暫停交易公告 TaiwanStockSuspended (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_6" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanstockdaytradingsuspension-backersponsor" class="md-nav__link">
+    暫停先賣後買當沖預告表 TaiwanStockDayTradingSuspension (只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backersponsor_7" class="md-nav__link">
+    一次拿特定日期，所有資料(只限 backer、sponsor 使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1325,7 +1381,7 @@
                 
                   <h1>技術面</h1>
                 
-                <p>在台股技術面，我們擁有 17 種資料集，如下:</p>
+                <p>在台股技術面，我們擁有 19 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfo">台股總覽 TaiwanStockInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockinfowithwarrant">台股總覽(含權證) TaiwanStockInfoWithWarrant</a></li>
@@ -1344,6 +1400,8 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstock10year-backersponsor">台灣個股十年線資料表 TaiwanStock10Year</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#k-taiwanstockkbar-sponsor">台股分 K 資料表 TaiwanStockKBar</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#5-taiwanstockevery5secondsindex-backersponsor">每 5 秒指數統計 TaiwanStockEvery5SecondsIndex</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstocksuspended-backersponsor">台股暫停交易公告 TaiwanStockSuspended</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockdaytradingsuspension-backersponsor">暫停先賣後買當沖預告表 TaiwanStockDayTradingSuspension</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockinfo">台股總覽 TaiwanStockInfo<a class="headerlink" href="#taiwanstockinfo" title="Permanent link">&para;</a></h4>
@@ -4417,6 +4475,258 @@
     price: float, # 價格
     kind: str # 市場別
 }
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanstocksuspended-backersponsor">台股暫停交易公告 TaiwanStockSuspended (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstocksuspended-backersponsor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2017-04-01 ~ now</li>
+<li>資料更新時間 <strong>每天 18:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="47:2"><input checked="checked" id="__tabbed_47_1" name="__tabbed_47" type="radio" /><label for="__tabbed_47_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockSuspended&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1101&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><label for="__tabbed_47_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockSuspended&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;1101&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2017-04-01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2025-01-01&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="48:2"><input checked="checked" id="__tabbed_48_1" name="__tabbed_48" type="radio" /><label for="__tabbed_48_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: left;">suspension_time</th>
+<th style="text-align: left;">resumption_date</th>
+<th style="text-align: left;">resumption_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2017-04-19</td>
+<td style="text-align: left;">1101</td>
+<td style="text-align: left;">8:00</td>
+<td style="text-align: left;">2017-04-21</td>
+<td style="text-align: left;">8:00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_48_2" name="__tabbed_48" type="radio" /><label for="__tabbed_48_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    stock_id: str, # 股票代碼
+    date: str, # 暫停交易日期
+    suspension_time: str, # 暫停交易時間
+    resumption_date: str, # 恢復交易日期
+    resumption_time: str # 恢復交易時間
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="backersponsor_6">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 使用)<a class="headerlink" href="#backersponsor_6" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="49:2"><input checked="checked" id="__tabbed_49_1" name="__tabbed_49" type="radio" /><label for="__tabbed_49_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockSuspended&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-06&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_49_2" name="__tabbed_49" type="radio" /><label for="__tabbed_49_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockSuspended&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2020-04-06&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanstockdaytradingsuspension-backersponsor">暫停先賣後買當沖預告表 TaiwanStockDayTradingSuspension (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockdaytradingsuspension-backersponsor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2014-06-30 ~ now</li>
+<li>資料來源：證交所、櫃買中心</li>
+<li>資料更新時間 <strong>每天 18:00</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="50:2"><input checked="checked" id="__tabbed_50_1" name="__tabbed_50" type="radio" /><label for="__tabbed_50_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockDayTradingSuspension&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;00940&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-12-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_50_2" name="__tabbed_50" type="radio" /><label for="__tabbed_50_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockDayTradingSuspension&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;00940&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-12-01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2025-01-01&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="51:2"><input checked="checked" id="__tabbed_51_1" name="__tabbed_51" type="radio" /><label for="__tabbed_51_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">end_date</th>
+<th style="text-align: left;">reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">00940</td>
+<td style="text-align: left;">2024-12-27</td>
+<td style="text-align: left;">2025-01-03</td>
+<td style="text-align: left;">除息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_51_2" name="__tabbed_51" type="radio" /><label for="__tabbed_51_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    stock_id: str, # 股票代碼
+    date: str, # 停止先賣後買開始日
+    end_date: str, # 停止先賣後買結束日
+    reason: str # 原因
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="backersponsor_7">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 使用)<a class="headerlink" href="#backersponsor_7" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="52:2"><input checked="checked" id="__tabbed_52_1" name="__tabbed_52" type="radio" /><label for="__tabbed_52_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockDayTradingSuspension&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-12-27&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_52_2" name="__tabbed_52" type="radio" /><label for="__tabbed_52_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockDayTradingSuspension&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-12-27&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
