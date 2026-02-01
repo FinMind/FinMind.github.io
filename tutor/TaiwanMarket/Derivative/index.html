@@ -559,6 +559,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanfuturesfinalsettlementprice-backersponsor" class="md-nav__link">
+    期貨最後結算價 TaiwanFuturesFinalSettlementPrice(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanoptionfinalsettlementprice-backersponsor" class="md-nav__link">
+    選擇權最後結算價 TaiwanOptionFinalSettlementPrice(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1306,6 +1320,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanfuturesfinalsettlementprice-backersponsor" class="md-nav__link">
+    期貨最後結算價 TaiwanFuturesFinalSettlementPrice(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taiwanoptionfinalsettlementprice-backersponsor" class="md-nav__link">
+    選擇權最後結算價 TaiwanOptionFinalSettlementPrice(只限 backer、sponsor 會員使用)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1325,9 +1353,9 @@
                 
                   <h1>衍生性金融商品</h1>
                 
-                <p>在台股衍生性商品資料，我們擁有 13 種資料集，如下:</p>
+                <p>在台股衍生性商品資料，我們擁有 15 種資料集，如下:</p>
 <ul>
-<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanOptionFutureInfo</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanFutOptDailyInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdaily">期貨日成交資訊 TaiwanFuturesDaily</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondaily">選擇權日成交資訊 TaiwanOptionDaily</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick-backersponsor">期貨交易明細表 TaiwanFuturesTick</a></li>
@@ -1340,6 +1368,8 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondealertradingvolumedaily">選擇權各卷商每日交易 TaiwanOptionDealerTradingVolumeDaily</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesopeninterestlargetraders-backersponsor">期貨大額交易人未沖銷部位 TaiwanFuturesOpenInterestLargeTraders</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptionopeninterestlargetraders-backersponsor">選擇權大額交易人未沖銷部位 TaiwanOptionOpenInterestLargeTraders</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesfinalsettlementprice-backersponsor">期貨最後結算價 TaiwanFuturesFinalSettlementPrice</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptionfinalsettlementprice-backersponsor">選擇權最後結算價 TaiwanOptionFinalSettlementPrice</a></li>
 </ul>
 <hr />
 <h4 id="taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanFutOptDailyInfo<a class="headerlink" href="#taiwanfutoptdailyinfo" title="Permanent link">&para;</a></h4>
@@ -5067,6 +5097,242 @@
     put_call: str, # 買賣權
     name: str, # 商品名稱
     option_id: str # 選擇權代碼
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanfuturesfinalsettlementprice-backersponsor">期貨最後結算價 TaiwanFuturesFinalSettlementPrice(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanfuturesfinalsettlementprice-backersponsor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：1998-01-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至五 每3小時</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="47:2"><input checked="checked" id="__tabbed_47_1" name="__tabbed_47" type="radio" /><label for="__tabbed_47_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanFuturesFinalSettlementPrice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TX&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-12-31&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><label for="__tabbed_47_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanFuturesFinalSettlementPrice&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TX&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-01-01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-12-31&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="48:2"><input checked="checked" id="__tabbed_48_1" name="__tabbed_48" type="radio" /><label for="__tabbed_48_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">contract_month</th>
+<th style="text-align: left;">futures_type</th>
+<th style="text-align: left;">futures_id</th>
+<th style="text-align: left;">futures_name</th>
+<th style="text-align: left;">settlement_price</th>
+<th style="text-align: left;">underlying_code</th>
+<th style="text-align: left;">notional_value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2024-01-17</td>
+<td style="text-align: left;">202401</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">TX</td>
+<td style="text-align: left;">臺股期貨</td>
+<td style="text-align: left;">17881.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-02-21</td>
+<td style="text-align: left;">202402</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">TX</td>
+<td style="text-align: left;">臺股期貨</td>
+<td style="text-align: left;">18658.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2024-03-20</td>
+<td style="text-align: left;">202403</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">TX</td>
+<td style="text-align: left;">臺股期貨</td>
+<td style="text-align: left;">20199.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_48_2" name="__tabbed_48" type="radio" /><label for="__tabbed_48_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str, # 到期日
+    contract_month: str, # 契約月份
+    futures_type: str, # 期貨類型 (index/stock/commodity)
+    futures_id: str, # 期貨代碼
+    futures_name: str, # 期貨名稱
+    settlement_price: float64, # 最後結算價
+    underlying_code: str, # 標的證券代號
+    notional_value: float64 # 約定標的物價值
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanoptionfinalsettlementprice-backersponsor">選擇權最後結算價 TaiwanOptionFinalSettlementPrice(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanoptionfinalsettlementprice-backersponsor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2001-01-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至五 每3小時</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="49:2"><input checked="checked" id="__tabbed_49_1" name="__tabbed_49" type="radio" /><label for="__tabbed_49_1">Python-request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionFinalSettlementPrice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-12-31&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_49_2" name="__tabbed_49" type="radio" /><label for="__tabbed_49_2">R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionFinalSettlementPrice&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-01-01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024-12-31&quot;</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set" data-tabs="50:2"><input checked="checked" id="__tabbed_50_1" name="__tabbed_50" type="radio" /><label for="__tabbed_50_1">DataFrame</label><div class="tabbed-content">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">contract_month</th>
+<th style="text-align: left;">option_type</th>
+<th style="text-align: left;">option_id</th>
+<th style="text-align: left;">option_name</th>
+<th style="text-align: left;">settlement_price</th>
+<th style="text-align: left;">underlying_code</th>
+<th style="text-align: left;">notional_value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2024-01-17</td>
+<td style="text-align: left;">202401</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">TXO</td>
+<td style="text-align: left;">臺指選擇權</td>
+<td style="text-align: left;">17881.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2024-02-21</td>
+<td style="text-align: left;">202402</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">TXO</td>
+<td style="text-align: left;">臺指選擇權</td>
+<td style="text-align: left;">18658.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2024-03-20</td>
+<td style="text-align: left;">202403</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">TXO</td>
+<td style="text-align: left;">臺指選擇權</td>
+<td style="text-align: left;">20199.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_50_2" name="__tabbed_50" type="radio" /><label for="__tabbed_50_2">Schema</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>{
+    date: str, # 到期日
+    contract_month: str, # 契約月份
+    option_type: str, # 選擇權類型 (index/stock)
+    option_id: str, # 選擇權代碼
+    option_name: str, # 選擇權名稱
+    settlement_price: float64, # 最後結算價
+    underlying_code: str, # 標的證券代號
+    notional_value: float64 # 約定標的物價值
 }
 </code></pre></div>
 </div>
