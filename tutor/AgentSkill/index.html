@@ -18,7 +18,7 @@
     
     
       
-        <title>Agent Skill - FinMind</title>
+        <title>AI Agent Skill - FinMind</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Agent Skill
+              AI Agent Skill
             
           </span>
         </div>
@@ -701,12 +701,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Agent Skill
+          AI Agent Skill
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Agent Skill
+        AI Agent Skill
       </a>
       
         
@@ -1204,14 +1204,33 @@
                   </a>
                 
                 
-                  <h1>Agent Skill</h1>
+                  <h1>AI Agent Skill</h1>
                 
-                <p>FinMind 提供 <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a> Agent Skill，讓你可以在 Claude Code 中，透過自然語言查詢 FinMind 75+ 種資料集，不需要自己組 API 參數。</p>
+                <p>FinMind 提供 AI Agent Skill，讓你可以在 <a href="https://gemini.google.com/">Gemini</a>、<a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a>、<a href="https://www.cursor.com/">Cursor</a>、<a href="https://windsurf.com/">Windsurf</a> 等 AI 工具中，透過自然語言查詢 FinMind 75+ 種資料集，不需要自己組 API 參數。</p>
 <h2 id="_1">安裝<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="1-skill">步驟 1: 下載 Skill<a class="headerlink" href="#1-skill" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Claude Code</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.claude/commands
 curl<span class="w"> </span>-o<span class="w"> </span>~/.claude/commands/finmind.md<span class="w"> </span>https://raw.githubusercontent.com/FinMind/FinMind/master/.claude/commands/finmind.md
 </code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Cursor</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>.cursor/rules
+curl<span class="w"> </span>-o<span class="w"> </span>.cursor/rules/finmind.mdc<span class="w"> </span>https://raw.githubusercontent.com/FinMind/FinMind/master/.claude/commands/finmind.md
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Windsurf</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>.windsurfrules<span class="w"> </span>https://raw.githubusercontent.com/FinMind/FinMind/master/.claude/commands/finmind.md
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Gemini</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>GEMINI.md<span class="w"> </span>https://raw.githubusercontent.com/FinMind/FinMind/master/.claude/commands/finmind.md
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="2-token">步驟 2: 設定 Token<a class="headerlink" href="#2-token" title="Permanent link">&para;</a></h3>
 <p>至 <a href="https://finmindtrade.com/analysis/#/account/register">FinMind</a> 註冊並驗證信箱後，取得 Token。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">FINMIND_TOKEN</span><span class="o">=</span><span class="s2">&quot;your_token_here&quot;</span>
