@@ -1226,45 +1226,100 @@ curl<span class="w"> </span>-o<span class="w"> </span>~/.claude/commands/finmind
 <h3 id="_3">股價查詢<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 台積電最近一個月股價
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台積電（2330）近一個月的每日股價表格，包含日期、開盤價、最高價、最低價、收盤價、成交量等欄位。</p>
+</blockquote>
+<p><img alt="台積電最近一個月股價" src="../../img/tsmc_1m_price.png" /></p>
 <div class="highlight"><pre><span></span><code>/finmind 2330 跟 2317 近三個月股價比較
 </code></pre></div>
+<blockquote>
+<p>預期結果：分別查詢台積電和鴻海近三個月股價，並以表格呈現兩檔股票的收盤價走勢比較。</p>
+</blockquote>
+<p><img alt="2330 跟 2317 近三個月股價比較" src="../../img/compare_2330_2317.png" /></p>
 <h3 id="_4">籌碼面<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 2330 三大法人近一週買賣
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台積電近一週外資、投信、自營商的每日買賣超張數。</p>
+</blockquote>
+<p><img alt="2330 三大法人近一週買賣" src="../../img/institutional_2330.png" /></p>
 <div class="highlight"><pre><span></span><code>/finmind 台積電外資持股比例變化
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台積電外資持股張數與持股比例的歷史資料表格。</p>
+</blockquote>
 <h3 id="_5">基本面<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 台積電今年每月營收
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台積電今年度各月份的營收數字。</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>/finmind 2330 近五年 PER 走勢
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台積電近五年的本益比（PER）、股價淨值比（PBR）、殖利率歷史資料。</p>
+</blockquote>
 <h3 id="_6">期貨選擇權<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 台指期近月合約近一週成交資訊
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台指期貨（TX）近一週的每日開高低收、成交量、未平倉量等資料。</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>/finmind 台指選擇權三大法人今日買賣
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳台指選擇權（TXO）今日三大法人的多空交易口數與金額。</p>
+</blockquote>
 <h3 id="_7">總體經濟<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 美元對台幣匯率近半年走勢
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳近半年 USD/TWD 的每日即期買入、賣出匯率。</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>/finmind 聯準會近十年利率變化
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳 FED 近十年的利率調整歷史紀錄。</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>/finmind 黃金價格近一年走勢
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳近一年的每日黃金價格。</p>
+</blockquote>
 <h3 id="_8">圖表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 台積電近三個月 K 線圖
 </code></pre></div>
+<blockquote>
+<p>預期結果：產生台積電近三個月的 K 線圖，包含開高低收、均線與成交量，儲存為圖片檔。</p>
+</blockquote>
 <p><img alt="TSMC 2330 Candlestick Chart" src="../../img/tsmc_3m_kbar.png" /></p>
 <div class="highlight"><pre><span></span><code>/finmind 2330 跟 2317 近半年股價比較，畫圖
 </code></pre></div>
+<blockquote>
+<p>預期結果：產生兩檔股票收盤價的折線比較圖，儲存為圖片檔。</p>
+</blockquote>
+<p><img alt="2330 vs 2317 Stock Comparison" src="../../img/stock_comparison_2330_2317.png" /></p>
 <div class="highlight"><pre><span></span><code>/finmind 美元匯率近一年走勢圖
 </code></pre></div>
+<blockquote>
+<p>預期結果：產生 USD/TWD 匯率折線圖，儲存為圖片檔。</p>
+</blockquote>
 <h3 id="_9">進階分析<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>/finmind 比較台積電和聯發科近一年股價報酬率
 </code></pre></div>
+<blockquote>
+<p>預期結果：計算兩檔股票近一年的累積報酬率，並以表格或圖表呈現比較。</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>/finmind 2330 近三年股利政策整理
 </code></pre></div>
+<blockquote>
+<p>預期結果：整理台積電近三年的現金股利、股票股利、除息日、發放日等資訊。</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>/finmind 台股加權指數今天每 5 秒走勢
 </code></pre></div>
+<blockquote>
+<p>預期結果：回傳今日台股加權指數每 5 秒的即時數值，呈現盤中走勢。</p>
+</blockquote>
                 
               
               
