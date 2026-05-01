@@ -5957,7 +5957,7 @@
 </div>
 <h4 id="taiwanstockblocktradingdailyreport-sponsor">鉅額交易買賣日報表 TaiwanStockBlockTradingDailyReport (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockblocktradingdailyreport-sponsor" title="Permanent link">&para;</a></h4>
 <ul>
-<li>資料區間：2026-04-24 ~ now</li>
+<li>資料區間：2026-04-28 ~ now</li>
 <li>只需輸入日期，不需股票代碼</li>
 </ul>
 <div class="admonition example">
@@ -5971,7 +5971,7 @@
 <a id="__codelineno-102-4" name="__codelineno-102-4" href="#__codelineno-102-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
 <a id="__codelineno-102-5" name="__codelineno-102-5" href="#__codelineno-102-5"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
 <a id="__codelineno-102-6" name="__codelineno-102-6" href="#__codelineno-102-6"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockBlockTradingDailyReport&quot;</span><span class="p">,</span>
-<a id="__codelineno-102-7" name="__codelineno-102-7" href="#__codelineno-102-7"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-04-24&quot;</span><span class="p">,</span>
+<a id="__codelineno-102-7" name="__codelineno-102-7" href="#__codelineno-102-7"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-04-28&quot;</span><span class="p">,</span>
 <a id="__codelineno-102-8" name="__codelineno-102-8" href="#__codelineno-102-8"></a>    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
 <a id="__codelineno-102-9" name="__codelineno-102-9" href="#__codelineno-102-9"></a><span class="p">}</span>
 <a id="__codelineno-102-10" name="__codelineno-102-10" href="#__codelineno-102-10"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -5988,7 +5988,7 @@
 <a id="__codelineno-103-5" name="__codelineno-103-5" href="#__codelineno-103-5"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
 <a id="__codelineno-103-6" name="__codelineno-103-6" href="#__codelineno-103-6"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
 <a id="__codelineno-103-7" name="__codelineno-103-7" href="#__codelineno-103-7"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockBlockTradingDailyReport&quot;</span><span class="p">,</span>
-<a id="__codelineno-103-8" name="__codelineno-103-8" href="#__codelineno-103-8"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="s">&quot;2026-04-24&quot;</span><span class="p">,</span>
+<a id="__codelineno-103-8" name="__codelineno-103-8" href="#__codelineno-103-8"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="s">&quot;2026-04-28&quot;</span><span class="p">,</span>
 <a id="__codelineno-103-9" name="__codelineno-103-9" href="#__codelineno-103-9"></a><span class="w">        </span><span class="n">token</span><span class="o">=</span><span class="s">&quot;&quot;</span>
 <a id="__codelineno-103-10" name="__codelineno-103-10" href="#__codelineno-103-10"></a><span class="w">    </span><span class="p">)</span>
 <a id="__codelineno-103-11" name="__codelineno-103-11" href="#__codelineno-103-11"></a><span class="p">)</span>
@@ -6022,8 +6022,7 @@
 </div>
 <h4 id="taiwanstockblocktrade-sponsor">鉅額交易日成交資訊 TaiwanStockBlockTrade (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockblocktrade-sponsor" title="Permanent link">&para;</a></h4>
 <ul>
-<li>資料區間：TWSE 2005-04-04、TPEX 2007-01-01 ~ now</li>
-<li>資料更新時間 <strong>星期一至五 盤後</strong>，實際更新時間以 API 資料為主</li>
+<li>資料區間：2005-04-04 ~ now</li>
 <li>涵蓋上市櫃股票鉅額交易（逐筆）</li>
 </ul>
 <div class="admonition example">
