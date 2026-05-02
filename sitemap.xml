@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://finmind.github.io/FinMindDoc/update_token/</loc>
+         <lastmod>2026-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://finmind.github.io/FinMindDoc/tutor/AgentSkill/</loc>
          <lastmod>2026-05-02</lastmod>
          <changefreq>daily</changefreq>
