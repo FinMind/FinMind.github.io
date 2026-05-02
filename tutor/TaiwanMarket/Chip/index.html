@@ -6103,8 +6103,70 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="52:1"><input checked="checked" id="__tabbed_52_1" name="__tabbed_52" type="radio" /><div class="tabbed-labels"><label for="__tabbed_52_1">Schema</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="52:2"><input checked="checked" id="__tabbed_52_1" name="__tabbed_52" type="radio" /><input id="__tabbed_52_2" name="__tabbed_52" type="radio" /><div class="tabbed-labels"><label for="__tabbed_52_1">DataFrame</label><label for="__tabbed_52_2">Schema</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: left;">trade_type</th>
+<th style="text-align: right;">price</th>
+<th style="text-align: right;">volume</th>
+<th style="text-align: right;">trading_money</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">配對交易</td>
+<td style="text-align: right;">1871.29</td>
+<td style="text-align: right;">25000</td>
+<td style="text-align: right;">46782250</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">配對交易</td>
+<td style="text-align: right;">1871.28</td>
+<td style="text-align: right;">25000</td>
+<td style="text-align: right;">46782000</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">配對交易</td>
+<td style="text-align: right;">1865.28</td>
+<td style="text-align: right;">15000</td>
+<td style="text-align: right;">27979200</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">配對交易</td>
+<td style="text-align: right;">1855</td>
+<td style="text-align: right;">1078000</td>
+<td style="text-align: right;">1999690000</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">配對交易</td>
+<td style="text-align: right;">1849.42</td>
+<td style="text-align: right;">137104</td>
+<td style="text-align: right;">253562880</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>{
 <a id="__codelineno-108-2" name="__codelineno-108-2" href="#__codelineno-108-2"></a>    date: str, # 日期
@@ -6184,8 +6246,256 @@
 </div>
 <div class="admonition output">
 <p class="admonition-title">Output</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="54:1"><input checked="checked" id="__tabbed_54_1" name="__tabbed_54" type="radio" /><div class="tabbed-labels"><label for="__tabbed_54_1">Schema</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="54:2"><input checked="checked" id="__tabbed_54_1" name="__tabbed_54" type="radio" /><input id="__tabbed_54_2" name="__tabbed_54" type="radio" /><div class="tabbed-labels"><label for="__tabbed_54_1">DataFrame</label><label for="__tabbed_54_2">Schema</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: left;">market</th>
+<th style="text-align: right;">MarginPreviousDayBalance</th>
+<th style="text-align: right;">MarginBuy</th>
+<th style="text-align: right;">MarginSell</th>
+<th style="text-align: right;">MarginCashRedemption</th>
+<th style="text-align: right;">MarginCurrentDayBalance</th>
+<th style="text-align: right;">MarginNextDayQuota</th>
+<th style="text-align: right;">SecuritiesFirmLoanPreviousDayBalance</th>
+<th style="text-align: right;">SecuritiesFirmLoanBuy</th>
+<th style="text-align: right;">SecuritiesFirmLoanSell</th>
+<th style="text-align: right;">SecuritiesFirmLoanCashRedemption</th>
+<th style="text-align: right;">SecuritiesFirmLoanReplacement</th>
+<th style="text-align: right;">SecuritiesFirmLoanCurrentDayBalance</th>
+<th style="text-align: right;">SecuritiesFirmLoanNextDayQuota</th>
+<th style="text-align: right;">UnrestrictedLoanPreviousDayBalance</th>
+<th style="text-align: right;">UnrestrictedLoanBuy</th>
+<th style="text-align: right;">UnrestrictedLoanSell</th>
+<th style="text-align: right;">UnrestrictedLoanCashRedemption</th>
+<th style="text-align: right;">UnrestrictedLoanReplacement</th>
+<th style="text-align: right;">UnrestrictedLoanCurrentDayBalance</th>
+<th style="text-align: right;">UnrestrictedLoanNextDayQuota</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanPreviousDayBalance</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanBuy</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanSell</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanCashRedemption</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanReplacement</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanCurrentDayBalance</th>
+<th style="text-align: right;">SecuritiesFinanceSecuredLoanNextDayQuota</th>
+<th style="text-align: right;">SettlementMarginPreviousDayBalance</th>
+<th style="text-align: right;">SettlementMarginBuy</th>
+<th style="text-align: right;">SettlementMarginSell</th>
+<th style="text-align: right;">SettlementMarginCashRedemption</th>
+<th style="text-align: right;">SettlementMarginReplacement</th>
+<th style="text-align: right;">SettlementMarginCurrentDayBalance</th>
+<th style="text-align: right;">SettlementMarginNextDayQuota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">集中市場</td>
+<td style="text-align: right;">26608</td>
+<td style="text-align: right;">1268</td>
+<td style="text-align: right;">1485</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">26353</td>
+<td style="text-align: right;">6483131</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">1296626</td>
+<td style="text-align: right;">119953</td>
+<td style="text-align: right;">851</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">215</td>
+<td style="text-align: right;">120401</td>
+<td style="text-align: right;">2593252</td>
+<td style="text-align: right;">16700</td>
+<td style="text-align: right;">111</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">16764</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1296626</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-04-02</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">集中市場</td>
+<td style="text-align: right;">26353</td>
+<td style="text-align: right;">1312</td>
+<td style="text-align: right;">873</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">26598</td>
+<td style="text-align: right;">6483131</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">1296626</td>
+<td style="text-align: right;">120401</td>
+<td style="text-align: right;">621</td>
+<td style="text-align: right;">139</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">416</td>
+<td style="text-align: right;">120397</td>
+<td style="text-align: right;">2593252</td>
+<td style="text-align: right;">16764</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">16855</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1296626</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-04-07</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">集中市場</td>
+<td style="text-align: right;">26598</td>
+<td style="text-align: right;">391</td>
+<td style="text-align: right;">970</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">26000</td>
+<td style="text-align: right;">6483131</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">1296626</td>
+<td style="text-align: right;">120397</td>
+<td style="text-align: right;">539</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;">120610</td>
+<td style="text-align: right;">2593252</td>
+<td style="text-align: right;">16855</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">16917</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1296626</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2026-04-08</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">集中市場</td>
+<td style="text-align: right;">26000</td>
+<td style="text-align: right;">2882</td>
+<td style="text-align: right;">2057</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">26797</td>
+<td style="text-align: right;">6483131</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">1296626</td>
+<td style="text-align: right;">120616</td>
+<td style="text-align: right;">776</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">222</td>
+<td style="text-align: right;">120961</td>
+<td style="text-align: right;">2593252</td>
+<td style="text-align: right;">16917</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">16947</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1296626</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2026-04-09</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">集中市場</td>
+<td style="text-align: right;">26604</td>
+<td style="text-align: right;">998</td>
+<td style="text-align: right;">953</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">26636</td>
+<td style="text-align: right;">6483131</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">1296626</td>
+<td style="text-align: right;">120961</td>
+<td style="text-align: right;">481</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">83</td>
+<td style="text-align: right;">198</td>
+<td style="text-align: right;">121142</td>
+<td style="text-align: right;">2593252</td>
+<td style="text-align: right;">16947</td>
+<td style="text-align: right;">126</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">17032</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1296626</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>{
 <a id="__codelineno-112-2" name="__codelineno-112-2" href="#__codelineno-112-2"></a>    date: str, # 日期
