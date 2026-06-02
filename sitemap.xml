@@ -43,6 +43,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/PrivacyPolicy/"/>
     </url>
     <url>
+        <loc>https://finmind.github.io/ServiceStatus/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/ServiceStatus/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/ServiceStatus/"/>
+    </url>
+    <url>
         <loc>https://finmind.github.io/StressTest/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
@@ -328,6 +335,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/PrivacyPolicy/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/PrivacyPolicy/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/en/ServiceStatus/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/ServiceStatus/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/ServiceStatus/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/en/StressTest/</loc>
