@@ -1415,6 +1415,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upgrade-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      升級須知 / Upgrade Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-1912-2026-06-09" class="md-nav__link">
     <span class="md-ellipsis">
       version: 1.9.12 (2026-06-09)
@@ -2236,6 +2245,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upgrade-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      升級須知 / Upgrade Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-1912-2026-06-09" class="md-nav__link">
     <span class="md-ellipsis">
       version: 1.9.12 (2026-06-09)
@@ -2799,6 +2817,19 @@
 <h2 id="whats-changed">What's Changed<a class="headerlink" href="#whats-changed" title="Permanent link">&para;</a></h2>
 <ul>
 <li>fix: 支援 Python 3.12（升級 pandas 2.x、ta 0.11） by @linsamtw in https://github.com/FinMind/FinMind/pull/420</li>
+</ul>
+<h2 id="upgrade-notes">升級須知 / Upgrade Notes<a class="headerlink" href="#upgrade-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>新增支援 <strong>Python 3.12</strong>（持續支援 3.8–3.11）。</li>
+<li>本版起相依升級為 <code>pandas&gt;=2.0</code>、<code>ta&gt;=0.11</code>（<code>numpy</code>、<code>pydantic</code> 不變）。</li>
+<li><strong>呼叫 FinMind 的程式碼無需修改</strong>：<code>DataLoader</code>、策略、繪圖等對外介面皆不變。</li>
+<li><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> 安裝／升級會一併把環境中的 <code>pandas</code> 升到 2.x、<code>ta</code> 升到 0.11。若你<strong>其餘自有程式碼</strong>仍使用 pandas 1.x 在 2.0 已移除的寫法，需自行調整，常見如：<ul>
+<li><code>df.append()</code> → <code>pd.concat([...])</code></li>
+<li><code>df.to_dict("r")</code> → <code>df.to_dict("records")</code></li>
+<li><code>df.iteritems()</code> → <code>df.items()</code></li>
+</ul>
+</li>
+<li>若暫時無法調整，可先固定安裝舊版 FinMind。</li>
 </ul>
 <p><img alt="⚡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a1.svg" title=":zap:" /> release_at: 2026-06-13 07:21:03</p>
 <h2 id="version-1912-2026-06-09">version: 1.9.12 (2026-06-09)<a class="headerlink" href="#version-1912-2026-06-09" title="Permanent link">&para;</a></h2>
