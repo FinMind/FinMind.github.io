@@ -2494,6 +2494,11 @@
 <li>Covers both <strong>listed (TWSE) and OTC (TPEX)</strong> warrants' underlying (<code>target_stock_id</code>) reference; OTC warrant underlying history goes back to <strong>2011-01-03</strong>, so you can look up the warrants of a given underlying (including expired and code-reused historical warrants).</li>
 <li>Data update time: <strong>1:30 daily</strong>. The actual update time is based on the API data.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">A single warrant code may map to different underlying stocks</p>
+<p>Warrants have an expiration date. <strong>Once a warrant code (<code>stock_id</code>) expires and is delisted, that code is recycled and reissued to a new warrant on a (possibly different) underlying stock.</strong> As a result, the same <code>stock_id</code> may appear in multiple rows in this table, each mapping to a different underlying (<code>target_stock_id</code>) and each with its own <code>date</code> (listing date) and <code>end_date</code> (last trading date).</p>
+<p>To determine which underlying a warrant code maps to on a given day, match by <strong>"the query date falls within that row's <code>date</code> ~ <code>end_date</code> interval"</strong>; reused codes from different periods are naturally distinguished by their non-overlapping intervals.</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python-request</label><label for="__tabbed_5_2">R</label></div>

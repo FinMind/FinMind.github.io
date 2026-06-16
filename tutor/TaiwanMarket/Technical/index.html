@@ -2494,6 +2494,11 @@
 <li>涵蓋<strong>上市 (TWSE) 與上櫃 (TPEX)</strong> 權證的標的（母股 <code>target_stock_id</code>）對照；上櫃權證的標的對照歷史回溯至 <strong>2011-01-03</strong>，可用母股代碼反查其對應權證（含已到期、代碼重用的歷史權證）。</li>
 <li>資料更新時間 <strong>每天 1:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">同一檔權證代號可能對應不同的標的母股</p>
+<p>權證有到期日，<strong>同一個權證代號 (<code>stock_id</code>) 到期下市後，該代號會被回收、重新發行給掛在不同母股的新權證</strong>。因此同一個 <code>stock_id</code> 在本資料表中可能出現多筆，各自對應到不同的標的母股 (<code>target_stock_id</code>)，並有各自的 <code>date</code>（上市日期）與 <code>end_date</code>（最後交易日）。</p>
+<p>判斷某個權證代號在特定日期對應哪一檔母股時，請以<strong>「查詢日期落在該筆的 <code>date</code> ～ <code>end_date</code> 區間內」</strong>為準；不同時期的同代號權證會因區間不重疊而自然區分。</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python-request</label><label for="__tabbed_5_2">R</label></div>
