@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#install" class="md-skip">
           Skip to content
         </a>
       
@@ -1210,7 +1210,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
     </span>
@@ -1220,7 +1220,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-download-the-skill" class="md-nav__link">
+  <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
       Step 1: Download the Skill
     </span>
@@ -1229,7 +1229,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-set-up-the-token" class="md-nav__link">
+  <a href="#token" class="md-nav__link">
     <span class="md-ellipsis">
       Step 2: Set Up the Token
     </span>
@@ -1238,7 +1238,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-use-it" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Step 3: Use It
     </span>
@@ -1789,7 +1789,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
     </span>
@@ -1799,7 +1799,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-download-the-skill" class="md-nav__link">
+  <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
       Step 1: Download the Skill
     </span>
@@ -1808,7 +1808,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-set-up-the-token" class="md-nav__link">
+  <a href="#token" class="md-nav__link">
     <span class="md-ellipsis">
       Step 2: Set Up the Token
     </span>
@@ -1817,7 +1817,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-use-it" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Step 3: Use It
     </span>
@@ -1943,10 +1943,18 @@
 <li><strong>Agent Skill file (CLI tools)</strong>: download the <code>/finmind</code> command file into Claude Code / Codex / Cursor / Windsurf / Gemini — see "Installation" below.</li>
 <li><strong>MCP Server</strong>: tools that support <a href="https://modelcontextprotocol.io/">MCP</a> (Claude Desktop / Claude Code, Cursor, Windsurf, Gemini CLI) can connect directly to the official FinMind MCP server — see "MCP Server".</li>
 </ol>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-download-the-skill">Step 1: Download the Skill<a class="headerlink" href="#step-1-download-the-skill" title="Permanent link">&para;</a></h3>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
+<div class="admonition abstract">
+<p class="admonition-title">On this page</p>
+<ul>
+<li><a href="#install">Installation</a>: <a href="#download">① Download</a> · <a href="#token">② Token</a> · <a href="#usage">③ Use</a></li>
+<li><a href="#mcp-server">MCP Server</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</div>
+<h2 id="install">Installation<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
+<h3 id="download">Step 1: Download the Skill<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>🍎 macOS / Linux install commands</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Claude Code</label><label for="__tabbed_1_2">Codex</label><label for="__tabbed_1_3">Cursor</label><label for="__tabbed_1_4">Windsurf</label><label for="__tabbed_1_5">Gemini</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1973,34 +1981,78 @@
 </div>
 </div>
 </div>
+</details>
+<details class="note">
+<summary>🪟 Windows (PowerShell) install commands</summary>
+<p>Windows 10/11 ships with <code>curl.exe</code> built in. Use the PowerShell versions below instead of the commands above (note the <code>.exe</code>: PowerShell's bare <code>curl</code> is an alias for <code>Invoke-WebRequest</code> and uses different syntax).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Claude Code</label><label for="__tabbed_2_2">Codex</label><label for="__tabbed_2_3">Cursor</label><label for="__tabbed_2_4">Windsurf</label><label for="__tabbed_2_5">Gemini</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">mkdir</span> <span class="nv">$HOME</span><span class="p">\.</span><span class="n">claude</span><span class="p">\</span><span class="n">commands</span> <span class="n">-Force</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-o</span> <span class="nv">$HOME</span><span class="p">\.</span><span class="n">claude</span><span class="p">\</span><span class="n">commands</span><span class="p">\</span><span class="n">finmind</span><span class="p">.</span><span class="nb">md </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">master</span><span class="p">/.</span><span class="n">claude</span><span class="p">/</span><span class="n">commands</span><span class="p">/</span><span class="n">finmind</span><span class="p">.</span><span class="nb">md</span>
+</code></pre></div>
 </div>
-<h3 id="step-2-set-up-the-token">Step 2: Set Up the Token<a class="headerlink" href="#step-2-set-up-the-token" title="Permanent link">&para;</a></h3>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-o</span> <span class="n">AGENTS</span><span class="p">.</span><span class="nb">md </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">master</span><span class="p">/.</span><span class="n">claude</span><span class="p">/</span><span class="n">commands</span><span class="p">/</span><span class="n">finmind</span><span class="p">.</span><span class="nb">md</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">mkdir</span> <span class="p">.</span><span class="n">cursor</span><span class="p">\</span><span class="n">rules</span> <span class="n">-Force</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-o</span> <span class="p">.</span><span class="n">cursor</span><span class="p">\</span><span class="n">rules</span><span class="p">\</span><span class="n">finmind</span><span class="p">.</span><span class="n">mdc</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">master</span><span class="p">/.</span><span class="n">claude</span><span class="p">/</span><span class="n">commands</span><span class="p">/</span><span class="n">finmind</span><span class="p">.</span><span class="nb">md</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-o</span> <span class="p">.</span><span class="n">windsurfrules</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">master</span><span class="p">/.</span><span class="n">claude</span><span class="p">/</span><span class="n">commands</span><span class="p">/</span><span class="n">finmind</span><span class="p">.</span><span class="nb">md</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">curl</span><span class="p">.</span><span class="n">exe</span> <span class="n">-o</span> <span class="n">GEMINI</span><span class="p">.</span><span class="nb">md </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">FinMind</span><span class="p">/</span><span class="n">master</span><span class="p">/.</span><span class="n">claude</span><span class="p">/</span><span class="n">commands</span><span class="p">/</span><span class="n">finmind</span><span class="p">.</span><span class="nb">md</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<p>If you use <strong>WSL</strong> or <strong>Git Bash</strong>, the macOS / Linux commands above work as-is — no changes needed.</p>
+</blockquote>
+</details>
+<h3 id="token">Step 2: Set Up the Token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
 <p>Register at <a href="https://finmindtrade.com/analysis/#/account/register">FinMind</a> and verify your email to obtain a token.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">FINMIND_TOKEN</span><span class="o">=</span><span class="s2">&quot;your_token_here&quot;</span>
+<details class="note">
+<summary>🍎 macOS / Linux — set the Token</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">FINMIND_TOKEN</span><span class="o">=</span><span class="s2">&quot;your_token_here&quot;</span>
 </code></pre></div>
 <p>We recommend adding this to <code>~/.bashrc</code> or <code>~/.zshrc</code> so it loads automatically every time you open a terminal.</p>
-<h3 id="step-3-use-it">Step 3: Use It<a class="headerlink" href="#step-3-use-it" title="Permanent link">&para;</a></h3>
+</details>
+<details class="note">
+<summary>🪟 Windows (PowerShell) — set the Token</summary>
+<p>PowerShell does not use <code>export</code>. Use this instead:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$env:FINMIND_TOKEN</span><span class="p">=</span><span class="s2">&quot;your_token_here&quot;</span>   <span class="c"># current terminal only</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">setx</span> <span class="n">FINMIND_TOKEN</span> <span class="s2">&quot;your_token_here&quot;</span>   <span class="c"># persists (reopen the terminal to take effect)</span>
+</code></pre></div>
+<p>On <strong>WSL</strong> or <strong>Git Bash</strong>, <code>export</code> and <code>~/.bashrc</code> work the same as macOS / Linux.</p>
+</details>
+<h3 id="usage">Step 3: Use It<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
 <p>In Claude Code, type <code>/finmind</code> followed by what you want to query:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/finmind TSMC stock prices for the past month
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/finmind TSMC stock prices for the past month
 </code></pre></div>
 <hr />
 <h2 id="mcp-server">MCP Server<a class="headerlink" href="#mcp-server" title="Permanent link">&para;</a></h2>
 <p>If your AI tool supports <a href="https://modelcontextprotocol.io/">MCP (Model Context Protocol)</a>, you can use the official FinMind MCP server <a href="https://pypi.org/project/finmind-mcp/"><code>finmind-mcp</code></a> instead — the tool calls it automatically, with no skill file to download. First get your Token (see "Step 2" above) and install <a href="https://docs.astral.sh/uv/">uv</a>.</p>
 <p><strong>Claude Code (one-click):</strong> first <code>export FINMIND_TOKEN=your_token_here</code>, then run inside Claude Code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/plugin marketplace add FinMind/FinMind-MCP
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>/plugin install finmind-mcp@finmind-official
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/plugin marketplace add FinMind/FinMind-MCP
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>/plugin install finmind-mcp@finmind-official
 </code></pre></div>
 <p>After install, run <code>/reload-plugins</code> to connect and <code>/mcp</code> to verify. (The plugin reads <code>${FINMIND_TOKEN}</code> from the environment, so export it before launching Claude Code.)</p>
 <p><strong>Other tools (Claude Desktop / Cursor / Windsurf / Gemini CLI):</strong> add this to the tool's MCP config file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;finmind&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uvx&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;finmind-mcp&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;FINMIND_TOKEN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your_token_here&quot;</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;finmind&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uvx&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;finmind-mcp&quot;</span><span class="p">],</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;FINMIND_TOKEN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your_token_here&quot;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Codex CLI</strong> uses a different config format (<code>[mcp_servers]</code> in <code>~/.codex/config.toml</code>), or a one-liner: <code>codex mcp add finmind --env FINMIND_TOKEN=... -- uvx finmind-mcp</code>.</p>
 <p>For per-host config file locations, the <code>claude mcp add</code> / <code>gemini mcp add</code> / <code>codex mcp add</code> one-liners, and verification steps, see the <a href="https://github.com/FinMind/FinMind-MCP/tree/master/install">FinMind-MCP install guides</a>.</p>
@@ -2009,102 +2061,102 @@
 <p>The queries below work with both methods: with the <strong>Skill file</strong> prefix them with <code>/finmind</code>; with <strong>MCP</strong> just ask in natural language.</p>
 </blockquote>
 <h3 id="stock-price-queries">Stock Price Queries<a class="headerlink" href="#stock-price-queries" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/finmind TSMC stock prices for the past month
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>/finmind TSMC stock prices for the past month
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns a daily stock price table for TSMC (2330) over the past month, including columns such as date, open, high, low, close, and volume.</p>
 </blockquote>
 <p><img alt="TSMC stock prices for the past month" src="../../../img/tsmc_1m_price.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/finmind Compare 2330 and 2317 stock prices over the past three months
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>/finmind Compare 2330 and 2317 stock prices over the past three months
 </code></pre></div>
 <blockquote>
 <p>Expected result: queries TSMC and Hon Hai stock prices over the past three months and presents a closing-price comparison of both stocks in a table.</p>
 </blockquote>
 <p><img alt="Compare 2330 and 2317 stock prices over the past three months" src="../../../img/compare_2330_2317.png" /></p>
 <h3 id="chip-institutional-data">Chip / Institutional Data<a class="headerlink" href="#chip-institutional-data" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/finmind 2330 institutional investors trading over the past week
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/finmind 2330 institutional investors trading over the past week
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns daily net buy/sell volumes (in lots) for foreign investors, investment trusts, and dealers for TSMC over the past week.</p>
 </blockquote>
 <p><img alt="2330 institutional investors trading over the past week" src="../../../img/institutional_2330.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/finmind TSMC foreign investor shareholding ratio history
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/finmind TSMC foreign investor shareholding ratio history
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns a historical table of TSMC's foreign investor shareholding (in lots) and shareholding ratio.</p>
 </blockquote>
 <p><img alt="TSMC foreign investor shareholding ratio history" src="../../../img/tsmc_foreign_shareholding.png" /></p>
 <h3 id="fundamentals">Fundamentals<a class="headerlink" href="#fundamentals" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/finmind TSMC monthly revenue this year
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>/finmind TSMC monthly revenue this year
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns TSMC's monthly revenue figures for the current year.</p>
 </blockquote>
 <p><img alt="TSMC monthly revenue this year" src="../../../img/tsmc_monthly_revenue.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/finmind 2330 PER trend over the past five years
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/finmind 2330 PER trend over the past five years
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns TSMC's historical price-to-earnings ratio (PER), price-to-book ratio (PBR), and dividend yield over the past five years.</p>
 </blockquote>
 <h3 id="futures-and-options">Futures and Options<a class="headerlink" href="#futures-and-options" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>/finmind TAIEX near-month futures contract weekly trading info
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>/finmind TAIEX near-month futures contract weekly trading info
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns daily open/high/low/close, volume, and open interest for TAIEX futures (TX) over the past week.</p>
 </blockquote>
 <p><img alt="TAIEX near-month futures contract weekly trading info" src="../../../img/taiex_futures_weekly.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>/finmind TAIEX options institutional investors trading today
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>/finmind TAIEX options institutional investors trading today
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns today's long/short trading volumes (in contracts) and amounts by the three institutional investors for TAIEX options (TXO).</p>
 </blockquote>
 <h3 id="macroeconomy">Macroeconomy<a class="headerlink" href="#macroeconomy" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/finmind USD/TWD exchange rate trend over the past six months
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>/finmind USD/TWD exchange rate trend over the past six months
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns daily spot buy/sell USD/TWD exchange rates over the past six months.</p>
 </blockquote>
 <p><img alt="USD/TWD exchange rate trend over the past six months" src="../../../img/usd_twd_exchange_rate.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/finmind Federal Reserve interest rate changes over the past ten years
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>/finmind Federal Reserve interest rate changes over the past ten years
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns the Fed's historical interest rate adjustment records over the past ten years.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>/finmind Gold price trend over the past year
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>/finmind Gold price trend over the past year
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns daily gold prices over the past year.</p>
 </blockquote>
 <h3 id="charts">Charts<a class="headerlink" href="#charts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/finmind TSMC candlestick chart for the past three months
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>/finmind TSMC candlestick chart for the past three months
 </code></pre></div>
 <blockquote>
 <p>Expected result: generates a candlestick chart for TSMC over the past three months, including OHLC, moving averages, and volume, saved as an image file.</p>
 </blockquote>
 <p><img alt="TSMC 2330 Candlestick Chart" src="../../../img/tsmc_3m_kbar.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>/finmind Compare 2330 and 2317 stock prices over the past six months, plot a chart
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>/finmind Compare 2330 and 2317 stock prices over the past six months, plot a chart
 </code></pre></div>
 <blockquote>
 <p>Expected result: generates a line chart comparing the closing prices of the two stocks, saved as an image file.</p>
 </blockquote>
 <p><img alt="2330 vs 2317 Stock Comparison" src="../../../img/stock_comparison_2330_2317.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>/finmind USD exchange rate trend chart for the past year
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>/finmind USD exchange rate trend chart for the past year
 </code></pre></div>
 <blockquote>
 <p>Expected result: generates a USD/TWD exchange rate line chart, saved as an image file.</p>
 </blockquote>
 <h3 id="advanced-analysis">Advanced Analysis<a class="headerlink" href="#advanced-analysis" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>/finmind Compare TSMC and MediaTek stock returns over the past year
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/finmind Compare TSMC and MediaTek stock returns over the past year
 </code></pre></div>
 <blockquote>
 <p>Expected result: calculates the cumulative return rates of both stocks over the past year and presents the comparison in a table or chart.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>/finmind 2330 dividend policy summary for the past three years
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>/finmind 2330 dividend policy summary for the past three years
 </code></pre></div>
 <blockquote>
 <p>Expected result: summarizes TSMC's cash dividends, stock dividends, ex-dividend dates, and payment dates for the past three years.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>/finmind TAIEX index every-5-second trend today
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>/finmind TAIEX index every-5-second trend today
 </code></pre></div>
 <blockquote>
 <p>Expected result: returns the TAIEX weighted index value every 5 seconds for today, showing the intraday trend.</p>
