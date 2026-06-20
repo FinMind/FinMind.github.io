@@ -5329,6 +5329,15 @@
 <li>部分資料缺失，缺失日期為：2022-10-31~2022-11-03, 2023-01-11~2023-01-17</li>
 <li>開啟 Async 功能，可大幅縮短資料更新時間，colab 實測 2175 檔股票，只需 4 分 20 秒即可完成下載。</li>
 </ul>
+<details class="note">
+<summary>興櫃自營商分點的 <code>price</code> 為 0 屬正常現象，非資料缺失</summary>
+<p>興櫃股票（<code>stock_id</code> 可用 <code>TaiwanStockInfo</code> 查為 <code>emerging</code>）採「推薦證券商報價驅動之議價交易」，與上市櫃的集中撮合不同。推薦證券商身兼造市，<strong>以自有資金及庫存（即自營商，券商代碼結尾為 <code>T</code>）連續報出買價與賣價並履行成交義務</strong>；其當日造市部位買賣雙向、橫跨多個價位，無單一代表成交均價，因此該分點列的 <code>price</code> 會顯示為 <code>0</code>（<code>buy</code>／<code>sell</code> 股數仍為正確值）。</p>
+<ul>
+<li>這是興櫃市場結構特性，<strong>並非資料缺失或錯誤</strong>；同一檔興櫃股票的「一般券商分點」仍有正常成交價。</li>
+<li>上市、上櫃股票不受影響，各分點（含自營商）皆有成交價。</li>
+<li>參考：<a href="https://www.tpex.org.tw/web/emergingstock/trading_rule/rule.php?l=zh-tw">櫃買中心〈興櫃股票交易制度〉</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="37:4"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><input id="__tabbed_37_3" name="__tabbed_37" type="radio" /><input id="__tabbed_37_4" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">Package</label><label for="__tabbed_37_2">Package-Async</label><label for="__tabbed_37_3">Python-request</label><label for="__tabbed_37_4">R</label></div>

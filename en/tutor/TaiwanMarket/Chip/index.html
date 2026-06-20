@@ -5329,6 +5329,15 @@
 <li>Some data is missing on the following dates: 2022-10-31~2022-11-03, 2023-01-11~2023-01-17.</li>
 <li>Enabling Async can significantly reduce data fetch time. In Colab tests, downloading 2,175 stocks takes only 4 minutes 20 seconds.</li>
 </ul>
+<details class="note">
+<summary>A <code>price</code> of 0 on emerging-stock dealer (自營商) branches is expected, not missing data</summary>
+<p>Emerging stocks (where <code>TaiwanStockInfo</code> reports the <code>stock_id</code> as <code>emerging</code>) trade on a <strong>quote-driven negotiation market run by recommending securities firms</strong>, unlike the central-matching auction used for listed/OTC stocks. The recommending firms act as market makers, <strong>continuously quoting bid/ask and filling orders with their own capital and inventory — i.e. the dealer (自營商) branch, whose <code>securities_trader_id</code> ends in <code>T</code></strong>. Because that daily market-making position trades both sides across many price levels, there is no single representative execution price, so <code>price</code> is reported as <code>0</code> for that branch row (<code>buy</code>/<code>sell</code> share counts are still correct).</p>
+<ul>
+<li>This is a structural characteristic of the emerging market, <strong>not missing or erroneous data</strong>; ordinary (non-dealer) branches of the same emerging stock still carry normal execution prices.</li>
+<li>Listed (TWSE) and OTC stocks are unaffected — every branch, including dealers, has an execution price.</li>
+<li>Reference: <a href="https://www.tpex.org.tw/web/emergingstock/trading_rule/rule.php?l=zh-tw">TPEx — Emerging Stock Trading System</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="37:4"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><input id="__tabbed_37_3" name="__tabbed_37" type="radio" /><input id="__tabbed_37_4" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">Package</label><label for="__tabbed_37_2">Package-Async</label><label for="__tabbed_37_3">Python-request</label><label for="__tabbed_37_4">R</label></div>
