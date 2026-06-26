@@ -3129,6 +3129,19 @@
 <li>Data range: 2011-01-03 ~ now</li>
 <li>Data update time: <strong>Monday to Friday 6:00</strong>. The actual update time is based on the API data.</li>
 </ul>
+<details class="note">
+<summary>How volume is counted</summary>
+<p>Tick volume is counted on a <strong>double-sided</strong> basis: each matched trade records both the buy side and the sell side once. As a result, the summed tick volume is about <strong>2×</strong> the (single-side) volume in the daily data TaiwanFuturesDaily; for spread / combination orders, which contain two legs, the tick volume is about <strong>4×</strong> the daily volume. Convert accordingly when reconciling tick volume against daily volume.</p>
+</details>
+<details class="note">
+<summary>Trading-day attribution of after-hours ticks</summary>
+<p>The after-hours (night) session follows the TAIFEX rule of being attributed to the <strong>next business day</strong>. The after-hours session for trading day D is the segment running from 15:00 on the previous business day until 05:00 on day D. Therefore, within a tick file:</p>
+<ul>
+<li><strong>00:00–05:00</strong> ticks belong to the after-hours (after_market) session of <strong>trading day D</strong> in TaiwanFuturesDaily.</li>
+<li><strong>08:45–13:45</strong> ticks belong to the regular session (position) of trading day D.</li>
+<li><strong>15:00–24:00</strong> ticks belong to the after-hours session of the <strong>next trading day</strong>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Package</label><label for="__tabbed_11_2">Python-request</label><label for="__tabbed_11_3">R</label></div>
