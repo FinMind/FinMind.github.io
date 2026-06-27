@@ -866,6 +866,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanoptionvix" class="md-nav__link">
+    <span class="md-ellipsis">
+      臺指選擇權波動率指數 TaiwanOptionVix
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2185,6 +2194,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanoptionvix" class="md-nav__link">
+    <span class="md-ellipsis">
+      臺指選擇權波動率指數 TaiwanOptionVix
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2205,7 +2223,7 @@
 
   <h1>衍生性金融商品</h1>
 
-<p>在台股衍生性商品資料，我們擁有 17 種資料集，如下:</p>
+<p>在台股衍生性商品資料，我們擁有 18 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanFutOptDailyInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdaily">期貨日成交資訊 TaiwanFuturesDaily</a></li>
@@ -2223,6 +2241,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptionopeninterestlargetraders-backersponsor">選擇權大額交易人未沖銷部位 TaiwanOptionOpenInterestLargeTraders</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesfinalsettlementprice-backersponsor">期貨最後結算價 TaiwanFuturesFinalSettlementPrice</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptionfinalsettlementprice-backersponsor">選擇權最後結算價 TaiwanOptionFinalSettlementPrice</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptionvix">臺指選擇權波動率指數 TaiwanOptionVix</a></li>
 </ul>
 <hr />
 <h4 id="taiwanfutoptdailyinfo">期貨、選擇權日成交資訊總覽 TaiwanFutOptDailyInfo<a class="headerlink" href="#taiwanfutoptdailyinfo" title="Permanent link">&para;</a></h4>
@@ -7195,6 +7214,103 @@
 <a id="__codelineno-122-8" name="__codelineno-122-8" href="#__codelineno-122-8"></a>    underlying_code: str, # 標的證券代號
 <a id="__codelineno-122-9" name="__codelineno-122-9" href="#__codelineno-122-9"></a>    notional_value: float64 # 約定標的物價值
 <a id="__codelineno-122-10" name="__codelineno-122-10" href="#__codelineno-122-10"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanoptionvix">臺指選擇權波動率指數 TaiwanOptionVix<a class="headerlink" href="#taiwanoptionvix" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2026-03-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至六 00:00~06:00、14:00~20:00 每15分鐘</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="59:2"><input checked="checked" id="__tabbed_59_1" name="__tabbed_59" type="radio" /><input id="__tabbed_59_2" name="__tabbed_59" type="radio" /><div class="tabbed-labels"><label for="__tabbed_59_1">Python-request</label><label for="__tabbed_59_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-123-2" name="__codelineno-123-2" href="#__codelineno-123-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-123-3" name="__codelineno-123-3" href="#__codelineno-123-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-123-4" name="__codelineno-123-4" href="#__codelineno-123-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-123-5" name="__codelineno-123-5" href="#__codelineno-123-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-123-6" name="__codelineno-123-6" href="#__codelineno-123-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-123-7" name="__codelineno-123-7" href="#__codelineno-123-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanOptionVix&quot;</span><span class="p">,</span>
+<a id="__codelineno-123-8" name="__codelineno-123-8" href="#__codelineno-123-8"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-123-9" name="__codelineno-123-9" href="#__codelineno-123-9"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-06-02&quot;</span><span class="p">,</span>
+<a id="__codelineno-123-10" name="__codelineno-123-10" href="#__codelineno-123-10"></a><span class="p">}</span>
+<a id="__codelineno-123-11" name="__codelineno-123-11" href="#__codelineno-123-11"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-123-12" name="__codelineno-123-12" href="#__codelineno-123-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-123-13" name="__codelineno-123-13" href="#__codelineno-123-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<a id="__codelineno-123-14" name="__codelineno-123-14" href="#__codelineno-123-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-124-2" name="__codelineno-124-2" href="#__codelineno-124-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-124-3" name="__codelineno-124-3" href="#__codelineno-124-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<a id="__codelineno-124-4" name="__codelineno-124-4" href="#__codelineno-124-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-124-5" name="__codelineno-124-5" href="#__codelineno-124-5"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<a id="__codelineno-124-6" name="__codelineno-124-6" href="#__codelineno-124-6"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-124-7" name="__codelineno-124-7" href="#__codelineno-124-7"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-124-8" name="__codelineno-124-8" href="#__codelineno-124-8"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-124-9" name="__codelineno-124-9" href="#__codelineno-124-9"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanOptionVix&quot;</span><span class="p">,</span>
+<a id="__codelineno-124-10" name="__codelineno-124-10" href="#__codelineno-124-10"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2026-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-124-11" name="__codelineno-124-11" href="#__codelineno-124-11"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2026-06-02&quot;</span>
+<a id="__codelineno-124-12" name="__codelineno-124-12" href="#__codelineno-124-12"></a><span class="w">    </span><span class="p">),</span>
+<a id="__codelineno-124-13" name="__codelineno-124-13" href="#__codelineno-124-13"></a><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<a id="__codelineno-124-14" name="__codelineno-124-14" href="#__codelineno-124-14"></a><span class="p">)</span>
+<a id="__codelineno-124-15" name="__codelineno-124-15" href="#__codelineno-124-15"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<a id="__codelineno-124-16" name="__codelineno-124-16" href="#__codelineno-124-16"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<a id="__codelineno-124-17" name="__codelineno-124-17" href="#__codelineno-124-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="60:2"><input checked="checked" id="__tabbed_60_1" name="__tabbed_60" type="radio" /><input id="__tabbed_60_2" name="__tabbed_60" type="radio" /><div class="tabbed-labels"><label for="__tabbed_60_1">DataFrame</label><label for="__tabbed_60_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">time</th>
+<th style="text-align: left;">vix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-06-01</td>
+<td style="text-align: left;">09:00:00</td>
+<td style="text-align: left;">37.12</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-06-01</td>
+<td style="text-align: left;">12:07:45</td>
+<td style="text-align: left;">36.05</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-06-01</td>
+<td style="text-align: left;">12:08:00</td>
+<td style="text-align: left;">36.04</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a>{
+<a id="__codelineno-125-2" name="__codelineno-125-2" href="#__codelineno-125-2"></a>    date: str, # 日期
+<a id="__codelineno-125-3" name="__codelineno-125-3" href="#__codelineno-125-3"></a>    time: str, # 時間
+<a id="__codelineno-125-4" name="__codelineno-125-4" href="#__codelineno-125-4"></a>    vix: float64 # 波動率指數
+<a id="__codelineno-125-5" name="__codelineno-125-5" href="#__codelineno-125-5"></a>}
 </code></pre></div>
 </div>
 </div>
