@@ -774,6 +774,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockconvertiblebondmonthlyanalysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      可轉換公司債月份分析表 TaiwanStockConvertibleBondMonthlyAnalysis
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1874,6 +1883,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockconvertiblebondmonthlyanalysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      可轉換公司債月份分析表 TaiwanStockConvertibleBondMonthlyAnalysis
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1894,12 +1912,13 @@
 
   <h1>可轉債</h1>
 
-<p>在台股可轉換公司債，我們擁有 4 種資料集，如下:</p>
+<p>在台股可轉換公司債，我們擁有 5 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondinfo-backersponsor">可轉債總覽 TaiwanStockConvertibleBondInfo</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebonddaily-backersponsor">可轉債日成交資訊 TaiwanStockConvertibleBondDaily</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondinstitutionalinvestors-backersponsor">可轉債三大法人日交易資訊 TaiwanStockConvertibleBondInstitutionalInvestors</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebonddailyoverview-backersponsor">可轉債每日總覽資訊 TaiwanStockConvertibleBondDailyOverview</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondmonthlyanalysis">可轉換公司債月份分析表 TaiwanStockConvertibleBondMonthlyAnalysis</a></li>
 </ul>
 <h4 id="taiwanstockconvertiblebondinfo-backersponsor">可轉債總覽 TaiwanStockConvertibleBondInfo(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockconvertiblebondinfo-backersponsor" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
@@ -3320,6 +3339,117 @@
 <a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>    DueDateOfSuspension: str, # 停止交易迄日
 <a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>    CouponRate: float32 # 票面利率
 <a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="taiwanstockconvertiblebondmonthlyanalysis">可轉換公司債月份分析表 TaiwanStockConvertibleBondMonthlyAnalysis<a class="headerlink" href="#taiwanstockconvertiblebondmonthlyanalysis" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2026-05-01 ~ now</li>
+<li>資料更新時間 <strong>星期一至六 14:00~23:00 每30分鐘</strong>，實際更新時間以 API 資料為主</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Python-request</label><label for="__tabbed_15_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockConvertibleBondMonthlyAnalysis&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;13166&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-05-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="p">}</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockConvertibleBondMonthlyAnalysis&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;13166&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2026-05-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2026-06-01&quot;</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">    </span><span class="p">),</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="p">)</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">DataFrame</label><label for="__tabbed_16_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">cb_id</th>
+<th style="text-align: left;">cb_name</th>
+<th style="text-align: left;">cb_name_en</th>
+<th style="text-align: right;">custody_balance</th>
+<th style="text-align: right;">last_month_balance</th>
+<th style="text-align: right;">change</th>
+<th style="text-align: right;">change_percent</th>
+<th style="text-align: right;">issued_units</th>
+<th style="text-align: right;">custody_accounts</th>
+<th style="text-align: right;">pledged_units</th>
+<th style="text-align: left;">date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">13166</td>
+<td style="text-align: left;">上曜六</td>
+<td style="text-align: left;">SUN YAD-CB6</td>
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-05-01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>{
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    cb_id: str, # 可轉債代號
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    cb_name: str, # 可轉債名稱
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    cb_name_en: str, # 可轉債英文名稱
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>    custody_balance: int, # 保管餘額
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>    last_month_balance: int, # 上月餘額
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>    change: int, # 增減
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>    change_percent: float64, # 增減百分比
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>    issued_units: int, # 發行單位數
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>    custody_accounts: int, # 保管戶數
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>    pledged_units: int, # 設質單位數
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>    date: str # 日期
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>}
 </code></pre></div>
 </div>
 </div>
