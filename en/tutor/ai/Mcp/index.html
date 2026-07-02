@@ -1352,6 +1352,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data field caveats
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1872,6 +1881,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data field caveats
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1949,6 +1967,27 @@
 <blockquote>
 <p>Expected result: the tool queries today's institutional trading data, sorts it, and returns the top 5 stocks by net-buy value.</p>
 </blockquote>
+<h2 id="caveats">Data field caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
+<p>The following are common field-definition differences to keep in mind when an AI agent interprets query results (Taiwan stock prices, futures ticks). They are not data errors:</p>
+<details class="warning">
+<summary>Emerging stocks: <code>open</code> is the <em>previous-day average price</em>, and may fall outside the day's high/low (not a data error)</summary>
+<p>Emerging-board stocks trade by negotiation and <strong>have no opening price</strong>. For emerging stocks this table therefore fills <code>open</code> with the <strong>previous-day average price</strong>, not an opening price; <code>max</code> / <code>min</code> / <code>close</code> are still the day's high / low / last traded price and are correct.</p>
+<p>As a result, an emerging stock's <code>open</code> can sit above <code>max</code> or below <code>min</code> on volatile days. This is a <strong>field-definition difference, not corrupt data</strong>. For candlestick charts, use <code>max</code> / <code>min</code> / <code>close</code>, or treat <code>open</code> as the previous-day average.</p>
+<p><strong>Example</strong>: 6515 穎崴 on 2020-03-19 (emerging at the time) → <code>open=218.06</code>, <code>max=200</code>, <code>min=170</code>, <code>close=174.9</code>; 218.06 is exactly the previous-day average that day. The stock later moved to TWSE, after which its data is normal.</p>
+</details>
+<details class="note">
+<summary>Futures ticks (TaiwanFuturesTick): how volume is counted</summary>
+<p>Tick volume is counted on a <strong>double-sided</strong> basis: each matched trade records both the buy side and the sell side once. As a result, the summed tick volume is about <strong>2×</strong> the (single-side) volume in the daily data TaiwanFuturesDaily; for spread / combination orders, which contain two legs, the tick volume is about <strong>4×</strong> the daily volume. Convert accordingly when reconciling tick volume against daily volume.</p>
+</details>
+<details class="note">
+<summary>Futures ticks: trading-day attribution of after-hours ticks</summary>
+<p>The after-hours (night) session follows the TAIFEX rule of being attributed to the <strong>next business day</strong>. The after-hours session for trading day D is the segment running from 15:00 on the previous business day until 05:00 on day D. Therefore, within a tick file:</p>
+<ul>
+<li><strong>00:00–05:00</strong> ticks belong to the after-hours (after_market) session of <strong>trading day D</strong> in TaiwanFuturesDaily.</li>
+<li><strong>08:45–13:45</strong> ticks belong to the regular session (position) of trading day D.</li>
+<li><strong>15:00–24:00</strong> ticks belong to the after-hours session of the <strong>next trading day</strong>.</li>
+</ul>
+</details>
 
 
 

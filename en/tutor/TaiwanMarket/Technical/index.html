@@ -2854,9 +2854,9 @@
 </ul>
 <details class="warning">
 <summary>Emerging stocks: <code>open</code> is the <em>previous-day average price</em>, and may fall outside the day's high/low (not a data error)</summary>
-<p>Emerging-board stocks trade by negotiation and <strong>have no opening price</strong>. For emerging stocks this table therefore fills <code>open</code> with the <strong>previous-day average price</strong> published by the Taipei Exchange (TPEx), not an opening price; <code>max</code> / <code>min</code> / <code>close</code> are still the day's high / low / last traded price and are correct.</p>
+<p>Emerging-board stocks trade by negotiation and <strong>have no opening price</strong>. For emerging stocks this table therefore fills <code>open</code> with the <strong>previous-day average price</strong>, not an opening price; <code>max</code> / <code>min</code> / <code>close</code> are still the day's high / low / last traded price and are correct.</p>
 <p>As a result, an emerging stock's <code>open</code> can sit above <code>max</code> or below <code>min</code> on volatile days. This is a <strong>field-definition difference, not corrupt data</strong>. For candlestick charts, use <code>max</code> / <code>min</code> / <code>close</code>, or treat <code>open</code> as the previous-day average.</p>
-<p><strong>Example</strong>: 6515 穎崴 on 2020-03-19 (emerging at the time) → <code>open=218.06</code>, <code>max=200</code>, <code>min=170</code>, <code>close=174.9</code>; 218.06 is exactly TPEx's previous-day average that day. The stock later moved to TWSE, after which its data is normal.</p>
+<p><strong>Example</strong>: 6515 穎崴 on 2020-03-19 (emerging at the time) → <code>open=218.06</code>, <code>max=200</code>, <code>min=170</code>, <code>close=174.9</code>; 218.06 is exactly the previous-day average that day. The stock later moved to TWSE, after which its data is normal.</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
