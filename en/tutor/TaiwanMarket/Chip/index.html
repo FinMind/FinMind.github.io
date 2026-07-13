@@ -869,6 +869,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwan-active-etf-list-taiwanstockactiveetfinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taiwan Active ETF List TaiwanStockActiveETFInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-etf-daily-holding-taiwanstockactiveetfholding-only-available-for-sponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active ETF Daily Holding TaiwanStockActiveETFHolding (only available for sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-etf-daily-holding-change-taiwanstockactiveetfholdingchange-only-available-for-sponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active ETF Daily Holding Change TaiwanStockActiveETFHoldingChange (only available for sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2381,6 +2408,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwan-active-etf-list-taiwanstockactiveetfinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taiwan Active ETF List TaiwanStockActiveETFInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-etf-daily-holding-taiwanstockactiveetfholding-only-available-for-sponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active ETF Daily Holding TaiwanStockActiveETFHolding (only available for sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-etf-daily-holding-change-taiwanstockactiveetfholdingchange-only-available-for-sponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active ETF Daily Holding Change TaiwanStockActiveETFHoldingChange (only available for sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2401,7 +2455,7 @@
 
   <h1>Chip (Institutional)</h1>
 
-<p>In Taiwan stock chip data, we have 21 datasets as follows:</p>
+<p>In Taiwan stock chip data, we have 24 datasets as follows:</p>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">Individual Stock Margin Purchase / Short Sale TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">Total Market Margin Purchase / Short Sale TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -2424,6 +2478,9 @@
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockblocktradingdailyreport-sponsor">Block Trading Daily Report TaiwanStockBlockTradingDailyReport</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockblocktrade-sponsor">Block Trade Daily Transactions TaiwanStockBlockTrade</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockloancollateralbalance-sponsor">Loan Collateral Balance TaiwanStockLoanCollateralBalance</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockactiveetfinfo">Taiwan Active ETF List TaiwanStockActiveETFInfo</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockactiveetfholding-sponsor">Active ETF Daily Holding TaiwanStockActiveETFHolding</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockactiveetfholdingchange-sponsor">Active ETF Daily Holding Change TaiwanStockActiveETFHoldingChange</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockdispositionsecuritiesperiod-backersponsor">Disposition Securities Period TaiwanStockDispositionSecuritiesPeriod</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockdaytradingborrowingfeerate-backersponsor">Day Trading Borrowing Fee Rate TaiwanStockDayTradingBorrowingFeeRate</a></li>
 </ul>
@@ -7839,6 +7896,394 @@
 </div>
 </div>
 <hr />
+<h4 id="taiwan-active-etf-list-taiwanstockactiveetfinfo">Taiwan Active ETF List TaiwanStockActiveETFInfo<a class="headerlink" href="#taiwan-active-etf-list-taiwanstockactiveetfinfo" title="Permanent link">&para;</a></h4>
+<ul>
+<li>This table lists Taiwan-listed active ETFs (TWSE-listed + TPEx OTC), including the ETF code, name, ETF category, and market type!</li>
+<li><code>category</code> is the ETF category: <code>domestic</code> (invests domestically) / <code>foreign</code> (invests cross-border)</li>
+<li><code>type</code> is the market type: <code>twse</code> (listed) / <code>tpex</code> (OTC)</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="69:3"><input checked="checked" id="__tabbed_69_1" name="__tabbed_69" type="radio" /><input id="__tabbed_69_2" name="__tabbed_69" type="radio" /><input id="__tabbed_69_3" name="__tabbed_69" type="radio" /><div class="tabbed-labels"><label for="__tabbed_69_1">Package</label><label for="__tabbed_69_2">Python-request</label><label for="__tabbed_69_3">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-141-2" name="__codelineno-141-2" href="#__codelineno-141-2"></a>
+<a id="__codelineno-141-3" name="__codelineno-141-3" href="#__codelineno-141-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-141-4" name="__codelineno-141-4" href="#__codelineno-141-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-141-5" name="__codelineno-141-5" href="#__codelineno-141-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_active_etf_info</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-142-2" name="__codelineno-142-2" href="#__codelineno-142-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-142-3" name="__codelineno-142-3" href="#__codelineno-142-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-142-4" name="__codelineno-142-4" href="#__codelineno-142-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Refer to login to obtain the token</span>
+<a id="__codelineno-142-5" name="__codelineno-142-5" href="#__codelineno-142-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-142-6" name="__codelineno-142-6" href="#__codelineno-142-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-142-7" name="__codelineno-142-7" href="#__codelineno-142-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockActiveETFInfo&quot;</span><span class="p">,</span>
+<a id="__codelineno-142-8" name="__codelineno-142-8" href="#__codelineno-142-8"></a><span class="p">}</span>
+<a id="__codelineno-142-9" name="__codelineno-142-9" href="#__codelineno-142-9"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-142-10" name="__codelineno-142-10" href="#__codelineno-142-10"></a><span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-142-11" name="__codelineno-142-11" href="#__codelineno-142-11"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-142-12" name="__codelineno-142-12" href="#__codelineno-142-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-143-2" name="__codelineno-143-2" href="#__codelineno-143-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-143-3" name="__codelineno-143-3" href="#__codelineno-143-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<a id="__codelineno-143-4" name="__codelineno-143-4" href="#__codelineno-143-4"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<a id="__codelineno-143-5" name="__codelineno-143-5" href="#__codelineno-143-5"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Refer to login to obtain the token</span>
+<a id="__codelineno-143-6" name="__codelineno-143-6" href="#__codelineno-143-6"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-143-7" name="__codelineno-143-7" href="#__codelineno-143-7"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-143-8" name="__codelineno-143-8" href="#__codelineno-143-8"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-143-9" name="__codelineno-143-9" href="#__codelineno-143-9"></a><span class="w">        </span><span class="n">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TaiwanStockActiveETFInfo&quot;</span>
+<a id="__codelineno-143-10" name="__codelineno-143-10" href="#__codelineno-143-10"></a><span class="w">    </span><span class="p">),</span>
+<a id="__codelineno-143-11" name="__codelineno-143-11" href="#__codelineno-143-11"></a><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<a id="__codelineno-143-12" name="__codelineno-143-12" href="#__codelineno-143-12"></a><span class="p">)</span>
+<a id="__codelineno-143-13" name="__codelineno-143-13" href="#__codelineno-143-13"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-143-14" name="__codelineno-143-14" href="#__codelineno-143-14"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<a id="__codelineno-143-15" name="__codelineno-143-15" href="#__codelineno-143-15"></a><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<a id="__codelineno-143-16" name="__codelineno-143-16" href="#__codelineno-143-16"></a><span class="n">data.table</span>
+<a id="__codelineno-143-17" name="__codelineno-143-17" href="#__codelineno-143-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="70:2"><input checked="checked" id="__tabbed_70_1" name="__tabbed_70" type="radio" /><input id="__tabbed_70_2" name="__tabbed_70" type="radio" /><div class="tabbed-labels"><label for="__tabbed_70_1">DataFrame</label><label for="__tabbed_70_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: left;">stock_name</th>
+<th style="text-align: left;">category</th>
+<th style="text-align: left;">type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-07-11</td>
+<td style="text-align: right;">00980A</td>
+<td style="text-align: left;">主動野村臺灣優選</td>
+<td style="text-align: left;">domestic</td>
+<td style="text-align: left;">twse</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-07-11</td>
+<td style="text-align: right;">00981A</td>
+<td style="text-align: left;">主動統一台股增長</td>
+<td style="text-align: left;">domestic</td>
+<td style="text-align: left;">twse</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-07-11</td>
+<td style="text-align: right;">00982A</td>
+<td style="text-align: left;">主動群益台灣強棒</td>
+<td style="text-align: left;">domestic</td>
+<td style="text-align: left;">twse</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a>{
+<a id="__codelineno-144-2" name="__codelineno-144-2" href="#__codelineno-144-2"></a>    date: str, # date
+<a id="__codelineno-144-3" name="__codelineno-144-3" href="#__codelineno-144-3"></a>    stock_id: str, # ETF code
+<a id="__codelineno-144-4" name="__codelineno-144-4" href="#__codelineno-144-4"></a>    stock_name: str, # ETF name
+<a id="__codelineno-144-5" name="__codelineno-144-5" href="#__codelineno-144-5"></a>    category: str, # ETF category (domestic / foreign)
+<a id="__codelineno-144-6" name="__codelineno-144-6" href="#__codelineno-144-6"></a>    type: str # market type (twse / tpex)
+<a id="__codelineno-144-7" name="__codelineno-144-7" href="#__codelineno-144-7"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="active-etf-daily-holding-taiwanstockactiveetfholding-only-available-for-sponsor-members">Active ETF Daily Holding TaiwanStockActiveETFHolding (only available for <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> members)<a class="headerlink" href="#active-etf-daily-holding-taiwanstockactiveetfholding-only-available-for-sponsor-members" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Data range: 2025-05-05 ~ now</li>
+<li>Data update time <strong>Monday to Saturday after market close</strong>, the actual update time is based on the API data.</li>
+<li>Provides the full daily portfolio of Taiwan-listed active ETFs (TWSE + TPEx), including constituent code, name, asset type, shares, weight, market value and currency; buy/sell holdings can be derived by differencing consecutive trading days.</li>
+<li>Query a single ETF via <code>data_id</code> (e.g. <code>00980A</code>), or query all active ETF holdings of a given date by date only.</li>
+<li>Note: the start date differs per ETF (depending on listing date and source history depth); some ETFs accumulate daily from launch.</li>
+<li>Note: if an issuer does not publish an obtainable daily portfolio for a given active ETF, that ETF has no holding data for now (currently "主動貝萊德優投等 <code>00985D</code>") and will be backfilled once the source becomes available; such ETFs also have no corresponding <code>TaiwanStockActiveETFHoldingChange</code>.</li>
+<li>Note: <code>shares</code> is an integer; <code>market_value</code> is disclosed per holding by <strong>only some</strong> active ETFs' daily portfolios — where it is not disclosed the field is <code>0</code> (you can estimate it as <code>shares</code> times the constituent's closing price).</li>
+<li>Note: an active ETF's portfolio includes derivatives and cash/liability line items, not only stocks. <strong>For short derivative positions (written options, short futures) both <code>shares</code> (contracts) and <code>market_value</code> can be negative</strong>; liability line items (e.g. payables) can also have a negative <code>market_value</code>. Use <code>asset_type</code> (<code>stock</code>/<code>bond</code>/<code>futures</code>/<code>option</code>/<code>cash</code>/<code>etf</code>/<code>repo</code>/<code>other</code>) to filter — e.g. take <code>asset_type == "stock"</code> for equity holdings only.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="71:3"><input checked="checked" id="__tabbed_71_1" name="__tabbed_71" type="radio" /><input id="__tabbed_71_2" name="__tabbed_71" type="radio" /><input id="__tabbed_71_3" name="__tabbed_71" type="radio" /><div class="tabbed-labels"><label for="__tabbed_71_1">Package</label><label for="__tabbed_71_2">Python</label><label for="__tabbed_71_3">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-145-2" name="__codelineno-145-2" href="#__codelineno-145-2"></a>
+<a id="__codelineno-145-3" name="__codelineno-145-3" href="#__codelineno-145-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-145-4" name="__codelineno-145-4" href="#__codelineno-145-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-145-5" name="__codelineno-145-5" href="#__codelineno-145-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_active_etf_holding</span><span class="p">(</span>
+<a id="__codelineno-145-6" name="__codelineno-145-6" href="#__codelineno-145-6"></a>    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;00980A&quot;</span><span class="p">,</span>
+<a id="__codelineno-145-7" name="__codelineno-145-7" href="#__codelineno-145-7"></a>    <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2025-05-05&quot;</span><span class="p">,</span>
+<a id="__codelineno-145-8" name="__codelineno-145-8" href="#__codelineno-145-8"></a>    <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2025-05-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-145-9" name="__codelineno-145-9" href="#__codelineno-145-9"></a><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-146-2" name="__codelineno-146-2" href="#__codelineno-146-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-146-3" name="__codelineno-146-3" href="#__codelineno-146-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-146-4" name="__codelineno-146-4" href="#__codelineno-146-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Refer to the login to obtain the token</span>
+<a id="__codelineno-146-5" name="__codelineno-146-5" href="#__codelineno-146-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-146-6" name="__codelineno-146-6" href="#__codelineno-146-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-146-7" name="__codelineno-146-7" href="#__codelineno-146-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockActiveETFHolding&quot;</span><span class="p">,</span>
+<a id="__codelineno-146-8" name="__codelineno-146-8" href="#__codelineno-146-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;00980A&quot;</span><span class="p">,</span>
+<a id="__codelineno-146-9" name="__codelineno-146-9" href="#__codelineno-146-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-05-05&quot;</span><span class="p">,</span>
+<a id="__codelineno-146-10" name="__codelineno-146-10" href="#__codelineno-146-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-05-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-146-11" name="__codelineno-146-11" href="#__codelineno-146-11"></a><span class="p">}</span>
+<a id="__codelineno-146-12" name="__codelineno-146-12" href="#__codelineno-146-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-146-13" name="__codelineno-146-13" href="#__codelineno-146-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-146-14" name="__codelineno-146-14" href="#__codelineno-146-14"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-146-15" name="__codelineno-146-15" href="#__codelineno-146-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-147-2" name="__codelineno-147-2" href="#__codelineno-147-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-147-3" name="__codelineno-147-3" href="#__codelineno-147-3"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-147-4" name="__codelineno-147-4" href="#__codelineno-147-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Refer to the login to obtain the token</span>
+<a id="__codelineno-147-5" name="__codelineno-147-5" href="#__codelineno-147-5"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-147-6" name="__codelineno-147-6" href="#__codelineno-147-6"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-147-7" name="__codelineno-147-7" href="#__codelineno-147-7"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-147-8" name="__codelineno-147-8" href="#__codelineno-147-8"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockActiveETFHolding&quot;</span><span class="p">,</span>
+<a id="__codelineno-147-9" name="__codelineno-147-9" href="#__codelineno-147-9"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;00980A&quot;</span><span class="p">,</span>
+<a id="__codelineno-147-10" name="__codelineno-147-10" href="#__codelineno-147-10"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="s">&quot;2025-05-05&quot;</span><span class="p">,</span>
+<a id="__codelineno-147-11" name="__codelineno-147-11" href="#__codelineno-147-11"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="s">&quot;2025-05-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-147-12" name="__codelineno-147-12" href="#__codelineno-147-12"></a><span class="w">        </span><span class="n">token</span><span class="o">=</span><span class="n">token</span>
+<a id="__codelineno-147-13" name="__codelineno-147-13" href="#__codelineno-147-13"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-147-14" name="__codelineno-147-14" href="#__codelineno-147-14"></a><span class="p">)</span>
+<a id="__codelineno-147-15" name="__codelineno-147-15" href="#__codelineno-147-15"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-147-16" name="__codelineno-147-16" href="#__codelineno-147-16"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&quot;rbind&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">))</span>
+<a id="__codelineno-147-17" name="__codelineno-147-17" href="#__codelineno-147-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="72:2"><input checked="checked" id="__tabbed_72_1" name="__tabbed_72" type="radio" /><input id="__tabbed_72_2" name="__tabbed_72" type="radio" /><div class="tabbed-labels"><label for="__tabbed_72_1">DataFrame</label><label for="__tabbed_72_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: left;">component_stock_id</th>
+<th style="text-align: left;">component_stock_name</th>
+<th style="text-align: left;">asset_type</th>
+<th style="text-align: right;">shares</th>
+<th style="text-align: right;">weight</th>
+<th style="text-align: right;">market_value</th>
+<th style="text-align: left;">currency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2025-05-05</td>
+<td style="text-align: left;">00980A</td>
+<td style="text-align: left;">2330</td>
+<td style="text-align: left;">台灣積體電路製造</td>
+<td style="text-align: left;">stock</td>
+<td style="text-align: right;">634000</td>
+<td style="text-align: right;">9.44</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">TWD</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2025-05-05</td>
+<td style="text-align: left;">00980A</td>
+<td style="text-align: left;">2454</td>
+<td style="text-align: left;">聯發科技</td>
+<td style="text-align: left;">stock</td>
+<td style="text-align: right;">269000</td>
+<td style="text-align: right;">6.49</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">TWD</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2025-05-05</td>
+<td style="text-align: left;">00980A</td>
+<td style="text-align: left;">2308</td>
+<td style="text-align: left;">台達電子工業</td>
+<td style="text-align: left;">stock</td>
+<td style="text-align: right;">475000</td>
+<td style="text-align: right;">5.41</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">TWD</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a>{
+<a id="__codelineno-148-2" name="__codelineno-148-2" href="#__codelineno-148-2"></a>    date: str, # date (holding as-of date)
+<a id="__codelineno-148-3" name="__codelineno-148-3" href="#__codelineno-148-3"></a>    stock_id: str, # ETF id (data_id)
+<a id="__codelineno-148-4" name="__codelineno-148-4" href="#__codelineno-148-4"></a>    component_stock_id: str, # constituent code (TW code / foreign ticker / bond CUSIP)
+<a id="__codelineno-148-5" name="__codelineno-148-5" href="#__codelineno-148-5"></a>    component_stock_name: str, # constituent name
+<a id="__codelineno-148-6" name="__codelineno-148-6" href="#__codelineno-148-6"></a>    asset_type: str, # asset type (stock/bond/futures/option/cash/etf/repo/other)
+<a id="__codelineno-148-7" name="__codelineno-148-7" href="#__codelineno-148-7"></a>    shares: int, # shares (par value for bonds, contracts for futures)
+<a id="__codelineno-148-8" name="__codelineno-148-8" href="#__codelineno-148-8"></a>    weight: float, # weight (%)
+<a id="__codelineno-148-9" name="__codelineno-148-9" href="#__codelineno-148-9"></a>    market_value: float, # market value
+<a id="__codelineno-148-10" name="__codelineno-148-10" href="#__codelineno-148-10"></a>    currency: str, # currency
+<a id="__codelineno-148-11" name="__codelineno-148-11" href="#__codelineno-148-11"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="active-etf-daily-holding-change-taiwanstockactiveetfholdingchange-only-available-for-sponsor-members">Active ETF Daily Holding Change TaiwanStockActiveETFHoldingChange (only available for <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> members)<a class="headerlink" href="#active-etf-daily-holding-change-taiwanstockactiveetfholdingchange-only-available-for-sponsor-members" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Data range: 2025-05-05 ~ now</li>
+<li>Data update time <strong>Monday to Saturday after market close</strong>, the actual update time is based on the API data.</li>
+<li>Derived from "Active ETF Daily Holding TaiwanStockActiveETFHolding": differencing the constituent shares of consecutive trading days yields which constituents each active ETF bought/sold that day.</li>
+<li><code>buy</code> is the shares bought that day (increase in constituent shares; 0 if none), <code>sell</code> is the shares sold that day (decrease in constituent shares, as a positive value; 0 if none); both are integers (no decimals), and exactly one of <code>buy</code>/<code>sell</code> is non-zero per row.</li>
+<li>Query a single ETF via <code>data_id</code> (e.g. <code>00980A</code>), or query all active ETF holding changes of a given date by date only.</li>
+<li>Note: creations/redemptions scale constituent shares proportionally and are included in <code>buy</code>/<code>sell</code>; therefore <code>buy</code>/<code>sell</code> reflect the change in held shares and are <strong>not</strong> the manager's net discretionary buy/sell.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="73:3"><input checked="checked" id="__tabbed_73_1" name="__tabbed_73" type="radio" /><input id="__tabbed_73_2" name="__tabbed_73" type="radio" /><input id="__tabbed_73_3" name="__tabbed_73" type="radio" /><div class="tabbed-labels"><label for="__tabbed_73_1">Package</label><label for="__tabbed_73_2">Python</label><label for="__tabbed_73_3">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-149-2" name="__codelineno-149-2" href="#__codelineno-149-2"></a>
+<a id="__codelineno-149-3" name="__codelineno-149-3" href="#__codelineno-149-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-149-4" name="__codelineno-149-4" href="#__codelineno-149-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-149-5" name="__codelineno-149-5" href="#__codelineno-149-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_active_etf_holding_change</span><span class="p">(</span>
+<a id="__codelineno-149-6" name="__codelineno-149-6" href="#__codelineno-149-6"></a>    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;00980A&quot;</span><span class="p">,</span>
+<a id="__codelineno-149-7" name="__codelineno-149-7" href="#__codelineno-149-7"></a>    <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2025-05-05&quot;</span><span class="p">,</span>
+<a id="__codelineno-149-8" name="__codelineno-149-8" href="#__codelineno-149-8"></a>    <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2025-05-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-149-9" name="__codelineno-149-9" href="#__codelineno-149-9"></a><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-150-2" name="__codelineno-150-2" href="#__codelineno-150-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-150-3" name="__codelineno-150-3" href="#__codelineno-150-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-150-4" name="__codelineno-150-4" href="#__codelineno-150-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Refer to the login to obtain the token</span>
+<a id="__codelineno-150-5" name="__codelineno-150-5" href="#__codelineno-150-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-150-6" name="__codelineno-150-6" href="#__codelineno-150-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-150-7" name="__codelineno-150-7" href="#__codelineno-150-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockActiveETFHoldingChange&quot;</span><span class="p">,</span>
+<a id="__codelineno-150-8" name="__codelineno-150-8" href="#__codelineno-150-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;00980A&quot;</span><span class="p">,</span>
+<a id="__codelineno-150-9" name="__codelineno-150-9" href="#__codelineno-150-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-05-05&quot;</span><span class="p">,</span>
+<a id="__codelineno-150-10" name="__codelineno-150-10" href="#__codelineno-150-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-05-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-150-11" name="__codelineno-150-11" href="#__codelineno-150-11"></a><span class="p">}</span>
+<a id="__codelineno-150-12" name="__codelineno-150-12" href="#__codelineno-150-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-150-13" name="__codelineno-150-13" href="#__codelineno-150-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-150-14" name="__codelineno-150-14" href="#__codelineno-150-14"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-150-15" name="__codelineno-150-15" href="#__codelineno-150-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-151-2" name="__codelineno-151-2" href="#__codelineno-151-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-151-3" name="__codelineno-151-3" href="#__codelineno-151-3"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-151-4" name="__codelineno-151-4" href="#__codelineno-151-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Refer to the login to obtain the token</span>
+<a id="__codelineno-151-5" name="__codelineno-151-5" href="#__codelineno-151-5"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-151-6" name="__codelineno-151-6" href="#__codelineno-151-6"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-151-7" name="__codelineno-151-7" href="#__codelineno-151-7"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-151-8" name="__codelineno-151-8" href="#__codelineno-151-8"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockActiveETFHoldingChange&quot;</span><span class="p">,</span>
+<a id="__codelineno-151-9" name="__codelineno-151-9" href="#__codelineno-151-9"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;00980A&quot;</span><span class="p">,</span>
+<a id="__codelineno-151-10" name="__codelineno-151-10" href="#__codelineno-151-10"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="s">&quot;2025-05-05&quot;</span><span class="p">,</span>
+<a id="__codelineno-151-11" name="__codelineno-151-11" href="#__codelineno-151-11"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="s">&quot;2025-05-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-151-12" name="__codelineno-151-12" href="#__codelineno-151-12"></a><span class="w">        </span><span class="n">token</span><span class="o">=</span><span class="n">token</span>
+<a id="__codelineno-151-13" name="__codelineno-151-13" href="#__codelineno-151-13"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-151-14" name="__codelineno-151-14" href="#__codelineno-151-14"></a><span class="p">)</span>
+<a id="__codelineno-151-15" name="__codelineno-151-15" href="#__codelineno-151-15"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-151-16" name="__codelineno-151-16" href="#__codelineno-151-16"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&quot;rbind&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">))</span>
+<a id="__codelineno-151-17" name="__codelineno-151-17" href="#__codelineno-151-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="74:2"><input checked="checked" id="__tabbed_74_1" name="__tabbed_74" type="radio" /><input id="__tabbed_74_2" name="__tabbed_74" type="radio" /><div class="tabbed-labels"><label for="__tabbed_74_1">DataFrame</label><label for="__tabbed_74_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: left;">component_stock_id</th>
+<th style="text-align: left;">component_stock_name</th>
+<th style="text-align: right;">buy</th>
+<th style="text-align: right;">sell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2025-05-06</td>
+<td style="text-align: left;">00980A</td>
+<td style="text-align: left;">2330</td>
+<td style="text-align: left;">台灣積體電路製造</td>
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2025-05-06</td>
+<td style="text-align: left;">00980A</td>
+<td style="text-align: left;">2454</td>
+<td style="text-align: left;">聯發科技</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5000</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2025-05-06</td>
+<td style="text-align: left;">00980A</td>
+<td style="text-align: left;">2308</td>
+<td style="text-align: left;">台達電子工業</td>
+<td style="text-align: right;">8000</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a>{
+<a id="__codelineno-152-2" name="__codelineno-152-2" href="#__codelineno-152-2"></a>    date: str, # date
+<a id="__codelineno-152-3" name="__codelineno-152-3" href="#__codelineno-152-3"></a>    stock_id: str, # ETF id (data_id)
+<a id="__codelineno-152-4" name="__codelineno-152-4" href="#__codelineno-152-4"></a>    component_stock_id: str, # constituent code
+<a id="__codelineno-152-5" name="__codelineno-152-5" href="#__codelineno-152-5"></a>    component_stock_name: str, # constituent name
+<a id="__codelineno-152-6" name="__codelineno-152-6" href="#__codelineno-152-6"></a>    buy: int, # shares bought that day (increase in constituent shares; 0 if none)
+<a id="__codelineno-152-7" name="__codelineno-152-7" href="#__codelineno-152-7"></a>    sell: int, # shares sold that day (decrease in constituent shares, positive; 0 if none)
+<a id="__codelineno-152-8" name="__codelineno-152-8" href="#__codelineno-152-8"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 
