@@ -2600,11 +2600,11 @@
 <li>Covers both <strong>listed (TWSE) and OTC (TPEX)</strong> warrants' underlying (<code>target_stock_id</code>) reference; OTC warrant underlying history goes back to <strong>2011-01-03</strong>, so you can look up the warrants of a given underlying (including expired and code-reused historical warrants).</li>
 <li>Data update time: <strong>1:30 daily</strong>. The actual update time is based on the API data.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">A single warrant code may map to different underlying stocks</p>
+<details class="note">
+<summary>A single warrant code may map to different underlying stocks</summary>
 <p>Warrants have an expiration date. <strong>Once a warrant code (<code>stock_id</code>) expires and is delisted, that code is recycled and reissued to a new warrant on a (possibly different) underlying stock.</strong> As a result, the same <code>stock_id</code> may appear in multiple rows in this table, each mapping to a different underlying (<code>target_stock_id</code>) and each with its own <code>date</code> (listing date) and <code>end_date</code> (last trading date).</p>
 <p>To determine which underlying a warrant code maps to on a given day, match by <strong>"the query date falls within that row's <code>date</code> ~ <code>end_date</code> interval"</strong>; reused codes from different periods are naturally distinguished by their non-overlapping intervals.</p>
-</div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python-request</label><label for="__tabbed_5_2">R</label></div>
@@ -4081,9 +4081,12 @@
 <li>Providing the dataset, stock_id, and start_date parameters returns data for that day.</li>
 <li>Data update time: <strong>Monday to Friday 15:30</strong>. The actual update time is based on the API data.</li>
 <li>Some data is missing on this date: 2019-02-20.</li>
-<li>Historical data limitation: for all of 2019, the TickType column is always 1, so buy/sell-side classification is not available for that year; complete TickType values (0, 1, 2) are available from 2020-01-02 onward.</li>
 <li>Enabling Async significantly reduces the data update time. In a Colab test, downloading 2,236 stocks took only 3 minutes 40 seconds.</li>
 </ul>
+<details class="note">
+<summary>Historical limitation of TickType in 2019</summary>
+<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: sell-side, 2: buy-side) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="25:4"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><input id="__tabbed_25_3" name="__tabbed_25" type="radio" /><input id="__tabbed_25_4" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Package</label><label for="__tabbed_25_2">Python-request</label><label for="__tabbed_25_3">Package-Async</label><label for="__tabbed_25_4">R</label></div>
@@ -4250,8 +4253,11 @@
 <li>Providing the dataset and date parameters returns data for that day.</li>
 <li>Data update time: <strong>Monday to Friday 15:30</strong>. The actual update time is based on the API data.</li>
 <li>Some data is missing on this date: 2019-02-20.</li>
-<li>Historical data limitation: for all of 2019, the TickType column is always 1, so buy/sell-side classification is not available for that year; complete TickType values (0, 1, 2) are available from 2020-01-02 onward.</li>
 </ul>
+<details class="note">
+<summary>Historical limitation of TickType in 2019</summary>
+<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: sell-side, 2: buy-side) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="27:3"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><input id="__tabbed_27_3" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Package</label><label for="__tabbed_27_2">Python-request</label><label for="__tabbed_27_3">R</label></div>
@@ -6395,15 +6401,15 @@
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note">
+<summary>Note</summary>
 <p>When <code>limit_up</code> and <code>limit_down</code> are <strong>0</strong>, this means the instrument has no price-limit, including:</p>
 <ul>
 <li>Leveraged ETFs (e.g., 00631L)</li>
 <li>Inverse ETFs (e.g., 00632R)</li>
 <li>Emerging stocks</li>
 </ul>
-</div>
+</details>
 <h4 id="fetch-all-data-for-a-specific-date-at-once-available-only-to-backer-sponsor-members_6">Fetch all data for a specific date at once (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer, sponsor</a> members)<a class="headerlink" href="#fetch-all-data-for-a-specific-date-at-once-available-only-to-backer-sponsor-members_6" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>

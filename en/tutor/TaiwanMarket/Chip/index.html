@@ -3079,10 +3079,10 @@
 <li>Coverage: listed (TWSE), OTC (TPEx) and emerging market companies, distinguished by <code>stock_id</code> (use <code>TaiwanStockInfo</code> to look up market type)</li>
 <li>Data update time <strong>Monday to Friday 20:00</strong>, the actual update time is based on the API data.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Values may be updated slightly after the initial release</p>
+<details class="note">
+<summary>Values may be updated slightly after the initial release</summary>
 <p>This data is the <strong>original-trade statistics</strong> of each institutional investor for the day. A small number of trades (e.g. after-hours fixed-price or block/matched trades) may be tallied into the day's statistics only after the initial release, so a given day's <strong>buy/sell totals can be topped up afterwards</strong>; when both sides of such a trade belong to the same investor category, buy and sell increase by the same amount and the <strong>net (buy minus sell) is unaffected</strong>. This is the completion of the day's original trades — not a data error, and not an error-account correction. There is no fixed "finalized" time; treat the value currently returned by the API as the latest. If you need finalized figures, retrieve them one or two business days after the trading day.</p>
-</div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Package</label><label for="__tabbed_7_2">Python-request</label><label for="__tabbed_7_3">R</label><label for="__tabbed_7_4">Package-Async</label></div>
@@ -3371,12 +3371,12 @@
 <li>Coverage: listed (TWSE), OTC (TPEx) and emerging market companies, distinguished by <code>stock_id</code> (use <code>TaiwanStockInfo</code> to look up market type)</li>
 <li>Data update time <strong>Monday to Friday 20:00</strong>, the actual update time is based on the API data.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Values may be updated slightly after the initial release</p>
+<details class="note">
+<summary>Values may be updated slightly after the initial release</summary>
 <p>This data is the <strong>original-trade statistics</strong> of each institutional investor for the day. A small number of trades (e.g. after-hours fixed-price or block/matched trades) may be tallied into the day's statistics only after the initial release, so a given day's <strong>buy/sell totals can be topped up afterwards</strong>; when both sides of such a trade belong to the same investor category, buy and sell increase by the same amount and the <strong>net (buy minus sell) is unaffected</strong>. This is the completion of the day's original trades — not a data error, and not an error-account correction. There is no fixed "finalized" time; treat the value currently returned by the API as the latest. If you need finalized figures, retrieve them one or two business days after the trading day.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">New vs old era columns (important)</p>
+</details>
+<details class="note">
+<summary>New vs old era columns (important)</summary>
 <p>The classification of the three institutional investors has changed over the years. This wide table includes <strong>all historical classifications</strong>; a classification is always <code>0</code> in eras where it did not yet exist:</p>
 <table>
 <thead>
@@ -3424,7 +3424,7 @@
 <li>From <strong>2018-01-15</strong>, <code>Foreign_Dealer_Self</code> was split out from foreign investors.</li>
 <li>For a continuous "dealer total" across eras, sum <code>Dealer + Dealer_self + Dealer_Hedging</code> (only one group is non-zero in any era, so there is no double counting).</li>
 </ul>
-</div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Package</label><label for="__tabbed_11_2">Python-request</label><label for="__tabbed_11_3">R</label></div>

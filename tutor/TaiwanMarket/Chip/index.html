@@ -3079,10 +3079,10 @@
 <li>資料涵蓋：上市、上櫃、興櫃公司，以 <code>stock_id</code> 區分（可搭配 <code>TaiwanStockInfo</code> 查詢市場別）</li>
 <li>資料更新時間 <strong>星期一至五 20:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">數值可能於初次公布後微幅更新</p>
+<details class="note">
+<summary>數值可能於初次公布後微幅更新</summary>
 <p>本資料為各法人別當日的<strong>原始成交統計</strong>。少數交易（例如盤後定價、鉅額配對等成交）可能於初次公布後才被補計進當日統計，使某日的<strong>買進／賣出總量事後略有增加</strong>；當該筆成交的買、賣雙方屬同一法人別時，買進與賣出會等額增加、<strong>買賣超（淨額）不受影響</strong>。此屬當日原始成交的補計，並非數據錯誤，亦非錯帳更正。官方未提供固定的「最終定案時間」，請以 API 當下回傳者為最新值；若需已定案數字，建議於該交易日後一至兩個營業日再取用。</p>
-</div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Package</label><label for="__tabbed_7_2">Python-request</label><label for="__tabbed_7_3">R</label><label for="__tabbed_7_4">Package-Async</label></div>
@@ -3371,12 +3371,12 @@
 <li>資料涵蓋：上市、上櫃、興櫃公司，以 <code>stock_id</code> 區分（可搭配 <code>TaiwanStockInfo</code> 查詢市場別）</li>
 <li>資料更新時間 <strong>星期一至五 20:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">數值可能於初次公布後微幅更新</p>
+<details class="note">
+<summary>數值可能於初次公布後微幅更新</summary>
 <p>本資料為各法人別當日的<strong>原始成交統計</strong>。少數交易（例如盤後定價、鉅額配對等成交）可能於初次公布後才被補計進當日統計，使某日的<strong>買進／賣出總量事後略有增加</strong>；當該筆成交的買、賣雙方屬同一法人別時，買進與賣出會等額增加、<strong>買賣超（淨額）不受影響</strong>。此屬當日原始成交的補計，並非數據錯誤，亦非錯帳更正。官方未提供固定的「最終定案時間」，請以 API 當下回傳者為最新值；若需已定案數字，建議於該交易日後一至兩個營業日再取用。</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">新制 / 舊制欄位差異（重要）</p>
+</details>
+<details class="note">
+<summary>新制 / 舊制欄位差異（重要）</summary>
 <p>三大法人的分類方式歷年有調整，本寬表欄位涵蓋<strong>所有歷史分類</strong>，某一分類在尚未存在的年代該欄一律為 <code>0</code>：</p>
 <table>
 <thead>
@@ -3424,7 +3424,7 @@
 <li>外資在 <strong>2018-01-15</strong> 起再拆出 <code>Foreign_Dealer_Self</code>（外資自營商）。</li>
 <li>若需「自營商合計」且跨年代連續，請自行加總 <code>Dealer + Dealer_self + Dealer_Hedging</code>（任一年代只有其中一組非 0，相加不會重複計算）。</li>
 </ul>
-</div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Package</label><label for="__tabbed_11_2">Python-request</label><label for="__tabbed_11_3">R</label></div>

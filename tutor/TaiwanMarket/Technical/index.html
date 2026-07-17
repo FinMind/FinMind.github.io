@@ -2600,11 +2600,11 @@
 <li>涵蓋<strong>上市 (TWSE) 與上櫃 (TPEX)</strong> 權證的標的（母股 <code>target_stock_id</code>）對照；上櫃權證的標的對照歷史回溯至 <strong>2011-01-03</strong>，可用母股代碼反查其對應權證（含已到期、代碼重用的歷史權證）。</li>
 <li>資料更新時間 <strong>每天 1:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">同一檔權證代號可能對應不同的標的母股</p>
+<details class="note">
+<summary>同一檔權證代號可能對應不同的標的母股</summary>
 <p>權證有到期日，<strong>同一個權證代號 (<code>stock_id</code>) 到期下市後，該代號會被回收、重新發行給掛在不同母股的新權證</strong>。因此同一個 <code>stock_id</code> 在本資料表中可能出現多筆，各自對應到不同的標的母股 (<code>target_stock_id</code>)，並有各自的 <code>date</code>（上市日期）與 <code>end_date</code>（最後交易日）。</p>
 <p>判斷某個權證代號在特定日期對應哪一檔母股時，請以<strong>「查詢日期落在該筆的 <code>date</code> ～ <code>end_date</code> 區間內」</strong>為準；不同時期的同代號權證會因區間不重疊而自然區分。</p>
-</div>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python-request</label><label for="__tabbed_5_2">R</label></div>
@@ -4081,9 +4081,12 @@
 <li>輸入 dataset、stock_id、start_date 參數，會回傳 start_date 當天資料。</li>
 <li>資料更新時間 <strong>星期一至五 15:30</strong>，實際更新時間以 API 資料為主。</li>
 <li>部分資料缺失，缺失日期為：2019-02-20。</li>
-<li>歷史資料限制：2019 年全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0、1、2 的完整標記。</li>
 <li>開啟 Async 功能，可大幅縮短資料更新時間，colab 實測 2236 檔股票，只需 3 分 40 秒即可完成下載。</li>
 </ul>
+<details class="note">
+<summary>2019 年 TickType 的歷史資料限制</summary>
+<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（賣盤成交）、2（買盤成交）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="25:4"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><input id="__tabbed_25_3" name="__tabbed_25" type="radio" /><input id="__tabbed_25_4" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Package</label><label for="__tabbed_25_2">Python-request</label><label for="__tabbed_25_3">Package-Async</label><label for="__tabbed_25_4">R</label></div>
@@ -4250,8 +4253,11 @@
 <li>輸入 dataset、date 參數，會回傳 date 當天資料。</li>
 <li>資料更新時間 <strong>星期一至五 15:30</strong>，實際更新時間以 API 資料為主。</li>
 <li>部分資料缺失，缺失日期為：2019-02-20。</li>
-<li>歷史資料限制：2019 年全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0、1、2 的完整標記。</li>
 </ul>
+<details class="note">
+<summary>2019 年 TickType 的歷史資料限制</summary>
+<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（賣盤成交）、2（買盤成交）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="27:3"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><input id="__tabbed_27_3" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Package</label><label for="__tabbed_27_2">Python-request</label><label for="__tabbed_27_3">R</label></div>
@@ -6395,15 +6401,15 @@
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note">
+<summary>Note</summary>
 <p><code>limit_up</code> 和 <code>limit_down</code> 為 <strong>0</strong> 時，表示該標的無漲跌幅限制，包含：</p>
 <ul>
 <li>槓桿型 ETF（如 00631L）</li>
 <li>反向型 ETF（如 00632R）</li>
 <li>興櫃股票</li>
 </ul>
-</div>
+</details>
 <h4 id="backersponsor_6">一次拿特定日期，所有資料(只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#backersponsor_6" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
