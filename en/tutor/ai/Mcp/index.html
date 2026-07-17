@@ -1957,6 +1957,16 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Codex CLI</strong> uses a different config format (<code>[mcp_servers]</code> in <code>~/.codex/config.toml</code>), or a one-liner: <code>codex mcp add finmind --env FINMIND_TOKEN=... -- uvx finmind-mcp</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Windows users</p>
+<p>The commands above use macOS / Linux syntax. On Windows, use <strong>PowerShell</strong> instead:</p>
+<ul>
+<li>Install uv: <code>winget install --id astral-sh.uv -e</code> (close and reopen PowerShell afterwards so PATH takes effect), then verify with <code>uvx finmind-mcp --help</code>.</li>
+<li>Set the token: <code>$env:FINMIND_TOKEN = "your_token_here"</code> (current window only) or <code>setx FINMIND_TOKEN "your_token_here"</code> (persistent; restart apps to pick it up) — or simply put it in the config file's <code>env</code> block above, which is the most reliable option.</li>
+<li>If your tool (e.g. Claude Desktop) reports the command not found or fails to connect: GUI apps see a different PATH than your terminal. Run <code>where.exe uvx</code> to find the full path (usually <code>C:\Users\&lt;name&gt;\.local\bin\uvx.exe</code>) and use it as <code>command</code> in the config; escape backslashes as <code>\\</code> in JSON.</li>
+</ul>
+<p>For the full walkthrough (pipx route, per-host Windows config paths, troubleshooting), see the <a href="https://github.com/FinMind/FinMind-MCP/blob/master/install/windows.md">Windows installation guide</a>.</p>
+</div>
 <p>For per-host config file locations, the <code>claude mcp add</code> / <code>gemini mcp add</code> / <code>codex mcp add</code> one-liners, and verification steps, see the <a href="https://github.com/FinMind/FinMind-MCP/tree/master/install">FinMind-MCP install guides</a>.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <blockquote>
