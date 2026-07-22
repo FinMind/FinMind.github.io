@@ -2854,6 +2854,10 @@
 </div>
 <hr />
 <h4 id="convertible-bond-daily-overview-taiwanstockconvertiblebonddailyoverview-only-available-to-backersponsor-members">Convertible Bond Daily Overview TaiwanStockConvertibleBondDailyOverview (only available to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer/sponsor</a> members)<a class="headerlink" href="#convertible-bond-daily-overview-taiwanstockconvertiblebonddailyoverview-only-available-to-backersponsor-members" title="Permanent link">&para;</a></h4>
+<details class="note">
+<summary>Why the put / early-redemption fields are mostly empty</summary>
+<p>The fields <code>LatestInitialDateOfPut</code>, <code>LatestDueDateOfPut</code>, <code>LatestPutPrice</code>, <code>InitialDateOfEarlyRedemption</code>, <code>DueDateOfEarlyRedemption</code>, and <code>EarlyRedemptionPrice</code> are only populated while a put or early-redemption process is publicly announced for that convertible bond; they revert to empty once the event window ends. Empty values for most bonds on most dates are therefore expected behavior, not missing data. This dataset is a daily overview snapshot and does not include full static issuance terms (e.g., the complete put schedule or the redemption price at maturity).</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Package</label><label for="__tabbed_11_2">Python-request</label><label for="__tabbed_11_3">R</label></div>
@@ -3112,6 +3116,10 @@
 </div>
 </div>
 <h4 id="fetch-all-data-for-a-specific-date-in-one-request-only-available-to-backersponsor-members_2">Fetch all data for a specific date in one request (only available to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer/sponsor</a> members)<a class="headerlink" href="#fetch-all-data-for-a-specific-date-in-one-request-only-available-to-backersponsor-members_2" title="Permanent link">&para;</a></h4>
+<details class="note">
+<summary>Why the put / early-redemption fields are mostly empty</summary>
+<p>The fields <code>LatestInitialDateOfPut</code>, <code>LatestDueDateOfPut</code>, <code>LatestPutPrice</code>, <code>InitialDateOfEarlyRedemption</code>, <code>DueDateOfEarlyRedemption</code>, and <code>EarlyRedemptionPrice</code> are only populated while a put or early-redemption process is publicly announced for that convertible bond; they revert to empty once the event window ends. Empty values for most bonds on most dates are therefore expected behavior, not missing data. This dataset is a daily overview snapshot and does not include full static issuance terms (e.g., the complete put schedule or the redemption price at maturity).</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Package</label><label for="__tabbed_13_2">Python-request</label><label for="__tabbed_13_3">R</label></div>
