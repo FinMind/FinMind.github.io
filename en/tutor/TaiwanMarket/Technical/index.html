@@ -4085,7 +4085,7 @@
 </ul>
 <details class="note">
 <summary>Historical limitation of TickType in 2019</summary>
-<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: sell-side, 2: buy-side) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
+<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: buyer-initiated (trade at ask), 2: seller-initiated (trade at bid)) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -4239,7 +4239,7 @@
 <a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>    deal_price: float64, # deal price
 <a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>    volume: int64, # volume
 <a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>    Time: str, # time
-<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>    TickType: str # tick type (0: undetermined, 1: sell-side, 2: buy-side)
+<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>    TickType: str # tick type (0: undetermined, 1: buyer-initiated (trade at ask), 2: seller-initiated (trade at bid))
 <a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a>}
 </code></pre></div>
 </div>
@@ -4256,7 +4256,7 @@
 </ul>
 <details class="note">
 <summary>Historical limitation of TickType in 2019</summary>
-<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: sell-side, 2: buy-side) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
+<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: buyer-initiated (trade at ask), 2: seller-initiated (trade at bid)) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -4387,7 +4387,7 @@
 <a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>    deal_price: float64, # deal price
 <a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>    volume: int64, # volume
 <a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>    Time: str, # time
-<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>    TickType: str # tick type (0: undetermined, 1: sell-side, 2: buy-side)
+<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>    TickType: str # tick type (0: undetermined, 1: buyer-initiated (trade at ask), 2: seller-initiated (trade at bid))
 <a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>}
 </code></pre></div>
 </div>

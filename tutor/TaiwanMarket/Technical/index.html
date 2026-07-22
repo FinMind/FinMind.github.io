@@ -4085,7 +4085,7 @@
 </ul>
 <details class="note">
 <summary>2019 年 TickType 的歷史資料限制</summary>
-<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（賣盤成交）、2（買盤成交）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
+<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（外盤成交，買方主動）、2（內盤成交，賣方主動）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -4239,7 +4239,7 @@
 <a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>    deal_price: float64, # 成交價
 <a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>    volume: int64, # 成交量
 <a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>    Time: str, # 時間
-<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>    TickType: str # 成交種類 (0: 無法判斷, 1: 賣盤成交, 2: 買盤成交)
+<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>    TickType: str # 成交種類 (0: 無法判斷, 1: 外盤成交（買方主動買進，成交在賣方掛價）, 2: 內盤成交（賣方主動賣出，成交在買方掛價）)
 <a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a>}
 </code></pre></div>
 </div>
@@ -4256,7 +4256,7 @@
 </ul>
 <details class="note">
 <summary>2019 年 TickType 的歷史資料限制</summary>
-<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（賣盤成交）、2（買盤成交）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
+<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（外盤成交，買方主動）、2（內盤成交，賣方主動）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -4387,7 +4387,7 @@
 <a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>    deal_price: float64, # 成交價
 <a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>    volume: int64, # 成交量
 <a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>    Time: str, # 時間
-<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>    TickType: str # 成交種類 (0: 無法判斷, 1: 賣盤成交, 2: 買盤成交)
+<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>    TickType: str # 成交種類 (0: 無法判斷, 1: 外盤成交（買方主動買進，成交在賣方掛價）, 2: 內盤成交（賣方主動賣出，成交在買方掛價）)
 <a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>}
 </code></pre></div>
 </div>
