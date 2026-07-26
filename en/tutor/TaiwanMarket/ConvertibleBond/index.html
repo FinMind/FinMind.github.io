@@ -783,6 +783,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convertible-bond-put-provision-schedule-taiwanstockconvertiblebondputprovision-only-available-to-backersponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convertible Bond Put Provision Schedule TaiwanStockConvertibleBondPutProvision (only available to backer/sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1913,6 +1922,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convertible-bond-put-provision-schedule-taiwanstockconvertiblebondputprovision-only-available-to-backersponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convertible Bond Put Provision Schedule TaiwanStockConvertibleBondPutProvision (only available to backer/sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1933,13 +1951,14 @@
 
   <h1>Convertible Bond</h1>
 
-<p>For Taiwan stock convertible bonds, we have 5 datasets, as listed below:</p>
+<p>For Taiwan stock convertible bonds, we have 6 datasets, as listed below:</p>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondinfo-backersponsor">Convertible Bond Overview TaiwanStockConvertibleBondInfo</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebonddaily-backersponsor">Convertible Bond Daily Trading Information TaiwanStockConvertibleBondDaily</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondinstitutionalinvestors-backersponsor">Convertible Bond Institutional Investors Daily Trading TaiwanStockConvertibleBondInstitutionalInvestors</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebonddailyoverview-backersponsor">Convertible Bond Daily Overview TaiwanStockConvertibleBondDailyOverview</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondmonthlyanalysis-backersponsor">Convertible Bond Monthly Analysis TaiwanStockConvertibleBondMonthlyAnalysis</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/ConvertibleBond/#taiwanstockconvertiblebondputprovision-backersponsor">Convertible Bond Put Provision Schedule TaiwanStockConvertibleBondPutProvision</a></li>
 </ul>
 <h4 id="convertible-bond-overview-taiwanstockconvertiblebondinfo-only-available-to-backersponsor-members">Convertible Bond Overview TaiwanStockConvertibleBondInfo (only available to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer/sponsor</a> members)<a class="headerlink" href="#convertible-bond-overview-taiwanstockconvertiblebondinfo-only-available-to-backersponsor-members" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
@@ -3479,6 +3498,158 @@
 <a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>    pledged_units: int, # pledged units
 <a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>    date: str # date
 <a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="convertible-bond-put-provision-schedule-taiwanstockconvertiblebondputprovision-only-available-to-backersponsor-members">Convertible Bond Put Provision Schedule TaiwanStockConvertibleBondPutProvision (only available to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer/sponsor</a> members)<a class="headerlink" href="#convertible-bond-put-provision-schedule-taiwanstockconvertiblebondputprovision-only-available-to-backersponsor-members" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Data range: 2011-06-22 ~ now (including announced future put dates).</li>
+<li>Provides each convertible bond's put record date, put price, and put yield rate.</li>
+<li><strong><code>data_id</code> (convertible bond id) is not required</strong> — provide only the date range to retrieve every convertible bond's put dates within that range.</li>
+<li>Data update time: <strong>Mon-Fri 19:00</strong>; the actual update time is subject to the API data.</li>
+</ul>
+<details class="note">
+<summary>data_id (convertible bond id) is not required</summary>
+<p>The query only needs <code>start_date</code> and <code>end_date</code>: omitting <code>data_id</code> returns the put dates of <strong>all</strong> convertible bonds within the range (a put provision is a per-bond event happening only a few times a year, so querying bond by bond is impractical). Add <code>data_id</code> if you want a single convertible bond.</p>
+</details>
+<details class="note">
+<summary>Includes announced future put dates</summary>
+<p>This dataset includes put dates that have been announced but not yet occurred (typically announced about one year in advance). Set <code>end_date</code> to a future date to retrieve upcoming put schedules. It complements the put-related fields in <code>TaiwanStockConvertibleBondDailyOverview</code> (which are only populated while a put process is publicly announced) — use this dataset for the complete put schedule.</p>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:3"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Package</label><label for="__tabbed_17_2">Python-request</label><label for="__tabbed_17_3">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_convertible_bond_put_provision</span><span class="p">(</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>    <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2011-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>    <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2011-12-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Refer to login to get the token</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockConvertibleBondPutProvision&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2011-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2011-12-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="p">}</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Refer to login to get the token</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockConvertibleBondPutProvision&quot;</span><span class="p">,</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2011-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="s">&#39;2011-12-31&#39;</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">    </span><span class="p">),</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="p">)</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">content</span>
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;cbind&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="n">data.table</span>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">DataFrame</label><label for="__tabbed_18_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">cb_id</th>
+<th style="text-align: left;">cb_name</th>
+<th style="text-align: right;">PutPrice</th>
+<th style="text-align: right;">PutYieldRate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2011-06-22</td>
+<td style="text-align: right;">14773</td>
+<td style="text-align: left;">聚陽三</td>
+<td style="text-align: right;">101.51</td>
+<td style="text-align: right;">0.75</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2011-07-01</td>
+<td style="text-align: right;">33833</td>
+<td style="text-align: left;">新世三</td>
+<td style="text-align: right;">104.04</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2011-08-07</td>
+<td style="text-align: right;">26033</td>
+<td style="text-align: left;">長榮三</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2011-08-11</td>
+<td style="text-align: right;">89331</td>
+<td style="text-align: left;">愛地一</td>
+<td style="text-align: right;">103.022</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2011-09-29</td>
+<td style="text-align: right;">55123</td>
+<td style="text-align: left;">力麒三</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">0.5</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">2011-12-21</td>
+<td style="text-align: right;">12251</td>
+<td style="text-align: left;">福脂一</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>{
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>    date: str, # put record date
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>    cb_id: str, # convertible bond id
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    cb_name: str, # convertible bond name
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>    PutPrice: float64, # put price
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>    PutYieldRate: float64 # put yield rate (%)
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>}
 </code></pre></div>
 </div>
 </div>
