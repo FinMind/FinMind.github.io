@@ -3733,6 +3733,12 @@
 <li>Data range: 1994-10-01 ~ now</li>
 <li>Data update time: <strong>Monday to Friday 17:30</strong>. The actual update time is based on the API data.</li>
 </ul>
+<details class="note">
+<summary>When the adjustment factor updates, and which day is the baseline</summary>
+<p>Adjusted prices are computed backwards: the most recent trading day in the data is the baseline, and adjustment factors are applied cumulatively to earlier days. As a result, <strong>the adjusted price on the event day itself always equals that day's raw price</strong> — the adjustment shows up in the history <em>before</em> that day.</p>
+<p>For ex-dividend / ex-rights, capital reduction, stock split and par value change events, the adjustment factor is applied <strong>in the post-close update on the event day itself</strong>; it is not deferred to the next trading day.</p>
+<p>If a scheduled event date falls on a market-wide closure (a typhoon suspension, for example) and is postponed, the adjustment follows <strong>the day trading actually took place</strong>, not the originally scheduled date.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="21:4"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><input id="__tabbed_21_4" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Package</label><label for="__tabbed_21_2">Python-request</label><label for="__tabbed_21_3">R</label><label for="__tabbed_21_4">Package-Async</label></div>

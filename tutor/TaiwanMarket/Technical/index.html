@@ -3733,6 +3733,12 @@
 <li>資料區間：1994-10-01 ~ now</li>
 <li>資料更新時間 <strong>星期一至五 17:30</strong>，實際更新時間以 API 資料為主</li>
 </ul>
+<details class="note">
+<summary>還原因子的更新時點與基準日</summary>
+<p>還原價為回溯計算：以資料中最新一個交易日為基準，往前累乘還原係數。因此<strong>事件當日的還原價恆等於該日的原始價</strong>，調整反映在該日「之前」的歷史資料上。</p>
+<p>除權息、減資、股票分割、面額變更等事件，其還原係數於<strong>事件當日的盤後更新時即納入計算</strong>，不會延後至次一交易日才反映。</p>
+<p>若事件的排定日遇全市場休市（例如颱風停市）而順延，還原調整以<strong>實際發生交易的日期</strong>為準，而非原定日期。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="21:4"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><input id="__tabbed_21_4" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Package</label><label for="__tabbed_21_2">Python-request</label><label for="__tabbed_21_3">R</label><label for="__tabbed_21_4">Package-Async</label></div>
