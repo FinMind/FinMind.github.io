@@ -1831,9 +1831,9 @@
 <p>FinMind publishes a public, real-time status page:</p>
 <p><a href="https://status.finmindtrade.com"><strong>status.finmindtrade.com</strong></a></p>
 <p>It shows the current API status, uptime over the past <strong>24 hours</strong> and <strong>90 days</strong>, and a history of past incidents.</p>
-<p>This uptime is also the <strong>measurement basis for the FinMind enterprise plan SLA</strong> — enterprise service levels are assessed with the same per-minute algorithm, kept transparent and consistent with what the status page shows.</p>
+<p>This uptime is also the <strong>measurement basis for the FinMind enterprise plan SLA</strong> — enterprise service levels are assessed with the same algorithm, kept transparent and consistent with what the status page shows.</p>
 <h2 id="how-uptime-is-calculated">How uptime is calculated<a class="headerlink" href="#how-uptime-is-calculated" title="Permanent link">&para;</a></h2>
-<p>Uptime is measured from real API traffic, <strong>minute by minute</strong>. The full formula chain is:</p>
+<p>Uptime is measured from real API traffic, <strong>request by request</strong>. The full formula chain is:</p>
 <p><strong>1. Valid requests</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>valid requests = successful requests (2xx / 3xx) + server-side errors
 </code></pre></div>
@@ -1841,20 +1841,19 @@
 <li>A <strong>server-side error</strong> means an HTTP <strong>5xx</strong> response, plus a connection dropped by a server-side timeout (HTTP <strong>499</strong> — usually caused by the server being busy or slow, so it is treated as a server-side problem).</li>
 <li>Ordinary <strong>client errors</strong> (e.g. <code>400</code> / <code>403</code> / <code>404</code> / <code>429</code>, excluding 499) are <strong>not</strong> counted as valid requests and do <strong>not</strong> affect uptime.</li>
 </ul>
-<p><strong>2. Per-minute error rate</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>per-minute error rate = server-side errors ÷ valid requests
+<p><strong>2. Uptime</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uptime % = successful requests ÷ valid requests × 100
 </code></pre></div>
 <ul>
-<li>A minute with <strong>traffic and an error rate &gt; 5%</strong> is counted as <strong>down</strong>.</li>
-<li>Minutes with <strong>no traffic</strong> are <strong>not</strong> counted toward uptime.</li>
+<li>The <strong>24-hour</strong>, <strong>90-day</strong> and <strong>month-to-date</strong> figures each sum the requests in that window and compute the ratio once — they are not averages of per-minute or per-day uptime.</li>
+<li>Windows with <strong>no traffic</strong> are <strong>not</strong> counted toward uptime.</li>
+<li><strong>Scheduled maintenance</strong> windows may be excluded; their requests count toward neither the numerator nor the denominator.</li>
 </ul>
-<p><strong>3. Uptime</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uptime % = (minutes with traffic − down minutes) ÷ minutes with traffic × 100
-</code></pre></div>
-<ul>
-<li>The <strong>24-hour</strong> and <strong>90-day</strong> figures aggregate these per-minute results; the 90-day and monthly numbers are weighted by <strong>minutes with traffic</strong>.</li>
-<li><strong>Scheduled maintenance</strong> windows may be excluded.</li>
-</ul>
+<details class="note">
+<summary>Why uptime is request-based</summary>
+<p>With requests as the denominator, an error rate is reflected <strong>proportionally</strong> in uptime: if 1.6% of the requests in a window end in a server-side error, uptime for that window is 98.4%.</p>
+<p>If uptime were instead measured by whether each block of time counts as "down", a persistent but low error rate would leave every block looking healthy and uptime pinned at 100%, hiding an ongoing degradation. Counting requests avoids that blind spot and matches the failure rate you actually experience.</p>
+</details>
 <h2 id="status-levels">Status levels<a class="headerlink" href="#status-levels" title="Permanent link">&para;</a></h2>
 <p>When a time window has traffic, it is classified into four levels by that window's uptime:</p>
 <table>
@@ -1867,19 +1866,19 @@
 <tbody>
 <tr>
 <td><strong>Operational</strong></td>
-<td>100% (traffic present, no down minutes)</td>
+<td>≥ 99.5%</td>
 </tr>
 <tr>
-<td><strong>Degraded Performance</strong></td>
-<td>≥ 99% (some down minutes, but uptime still ≥ 99%)</td>
+<td><strong>Elevated Error Rates</strong></td>
+<td>95% – 99.5% (95% ≤ uptime &lt; 99.5%)</td>
 </tr>
 <tr>
 <td><strong>Partial Outage</strong></td>
-<td>95% – 99% (95% ≤ uptime &lt; 99%)</td>
+<td>80% – 95% (80% ≤ uptime &lt; 95%)</td>
 </tr>
 <tr>
 <td><strong>Major Outage</strong></td>
-<td>&lt; 95%</td>
+<td>&lt; 80%</td>
 </tr>
 <tr>
 <td><strong>No data</strong></td>

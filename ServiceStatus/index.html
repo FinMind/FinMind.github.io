@@ -1831,9 +1831,9 @@
 <p>FinMind 提供對外即時狀態頁：</p>
 <p><a href="https://status.finmindtrade.com"><strong>status.finmindtrade.com</strong></a></p>
 <p>該頁顯示 API 目前狀態、過去 <strong>24 小時</strong>與 <strong>90 天</strong>的可用率（uptime），以及歷史事件紀錄。</p>
-<p>此可用率即 <strong>FinMind 企業方案 SLA 的衡量基準</strong>——企業客戶的服務水準以同一套逐分鐘演算法衡量，與狀態頁所呈現者一致透明。</p>
+<p>此可用率即 <strong>FinMind 企業方案 SLA 的衡量基準</strong>——企業客戶的服務水準以同一套演算法衡量，與狀態頁所呈現者一致透明。</p>
 <h2 id="_2">可用率怎麼計算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>可用率以<strong>真實 API 流量、逐分鐘</strong>衡量。完整公式鏈如下：</p>
+<p>可用率以<strong>真實 API 流量、逐請求</strong>衡量。完整公式鏈如下：</p>
 <p><strong>1. 有效請求</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>有效請求 = 成功請求(2xx / 3xx) + server-side error
 </code></pre></div>
@@ -1841,20 +1841,19 @@
 <li><strong>server-side error</strong> 指 HTTP <strong>5xx</strong> 回應，以及因伺服器端逾時而中斷的連線（HTTP <strong>499</strong>；多半是伺服器忙碌/變慢造成連線被中斷，視為伺服器端問題）。</li>
 <li>一般 <strong>client error</strong>（例如 <code>400</code> / <code>403</code> / <code>404</code> / <code>429</code> 等請求端錯誤，不含 499）<strong>不計入</strong>有效請求，也不影響可用率。</li>
 </ul>
-<p><strong>2. 逐分鐘錯誤率</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>逐分鐘錯誤率 = server-side error ÷ 有效請求
+<p><strong>2. 可用率</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>可用率 % = 成功請求 ÷ 有效請求 × 100
 </code></pre></div>
 <ul>
-<li>某分鐘<strong>有流量且錯誤率 &gt; 5%</strong>，該分鐘即記為 <strong>down（中斷）</strong>。</li>
-<li><strong>沒有流量的分鐘不計入</strong>可用率。</li>
+<li><strong>24 小時</strong>、<strong>90 天</strong>與<strong>當月</strong>數字，都是把該區間內的<strong>請求數加總</strong>後再計算一次，而不是把各分鐘或各日的可用率平均。</li>
+<li><strong>沒有流量的區間不計入</strong>可用率。</li>
+<li><strong>計畫性維護</strong>時段可排除，該時段的請求不計入分子與分母。</li>
 </ul>
-<p><strong>3. 可用率</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>可用率 % =（有流量的分鐘數 − 中斷的分鐘數）÷ 有流量的分鐘數 × 100
-</code></pre></div>
-<ul>
-<li><strong>24 小時</strong>與 <strong>90 天</strong>數字由上述逐分鐘結果彙總；90 天與當月數字以<strong>有流量分鐘</strong>加權。</li>
-<li><strong>計畫性維護</strong>時段可排除，不計入中斷。</li>
-</ul>
+<details class="note">
+<summary>為什麼以請求數計算</summary>
+<p>以請求數為分母，錯誤比例會<strong>等比反映</strong>在可用率上：某區間有 1.6% 的請求以 server-side error 收場，該區間的可用率就是 98.4%。</p>
+<p>若改以「時間區塊是否算中斷」為單位衡量，長期存在但比例偏低的錯誤會讓每一個區塊都被視為正常，可用率恆為 100%，反而看不出服務的持續性劣化。以請求數計算可避免這個盲點，也與您實際感受到的失敗比例一致。</p>
+</details>
 <h2 id="_3">狀態分級<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>某時間窗有流量時，依該窗的可用率分為四級：</p>
 <table>
@@ -1867,19 +1866,19 @@
 <tbody>
 <tr>
 <td><strong>Operational</strong></td>
-<td>100%（有流量且無任何中斷分鐘）</td>
+<td>≥ 99.5%</td>
 </tr>
 <tr>
-<td><strong>Degraded Performance</strong></td>
-<td>≥ 99%（有中斷分鐘，但可用率仍 ≥ 99%）</td>
+<td><strong>Elevated Error Rates</strong></td>
+<td>95% ～ 99.5%（95% ≤ 可用率 &lt; 99.5%）</td>
 </tr>
 <tr>
 <td><strong>Partial Outage</strong></td>
-<td>95% ～ 99%（95% ≤ 可用率 &lt; 99%）</td>
+<td>80% ～ 95%（80% ≤ 可用率 &lt; 95%）</td>
 </tr>
 <tr>
 <td><strong>Major Outage</strong></td>
-<td>&lt; 95%</td>
+<td>&lt; 80%</td>
 </tr>
 <tr>
 <td><strong>No data</strong></td>
