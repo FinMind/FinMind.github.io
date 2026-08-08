@@ -905,6 +905,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockmarginmaintenance-sponsor" class="md-nav__link">
+    <span class="md-ellipsis">
+      個股融資維持率 TaiwanStockMarginMaintenance (只限 sponsor 會員使用)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2453,6 +2462,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#taiwanstockmarginmaintenance-sponsor" class="md-nav__link">
+    <span class="md-ellipsis">
+      個股融資維持率 TaiwanStockMarginMaintenance (只限 sponsor 會員使用)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2473,7 +2491,7 @@
 
   <h1>籌碼面</h1>
 
-<p>在台股籌碼面，我們擁有 25 種資料集，如下:</p>
+<p>在台股籌碼面，我們擁有 26 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">個股融資融劵表 TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">整體市場融資融劵表 TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -2500,6 +2518,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#etf-taiwanstockactiveetfholding-sponsor">主動式ETF每日持股明細 TaiwanStockActiveETFHolding</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#etftaiwanstockactiveetfholdingchange-sponsor">主動式ETF每日持股異動（買賣）TaiwanStockActiveETFHoldingChange</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockindustrychainmoneyflow-sponsor">台股產業鏈資金流向 TaiwanStockIndustryChainMoneyFlow</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockmarginmaintenance-sponsor">個股融資維持率 TaiwanStockMarginMaintenance</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockdispositionsecuritiesperiod-backersponsor">公布處置有價證券表 TaiwanStockDispositionSecuritiesPeriod</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockdaytradingborrowingfeerate-backersponsor">現股當日沖銷券差借券費率 TaiwanStockDayTradingBorrowingFeeRate</a></li>
 </ul>
@@ -8430,6 +8449,180 @@
 <a id="__codelineno-156-7" name="__codelineno-156-7" href="#__codelineno-156-7"></a>    trading_money: int, # 成交金額合計
 <a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>    trading_money_pct: float, # 佔當日全市場個股成交金額比重(%)
 <a id="__codelineno-156-9" name="__codelineno-156-9" href="#__codelineno-156-9"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="taiwanstockmarginmaintenance-sponsor">個股融資維持率 TaiwanStockMarginMaintenance (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockmarginmaintenance-sponsor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>資料區間：2001-01-05 ~ now（上櫃自 2007-01-04 起）</li>
+<li>資料更新時間 <strong>星期一至六 22:30</strong>，實際更新時間以 API 資料為主</li>
+<li>提供個股每日的融資維持率（%）、融資成本線、融資餘額（張），以及計算時實際採用的融資成數</li>
+<li>涵蓋上市、上櫃所有有融資餘額的標的（含 ETF／ETN／受益證券／存託憑證）；興櫃無信用交易，不在涵蓋範圍</li>
+<li>當日融資餘額為 0，或當日無成交（停牌／處置無量）的標的，不輸出該日資料</li>
+<li><strong>一次拿特定日期，所有資料</strong>：不帶 <code>data_id</code>、只帶 <code>start_date</code>，即可取得該日全市場個股的融資維持率</li>
+</ul>
+<details class="note">
+<summary>計算方式</summary>
+<p>融資維持率：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-157-1" name="__codelineno-157-1" href="#__codelineno-157-1"></a>margin_maintenance = 當日收盤價 / (margin_cost * margin_ratio) * 100
+</code></pre></div>
+<p><code>margin_cost</code>（融資成本線）是融資部位的移動加權平均成本，逐日遞推。每個交易日先把當日賣出與現金償還從舊部位沖銷掉，再把當日新增的融資買進以當日收盤價混入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a>舊部位     = max(今日融資餘額 - 今日融資買進, 0)
+<a id="__codelineno-158-2" name="__codelineno-158-2" href="#__codelineno-158-2"></a>margin_cost = (前一日 margin_cost * 舊部位 + 當日收盤價 * 今日融資買進)
+<a id="__codelineno-158-3" name="__codelineno-158-3" href="#__codelineno-158-3"></a>              / (舊部位 + 今日融資買進)
+</code></pre></div>
+<p>融資餘額與融資買進的單位皆為「張」，取自個股融資融劵表的當日餘額與當日買進；當日買進直接採用公告值，不是用餘額差推算，因此股數事件造成的餘額跳變不會被誤計為買進。</p>
+<p>邊界情況：</p>
+<ul>
+<li>今日餘額全數為當日新增買進（舊部位為 0）→ 成本線即為當日收盤價</li>
+<li>融資餘額歸零 → 視為部位結清、成本線重置，之後再有融資餘額會從當日收盤價重新起算</li>
+<li>當日無成交（停牌／處置無量）→ 沿用前一日成本線，且不輸出當日資料</li>
+</ul>
+<p>股數事件與除權息：遇到事件時會先調整前一日的成本線，再套用當日買進。股票分割、面額變更、減資、除權配股依參考價比例等比調整；除息則自成本線扣除每股現金股利（現金股利會沖抵融資金額）。</p>
+</details>
+<details class="note">
+<summary>使用前必讀：本資料集為估算指標</summary>
+<ul>
+<li><strong>無官方真值，數字與其他服務不會一致</strong>：公開資訊只揭露個股的融資餘額「張數」，並未揭露個股層級的「融資金額」，因此融資成本線與融資維持率只能由歷史融資買賣逐日推估。市面上提供此指標的服務同樣是各自估算，彼此數字互不相同，也不會與本資料集完全相同。建議作為觀察籌碼壓力的<strong>相對指標</strong>使用，不要當成精確值。</li>
+<li><strong>融資成數採法定上限</strong>：<code>margin_ratio</code> 一律以最高融資比率計算（上市六成；上櫃 2014-11-10 起六成、之前五成）。個別標的若被列為警示股／處置股，實際融資成數可能較低，甚至暫停信用交易，此時實際維持率會與本資料集不同。</li>
+<li><strong>上櫃起始日與上市不同</strong>：上市自 2001-01-05 起、上櫃自 2007-01-04 起。查詢上櫃標的在 2007-01-04 之前的區間會回傳空資料。</li>
+<li><strong>成本線為名目值</strong>：<code>margin_cost</code> 已針對股票分割／面額變更、減資、除權配股等股數事件調整，並於除息日扣除每股現金股利（現金股利會沖抵融資金額），因此是調整後的名目成本，不等於原始買進價格。</li>
+</ul>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="77:3"><input checked="checked" id="__tabbed_77_1" name="__tabbed_77" type="radio" /><input id="__tabbed_77_2" name="__tabbed_77" type="radio" /><input id="__tabbed_77_3" name="__tabbed_77" type="radio" /><div class="tabbed-labels"><label for="__tabbed_77_1">Package</label><label for="__tabbed_77_2">Python</label><label for="__tabbed_77_3">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-159-2" name="__codelineno-159-2" href="#__codelineno-159-2"></a>
+<a id="__codelineno-159-3" name="__codelineno-159-3" href="#__codelineno-159-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-159-4" name="__codelineno-159-4" href="#__codelineno-159-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-159-5" name="__codelineno-159-5" href="#__codelineno-159-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_margin_maintenance</span><span class="p">(</span>
+<a id="__codelineno-159-6" name="__codelineno-159-6" href="#__codelineno-159-6"></a>    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-159-7" name="__codelineno-159-7" href="#__codelineno-159-7"></a>    <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2026-07-22&quot;</span><span class="p">,</span>
+<a id="__codelineno-159-8" name="__codelineno-159-8" href="#__codelineno-159-8"></a>    <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2026-07-28&quot;</span><span class="p">,</span>
+<a id="__codelineno-159-9" name="__codelineno-159-9" href="#__codelineno-159-9"></a><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-160-2" name="__codelineno-160-2" href="#__codelineno-160-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-160-3" name="__codelineno-160-3" href="#__codelineno-160-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-160-4" name="__codelineno-160-4" href="#__codelineno-160-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-160-5" name="__codelineno-160-5" href="#__codelineno-160-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-160-6" name="__codelineno-160-6" href="#__codelineno-160-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-160-7" name="__codelineno-160-7" href="#__codelineno-160-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockMarginMaintenance&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-8" name="__codelineno-160-8" href="#__codelineno-160-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-9" name="__codelineno-160-9" href="#__codelineno-160-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-07-22&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-10" name="__codelineno-160-10" href="#__codelineno-160-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-07-28&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-11" name="__codelineno-160-11" href="#__codelineno-160-11"></a><span class="p">}</span>
+<a id="__codelineno-160-12" name="__codelineno-160-12" href="#__codelineno-160-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-160-13" name="__codelineno-160-13" href="#__codelineno-160-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-160-14" name="__codelineno-160-14" href="#__codelineno-160-14"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-160-15" name="__codelineno-160-15" href="#__codelineno-160-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-161-2" name="__codelineno-161-2" href="#__codelineno-161-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-161-3" name="__codelineno-161-3" href="#__codelineno-161-3"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-161-4" name="__codelineno-161-4" href="#__codelineno-161-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-161-5" name="__codelineno-161-5" href="#__codelineno-161-5"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-161-6" name="__codelineno-161-6" href="#__codelineno-161-6"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-161-7" name="__codelineno-161-7" href="#__codelineno-161-7"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-161-8" name="__codelineno-161-8" href="#__codelineno-161-8"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockMarginMaintenance&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-9" name="__codelineno-161-9" href="#__codelineno-161-9"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-10" name="__codelineno-161-10" href="#__codelineno-161-10"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="s">&quot;2026-07-22&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-11" name="__codelineno-161-11" href="#__codelineno-161-11"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="s">&quot;2026-07-28&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-12" name="__codelineno-161-12" href="#__codelineno-161-12"></a><span class="w">        </span><span class="n">token</span><span class="o">=</span><span class="n">token</span>
+<a id="__codelineno-161-13" name="__codelineno-161-13" href="#__codelineno-161-13"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-161-14" name="__codelineno-161-14" href="#__codelineno-161-14"></a><span class="p">)</span>
+<a id="__codelineno-161-15" name="__codelineno-161-15" href="#__codelineno-161-15"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-161-16" name="__codelineno-161-16" href="#__codelineno-161-16"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&quot;rbind&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">))</span>
+<a id="__codelineno-161-17" name="__codelineno-161-17" href="#__codelineno-161-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="78:2"><input checked="checked" id="__tabbed_78_1" name="__tabbed_78" type="radio" /><input id="__tabbed_78_2" name="__tabbed_78" type="radio" /><div class="tabbed-labels"><label for="__tabbed_78_1">DataFrame</label><label for="__tabbed_78_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: right;">margin_balance</th>
+<th style="text-align: right;">margin_cost</th>
+<th style="text-align: right;">margin_ratio</th>
+<th style="text-align: right;">margin_maintenance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-07-22</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24182</td>
+<td style="text-align: right;">2349.5</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">160.32</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-07-23</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24065</td>
+<td style="text-align: right;">2349.1</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">162.83</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-07-24</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24310</td>
+<td style="text-align: right;">2348.6</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">163.57</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2026-07-27</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24278</td>
+<td style="text-align: right;">2347.4</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">162.59</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2026-07-28</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24151</td>
+<td style="text-align: right;">2346.9</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">161.92</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a>{
+<a id="__codelineno-162-2" name="__codelineno-162-2" href="#__codelineno-162-2"></a>    date: str, # 日期
+<a id="__codelineno-162-3" name="__codelineno-162-3" href="#__codelineno-162-3"></a>    stock_id: str, # 股票代號
+<a id="__codelineno-162-4" name="__codelineno-162-4" href="#__codelineno-162-4"></a>    margin_balance: int, # 融資餘額（張）
+<a id="__codelineno-162-5" name="__codelineno-162-5" href="#__codelineno-162-5"></a>    margin_cost: float, # 融資成本線（估算的融資部位移動加權平均成本）
+<a id="__codelineno-162-6" name="__codelineno-162-6" href="#__codelineno-162-6"></a>    margin_ratio: float, # 計算所採用的融資成數（0.6 / 0.5）
+<a id="__codelineno-162-7" name="__codelineno-162-7" href="#__codelineno-162-7"></a>    margin_maintenance: float, # 融資維持率（%），例 156.1
+<a id="__codelineno-162-8" name="__codelineno-162-8" href="#__codelineno-162-8"></a>}
 </code></pre></div>
 </div>
 </div>

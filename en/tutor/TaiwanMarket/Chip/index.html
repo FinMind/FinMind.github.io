@@ -905,6 +905,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#individual-stock-margin-maintenance-taiwanstockmarginmaintenance-only-available-for-sponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Individual Stock Margin Maintenance TaiwanStockMarginMaintenance (only available for sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2453,6 +2462,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#individual-stock-margin-maintenance-taiwanstockmarginmaintenance-only-available-for-sponsor-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Individual Stock Margin Maintenance TaiwanStockMarginMaintenance (only available for sponsor members)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2473,7 +2491,7 @@
 
   <h1>Chip (Institutional)</h1>
 
-<p>In Taiwan stock chip data, we have 25 datasets as follows:</p>
+<p>In Taiwan stock chip data, we have 26 datasets as follows:</p>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockmarginpurchaseshortsale">Individual Stock Margin Purchase / Short Sale TaiwanStockMarginPurchaseShortSale</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstocktotalmarginpurchaseshortsale">Total Market Margin Purchase / Short Sale TaiwanStockTotalMarginPurchaseShortSale</a></li>
@@ -2500,6 +2518,7 @@
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#active-etf-daily-holding-taiwanstockactiveetfholding-only-available-for-sponsor-members">Active ETF Daily Holding TaiwanStockActiveETFHolding</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#active-etf-daily-holding-change-taiwanstockactiveetfholdingchange-only-available-for-sponsor-members">Active ETF Daily Holding Change TaiwanStockActiveETFHoldingChange</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#industry-chain-money-flow-taiwanstockindustrychainmoneyflow-only-available-for-sponsor-members">Industry Chain Money Flow TaiwanStockIndustryChainMoneyFlow</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#individual-stock-margin-maintenance-taiwanstockmarginmaintenance-only-available-for-sponsor-members">Individual Stock Margin Maintenance TaiwanStockMarginMaintenance</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockdispositionsecuritiesperiod-backersponsor">Disposition Securities Period TaiwanStockDispositionSecuritiesPeriod</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockdaytradingborrowingfeerate-backersponsor">Day Trading Borrowing Fee Rate TaiwanStockDayTradingBorrowingFeeRate</a></li>
 </ul>
@@ -8430,6 +8449,181 @@
 <a id="__codelineno-156-7" name="__codelineno-156-7" href="#__codelineno-156-7"></a>    trading_money: int, # total trading money
 <a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>    trading_money_pct: float, # % of whole-market individual-stock trading money
 <a id="__codelineno-156-9" name="__codelineno-156-9" href="#__codelineno-156-9"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="individual-stock-margin-maintenance-taiwanstockmarginmaintenance-only-available-for-sponsor-members">Individual Stock Margin Maintenance TaiwanStockMarginMaintenance (only available for <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> members)<a class="headerlink" href="#individual-stock-margin-maintenance-taiwanstockmarginmaintenance-only-available-for-sponsor-members" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Data range: 2001-01-05 ~ now (OTC / TPEx stocks start from 2007-01-04)</li>
+<li>Data update time <strong>Monday to Saturday 22:30</strong>, the actual update time is based on the API data.</li>
+<li>Provides the daily margin maintenance ratio (%), margin cost line, margin purchase balance (lots) and the margin purchase ratio actually applied, for each individual stock</li>
+<li>Covers all TWSE-listed and TPEx-listed instruments that have a margin purchase balance (including ETFs / ETNs / beneficiary certificates / depositary receipts). Emerging-market stocks have no margin trading and are therefore out of scope</li>
+<li>Rows are not produced for a stock on days when its margin purchase balance is 0, or when the stock has no trade that day (suspended / no volume)</li>
+<li><strong>Get all data for a specific date in one request</strong>: omit <code>data_id</code> and pass only <code>start_date</code> to get the margin maintenance ratio of every stock for that day</li>
+</ul>
+<details class="note">
+<summary>How it is calculated</summary>
+<p>Margin maintenance ratio:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-157-1" name="__codelineno-157-1" href="#__codelineno-157-1"></a>margin_maintenance = closing price / (margin_cost * margin_ratio) * 100
+</code></pre></div>
+<p><code>margin_cost</code> (the margin cost line) is the moving weighted average cost of the margin position, rolled forward day by day. On each trading day the carried-over position is first reduced by that day's sells and cash redemptions, then that day's new margin purchases are blended in at that day's closing price:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a>carried_position = max(today&#39;s margin balance - today&#39;s margin purchase, 0)
+<a id="__codelineno-158-2" name="__codelineno-158-2" href="#__codelineno-158-2"></a>margin_cost      = (previous margin_cost * carried_position
+<a id="__codelineno-158-3" name="__codelineno-158-3" href="#__codelineno-158-3"></a>                    + today&#39;s closing price * today&#39;s margin purchase)
+<a id="__codelineno-158-4" name="__codelineno-158-4" href="#__codelineno-158-4"></a>                   / (carried_position + today&#39;s margin purchase)
+</code></pre></div>
+<p>Both the margin balance and the margin purchase are in lots, taken from the individual stock margin purchase / short sale table. The daily margin purchase is used as published rather than derived from the change in balance, so a jump in balance caused by a share-count event is not mistaken for buying.</p>
+<p>Boundary cases:</p>
+<ul>
+<li>The whole balance is new buying that day (carried position is 0) → the cost line equals that day's closing price</li>
+<li>The margin balance drops to zero → the position is treated as closed and the cost line resets; when a balance appears again it restarts from that day's closing price</li>
+<li>No trade that day (suspended / no volume) → the previous cost line is carried forward and no row is produced for that day</li>
+</ul>
+<p>Share-count events and dividends: on an event day the previous cost line is adjusted first, then that day's purchases are applied. Stock splits, par value changes, capital reductions and stock dividends are scaled by the reference price ratio; on an ex-dividend date the cash dividend per share is deducted from the cost line (cash dividends are used to offset the margin loan).</p>
+</details>
+<details class="note">
+<summary>Read first: this dataset is an estimated indicator</summary>
+<ul>
+<li><strong>There is no official ground truth, and numbers will not match other services</strong>: public disclosure only provides the margin purchase balance in <strong>lots</strong> for each stock, not the margin purchase <strong>amount</strong> at the individual-stock level. The margin cost line and the maintenance ratio can therefore only be estimated by rolling forward the historical margin buys and sells. Every service that publishes this indicator estimates it in its own way, so the numbers differ between services and will not match this dataset exactly. Please treat it as a <strong>relative</strong> indicator of margin pressure rather than an exact value.</li>
+<li><strong>The statutory maximum margin purchase ratio is used</strong>: <code>margin_ratio</code> is always the maximum margin purchase ratio (60% for TWSE-listed stocks; 60% for TPEx-listed stocks from 2014-11-10, 50% before that). Stocks flagged for attention or under disposition may in practice be given a lower ratio, or have margin trading suspended, in which case the real maintenance ratio differs from this dataset.</li>
+<li><strong>The OTC start date differs from the listed-market start date</strong>: TWSE-listed from 2001-01-05, TPEx-listed from 2007-01-04. Querying a TPEx stock for a period before 2007-01-04 returns empty data.</li>
+<li><strong>The cost line is a nominal value</strong>: <code>margin_cost</code> is already adjusted for share-count events (stock splits / par value changes, capital reductions, stock dividends), and the cash dividend per share is deducted on the ex-dividend date (cash dividends are used to offset the margin loan). It is therefore an adjusted nominal cost, not the original purchase price.</li>
+</ul>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="77:3"><input checked="checked" id="__tabbed_77_1" name="__tabbed_77" type="radio" /><input id="__tabbed_77_2" name="__tabbed_77" type="radio" /><input id="__tabbed_77_3" name="__tabbed_77" type="radio" /><div class="tabbed-labels"><label for="__tabbed_77_1">Package</label><label for="__tabbed_77_2">Python</label><label for="__tabbed_77_3">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-159-2" name="__codelineno-159-2" href="#__codelineno-159-2"></a>
+<a id="__codelineno-159-3" name="__codelineno-159-3" href="#__codelineno-159-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-159-4" name="__codelineno-159-4" href="#__codelineno-159-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-159-5" name="__codelineno-159-5" href="#__codelineno-159-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_margin_maintenance</span><span class="p">(</span>
+<a id="__codelineno-159-6" name="__codelineno-159-6" href="#__codelineno-159-6"></a>    <span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-159-7" name="__codelineno-159-7" href="#__codelineno-159-7"></a>    <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2026-07-22&quot;</span><span class="p">,</span>
+<a id="__codelineno-159-8" name="__codelineno-159-8" href="#__codelineno-159-8"></a>    <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;2026-07-28&quot;</span><span class="p">,</span>
+<a id="__codelineno-159-9" name="__codelineno-159-9" href="#__codelineno-159-9"></a><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-160-2" name="__codelineno-160-2" href="#__codelineno-160-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-160-3" name="__codelineno-160-3" href="#__codelineno-160-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-160-4" name="__codelineno-160-4" href="#__codelineno-160-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Refer to login to obtain the API key</span>
+<a id="__codelineno-160-5" name="__codelineno-160-5" href="#__codelineno-160-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-160-6" name="__codelineno-160-6" href="#__codelineno-160-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-160-7" name="__codelineno-160-7" href="#__codelineno-160-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockMarginMaintenance&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-8" name="__codelineno-160-8" href="#__codelineno-160-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-9" name="__codelineno-160-9" href="#__codelineno-160-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-07-22&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-10" name="__codelineno-160-10" href="#__codelineno-160-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-07-28&quot;</span><span class="p">,</span>
+<a id="__codelineno-160-11" name="__codelineno-160-11" href="#__codelineno-160-11"></a><span class="p">}</span>
+<a id="__codelineno-160-12" name="__codelineno-160-12" href="#__codelineno-160-12"></a><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-160-13" name="__codelineno-160-13" href="#__codelineno-160-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-160-14" name="__codelineno-160-14" href="#__codelineno-160-14"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-160-15" name="__codelineno-160-15" href="#__codelineno-160-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-161-2" name="__codelineno-161-2" href="#__codelineno-161-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-161-3" name="__codelineno-161-3" href="#__codelineno-161-3"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-161-4" name="__codelineno-161-4" href="#__codelineno-161-4"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Refer to login to obtain the API key</span>
+<a id="__codelineno-161-5" name="__codelineno-161-5" href="#__codelineno-161-5"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-161-6" name="__codelineno-161-6" href="#__codelineno-161-6"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-161-7" name="__codelineno-161-7" href="#__codelineno-161-7"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-161-8" name="__codelineno-161-8" href="#__codelineno-161-8"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockMarginMaintenance&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-9" name="__codelineno-161-9" href="#__codelineno-161-9"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-10" name="__codelineno-161-10" href="#__codelineno-161-10"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="s">&quot;2026-07-22&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-11" name="__codelineno-161-11" href="#__codelineno-161-11"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="s">&quot;2026-07-28&quot;</span><span class="p">,</span>
+<a id="__codelineno-161-12" name="__codelineno-161-12" href="#__codelineno-161-12"></a><span class="w">        </span><span class="n">token</span><span class="o">=</span><span class="n">token</span>
+<a id="__codelineno-161-13" name="__codelineno-161-13" href="#__codelineno-161-13"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-161-14" name="__codelineno-161-14" href="#__codelineno-161-14"></a><span class="p">)</span>
+<a id="__codelineno-161-15" name="__codelineno-161-15" href="#__codelineno-161-15"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-161-16" name="__codelineno-161-16" href="#__codelineno-161-16"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="s">&quot;rbind&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">))</span>
+<a id="__codelineno-161-17" name="__codelineno-161-17" href="#__codelineno-161-17"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="78:2"><input checked="checked" id="__tabbed_78_1" name="__tabbed_78" type="radio" /><input id="__tabbed_78_2" name="__tabbed_78" type="radio" /><div class="tabbed-labels"><label for="__tabbed_78_1">DataFrame</label><label for="__tabbed_78_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: right;">margin_balance</th>
+<th style="text-align: right;">margin_cost</th>
+<th style="text-align: right;">margin_ratio</th>
+<th style="text-align: right;">margin_maintenance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2026-07-22</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24182</td>
+<td style="text-align: right;">2349.5</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">160.32</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2026-07-23</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24065</td>
+<td style="text-align: right;">2349.1</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">162.83</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2026-07-24</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24310</td>
+<td style="text-align: right;">2348.6</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">163.57</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2026-07-27</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24278</td>
+<td style="text-align: right;">2347.4</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">162.59</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2026-07-28</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">24151</td>
+<td style="text-align: right;">2346.9</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">161.92</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a>{
+<a id="__codelineno-162-2" name="__codelineno-162-2" href="#__codelineno-162-2"></a>    date: str, # date
+<a id="__codelineno-162-3" name="__codelineno-162-3" href="#__codelineno-162-3"></a>    stock_id: str, # stock id
+<a id="__codelineno-162-4" name="__codelineno-162-4" href="#__codelineno-162-4"></a>    margin_balance: int, # margin purchase balance (lots)
+<a id="__codelineno-162-5" name="__codelineno-162-5" href="#__codelineno-162-5"></a>    margin_cost: float, # margin cost line (estimated moving weighted average cost of the margin position)
+<a id="__codelineno-162-6" name="__codelineno-162-6" href="#__codelineno-162-6"></a>    margin_ratio: float, # margin purchase ratio applied (0.6 / 0.5)
+<a id="__codelineno-162-7" name="__codelineno-162-7" href="#__codelineno-162-7"></a>    margin_maintenance: float, # margin maintenance ratio (%), e.g. 156.1
+<a id="__codelineno-162-8" name="__codelineno-162-8" href="#__codelineno-162-8"></a>}
 </code></pre></div>
 </div>
 </div>
