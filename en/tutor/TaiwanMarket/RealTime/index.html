@@ -1865,10 +1865,10 @@
 
 <p>For Taiwan stock real-time data, we have 4 datasets, as listed below:</p>
 <ul>
-<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwan_stock_tick_snapshot-sponsor">Taiwan Stock Real-Time Information taiwan_stock_tick_snapshot</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwan-stock-real-time-information-taiwan_stock_tick_snapshot-only-available-to-sponsor-members">Taiwan Stock Real-Time Information taiwan_stock_tick_snapshot</a></li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwanfutopttickinfo">Futures and Options Real-Time Quote Overview TaiwanFutOptTickInfo</a></li>
-<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwan_futures_snapshot-sponsor">Taiwan Futures Real-Time Information taiwan_futures_snapshot</a></li>
-<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwan_options_snapshot-sponsor">Taiwan Options Real-Time Information taiwan_options_snapshot</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwan-futures-real-time-information-taiwan_futures_snapshot-only-available-to-sponsor-members">Taiwan Futures Real-Time Information taiwan_futures_snapshot</a></li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/RealTime/#taiwan-options-real-time-information-taiwan_options_snapshot-only-available-to-sponsor-members">Taiwan Options Real-Time Information taiwan_options_snapshot</a></li>
 </ul>
 <hr />
 <h4 id="taiwan-stock-real-time-information-taiwan_stock_tick_snapshot-only-available-to-sponsor-members">Taiwan Stock Real-Time Information taiwan_stock_tick_snapshot (only available to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> members)<a class="headerlink" href="#taiwan-stock-real-time-information-taiwan_stock_tick_snapshot-only-available-to-sponsor-members" title="Permanent link">&para;</a></h4>
@@ -2392,6 +2392,34 @@
 <hr />
 <h4 id="taiwan-options-real-time-information-taiwan_options_snapshot-only-available-to-sponsor-members">Taiwan Options Real-Time Information taiwan_options_snapshot (only available to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> members)<a class="headerlink" href="#taiwan-options-real-time-information-taiwan_options_snapshot-only-available-to-sponsor-members" title="Permanent link">&para;</a></h4>
 <p>(updated approximately every 30 seconds)</p>
+<details class="note">
+<summary>Contract series codes (monthly, Wednesday-expiry weekly, Friday-expiry weekly)</summary>
+<p>TAIEX options come in three contract series. Pass the corresponding TAIFEX trading-system code as <code>data_id</code>:</p>
+<table>
+<thead>
+<tr>
+<th><code>data_id</code></th>
+<th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TXO</code></td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td><code>TX1</code> <code>TX2</code> <code>TX3</code> <code>TX4</code> <code>TX5</code></td>
+<td>Weekly, expiring on the 1st ~ 5th <strong>Wednesday</strong> of the month</td>
+</tr>
+<tr>
+<td><code>TXU</code> <code>TXV</code> <code>TXX</code> <code>TXY</code> <code>TXZ</code></td>
+<td>Weekly, expiring on the 1st ~ 5th <strong>Friday</strong> of the month</td>
+</tr>
+</tbody>
+</table>
+<p>Some codes return no data in a given month. This is expected behaviour, not missing data, for two reasons: the contract may not be listed yet (weekly contracts are listed only a limited period before expiry), or that week does not exist in that month (e.g. a month with only 4 Fridays has no 5th-Friday contract).</p>
+<p>Also note that if a contract has not traded yet on the current day, the response carries the price and volume from the <strong>last session in which it did trade</strong>. Use the returned <code>date</code> field to tell whether a row is a same-day quote.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Package</label><label for="__tabbed_7_2">Python-request</label><label for="__tabbed_7_3">R</label></div>
@@ -2401,8 +2429,9 @@
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">api</span><span class="o">.</span><span class="n">login_by_token</span><span class="p">(</span><span class="n">api_token</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># Currently only TAIEX options are supported: TXO, TX1, TX2, TX3, TX4</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_options_snapshot</span><span class="p">(</span><span class="n">options_id</span><span class="o">=</span><span class="s2">&quot;TXO&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># Currently only TAIEX options are supported</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># Monthly TXO; Wednesday-expiry weekly TX1~TX5; Friday-expiry weekly TXU, TXV, TXX, TXY, TXZ</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_options_snapshot</span><span class="p">(</span><span class="n">options_id</span><span class="o">=</span><span class="s2">&quot;TXO&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2412,7 +2441,7 @@
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/taiwan_options_snapshot&quot;</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span> <span class="c1"># TXO, TX1, TX2, TX3, TX4, TX5</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;TXO&quot;</span><span class="p">,</span> <span class="c1"># TXO(monthly), TX1~TX5(Wed-expiry), TXU/TXV/TXX/TXY/TXZ(Fri-expiry)</span>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="c1"># &quot;data_id&quot;: &quot;&quot;, # fetch all at once</span>
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">}</span>
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
@@ -2430,7 +2459,7 @@
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="w"> </span><span class="c1"># TXO, TX1, TX2, TX3, TX4, TX5</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="s">&quot;TXO&quot;</span><span class="w"> </span><span class="c1"># TXO(monthly), TX1~TX5(Wed-expiry), TXU/TXV/TXX/TXY/TXZ(Fri-expiry)</span>
 <a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="c1"># data_id=&quot;&quot; # fetch all at once</span>
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="p">),</span>
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
