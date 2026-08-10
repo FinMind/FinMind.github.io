@@ -1838,8 +1838,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>valid requests = successful requests (2xx / 3xx) + server-side errors
 </code></pre></div>
 <ul>
-<li>A <strong>server-side error</strong> means an HTTP <strong>5xx</strong> response, plus a connection dropped by a server-side timeout (HTTP <strong>499</strong> — usually caused by the server being busy or slow, so it is treated as a server-side problem).</li>
-<li>Ordinary <strong>client errors</strong> (e.g. <code>400</code> / <code>403</code> / <code>404</code> / <code>429</code>, excluding 499) are <strong>not</strong> counted as valid requests and do <strong>not</strong> affect uptime.</li>
+<li>A <strong>server-side error</strong> means an HTTP <strong>5xx</strong> response.</li>
+<li><strong>Client errors</strong> (e.g. <code>400</code> / <code>403</code> / <code>404</code> / <code>429</code>), along with connections closed by the client before a response was delivered, are <strong>not</strong> counted as valid requests and do <strong>not</strong> affect uptime.</li>
 </ul>
 <p><strong>2. Uptime</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uptime % = successful requests ÷ valid requests × 100

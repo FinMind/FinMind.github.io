@@ -1838,8 +1838,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>有效請求 = 成功請求(2xx / 3xx) + server-side error
 </code></pre></div>
 <ul>
-<li><strong>server-side error</strong> 指 HTTP <strong>5xx</strong> 回應，以及因伺服器端逾時而中斷的連線（HTTP <strong>499</strong>；多半是伺服器忙碌/變慢造成連線被中斷，視為伺服器端問題）。</li>
-<li>一般 <strong>client error</strong>（例如 <code>400</code> / <code>403</code> / <code>404</code> / <code>429</code> 等請求端錯誤，不含 499）<strong>不計入</strong>有效請求，也不影響可用率。</li>
+<li><strong>server-side error</strong> 指 HTTP <strong>5xx</strong> 回應。</li>
+<li><strong>client error</strong>（例如 <code>400</code> / <code>403</code> / <code>404</code> / <code>429</code> 等請求端錯誤），以及在回應送達前由用戶端中斷的連線，<strong>不計入</strong>有效請求，也不影響可用率。</li>
 </ul>
 <p><strong>2. 可用率</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>可用率 % = 成功請求 ÷ 有效請求 × 100
