@@ -8326,9 +8326,9 @@
 <ul>
 <li>Data range: 1992-01-04 ~ now</li>
 <li>Update time: <strong>Monday to Saturday, after market close</strong>; actual update time subject to API data</li>
-<li>Shows where the daily trading money goes across industry chains: daily per-stock trading data aggregated by "Per-Company Industry Chain TaiwanStockIndustryChain" (industry / sub_industry), including stock count, trading volume, trading money, and the percentage of the whole-market individual-stock trading money</li>
+<li>Shows where the daily trading money goes across industry chains: daily per-stock trading data aggregated by "Per-Company Industry Chain TaiwanStockIndustryChain" (industry / sub_industry), including stock count, trading volume, trading money, and the percentage of TWSE + TPEX individual-stock trading money</li>
 <li>Rows with an empty <code>sub_industry</code> are the industry-chain totals (each stock counted once; <strong>not</strong> equal to the sum of sub-industry rows, because one stock can belong to multiple sub-industries of the same chain); other rows are sub-industry details</li>
-<li>The denominator of <code>trading_money_pct</code> is the whole-market individual-stock trading money of the day (ETF / ETN / beneficiary certificates / TDR excluded)</li>
+<li>The denominator of <code>trading_money_pct</code> is the TWSE + TPEX individual-stock trading money of the day (emerging-market stocks and ETF / ETN / beneficiary certificates / TDR excluded); numerator and denominator use the same market scope, fixed to TWSE + TPEX</li>
 <li><strong>One day of data per request</strong>: query with a single <code>start_date</code> (no <code>data_id</code>); returns all industry chains for that day</li>
 <li>Note: one stock can belong to multiple industry chains, so the percentages across chains sum to more than 100%; the dataset is designed for comparing relative money strength and rotation between chains. Historical dates are calculated with the current industry-chain classification.</li>
 </ul>
@@ -8411,10 +8411,10 @@
 <td style="text-align: left;">2026-07-17</td>
 <td style="text-align: left;">半導體</td>
 <td style="text-align: left;"></td>
-<td style="text-align: right;">314</td>
-<td style="text-align: right;">2083008796</td>
-<td style="text-align: right;">693623697527</td>
-<td style="text-align: right;">52.3044</td>
+<td style="text-align: right;">271</td>
+<td style="text-align: right;">2071162807</td>
+<td style="text-align: right;">690560820668</td>
+<td style="text-align: right;">52.3755</td>
 </tr>
 <tr>
 <td style="text-align: right;">1</td>
@@ -8431,10 +8431,10 @@
 <td style="text-align: left;">2026-07-17</td>
 <td style="text-align: left;">半導體</td>
 <td style="text-align: left;">IC封裝測試</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">430118317</td>
-<td style="text-align: right;">85061031396</td>
-<td style="text-align: right;">6.4142</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">429731360</td>
+<td style="text-align: right;">84973154696</td>
+<td style="text-align: right;">6.4448</td>
 </tr>
 </tbody>
 </table>
@@ -8447,7 +8447,7 @@
 <a id="__codelineno-156-5" name="__codelineno-156-5" href="#__codelineno-156-5"></a>    stock_count: int, # number of component stocks traded that day
 <a id="__codelineno-156-6" name="__codelineno-156-6" href="#__codelineno-156-6"></a>    trading_volume: int, # total trading volume (shares)
 <a id="__codelineno-156-7" name="__codelineno-156-7" href="#__codelineno-156-7"></a>    trading_money: int, # total trading money
-<a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>    trading_money_pct: float, # % of whole-market individual-stock trading money
+<a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>    trading_money_pct: float, # % of TWSE + TPEX individual-stock trading money
 <a id="__codelineno-156-9" name="__codelineno-156-9" href="#__codelineno-156-9"></a>}
 </code></pre></div>
 </div>
