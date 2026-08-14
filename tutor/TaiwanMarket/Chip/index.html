@@ -8326,9 +8326,9 @@
 <ul>
 <li>資料區間：1992-01-04 ~ now</li>
 <li>資料更新時間 <strong>星期一至六 盤後</strong>，實際更新時間以 API 資料為主</li>
-<li>計算每日交易資金在各產業鏈的分佈：以「個體公司所屬產業鏈 TaiwanStockIndustryChain」（industry / sub_industry）彙總每日個股成交，包含成分股數、成交股數、成交金額、佔上市＋上櫃個股成交金額比重(%)</li>
+<li>計算每日交易資金在各產業鏈的分佈：以「個體公司所屬產業鏈 TaiwanStockIndustryChain」（industry / sub_industry）彙總每日個股成交，包含成分股數、成交股數、成交金額、佔全市場個股成交金額比重(%)</li>
 <li><code>sub_industry</code> 為空字串的列為該產業鏈總計（成分股不重複計算，<strong>不等於</strong>子產業列加總，因一檔股票可屬同產業鏈多個子產業）；其餘列為子產業明細</li>
-<li><code>trading_money_pct</code> 分母為當日上市＋上櫃個股成交金額（排除興櫃，以及 ETF／ETN／受益證券／存託憑證等非個股）；分子與分母採同一市場口徑，市場範圍固定為上市＋上櫃</li>
+<li><code>trading_money_pct</code> 分母為當日全市場個股成交金額（排除 ETF／ETN／受益證券／存託憑證等非個股）</li>
 <li><strong>一次提供一天的資料</strong>：以單一 <code>start_date</code> 查詢（無 <code>data_id</code>），回傳當日全部產業鏈</li>
 <li>備註：一檔股票可屬多條產業鏈，各產業鏈佔比加總會超過 100%，適合觀察產業鏈之間的相對資金強弱與輪動；歷史資料以目前的產業鏈分類回溯計算</li>
 </ul>
@@ -8411,10 +8411,10 @@
 <td style="text-align: left;">2026-07-17</td>
 <td style="text-align: left;">半導體</td>
 <td style="text-align: left;"></td>
-<td style="text-align: right;">271</td>
-<td style="text-align: right;">2071162807</td>
-<td style="text-align: right;">690560820668</td>
-<td style="text-align: right;">52.3755</td>
+<td style="text-align: right;">314</td>
+<td style="text-align: right;">2083008796</td>
+<td style="text-align: right;">693623697527</td>
+<td style="text-align: right;">52.3044</td>
 </tr>
 <tr>
 <td style="text-align: right;">1</td>
@@ -8431,10 +8431,10 @@
 <td style="text-align: left;">2026-07-17</td>
 <td style="text-align: left;">半導體</td>
 <td style="text-align: left;">IC封裝測試</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">429731360</td>
-<td style="text-align: right;">84973154696</td>
-<td style="text-align: right;">6.4448</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">430118317</td>
+<td style="text-align: right;">85061031396</td>
+<td style="text-align: right;">6.4142</td>
 </tr>
 </tbody>
 </table>
@@ -8447,7 +8447,7 @@
 <a id="__codelineno-156-5" name="__codelineno-156-5" href="#__codelineno-156-5"></a>    stock_count: int, # 成分股數（當日有成交）
 <a id="__codelineno-156-6" name="__codelineno-156-6" href="#__codelineno-156-6"></a>    trading_volume: int, # 成交股數合計
 <a id="__codelineno-156-7" name="__codelineno-156-7" href="#__codelineno-156-7"></a>    trading_money: int, # 成交金額合計
-<a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>    trading_money_pct: float, # 佔當日上市＋上櫃個股成交金額比重(%)
+<a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>    trading_money_pct: float, # 佔當日全市場個股成交金額比重(%)
 <a id="__codelineno-156-9" name="__codelineno-156-9" href="#__codelineno-156-9"></a>}
 </code></pre></div>
 </div>
