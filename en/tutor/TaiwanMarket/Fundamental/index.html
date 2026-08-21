@@ -3824,6 +3824,12 @@
 <li>Data range: 2002-02-01 ~ now</li>
 <li>Coverage: listed (TWSE), OTC (TPEx) and emerging market companies, distinguished by <code>stock_id</code> (use <code>TaiwanStockInfo</code> to look up market type)</li>
 </ul>
+<details class="note">
+<summary><code>create_time</code> only exists from 2026-04-21 onwards, and reflects when the row entered the FinMind database</summary>
+<p><code>create_time</code> is the date (YYYY-MM-DD) on which the monthly revenue row <strong>entered the FinMind database</strong>. It has only been recorded since <strong>2026-04-21</strong>; rows older than that carry <strong>no</strong> <code>create_time</code> and the field is an empty string.</p>
+<p>It is therefore <strong>not the official announcement time</strong> filed by the company on the Market Observation Post System - it only tells you when FinMind observed the row. That said, FinMind collects monthly revenue several times a day, so in practice the gap to the announcement time should be negligible, and the field can still be used as an approximation of "roughly when this revenue figure was published".</p>
+<p>Note also that rows written on 2026-04-21 (the day the column went live) all carry <code>create_time</code> = 2026-04-21, which is the initial backfilled value of the column rather than the day those figures were announced.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="21:4"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><input id="__tabbed_21_4" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Package</label><label for="__tabbed_21_2">Python-request</label><label for="__tabbed_21_3">R</label><label for="__tabbed_21_4">Package-Async</label></div>
@@ -3980,7 +3986,7 @@
 <a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>    revenue: int64, # revenue
 <a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>    revenue_month: int64, # revenue month
 <a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>    revenue_year: int64, # revenue year
-<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>    create_time: str # creation time (YYYY-MM-DD); empty string for older historical rows
+<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>    create_time: str # creation time (YYYY-MM-DD); recorded only since 2026-04-21, empty string for older historical rows
 <a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>}
 </code></pre></div>
 </div>
@@ -4122,7 +4128,7 @@
 <a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>    revenue: int64, # revenue
 <a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>    revenue_month: int64, # revenue month
 <a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>    revenue_year: int64, # revenue year
-<a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>    create_time: str # creation time (YYYY-MM-DD); empty string for older historical rows
+<a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>    create_time: str # creation time (YYYY-MM-DD); recorded only since 2026-04-21, empty string for older historical rows
 <a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>}
 </code></pre></div>
 </div>

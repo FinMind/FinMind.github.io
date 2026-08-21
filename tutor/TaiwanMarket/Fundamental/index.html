@@ -3824,6 +3824,12 @@
 <li>資料區間：2002-02-01 ~ now</li>
 <li>資料涵蓋：上市、上櫃、興櫃公司，以 <code>stock_id</code> 區分（可搭配 <code>TaiwanStockInfo</code> 查詢市場別）</li>
 </ul>
+<details class="note">
+<summary><code>create_time</code> 自 2026-04-21 起才有值，且代表進入 FinMind 資料庫的時間</summary>
+<p><code>create_time</code> 是<strong>該筆月營收進入 FinMind 資料庫的日期</strong>（YYYY-MM-DD），自 <strong>2026-04-21</strong> 起才開始記錄，在此之前的歷史資料<strong>沒有</strong> <code>create_time</code>，該欄位為空字串。</p>
+<p>因此它<strong>不等於公司在公開資訊觀測站的正式公告時間</strong>，僅能視為 FinMind 觀察到該筆資料的時間。不過 FinMind 一天內會多次收集月營收資料，理論上與公告時間不會有明顯差距，仍可作為「這筆營收大約何時公布」的近似參考。</p>
+<p>另外，2026-04-21（欄位啟用當天）寫入的列，<code>create_time</code> 一律為 2026-04-21，是欄位啟用時的初始值，不代表那幾筆營收是在該日公告。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="21:4"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><input id="__tabbed_21_4" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Package</label><label for="__tabbed_21_2">Python-request</label><label for="__tabbed_21_3">R</label><label for="__tabbed_21_4">Package-Async</label></div>
@@ -3980,7 +3986,7 @@
 <a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>    revenue: int64, # 營收
 <a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>    revenue_month: int64, # 營收月份
 <a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>    revenue_year: int64, # 營收年份
-<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>    create_time: str # 建立時間 (YYYY-MM-DD)，舊歷史資料為空字串
+<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>    create_time: str # 建立時間 (YYYY-MM-DD)，2026-04-21 起才記錄，舊歷史資料為空字串
 <a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>}
 </code></pre></div>
 </div>
@@ -4122,7 +4128,7 @@
 <a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>    revenue: int64, # 營收
 <a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>    revenue_month: int64, # 營收月份
 <a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>    revenue_year: int64, # 營收年份
-<a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>    create_time: str # 建立時間 (YYYY-MM-DD)，舊歷史資料為空字串
+<a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>    create_time: str # 建立時間 (YYYY-MM-DD)，2026-04-21 起才記錄，舊歷史資料為空字串
 <a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>}
 </code></pre></div>
 </div>
