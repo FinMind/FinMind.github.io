@@ -3121,6 +3121,58 @@
 <summary>Values may be updated slightly after the initial release</summary>
 <p>This data is the <strong>original-trade statistics</strong> of each institutional investor for the day. A small number of trades (e.g. after-hours fixed-price or block/matched trades) may be tallied into the day's statistics only after the initial release, so a given day's <strong>buy/sell totals can be topped up afterwards</strong>; when both sides of such a trade belong to the same investor category, buy and sell increase by the same amount and the <strong>net (buy minus sell) is unaffected</strong>. This is the completion of the day's original trades — not a data error, and not an error-account correction. There is no fixed "finalized" time; treat the value currently returned by the API as the latest. If you need finalized figures, retrieve them one or two business days after the trading day.</p>
 </details>
+<details class="note">
+<summary>New vs old era classifications (read this first if a dealer field is 0)</summary>
+<p>The classification of the three institutional investors has changed over the years. <strong>A classification has no corresponding row in eras where it did not yet exist</strong> — this is not missing data:</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th>Meaning</th>
+<th>Available era</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Foreign_Investor</code></td>
+<td>Foreign investors (excl. foreign dealer self)</td>
+<td>all</td>
+</tr>
+<tr>
+<td><code>Foreign_Dealer_Self</code></td>
+<td>Foreign dealer self</td>
+<td>from 2018-01-15</td>
+</tr>
+<tr>
+<td><code>Investment_Trust</code></td>
+<td>Investment trust</td>
+<td>all</td>
+</tr>
+<tr>
+<td><code>Dealer</code></td>
+<td>Dealer (combined)</td>
+<td>before ~2014-12-01, and Emerging market</td>
+</tr>
+<tr>
+<td><code>Dealer_self</code></td>
+<td>Dealer (proprietary)</td>
+<td>from 2014-12-01 (TWSE, TPEx)</td>
+</tr>
+<tr>
+<td><code>Dealer_Hedging</code></td>
+<td>Dealer (hedging)</td>
+<td>from 2014-12-01 (TWSE, TPEx)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>From <strong>2014-12-01</strong> the combined <code>Dealer</code> was split into <code>Dealer_self</code> (proprietary) and <code>Dealer_Hedging</code> (hedging). For TWSE / TPEx stocks after 2014-12-01 there is therefore <strong>no <code>Dealer</code> row at all</strong>; the values live in <code>Dealer_self</code> and <code>Dealer_Hedging</code>.</li>
+<li>From <strong>2018-01-15</strong>, <code>Foreign_Dealer_Self</code> (foreign dealer self) was split out from foreign investors.</li>
+<li>For a continuous "dealer total" across eras, sum <code>Dealer + Dealer_self + Dealer_Hedging</code> (only one group has values in any era, so there is no double counting).</li>
+<li><strong>Emerging market</strong> stocks keep the combined <code>Dealer</code> and only the net (buy minus sell) is published, so <code>buy</code> / <code>sell</code> here are reconstructed from the net (net buy goes to <code>buy</code>, net sell goes to <code>sell</code>) and one side is always 0.</li>
+<li>Even in the new era, <code>Foreign_Dealer_Self</code> is 0 on both <code>buy</code> and <code>sell</code> for most stocks on most days — that means the stock genuinely had no foreign-dealer-self trades that day; it is a real value, not a gap.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Package</label><label for="__tabbed_7_2">Python-request</label><label for="__tabbed_7_3">R</label><label for="__tabbed_7_4">Package-Async</label></div>
@@ -3414,7 +3466,7 @@
 <p>This data is the <strong>original-trade statistics</strong> of each institutional investor for the day. A small number of trades (e.g. after-hours fixed-price or block/matched trades) may be tallied into the day's statistics only after the initial release, so a given day's <strong>buy/sell totals can be topped up afterwards</strong>; when both sides of such a trade belong to the same investor category, buy and sell increase by the same amount and the <strong>net (buy minus sell) is unaffected</strong>. This is the completion of the day's original trades — not a data error, and not an error-account correction. There is no fixed "finalized" time; treat the value currently returned by the API as the latest. If you need finalized figures, retrieve them one or two business days after the trading day.</p>
 </details>
 <details class="note">
-<summary>New vs old era columns (important)</summary>
+<summary>New vs old era columns (read this first if <code>Dealer_buy</code> / <code>Dealer_sell</code> is 0)</summary>
 <p>The classification of the three institutional investors has changed over the years. This wide table includes <strong>all historical classifications</strong>; a classification is always <code>0</code> in eras where it did not yet exist:</p>
 <table>
 <thead>
@@ -3458,9 +3510,11 @@
 </tbody>
 </table>
 <ul>
-<li>From <strong>2014-12-01</strong>, the combined <code>Dealer</code> was split into <code>Dealer_self</code> (proprietary) and <code>Dealer_Hedging</code> (hedging).</li>
+<li>From <strong>2014-12-01</strong>, the combined <code>Dealer</code> was split into <code>Dealer_self</code> (proprietary) and <code>Dealer_Hedging</code> (hedging). For TWSE / TPEx stocks after 2014-12-01, <code>Dealer_buy</code> / <code>Dealer_sell</code> are therefore <strong>always 0</strong>; the values live in <code>Dealer_self_buy</code> / <code>Dealer_self_sell</code> and <code>Dealer_Hedging_buy</code> / <code>Dealer_Hedging_sell</code>.</li>
 <li>From <strong>2018-01-15</strong>, <code>Foreign_Dealer_Self</code> was split out from foreign investors.</li>
 <li>For a continuous "dealer total" across eras, sum <code>Dealer + Dealer_self + Dealer_Hedging</code> (only one group is non-zero in any era, so there is no double counting).</li>
+<li><strong>Emerging market</strong> stocks keep the combined <code>Dealer</code>, and only the net (buy minus sell) is published, so <code>Dealer_buy</code> / <code>Dealer_sell</code> are reconstructed from the net (net buy goes to buy, net sell goes to sell) and one side is always 0; the same applies to foreign investors and investment trust.</li>
+<li>Even in the new era, <code>Foreign_Dealer_Self_buy</code> / <code>Foreign_Dealer_Self_sell</code> are 0 for most stocks on most days — the stock genuinely had no foreign-dealer-self trades that day; a real value, not a gap.</li>
 </ul>
 </details>
 <div class="admonition example">

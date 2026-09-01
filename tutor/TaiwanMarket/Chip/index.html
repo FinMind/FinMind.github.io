@@ -3121,6 +3121,58 @@
 <summary>數值可能於初次公布後微幅更新</summary>
 <p>本資料為各法人別當日的<strong>原始成交統計</strong>。少數交易（例如盤後定價、鉅額配對等成交）可能於初次公布後才被補計進當日統計，使某日的<strong>買進／賣出總量事後略有增加</strong>；當該筆成交的買、賣雙方屬同一法人別時，買進與賣出會等額增加、<strong>買賣超（淨額）不受影響</strong>。此屬當日原始成交的補計，並非數據錯誤，亦非錯帳更正。官方未提供固定的「最終定案時間」，請以 API 當下回傳者為最新值；若需已定案數字，建議於該交易日後一至兩個營業日再取用。</p>
 </details>
+<details class="note">
+<summary>法人別分類的新舊制差異（自營商欄位為 0 請先看這裡）</summary>
+<p>三大法人的分類方式歷年有調整，<strong>某一分類在尚未實施的年代不會有對應的列</strong>，並非資料缺漏：</p>
+<table>
+<thead>
+<tr>
+<th><code>name</code></th>
+<th>中文</th>
+<th>提供年代</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Foreign_Investor</code></td>
+<td>外資（不含外資自營商）</td>
+<td>全期間</td>
+</tr>
+<tr>
+<td><code>Foreign_Dealer_Self</code></td>
+<td>外資自營商</td>
+<td>2018-01-15 起</td>
+</tr>
+<tr>
+<td><code>Investment_Trust</code></td>
+<td>投信</td>
+<td>全期間</td>
+</tr>
+<tr>
+<td><code>Dealer</code></td>
+<td>自營商（合併）</td>
+<td>約 2014-12-01 前，以及興櫃</td>
+</tr>
+<tr>
+<td><code>Dealer_self</code></td>
+<td>自營商（自行買賣）</td>
+<td>2014-12-01 起（上市、上櫃）</td>
+</tr>
+<tr>
+<td><code>Dealer_Hedging</code></td>
+<td>自營商（避險）</td>
+<td>2014-12-01 起（上市、上櫃）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>自營商自 <strong>2014-12-01</strong> 起由合併的 <code>Dealer</code> 拆成 <code>Dealer_self</code>（自行買賣）與 <code>Dealer_Hedging</code>（避險）。因此上市、上櫃個股在 2014-12-01 之後<strong>查不到 <code>Dealer</code> 這一列</strong>，數值都落在 <code>Dealer_self</code> 與 <code>Dealer_Hedging</code>。</li>
+<li>外資自 <strong>2018-01-15</strong> 起再拆出 <code>Foreign_Dealer_Self</code>（外資自營商）。</li>
+<li>若需要跨年代連續的「自營商合計」，請自行加總 <code>Dealer + Dealer_self + Dealer_Hedging</code>（任一年代只有其中一組有值，相加不會重複計算）。</li>
+<li><strong>興櫃</strong>個股維持合併的 <code>Dealer</code>，且僅提供買賣超淨額，本資料的 <code>buy</code> / <code>sell</code> 由淨額還原（淨買超記入 <code>buy</code>、淨賣超記入 <code>sell</code>），故單邊恆為 0。</li>
+<li><code>Foreign_Dealer_Self</code> 即使在新制期間，多數個股當日 <code>buy</code> / <code>sell</code> 仍為 0，代表該股當日確實沒有外資自營商成交，屬正常值而非缺漏。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Package</label><label for="__tabbed_7_2">Python-request</label><label for="__tabbed_7_3">R</label><label for="__tabbed_7_4">Package-Async</label></div>
@@ -3414,7 +3466,7 @@
 <p>本資料為各法人別當日的<strong>原始成交統計</strong>。少數交易（例如盤後定價、鉅額配對等成交）可能於初次公布後才被補計進當日統計，使某日的<strong>買進／賣出總量事後略有增加</strong>；當該筆成交的買、賣雙方屬同一法人別時，買進與賣出會等額增加、<strong>買賣超（淨額）不受影響</strong>。此屬當日原始成交的補計，並非數據錯誤，亦非錯帳更正。官方未提供固定的「最終定案時間」，請以 API 當下回傳者為最新值；若需已定案數字，建議於該交易日後一至兩個營業日再取用。</p>
 </details>
 <details class="note">
-<summary>新制 / 舊制欄位差異（重要）</summary>
+<summary>新制 / 舊制欄位差異（<code>Dealer_buy</code> / <code>Dealer_sell</code> 為 0 請先看這裡）</summary>
 <p>三大法人的分類方式歷年有調整，本寬表欄位涵蓋<strong>所有歷史分類</strong>，某一分類在尚未存在的年代該欄一律為 <code>0</code>：</p>
 <table>
 <thead>
@@ -3458,9 +3510,11 @@
 </tbody>
 </table>
 <ul>
-<li>自營商在 <strong>2014-12-01</strong> 起由合併的 <code>Dealer</code> 拆成 <code>Dealer_self</code>（自行買賣）與 <code>Dealer_Hedging</code>（避險）。</li>
+<li>自營商在 <strong>2014-12-01</strong> 起由合併的 <code>Dealer</code> 拆成 <code>Dealer_self</code>（自行買賣）與 <code>Dealer_Hedging</code>（避險）。因此上市、上櫃個股在 2014-12-01 之後 <code>Dealer_buy</code> / <code>Dealer_sell</code> <strong>恆為 0</strong>，數值都落在 <code>Dealer_self_buy</code> / <code>Dealer_self_sell</code> 與 <code>Dealer_Hedging_buy</code> / <code>Dealer_Hedging_sell</code>。</li>
 <li>外資在 <strong>2018-01-15</strong> 起再拆出 <code>Foreign_Dealer_Self</code>（外資自營商）。</li>
 <li>若需「自營商合計」且跨年代連續，請自行加總 <code>Dealer + Dealer_self + Dealer_Hedging</code>（任一年代只有其中一組非 0，相加不會重複計算）。</li>
+<li><strong>興櫃</strong>個股維持合併的 <code>Dealer</code>，且僅提供買賣超淨額，<code>Dealer_buy</code> / <code>Dealer_sell</code> 由淨額還原（淨買超記入 buy、淨賣超記入 sell），故單邊恆為 0；外資、投信同理。</li>
+<li><code>Foreign_Dealer_Self_buy</code> / <code>Foreign_Dealer_Self_sell</code> 即使在新制期間，多數個股當日仍為 0，代表該股當日確實沒有外資自營商成交，屬正常值而非缺漏。</li>
 </ul>
 </details>
 <div class="admonition example">
