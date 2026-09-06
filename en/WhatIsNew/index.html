@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-09-02" class="md-skip">
+        <a href="#2026-09-06" class="md-skip">
           Skip to content
         </a>
       
@@ -1462,6 +1462,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-06
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-02" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-02
@@ -2714,6 +2723,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-06
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-02" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-02
@@ -3681,9 +3699,24 @@
 
   <h1>What's New</h1>
 
+<h4 id="2026-09-06">2026-09-06<a class="headerlink" href="#2026-09-06" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Data correction notice</strong>: the datasets below have been corrected and are live. <strong>If you previously queried or downloaded the affected periods / dates, please fetch them again</strong><ul>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Fundamental/#balance-sheet-taiwanstockbalancesheet">Balance Sheet TaiwanStockBalanceSheet</a>: data for the single period <strong>2024-06-30 (2024 half-year report)</strong> was missing and has now been backfilled; coverage for that period grew from 1,917 to <strong>2,233 companies</strong> (316 restored). Every period from 2014 to 2025 has been checked quarter by quarter and no gap of comparable size was found<ul>
+<li>A further <strong>25 companies</strong> were listed and did file for the first half of 2024, but have since delisted or ceased public offering, and the original source no longer serves their historical statements. <strong>This part cannot be backfilled</strong></li>
+<li>The <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Fundamental/#income-statement-taiwanstockfinancialstatements">Income Statement TaiwanStockFinancialStatements</a> and <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Fundamental/#cash-flows-statement-taiwanstockcashflowsstatement">Cash Flows Statement TaiwanStockCashFlowsStatement</a> for the same period are complete and were not affected</li>
+</ul>
+</li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Fundamental/#ex-dividendex-right-result-table-taiwanstockdividendresult">Ex-Dividend/Ex-Right Result Table TaiwanStockDividendResult</a>: data for <strong>2026-09-02</strong> briefly contained only part of the TWSE companies for that day; it has been completed to all 20<ul>
+<li>Cause: one stock going ex-rights that day had a combined rights-plus-dividend value above 1,000, formatted with a thousands separator, which made the whole day's batch fail to load. The parser has been fixed so this will not recur</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h4 id="2026-09-02">2026-09-02<a class="headerlink" href="#2026-09-02" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-trading-detail-table-taiwanfuturestick-available-only-to-backer-sponsor-members">Futures Trading Detail TaiwanFuturesTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#options-trading-detail-table-taiwanoptiontick-available-only-to-backer-sponsor-members">Options Trading Detail TaiwanOptionTick</a>: after-hours tick data corrected. <strong>The dates below have been regenerated and verified — if you downloaded or queried any of them, please fetch the data again</strong><ul>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-trading-detail-table-taiwanfuturestick-available-only-to-backer-sponsor-members">Futures Trading Detail TaiwanFuturesTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#options-trading-detail-table-taiwanoptiontick-available-only-to-backer-sponsor-members">Options Trading Detail TaiwanOptionTick</a>: after-hours tick data corrected. <strong>The dates below have been regenerated and verified — if you downloaded or queried any of them, please fetch the data again</strong><ul>
 <li>TaiwanFuturesTick: <strong>2026-08-14</strong>, <strong>2019-04-19, 2019-05-17, 2019-06-21, 2019-07-01, 2019-07-03, 2019-07-11</strong> (15:00–24:00 after-hours session restored on all of these), <strong>2020-02-01</strong> (duplicate rows removed from the Saturday file)</li>
 <li>TaiwanOptionTick: <strong>2026-08-14</strong> (15:00–24:00 after-hours session restored)</li>
 <li>Cause for 2026-08-14: each trading day's after-hours session (15:00 that day until 05:00 the next morning) belongs to the <strong>next trading day</strong> by rule and only becomes complete then, but that day's whole-day file is generated the same evening and then completed by the next day's routine run. On the weekend of 08-14 the Saturday file was generated early, that routine run was skipped, and the Friday file stayed at the version without the after-hours session; because historical dates older than 14 days are served from whole-day files, the issue only became visible from 08-28. This was a one-off situation for that single weekend — every other trading day since the after-hours session launched in 2017-05 has been checked day by day and is unaffected; the generation logic has been fixed so it no longer depends on the next day's routine run</li>
