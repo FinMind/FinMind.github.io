@@ -3702,6 +3702,13 @@
 <h4 id="2026-09-13">2026-09-13<a class="headerlink" href="#2026-09-13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>新增 <a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#k-taiwanfutureskbar-sponsor">期貨分K TaiwanFuturesKBar</a>: 資料區間 2011-01-03 ~ now</li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick-backersponsor">期貨交易明細 TaiwanFuturesTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiontick-backersponsor">選擇權交易明細 TaiwanOptionTick</a>：歷史資料補齊，<strong>以下日期已重新產製並驗證，曾下載或查詢過這些日期的使用者請重新取得資料</strong><ul>
+<li>TaiwanFuturesTick <strong>2019-04-19 ~ 2019-05-13</strong>（共 20 個日曆日）：補回 16 個匯率、黃金與海外指數期貨商品（<code>GDF</code>、<code>NZF</code>、<code>OAF</code>、<code>OBF</code>、<code>OCF</code>、<code>OJF</code>、<code>OKF</code>、<code>OOF</code>、<code>RHF</code>、<code>RTF</code>、<code>TGF</code>、<code>TJF</code>、<code>XAF</code>、<code>XBF</code>、<code>XEF</code>、<code>XJF</code>）整段缺漏的逐筆資料；同區間其他商品不受影響</li>
+<li>TaiwanFuturesTick <strong>2014-03-19</strong>：整日逐筆資料（235 個商品）已補齊。此日先前公告為無法補齊，現已取得完整資料並完成驗證，<strong>2026-09-02 該則公告同步更正</strong></li>
+<li>TaiwanOptionTick <strong>2019-01-15 ~ 2019-06-28</strong>（共 129 個日曆日、105 個交易日）：此區間先前在資料集說明標示為「缺少部分資料，不完整」，現已補齊完整，該但書同步移除</li>
+<li>三段皆逐日、逐商品比對筆數與成交量後才上線</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-09-06">2026-09-06<a class="headerlink" href="#2026-09-06" title="Permanent link">&para;</a></h4>
 <ul>
@@ -3725,7 +3732,7 @@
 <li>TaiwanOptionTick：<strong>2026-08-14</strong>（補回 15:00～24:00 夜盤）</li>
 <li>2026-08-14 的原因：每個交易日的夜盤（當天 15:00 起至隔天 05:00）依規則歸屬於<strong>下一個交易日</strong>，資料要到下一個交易日才會完整；但當天的整日檔會在當晚先行產出，再由隔天的例行作業補上夜盤。08-14 那個週末因週六檔案提前產出，例行補產被跳過，週五整日檔便停留在沒有夜盤的版本；由於逾 14 天的歷史日改由整日檔提供查詢，此問題於 08-28 起才顯現。這是單一週末的特殊情況——2017-05 夜盤上線以來的其他交易日已逐日全量比對，均無此問題；產檔邏輯已修正，不再依賴隔日例行作業</li>
 <li>2019 年 6 天的原因：當年歷史回補漏掉週五夜盤的前半段，本次已補齊並驗證</li>
-<li>2011～2018 逐日檢查：僅 <strong>2014-03-19</strong> 整日逐筆資料缺漏，來源已無該日資料、無法補齊，已於資料集說明註記</li>
+<li>2011～2018 逐日檢查：僅 <strong>2014-03-19</strong> 整日逐筆資料缺漏（<strong>2026-09-13 更正：該日資料已取得並補齊，詳見上方公告</strong>）</li>
 </ul>
 </li>
 </ul>

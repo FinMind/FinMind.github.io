@@ -3450,12 +3450,6 @@
 <li><strong>15:00–24:00</strong> ticks belong to the after-hours session of the <strong>next trading day</strong>.</li>
 </ul>
 </details>
-<details class="note">
-<summary>Known data gap</summary>
-<ul>
-<li><strong>2014-03-19</strong>: tick data for that day is no longer available from the source, so the whole day (all products) cannot be backfilled (TaiwanFuturesDaily daily data is unaffected).</li>
-</ul>
-</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Package</label><label for="__tabbed_13_2">Python-request</label><label for="__tabbed_13_3">R</label></div>
@@ -3885,7 +3879,7 @@
 <h4 id="options-trading-detail-table-taiwanoptiontick-available-only-to-backer-sponsor-members">Options Trading Detail Table TaiwanOptionTick (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer, sponsor</a> members)<a class="headerlink" href="#options-trading-detail-table-taiwanoptiontick-available-only-to-backer-sponsor-members" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Due to the large data volume, each request only provides one day's data.</li>
-<li>Data range: 2011-01-03 ~ now (data is incomplete between 2019-01-16 and 2019-06-30).</li>
+<li>Data range: 2011-01-03 ~ now.</li>
 <li>Data update time: <strong>Monday to Friday 6:00</strong>. The actual update time is based on the API data.</li>
 </ul>
 <div class="admonition example">
@@ -4055,7 +4049,7 @@
 <h4 id="fetch-all-data-for-a-specific-date-at-once-available-only-to-sponsorpro-members_1">Fetch all data for a specific date at once (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> members)<a class="headerlink" href="#fetch-all-data-for-a-specific-date-at-once-available-only-to-sponsorpro-members_1" title="Permanent link">&para;</a></h4>
 <p>(Due to the large data volume, each request only provides one day's data.)</p>
 <ul>
-<li>Data range: 2011-01-03 ~ now, one trading day at a time (data is incomplete between 2019-01-16 and 2019-06-30).</li>
+<li>Data range: 2011-01-03 ~ now, one trading day at a time.</li>
 <li>Providing the dataset and date parameters returns all market data for that day.</li>
 <li>Downloads the whole-day parquet via a signed URL — no need to query contract by contract.</li>
 </ul>
