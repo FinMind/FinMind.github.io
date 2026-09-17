@@ -2009,6 +2009,12 @@
 <details class="note">
 <summary>Futures ticks (TaiwanFuturesTick): how volume is counted</summary>
 <p>Tick volume is counted on a <strong>double-sided</strong> basis: each matched trade records both the buy side and the sell side once. As a result, the summed tick volume is about <strong>2×</strong> the (single-side) volume in the daily data TaiwanFuturesDaily; for spread / combination orders, which contain two legs, the tick volume is about <strong>4×</strong> the daily volume. Convert accordingly when reconciling tick volume against daily volume.</p>
+<p><strong>Per-contract-month reconciliation</strong>: for a given contract month (e.g. 202606) within the same trading session,</p>
+<p><code>sum of volume of outright rows (contract_date = 202606) + sum of volume of spread rows containing that month (e.g. 202606/202607) ÷ 2 = 2 × TaiwanFuturesDaily volume of that month − 2 × negotiated block-trade lots of that month</code></p>
+<ul>
+<li>The volume of a spread row is exactly 4× the volume of the corresponding spread contract (contract_date with two months) in TaiwanFuturesDaily. Each spread lot counts toward the daily volume of both legs, so divide spread volume by 2 when attributing it to a single month; do not add it in full.</li>
+<li><strong>Negotiated block trades are not included in tick data, but are included in daily volume.</strong> They occur mostly as rollovers ahead of settlement (equal lots in the near and next months) and are the main reason tick volume falls noticeably short of 2× daily volume around settlement week; this is not missing tick data. Details are published on the TAIFEX website under "Market Data &gt; Daily Market Report &gt; Block Trade &gt; Negotiation": trades in the regular trading session count toward the regular session (position), and after-hours trades count toward that trading day's after-hours session (after_market).</li>
+</ul>
 </details>
 <details class="note">
 <summary>Futures ticks: trading-day attribution of after-hours ticks</summary>
