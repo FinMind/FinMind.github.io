@@ -3761,6 +3761,12 @@
 <li>已逐日比對筆數與成交量後上線；2018 全年臺股期貨 TX 逐筆資料亦已與交易所原始資料逐列比對，完全一致</li>
 </ul>
 </li>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockinstitutionalinvestorsbuysell">個股三大法人買賣表 TaiwanStockInstitutionalInvestorsBuySell</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockinstitutionalinvestorsbuysellwide">個股三大法人買賣表（寬表）TaiwanStockInstitutionalInvestorsBuySellWide</a>：上櫃 <strong>2017-12-18 ~ 2018-01-12</strong>（19 個交易日）的 <code>Foreign_Dealer_Self</code>（外資自營商）有誤，已修正。<strong>曾下載或查詢過這段期間上櫃資料的使用者請重新取得資料</strong><ul>
+<li>問題：上櫃當時尚未單獨揭露外資自營商（2018-01-15 起才拆分），但此期間約 380 檔上櫃股票的 <code>Foreign_Dealer_Self</code> 被誤植為與 <code>Foreign_Investor</code> 相同的數值，加總各法人別時外資會被重複計算</li>
+<li>修正後此期間上櫃的 <code>Foreign_Dealer_Self</code> 買進／賣出皆為 0；另 2018-01-12 有 7 檔上櫃股票的投信買賣股數一併校正為官方數值</li>
+<li>已逐日比對官方公告；上市股票及其他期間不受影響</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-09-19">2026-09-19<a class="headerlink" href="#2026-09-19" title="Permanent link">&para;</a></h4>
 <ul>

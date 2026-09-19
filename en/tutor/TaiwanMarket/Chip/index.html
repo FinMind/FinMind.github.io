@@ -3141,7 +3141,7 @@
 <tr>
 <td><code>Foreign_Dealer_Self</code></td>
 <td>Foreign dealer self</td>
-<td>from 2018-01-15</td>
+<td>from 2017-12-18 (TWSE), 2018-01-15 (TPEx)</td>
 </tr>
 <tr>
 <td><code>Investment_Trust</code></td>
@@ -3167,7 +3167,8 @@
 </table>
 <ul>
 <li>From <strong>2014-12-01</strong> the combined <code>Dealer</code> was split into <code>Dealer_self</code> (proprietary) and <code>Dealer_Hedging</code> (hedging). For TWSE / TPEx stocks after 2014-12-01 there is therefore <strong>no <code>Dealer</code> row at all</strong>; the values live in <code>Dealer_self</code> and <code>Dealer_Hedging</code>.</li>
-<li>From <strong>2018-01-15</strong>, <code>Foreign_Dealer_Self</code> (foreign dealer self) was split out from foreign investors.</li>
+<li>From <strong>2017-12-18 (TWSE) / 2018-01-15 (TPEx)</strong>, <code>Foreign_Dealer_Self</code> (foreign dealer self) was split out from foreign investors; before that, <code>Foreign_Investor</code> is the foreign total (including foreign dealer self).</li>
+<li>Exception: TPEx stocks between <strong>2017-12-18 and 2018-01-12</strong> still have a <code>Foreign_Dealer_Self</code> row whose <code>buy</code> / <code>sell</code> are always 0 (TPEx had not split the category yet); it does not represent actual trades.</li>
 <li>For a continuous "dealer total" across eras, sum <code>Dealer + Dealer_self + Dealer_Hedging</code> (only one group has values in any era, so there is no double counting).</li>
 <li><strong>Emerging market</strong> stocks keep the combined <code>Dealer</code> and only the net (buy minus sell) is published, so <code>buy</code> / <code>sell</code> here are reconstructed from the net (net buy goes to <code>buy</code>, net sell goes to <code>sell</code>) and one side is always 0.</li>
 <li>Even in the new era, <code>Foreign_Dealer_Self</code> is 0 on both <code>buy</code> and <code>sell</code> for most stocks on most days — that means the stock genuinely had no foreign-dealer-self trades that day; it is a real value, not a gap.</li>
@@ -3504,14 +3505,14 @@
 </tr>
 <tr>
 <td><code>Foreign_Dealer_Self</code> (foreign dealer self)</td>
-<td><strong>new era</strong> (from 2018-01-15)</td>
+<td><strong>new era</strong> (from 2017-12-18 TWSE, 2018-01-15 TPEx)</td>
 <td><code>0</code> before</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>From <strong>2014-12-01</strong>, the combined <code>Dealer</code> was split into <code>Dealer_self</code> (proprietary) and <code>Dealer_Hedging</code> (hedging). For TWSE / TPEx stocks after 2014-12-01, <code>Dealer_buy</code> / <code>Dealer_sell</code> are therefore <strong>always 0</strong>; the values live in <code>Dealer_self_buy</code> / <code>Dealer_self_sell</code> and <code>Dealer_Hedging_buy</code> / <code>Dealer_Hedging_sell</code>.</li>
-<li>From <strong>2018-01-15</strong>, <code>Foreign_Dealer_Self</code> was split out from foreign investors.</li>
+<li>From <strong>2017-12-18 (TWSE) / 2018-01-15 (TPEx)</strong>, <code>Foreign_Dealer_Self</code> was split out from foreign investors; before that, <code>Foreign_Investor_buy</code> / <code>Foreign_Investor_sell</code> are the foreign total (including foreign dealer self) and <code>Foreign_Dealer_Self_buy</code> / <code>Foreign_Dealer_Self_sell</code> are 0.</li>
 <li>For a continuous "dealer total" across eras, sum <code>Dealer + Dealer_self + Dealer_Hedging</code> (only one group is non-zero in any era, so there is no double counting).</li>
 <li><strong>Emerging market</strong> stocks keep the combined <code>Dealer</code>, and only the net (buy minus sell) is published, so <code>Dealer_buy</code> / <code>Dealer_sell</code> are reconstructed from the net (net buy goes to buy, net sell goes to sell) and one side is always 0; the same applies to foreign investors and investment trust.</li>
 <li>Even in the new era, <code>Foreign_Dealer_Self_buy</code> / <code>Foreign_Dealer_Self_sell</code> are 0 for most stocks on most days — the stock genuinely had no foreign-dealer-self trades that day; a real value, not a gap.</li>

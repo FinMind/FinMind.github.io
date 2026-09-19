@@ -3761,6 +3761,12 @@
 <li>Every date was verified on both row counts and traded volume before going live; the full-year 2018 TX tick data has also been compared row by row against the exchange's original data and matches exactly</li>
 </ul>
 </li>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockinstitutionalinvestorsbuysell">Institutional Investors Buy/Sell TaiwanStockInstitutionalInvestorsBuySell</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockinstitutionalinvestorsbuysellwide">Institutional Investors Buy/Sell (Wide) TaiwanStockInstitutionalInvestorsBuySellWide</a>: <code>Foreign_Dealer_Self</code> (foreign dealer self) for TPEx stocks between <strong>2017-12-18 and 2018-01-12</strong> (19 trading days) was wrong and has been fixed. <strong>If you downloaded or queried TPEx data for this period before, please fetch it again</strong><ul>
+<li>Issue: TPEx did not report foreign dealer self separately at the time (it was split out from 2018-01-15), but for about 380 TPEx stocks in this period <code>Foreign_Dealer_Self</code> had been filled with the same values as <code>Foreign_Investor</code>, so summing all categories double-counted foreign investors</li>
+<li>After the fix, <code>Foreign_Dealer_Self</code> buy/sell for TPEx stocks in this period are 0; in addition, the investment trust buy/sell shares of 7 TPEx stocks on 2018-01-12 were corrected to the official figures</li>
+<li>Verified day by day against the official data; TWSE stocks and other periods are not affected</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-09-19">2026-09-19<a class="headerlink" href="#2026-09-19" title="Permanent link">&para;</a></h4>
 <ul>
