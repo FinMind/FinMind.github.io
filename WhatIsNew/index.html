@@ -3767,6 +3767,21 @@
 <li>已逐日比對官方公告；上市股票及其他期間不受影響</li>
 </ul>
 </li>
+<li><strong>資料校正公告</strong>：<strong>颱風全日停市日</strong>出現與<strong>次一交易日盤後時段</strong>完全相同的重複資料，已全數移除。<strong>曾下載或查詢過這些日期的使用者請重新取得資料</strong><ul>
+<li>影響日期：<strong>2023-08-03</strong>、<strong>2024-07-24</strong>、<strong>2024-07-25</strong>、<strong>2024-10-02</strong>、<strong>2024-10-03</strong>、<strong>2024-10-31</strong>、<strong>2026-07-10</strong></li>
+<li>影響資料集：<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdaily">期貨日成交資訊 TaiwanFuturesDaily</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondaily">選擇權日成交資訊 TaiwanOptionDaily</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesdealertradingvolumedaily">期貨各卷商每日交易 TaiwanFuturesDealerTradingVolumeDaily</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiondealertradingvolumedaily">選擇權各卷商每日交易 TaiwanOptionDealerTradingVolumeDaily</a></li>
+<li>問題：颱風全日停市時，當日已完成的盤後交易時段依規則改歸屬於<strong>次一交易日</strong>；停市日當下寫入的那份資料在歸屬更正後成為殘留，形成與次一交易日盤後列完全相同的重複。正式歸屬日為次一交易日，停市日本身不應有資料</li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturesinstitutionalinvestorsafterhours-backersponsor">期貨夜盤三大法人買賣 TaiwanFuturesInstitutionalInvestorsAfterHours</a>：<strong>2022-07-24</strong>（週日）有與 2022-07-25 完全相同的重複資料，一併移除</li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstocktradingdate">台股交易日 TaiwanStockTradingDate</a>：<strong>2026-07-10</strong> 先前誤列為交易日，已更正</li>
+<li>逐筆與分 K 資料<strong>不受影響，也不應一併剔除</strong>：這類資料集的 <code>date</code> 為日曆時間，停市日 00:00～04:59 是前一交易日夜盤的真實成交</li>
+</ul>
+</li>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick-backersponsor">期貨交易明細 TaiwanFuturesTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#k-taiwanfutureskbar-sponsor">期貨分K TaiwanFuturesKBar</a>：<strong>2024-04-26</strong> 少 3 筆成交，已重新產製並驗證。<strong>曾下載或查詢過該日的使用者請重新取得資料</strong><ul>
+<li>問題：臺股期貨 TX 202405 於 <strong>15:07:30</strong> 少 3 筆（價格 20163、數量 2），整日由 127,504 筆補回 <strong>127,507 筆</strong>，與交易所原始資料一致</li>
+<li>分K 連帶更正：該日 15:07 這一分鐘的成交量由 490 更正為 <strong>496</strong>，TX 202405 整日成交量 389,496</li>
+<li>其餘日期已抽驗逐筆與分K 的成交量對帳，無同類問題</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-09-19">2026-09-19<a class="headerlink" href="#2026-09-19" title="Permanent link">&para;</a></h4>
 <ul>

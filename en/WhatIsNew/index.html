@@ -3767,6 +3767,21 @@
 <li>Verified day by day against the official data; TWSE stocks and other periods are not affected</li>
 </ul>
 </li>
+<li><strong>Data correction notice</strong>: on <strong>days when the market was closed all day for a typhoon</strong>, rows identical to the <strong>next trading day's after-hours session</strong> were present and have now been removed. <strong>If you downloaded or queried any of these dates, please fetch the data again</strong><ul>
+<li>Affected dates: <strong>2023-08-03</strong>, <strong>2024-07-24</strong>, <strong>2024-07-25</strong>, <strong>2024-10-02</strong>, <strong>2024-10-03</strong>, <strong>2024-10-31</strong>, <strong>2026-07-10</strong></li>
+<li>Affected datasets: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-daily-trading-information-taiwanfuturesdaily">Futures Daily Trading Information TaiwanFuturesDaily</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#options-daily-trading-information-taiwanoptiondaily">Options Daily Trading Information TaiwanOptionDaily</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-daily-trading-volume-by-dealer-taiwanfuturesdealertradingvolumedaily">Futures Daily Trading Volume by Dealer TaiwanFuturesDealerTradingVolumeDaily</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#options-daily-trading-volume-by-dealer-taiwanoptiondealertradingvolumedaily">Options Daily Trading Volume by Dealer TaiwanOptionDealerTradingVolumeDaily</a></li>
+<li>Issue: when the market is closed all day for a typhoon, the after-hours session that had already completed is reassigned by rule to the <strong>next trading day</strong>; the copy written on the closed day itself was left behind after that reassignment, producing rows identical to the next trading day's after-hours rows. The next trading day is the official attribution date, and the closed day itself should carry no data</li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-after-hours-top-three-institutional-investors-trading-taiwanfuturesinstitutionalinvestorsafterhours-available-only-to-backer-sponsor-members">Futures After-Hours Top Three Institutional Investors Trading TaiwanFuturesInstitutionalInvestorsAfterHours</a>: <strong>2022-07-24</strong> (a Sunday) carried rows identical to 2022-07-25; removed as well</li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-trading-date-taiwanstocktradingdate">Taiwan Stock Trading Date TaiwanStockTradingDate</a>: <strong>2026-07-10</strong> was previously listed as a trading day; corrected</li>
+<li>Tick and K-bar datasets are <strong>not affected and should not be filtered out</strong>: their <code>date</code> is a calendar timestamp, so 00:00-04:59 on a closed day are genuine trades from the previous trading day's after-hours session</li>
+</ul>
+</li>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-trading-detail-table-taiwanfuturestick-available-only-to-backer-sponsor-members">Futures Trading Detail TaiwanFuturesTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-minute-kbar-taiwanfutureskbar-available-only-to-sponsor-members">Futures Minute KBar TaiwanFuturesKBar</a>: 3 trades were missing on <strong>2024-04-26</strong>; regenerated and verified. <strong>If you downloaded or queried that date, please fetch the data again</strong><ul>
+<li>Issue: TX 202405 was missing 3 trades at <strong>15:07:30</strong> (price 20163, volume 2); the whole day went from 127,504 back to <strong>127,507</strong> rows, matching the exchange's raw data</li>
+<li>Minute K-bar corrected accordingly: volume for the 15:07 minute went from 490 to <strong>496</strong>; TX 202405 whole-day volume is 389,496</li>
+<li>Other dates were spot-checked by reconciling tick volume against minute K-bar volume; no similar issue found</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-09-19">2026-09-19<a class="headerlink" href="#2026-09-19" title="Permanent link">&para;</a></h4>
 <ul>
