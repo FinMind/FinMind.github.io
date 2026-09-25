@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-09-20" class="md-skip">
+        <a href="#2026-09-24" class="md-skip">
           跳轉到
         </a>
       
@@ -1462,6 +1462,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-20" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-20
@@ -2750,6 +2759,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-20" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-20
@@ -3753,6 +3771,16 @@
 
   <h1>更新公告</h1>
 
+<h4 id="2026-09-24">2026-09-24<a class="headerlink" href="#2026-09-24" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#etf-taiwanstockactiveetfholding-sponsor">主動式ETF每日持股明細 TaiwanStockActiveETFHolding</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#etftaiwanstockactiveetfholdingchange-sponsor">主動式ETF每日持股異動（買賣）TaiwanStockActiveETFHoldingChange</a>：<strong>2026-02-11</strong>（春節前最後一個交易日）有 11 檔 ETF 缺持股資料，已補齊。<strong>曾下載或查詢過 2026-02-11、2026-02-23 資料的使用者請重新取得資料</strong><ul>
+<li>補齊的 ETF：00980A、00981A、00981D、00982A、00983A、00985A、00988A、00990A、00992A、00994A、00995A</li>
+<li>問題：春節前最後一個交易日的持股清單在春節後第一個交易日才公告，間隔超過收錄時的檢查上限，當日持股因此漏收；已修正，往後遇到長假也能正常收錄</li>
+<li>持股異動同步重算：2026-02-11 補上當日買賣；2026-02-23 原本是與 2026-02-10 相減，改為與 2026-02-11 相減。2026-02-23 部分成份股會出現 <code>buy</code>、<code>sell</code> 皆為 0 的列，代表該成份股當日無異動，可直接略過</li>
+<li>00981D、00983A、00988A、00990A 的 <strong>2026-02-10</strong> 資料來源本身未提供持股，<strong>此日無法補齊</strong></li>
+</ul>
+</li>
+</ul>
 <h4 id="2026-09-20">2026-09-20<a class="headerlink" href="#2026-09-20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick-backersponsor">期貨交易明細 TaiwanFuturesTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#k-taiwanfutureskbar-sponsor">期貨分K TaiwanFuturesKBar</a>：2018 年部分交易日逐筆資料缺漏，已依交易所原始資料重建。<strong>以下日期已重新產製並驗證，曾下載或查詢過這些日期的使用者請重新取得資料</strong><ul>
@@ -3785,6 +3813,7 @@
 </ul>
 <h4 id="2026-09-19">2026-09-19<a class="headerlink" href="#2026-09-19" title="Permanent link">&para;</a></h4>
 <ul>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#taiwanstockdaytradingborrowingfeerate-backersponsor">現股當日沖銷券差借券費率 TaiwanStockDayTradingBorrowingFeeRate</a>：修復相同股票在同一天只有一筆資料的問題（來源資料同一天同一檔股票會有多筆不同借券股數與費率），現已完整保留所有原始資料列，並回補歷史資料</li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#k-taiwanfutureskbar-sponsor">期貨分K TaiwanFuturesKBar</a> 新增 storage_objects 一次取得整日資料的下載方式（只限 sponsorpro 會員）；歷史資料亦可下載</li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick-backersponsor">期貨交易明細 TaiwanFuturesTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanoptiontick-backersponsor">選擇權交易明細 TaiwanOptionTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#k-taiwanfutureskbar-sponsor">期貨分K TaiwanFuturesKBar</a> 查詢須帶 <code>data_id</code>；一次取得整日資料請使用 storage_objects 下載方式</li>
 <li><strong>資料校正公告（補充 2026-09-17）</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#taiwanfuturestick-backersponsor">期貨交易明細 TaiwanFuturesTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Derivative/#k-taiwanfutureskbar-sponsor">期貨分K TaiwanFuturesKBar</a>：<strong>2018-02-13</strong> 有與 2026-09-17 公告相同的夜盤重複問題，先前未列入該次修正範圍，現已修正。<strong>此日期已重新產製並驗證，曾下載或查詢過的使用者請重新取得資料</strong><ul>

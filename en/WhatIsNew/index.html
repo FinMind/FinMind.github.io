@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-09-20" class="md-skip">
+        <a href="#2026-09-24" class="md-skip">
           Skip to content
         </a>
       
@@ -1462,6 +1462,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-20" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-20
@@ -2750,6 +2759,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-20" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-20
@@ -3753,6 +3771,16 @@
 
   <h1>What's New</h1>
 
+<h4 id="2026-09-24">2026-09-24<a class="headerlink" href="#2026-09-24" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#active-etf-daily-holding-taiwanstockactiveetfholding-only-available-for-sponsor-members">Active ETF Daily Holding TaiwanStockActiveETFHolding</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#active-etf-daily-holding-change-taiwanstockactiveetfholdingchange-only-available-for-sponsor-members">Active ETF Daily Holding Change TaiwanStockActiveETFHoldingChange</a>: holdings for 11 ETFs were missing on <strong>2026-02-11</strong> (the last trading day before the Lunar New Year holiday) and have been filled in. <strong>If you downloaded or queried data for 2026-02-11 or 2026-02-23 before, please fetch it again</strong><ul>
+<li>ETFs filled in: 00980A, 00981A, 00981D, 00982A, 00983A, 00985A, 00988A, 00990A, 00992A, 00994A, 00995A</li>
+<li>Issue: the holdings for the last trading day before the Lunar New Year holiday are only published on the first trading day after the holiday; the gap exceeded a check limit used when collecting the data, so that day was skipped. This has been fixed, and long holidays are now handled correctly</li>
+<li>Holding changes recalculated accordingly: 2026-02-11 now has that day's buys and sells; 2026-02-23 was previously computed against 2026-02-10 and is now computed against 2026-02-11. On 2026-02-23 some components show rows with both <code>buy</code> and <code>sell</code> equal to 0, meaning no change on that day; these rows can be ignored</li>
+<li>For 00981D, 00983A, 00988A and 00990A, the data source does not provide holdings for <strong>2026-02-10</strong>, so <strong>that date cannot be filled in</strong></li>
+</ul>
+</li>
+</ul>
 <h4 id="2026-09-20">2026-09-20<a class="headerlink" href="#2026-09-20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-trading-detail-table-taiwanfuturestick-available-only-to-backer-sponsor-members">Futures tick TaiwanFuturesTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-minute-kbar-taiwanfutureskbar-available-only-to-sponsor-members">Futures Minute KBar TaiwanFuturesKBar</a>: some 2018 trading days were missing part of their tick data and have been rebuilt from the exchange's original data. <strong>The dates below were regenerated and verified; if you downloaded or queried them before, please fetch the data again</strong><ul>
@@ -3785,6 +3813,7 @@
 </ul>
 <h4 id="2026-09-19">2026-09-19<a class="headerlink" href="#2026-09-19" title="Permanent link">&para;</a></h4>
 <ul>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwanstockdaytradingborrowingfeerate-backersponsor">Day Trading Short-Selling Borrowing Fee Rate TaiwanStockDayTradingBorrowingFeeRate</a>: fixed an issue where each stock only had one row per day (the source data can have multiple rows per stock per day with different borrowed share counts and fee rates); all original rows are now preserved, and historical data has been backfilled</li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-minute-kbar-taiwanfutureskbar-available-only-to-sponsor-members">Futures Minute KBar TaiwanFuturesKBar</a> now supports storage_objects whole-day bulk download (sponsorpro members only); historical data is also available for download</li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-trading-detail-table-taiwanfuturestick-available-only-to-backer-sponsor-members">Futures tick TaiwanFuturesTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#options-trading-detail-table-taiwanoptiontick-available-only-to-backer-sponsor-members">Options tick TaiwanOptionTick</a> and <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-minute-kbar-taiwanfutureskbar-available-only-to-sponsor-members">Futures Minute KBar TaiwanFuturesKBar</a> require <code>data_id</code>; to fetch a whole day's data at once, use storage_objects bulk download</li>
 <li><strong>Data correction notice (supplement to 2026-09-17)</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-trading-detail-table-taiwanfuturestick-available-only-to-backer-sponsor-members">Futures tick TaiwanFuturesTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Derivative/#futures-minute-kbar-taiwanfutureskbar-available-only-to-sponsor-members">Futures Minute KBar TaiwanFuturesKBar</a>: <strong>2018-02-13</strong> had the same duplicated after-hours data as described in the 2026-09-17 notice but was not included in that fix; it has now been fixed. <strong>This date was regenerated and verified; if you downloaded or queried it before, please fetch the data again</strong><ul>
