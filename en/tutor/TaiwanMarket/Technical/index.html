@@ -4741,6 +4741,11 @@
 <ul>
 <li>Data range: 2005-01-01 ~ now</li>
 </ul>
+<details class="note">
+<summary>Scope of cumulative trades</summary>
+<p>Cumulative trades (<code>TotalDealOrder</code>, <code>TotalDealVolume</code>, <code>TotalDealMoney</code>) only count regular trades on the centralized market and <strong>exclude odd-lot, block, after-hours fixed-price, auction and tender trades</strong>, so the closing total is slightly lower than the daily market volume, and the gap widens on days with large block trades. Volume is in lots (1,000 shares) and value in millions of NTD.</p>
+<p>Interval: one row per minute until 2011-01-14, every 15 seconds from 2011-01-17, every 10 seconds from 2014-02-24, and every 5 seconds from 2014-12-29.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="33:3"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><input id="__tabbed_33_2" name="__tabbed_33" type="radio" /><input id="__tabbed_33_3" name="__tabbed_33" type="radio" /><div class="tabbed-labels"><label for="__tabbed_33_1">Package</label><label for="__tabbed_33_2">Python-request</label><label for="__tabbed_33_3">R</label></div>

@@ -4741,6 +4741,11 @@
 <ul>
 <li>資料區間：2005-01-01 ~ now</li>
 </ul>
+<details class="note">
+<summary>累積成交的統計範圍</summary>
+<p>累積成交（<code>TotalDealOrder</code>、<code>TotalDealVolume</code>、<code>TotalDealMoney</code>）只統計集中市場一般交易，<strong>不含零股、鉅額、盤後定價、拍賣及標購</strong>，因此收盤累計會略低於每日市場成交量，在有大量鉅額交易的日子差距會明顯放大。數量單位為張、金額單位為百萬元。</p>
+<p>資料間隔：2011-01-14 以前每分鐘一筆，2011-01-17 起每 15 秒，2014-02-24 起每 10 秒，2014-12-29 起每 5 秒。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="33:3"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><input id="__tabbed_33_2" name="__tabbed_33" type="radio" /><input id="__tabbed_33_3" name="__tabbed_33" type="radio" /><div class="tabbed-labels"><label for="__tabbed_33_1">Package</label><label for="__tabbed_33_2">Python-request</label><label for="__tabbed_33_3">R</label></div>

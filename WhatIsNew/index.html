@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-09-24" class="md-skip">
+        <a href="#2026-09-25" class="md-skip">
           跳轉到
         </a>
       
@@ -1462,6 +1462,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-25
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-24" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-24
@@ -2759,6 +2768,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-09-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-09-25
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-09-24" class="md-nav__link">
     <span class="md-ellipsis">
       2026-09-24
@@ -3771,6 +3789,32 @@
 
   <h1>更新公告</h1>
 
+<h4 id="2026-09-25">2026-09-25<a class="headerlink" href="#2026-09-25" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpricetick-backersponsor">台灣股價歷史逐筆資料表 TaiwanStockPriceTick</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#k-taiwanstockkbar-sponsor">台股分 K 資料表 TaiwanStockKBar</a>：部分日期有重複或非實際成交的紀錄，已依證交所、櫃買中心公布的日成交量與盤後定價資料逐檔比對後移除，分 K 同步重新計算。<strong>曾下載或查詢過以下日期的使用者請重新取得資料</strong><ul>
+<li><strong>2018-12-07 ~ 2019-09-27</strong>（190 個交易日）：同一筆成交多出一筆毫秒為 <code>.000</code> 的重複紀錄，共約 19.8 萬筆，已移除</li>
+<li><strong>13:30:00 收盤撮合列重複</strong>：部分日期同一檔股票的收盤撮合出現多筆完全相同的紀錄（例如 2022-07-20 ~ 2022-10-18 的上櫃股票），現在每檔每日只保留一筆</li>
+<li><strong>2020-01-02 ~ 2020-04-28</strong>：部分個股有重複收錄的成交，或多出非實際成交的 13:30:00 收盤列、14:30:00 盤後定價列，已移除</li>
+<li><strong>2025-06-16</strong>：多數股票多出一筆與 13:30:00 收盤列相同的 14:30:00 紀錄（並非實際的盤後定價成交），已移除</li>
+<li>分 K：<strong>2020-03-06</strong>、<strong>2021-07-27</strong> 有少數分 K 成交量為負值；<strong>2020-03-23 ~ 2023-07-13</strong> 部分分 K 的開高低收或最低價為 0。均來自原始資料中的非實際成交紀錄，已排除後重新計算</li>
+<li>官方日成交量包含零股與鉅額交易，逐筆量合計略低於官方日成交量屬正常現象</li>
+</ul>
+</li>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#5-taiwanstockevery5secondsindex-backersponsor">每 5 秒指數統計 TaiwanStockEvery5SecondsIndex</a>：<ul>
+<li>上櫃各指數 13:30:00 原本記錄的是收盤集合競價前最後一個揭示值，已全期間更正為官方收盤指數，與上市指數一致</li>
+<li><strong>2026-06-02</strong> 多出 7 條舊制名稱的序列（其中 <code>CompositAveragePrice</code>、<code>IndustryAveragePrice</code> 整天為 0），已移除</li>
+<li><strong>2007-07-02 ~ 2014-01-03</strong> 上櫃航運類的名稱前多一個 Tab 字元，已統一為 <code>ShippingTransportation</code></li>
+<li><strong>2005-01-03 ~ 2008-09-18</strong> 部分上市指數同時存在新舊兩個名稱（例如 <code>TSEWeighted</code> 與 <code>TAIEX</code>、<code>Electron</code> 與 <code>Electronic</code>，數值相同），已只保留現行名稱；<strong>2005-09-16</strong> 原本只有舊名稱，已改為現行名稱，當日 TAIEX 分 K 一併補齊</li>
+<li><strong>2017-05-08</strong> 上櫃各指數的原始資料由 09:00:05 開始，沒有 09:00:00 這一點，無法補齊</li>
+</ul>
+</li>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#5-taiwanstockstatisticsoforderbookandtrade">每5秒委託成交統計 TaiwanStockStatisticsOfOrderBookAndTrade</a>：<strong>2023-08-04</strong> 09:00:00 的累積成交誤為前一交易日的收盤累計值，已更正為 0；<strong>2011-01-21</strong> 整日資料誤為其他日期的資料，已更正。另有部分日期同一時間點存有重複資料，已一併清除</li>
+<li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockprice">股價日成交資訊 TaiwanStockPrice</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#taiwanstockpriceadj-backersponsor">台灣還原股價 TaiwanStockPriceAdj</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#k-taiwanstockweekprice-backersponsor">台股週 K 資料表 TaiwanStockWeekPrice</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Technical/#k-taiwanstockmonthprice-backersponsor">台股月 K 資料表 TaiwanStockMonthPrice</a>：<ul>
+<li>上櫃股票在 <strong>2015-11-23</strong>、<strong>2020-03-09</strong>、<strong>2020-03-10</strong>、<strong>2020-04-24</strong> 的成交股數、成交金額、成交筆數未計入盤後定價與零股交易，已更正為與其他交易日一致的全日口徑；開高低收與漲跌不受影響</li>
+<li>還原股價同步更新；上櫃週 K、月 K（2020-03 ~ 2024-12）已依日成交資料重新計算</li>
+</ul>
+</li>
+</ul>
 <h4 id="2026-09-24">2026-09-24<a class="headerlink" href="#2026-09-24" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>資料校正公告</strong>：<a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#etf-taiwanstockactiveetfholding-sponsor">主動式ETF每日持股明細 TaiwanStockActiveETFHolding</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Chip/#etftaiwanstockactiveetfholdingchange-sponsor">主動式ETF每日持股異動（買賣）TaiwanStockActiveETFHoldingChange</a>：<strong>2026-02-11</strong>（春節前最後一個交易日）有 11 檔 ETF 缺持股資料，已補齊。<strong>曾下載或查詢過 2026-02-11、2026-02-23 資料的使用者請重新取得資料</strong><ul>
