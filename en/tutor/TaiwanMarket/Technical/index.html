@@ -4118,15 +4118,16 @@
 <h4 id="taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Stock Historical Tick Data Table TaiwanStockPriceTick (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer, sponsor</a> members)<a class="headerlink" href="#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members" title="Permanent link">&para;</a></h4>
 <p>(Due to the large data volume, each request only provides one stock's data for one day.)</p>
 <ul>
-<li>Data range: 2019-01-01 ~ now.</li>
+<li>Data range: 2018-12-07 ~ now.</li>
 <li>Providing the dataset, stock_id, and start_date parameters returns data for that day.</li>
 <li>Data update time: <strong>Monday to Friday 15:30</strong>. The actual update time is based on the API data.</li>
-<li>Some data is missing on this date: 2019-02-20.</li>
+<li>Some data is missing on these dates: 2018-12-22, 2019-02-20, 2019-02-21, 2019-02-22. In addition, 2019-05-16 only has data for a small number of ETFs.</li>
 <li>Enabling Async significantly reduces the data update time. In a Colab test, downloading 2,236 stocks took only 3 minutes 40 seconds.</li>
 </ul>
 <details class="note">
-<summary>Historical limitation of TickType in 2019</summary>
-<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: buyer-initiated (trade at ask), 2: seller-initiated (trade at bid)) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
+<summary>TickType has been corrected across the full history (2018-12-07 ~ 2023-03-10)</summary>
+<p>Before 2023-03-13, trades whose side could not be determined were all labelled 1 (buyer-initiated), which made the buyer-initiated share noticeably too high. Every trading day in this range has been regenerated using the same rule applied from 2023-03-13 onward. If you downloaded any of these dates before, please fetch the data again.</p>
+<p><strong>For dates before 2021-06-22, about 8% ~ 10% of trades have TickType 0 (undetermined)</strong>, because the source data itself carries no side information for those trades, while the old version labelled them all as buyer-initiated. If you group statistics by TickType, treat 0 separately rather than merging it into either side.</p>
 </details>
 <details class="note">
 <summary>The unit of <code>volume</code> differs by market: lots for TWSE / TPEx, shares for Emerging</summary>
@@ -4297,14 +4298,15 @@
 <h4 id="fetch-all-data-for-a-specific-date-at-once-available-only-to-sponsorpro-members">Fetch all data for a specific date at once (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> members)<a class="headerlink" href="#fetch-all-data-for-a-specific-date-at-once-available-only-to-sponsorpro-members" title="Permanent link">&para;</a></h4>
 <p>(Due to the large data volume, each request only provides one day's data.)</p>
 <ul>
-<li>Data range: 2019-01-01 ~ now.</li>
+<li>Data range: 2018-12-07 ~ now.</li>
 <li>Providing the dataset and date parameters returns data for that day.</li>
 <li>Data update time: <strong>Monday to Friday 15:30</strong>. The actual update time is based on the API data.</li>
-<li>Some data is missing on this date: 2019-02-20.</li>
+<li>Some data is missing on these dates: 2018-12-22, 2019-02-20, 2019-02-21, 2019-02-22. In addition, 2019-05-16 only has data for a small number of ETFs.</li>
 </ul>
 <details class="note">
-<summary>Historical limitation of TickType in 2019</summary>
-<p>For all of 2019 (2019-01-01 ~ 2019-12-31), the TickType column is always 1, so buy/sell-side classification is not available for that year. Complete TickType values (0: unknown, 1: buyer-initiated (trade at ask), 2: seller-initiated (trade at bid)) are available from 2020-01-02 onward. Do not use TickType for buy/sell-side analysis on 2019 data.</p>
+<summary>TickType has been corrected across the full history (2018-12-07 ~ 2023-03-10)</summary>
+<p>Before 2023-03-13, trades whose side could not be determined were all labelled 1 (buyer-initiated), which made the buyer-initiated share noticeably too high. Every trading day in this range has been regenerated using the same rule applied from 2023-03-13 onward. If you downloaded any of these dates before, please fetch the data again.</p>
+<p><strong>For dates before 2021-06-22, about 8% ~ 10% of trades have TickType 0 (undetermined)</strong>, because the source data itself carries no side information for those trades, while the old version labelled them all as buyer-initiated. If you group statistics by TickType, treat 0 separately rather than merging it into either side.</p>
 </details>
 <details class="note">
 <summary>The unit of <code>volume</code> differs by market: lots for TWSE / TPEx, shares for Emerging</summary>
@@ -4393,8 +4395,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">167</td>
-<td style="text-align: left;">09:00:03</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:03.794</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr>
 <td style="text-align: right;">1</td>
@@ -4402,7 +4404,7 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.90</td>
 <td style="text-align: right;">11</td>
-<td style="text-align: left;">09:00:08</td>
+<td style="text-align: left;">09:00:08.813</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr>
@@ -4411,8 +4413,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">09:00:18</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:18.852</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr>
 <td style="text-align: right;">3</td>
@@ -4420,8 +4422,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">31</td>
-<td style="text-align: left;">09:00:23</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:23.871</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr>
 <td style="text-align: right;">4</td>
@@ -4429,8 +4431,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: left;">09:00:28</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:28.890</td>
+<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>

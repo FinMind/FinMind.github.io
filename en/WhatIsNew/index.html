@@ -3814,6 +3814,19 @@
 <li>Adjusted prices were updated accordingly; TPEx weekly and monthly K (2020-03 ~ 2024-12) were recalculated from the daily data</li>
 </ul>
 </li>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Historical Tick-Level Stock Price Table TaiwanStockPriceTick</a>: the <code>TickType</code> (buy/sell side) labelling has been corrected across <strong>1,028 trading days</strong> from <strong>2018-12-07 to 2023-03-10</strong>. <strong>If you downloaded or queried data in this period before, please fetch it again</strong><ul>
+<li>Issue: before 2023-03-13, trades whose side the source could not determine were all labelled 1 (buyer-initiated), which made the buyer-initiated share noticeably too high — up to 0.82 on some dates, returning to around 0.50 after the fix</li>
+<li>The corrected data uses the same rule applied from 2023-03-13 onward. <code>TickType</code>: 1 = buyer-initiated (trade at ask), 2 = seller-initiated (trade at bid), 0 = undetermined</li>
+<li><strong>For dates before 2021-06-22, about 8% ~ 10% of trades have <code>TickType</code> 0 (undetermined)</strong>, because the source data itself carries no side information for them. If you group statistics by <code>TickType</code>, treat 0 separately rather than merging it into either side</li>
+<li>About 1.52 million rows (0.15% of the period, spread over 187 trading days) could not be retrieved from the source again; the original rows and their original labels were kept so that no trade record is lost</li>
+</ul>
+</li>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Historical Tick-Level Stock Price Table TaiwanStockPriceTick</a>: <strong>2018-12-10</strong> contained a full duplicate of the whole day and has been regenerated. <strong>If you ran any analysis on that date, please recompute it</strong><ul>
+<li>Issue: almost every trade that day had an identical second copy, making the day's traded volume about twice the actual figure; after regeneration, per-stock volume was verified against the official daily volume</li>
+<li>The whole range 2018-12-07 to 2022-09-30 was checked for the same pattern; this is the only affected day</li>
+</ul>
+</li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Historical Tick-Level Stock Price Table TaiwanStockPriceTick</a>: data range corrected to <strong>2018-12-07 ~ now</strong> (previously listed as 2019-01-01); the known missing dates are now listed as <strong>2018-12-22, 2019-02-20, 2019-02-21, 2019-02-22</strong>, and <strong>2019-05-16</strong> only has data for a small number of ETFs</li>
 </ul>
 <h4 id="2026-09-24">2026-09-24<a class="headerlink" href="#2026-09-24" title="Permanent link">&para;</a></h4>
 <ul>

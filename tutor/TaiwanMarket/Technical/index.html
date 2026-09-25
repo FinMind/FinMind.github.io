@@ -4118,15 +4118,16 @@
 <h4 id="taiwanstockpricetick-backersponsor">台灣股價歷史逐筆資料表 TaiwanStockPriceTick (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer、sponsor</a> 會員使用)<a class="headerlink" href="#taiwanstockpricetick-backersponsor" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天一檔個股資料)</p>
 <ul>
-<li>資料區間：2019-01-01 ~ now。</li>
+<li>資料區間：2018-12-07 ~ now。</li>
 <li>輸入 dataset、stock_id、start_date 參數，會回傳 start_date 當天資料。</li>
 <li>資料更新時間 <strong>星期一至五 15:30</strong>，實際更新時間以 API 資料為主。</li>
-<li>部分資料缺失，缺失日期為：2019-02-20。</li>
+<li>部分資料缺失，缺失日期為：2018-12-22、2019-02-20、2019-02-21、2019-02-22；另 2019-05-16 僅有少數 ETF 的資料。</li>
 <li>開啟 Async 功能，可大幅縮短資料更新時間，colab 實測 2236 檔股票，只需 3 分 40 秒即可完成下載。</li>
 </ul>
 <details class="note">
-<summary>2019 年 TickType 的歷史資料限制</summary>
-<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（外盤成交，買方主動）、2（內盤成交，賣方主動）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
+<summary>TickType 內外盤標記已全面修正（2018-12-07 ~ 2023-03-10）</summary>
+<p>2023-03-13 以前的資料，舊版把無法判定內外盤的成交一律標記為 1（外盤），使外盤占比明顯偏高。此區間的全部交易日已重新產製，改用與 2023-03-13 之後一致的判定規則。若您先前已下載過這些日期的資料，請重新取得。</p>
+<p><strong>2021-06-22 以前的日期，約 8% ~ 10% 的成交其 TickType 為 0（無法判定）</strong>，這是因為來源資料本身對這些成交沒有內外盤資訊，而舊版一律歸為外盤。若您以 TickType 分類統計，請將 0 單獨處理，不要併入外盤或內盤。</p>
 </details>
 <details class="note">
 <summary><code>volume</code> 單位依市場別而異：上市 / 上櫃為「張」、興櫃為「股」</summary>
@@ -4297,14 +4298,15 @@
 <h4 id="sponsorpro">一次拿特定日期，所有資料 (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> 會員使用)<a class="headerlink" href="#sponsorpro" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <ul>
-<li>資料區間：2019-01-01 ~ now。</li>
+<li>資料區間：2018-12-07 ~ now。</li>
 <li>輸入 dataset、date 參數，會回傳 date 當天資料。</li>
 <li>資料更新時間 <strong>星期一至五 15:30</strong>，實際更新時間以 API 資料為主。</li>
-<li>部分資料缺失，缺失日期為：2019-02-20。</li>
+<li>部分資料缺失，缺失日期為：2018-12-22、2019-02-20、2019-02-21、2019-02-22；另 2019-05-16 僅有少數 ETF 的資料。</li>
 </ul>
 <details class="note">
-<summary>2019 年 TickType 的歷史資料限制</summary>
-<p>2019 年（2019-01-01 ~ 2019-12-31）全年資料的 TickType 皆為 1，該年度無法用於判別內外盤；自 2020-01-02 起，TickType 才有 0（無法判斷）、1（外盤成交，買方主動）、2（內盤成交，賣方主動）的完整標記。使用 2019 年資料時，請勿以 TickType 進行內外盤分析。</p>
+<summary>TickType 內外盤標記已全面修正（2018-12-07 ~ 2023-03-10）</summary>
+<p>2023-03-13 以前的資料，舊版把無法判定內外盤的成交一律標記為 1（外盤），使外盤占比明顯偏高。此區間的全部交易日已重新產製，改用與 2023-03-13 之後一致的判定規則。若您先前已下載過這些日期的資料，請重新取得。</p>
+<p><strong>2021-06-22 以前的日期，約 8% ~ 10% 的成交其 TickType 為 0（無法判定）</strong>，這是因為來源資料本身對這些成交沒有內外盤資訊，而舊版一律歸為外盤。若您以 TickType 分類統計，請將 0 單獨處理，不要併入外盤或內盤。</p>
 </details>
 <details class="note">
 <summary><code>volume</code> 單位依市場別而異：上市 / 上櫃為「張」、興櫃為「股」</summary>
@@ -4393,8 +4395,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">167</td>
-<td style="text-align: left;">09:00:03</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:03.794</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr>
 <td style="text-align: right;">1</td>
@@ -4402,7 +4404,7 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.90</td>
 <td style="text-align: right;">11</td>
-<td style="text-align: left;">09:00:08</td>
+<td style="text-align: left;">09:00:08.813</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr>
@@ -4411,8 +4413,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">09:00:18</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:18.852</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr>
 <td style="text-align: right;">3</td>
@@ -4420,8 +4422,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">31</td>
-<td style="text-align: left;">09:00:23</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:23.871</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr>
 <td style="text-align: right;">4</td>
@@ -4429,8 +4431,8 @@
 <td style="text-align: right;">0050</td>
 <td style="text-align: right;">75.85</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: left;">09:00:28</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">09:00:28.890</td>
+<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>
