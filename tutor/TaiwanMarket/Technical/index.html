@@ -4315,6 +4315,10 @@
 <p><strong>範例</strong>：1294 漢田生技的 <code>emerging</code> 列 <code>date</code> 停在 2024-09-25、<code>tpex</code> 列 <code>date</code> 為當日，代表它現在是上櫃股，<code>volume</code> 單位為「張」；1260 富味鄉只有 <code>emerging</code> 一列且 <code>date</code> 為當日，仍是興櫃股，<code>volume</code> 單位為「股」。</p>
 <p>另外，拿逐筆資料與 <code>TaiwanStockPrice</code> 的日成交量對帳時請注意，上市 / 上櫃個股的日成交量<strong>包含鉅額交易</strong>（見 <code>TaiwanStockBlockTrade</code>），而逐筆資料不含鉅額交易，兩者不會直接相等。</p>
 </details>
+<details class="note">
+<summary>整日資料的排列順序</summary>
+<p>整日資料依 <code>stock_id</code>、<code>Time</code> 排序；同一時間有多筆成交時，依實際成交先後排列。可以直接依檔案順序取每檔股票的第一筆（開盤）或某個時間點前的最後一筆成交。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="27:3"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><input id="__tabbed_27_3" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Package</label><label for="__tabbed_27_2">Python-request</label><label for="__tabbed_27_3">R</label></div>

@@ -4315,6 +4315,10 @@
 <p><strong>Example</strong>: for 1294, the <code>emerging</code> row has <code>date</code> 2024-09-25 while the <code>tpex</code> row carries the current date, so it is a TPEx stock today and its <code>volume</code> is in lots; 1260 has only an <code>emerging</code> row carrying the current date, so it is still an Emerging stock and its <code>volume</code> is in shares.</p>
 <p>Also note, when reconciling tick data against the daily volume in <code>TaiwanStockPrice</code>: for TWSE / TPEx stocks the daily volume <strong>includes block trades</strong> (see <code>TaiwanStockBlockTrade</code>), while tick data does not, so the two will not match exactly.</p>
 </details>
+<details class="note">
+<summary>Row order of the whole-day files</summary>
+<p>The whole-day files are sorted by <code>stock_id</code> and <code>Time</code>; when several trades share the same time, they are ordered by actual execution sequence. You can take each stock's first row (the open) or its last trade before a given time directly in file order.</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="27:3"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><input id="__tabbed_27_3" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Package</label><label for="__tabbed_27_2">Python-request</label><label for="__tabbed_27_3">R</label></div>
