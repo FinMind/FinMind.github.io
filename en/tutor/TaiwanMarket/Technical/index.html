@@ -6109,6 +6109,14 @@
 <ul>
 <li>Data range: 2005-01-03 ~ now</li>
 </ul>
+<details class="note">
+<summary>13:30:00 closing value, index name history and known gaps</summary>
+<ul>
+<li><strong>13:30:00 is the official closing index</strong>: for both TWSE and TPEx indices, the 13:30:00 value is the day's closing index. After TPEx indices enter the closing auction at 13:25, the published intraday value stops changing, so 13:25 ~ 13:29:55 stay at the same value and 13:30:00 is the closing index.</li>
+<li><strong>TPEx chemical index name</strong>: <code>ChemicalEngineering</code> from 2007-07-02 to 2025-09-12 and <code>Chemical</code> from 2025-09-15; they are the same index, so please combine both names when querying across periods.</li>
+<li><strong>Known gap</strong>: on 2017-05-08 the raw TPEx index data starts at 09:00:05, with no 09:00:00 point.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="51:4"><input checked="checked" id="__tabbed_51_1" name="__tabbed_51" type="radio" /><input id="__tabbed_51_2" name="__tabbed_51" type="radio" /><input id="__tabbed_51_3" name="__tabbed_51" type="radio" /><input id="__tabbed_51_4" name="__tabbed_51" type="radio" /><div class="tabbed-labels"><label for="__tabbed_51_1">Package</label><label for="__tabbed_51_2">Python-request</label><label for="__tabbed_51_3">R</label><label for="__tabbed_51_4">Package-Async</label></div>
