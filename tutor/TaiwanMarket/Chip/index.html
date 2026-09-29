@@ -5602,6 +5602,17 @@
 <li>參考：<a href="https://www.tpex.org.tw/web/emergingstock/trading_rule/rule.php?l=zh-tw">櫃買中心〈興櫃股票交易制度〉</a>。</li>
 </ul>
 </details>
+<details class="note">
+<summary>同一股票同一天，分點買進合計與賣出合計不一定相等</summary>
+<p>來源資料本身即有部分個股的分點買進合計與賣出合計不相等，FinMind 的資料與來源一致，<strong>並非資料缺漏或處理錯誤</strong>，請勿自行平衡或補值。</p>
+<ul>
+<li>每個交易日約有數十檔個股出現，幾乎都是上市股票。</li>
+<li>差額多為整張，少數為零股；多數情況只有一邊短少，少數情況兩邊都短少。</li>
+<li>與鉅額交易無關：本資料集不含鉅額交易，出現差額的個股當日多半沒有鉅額交易。</li>
+<li>分點買賣超為「已揭露部分」的統計，全市場加總不一定為零。</li>
+<li>若需要當日一般交易（不含鉅額）的總量，建議以 <code>TaiwanStockPrice</code> 的 <code>Trading_Volume</code> 減去 <a href="#taiwanstockblocktrade-sponsor">TaiwanStockBlockTrade</a> 的鉅額成交量為準，而不是以分點合計反推。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="37:4"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><input id="__tabbed_37_3" name="__tabbed_37" type="radio" /><input id="__tabbed_37_4" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">Package</label><label for="__tabbed_37_2">Package-Async</label><label for="__tabbed_37_3">Python-request</label><label for="__tabbed_37_4">R</label></div>

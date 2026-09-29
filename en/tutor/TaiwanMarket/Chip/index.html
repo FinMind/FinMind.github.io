@@ -5602,6 +5602,17 @@
 <li>Reference: <a href="https://www.tpex.org.tw/web/emergingstock/trading_rule/rule.php?l=zh-tw">TPEx — Emerging Stock Trading System</a>.</li>
 </ul>
 </details>
+<details class="note">
+<summary>Total branch buy and total branch sell for the same stock and day may not be equal</summary>
+<p>In the source data, total branch buy and total branch sell are not equal for some stocks. FinMind's data matches the source, so this is <strong>not missing data or a processing error</strong>; please do not balance or fill the difference yourself.</p>
+<ul>
+<li>It occurs for a few dozen stocks per trading day, almost all of them listed (TWSE) stocks.</li>
+<li>The difference is usually whole board lots, occasionally odd lots; in most cases only one side is short, occasionally both sides are.</li>
+<li>It is unrelated to block trades: this dataset excludes block trades, and most affected stocks have no block trade that day.</li>
+<li>Branch net buy/sell reflects only the disclosed portion, so it does not necessarily sum to zero across the market.</li>
+<li>To get the day's regular trading volume (excluding block trades), use <code>Trading_Volume</code> from <code>TaiwanStockPrice</code> minus the block trade volume from <a href="#block-trade-daily-transactions-taiwanstockblocktrade-only-available-for-sponsor-members">TaiwanStockBlockTrade</a>, rather than deriving it from branch totals.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="37:4"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><input id="__tabbed_37_3" name="__tabbed_37" type="radio" /><input id="__tabbed_37_4" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">Package</label><label for="__tabbed_37_2">Package-Async</label><label for="__tabbed_37_3">Python-request</label><label for="__tabbed_37_4">R</label></div>
