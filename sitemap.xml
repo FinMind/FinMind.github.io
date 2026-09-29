@@ -36,6 +36,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/Donate/"/>
     </url>
     <url>
+        <loc>https://finmind.github.io/Pricing/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/Pricing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/Pricing/"/>
+    </url>
+    <url>
         <loc>https://finmind.github.io/PrivacyPolicy/</loc>
         <lastmod>2026-09-29</lastmod>
         <changefreq>daily</changefreq>
@@ -342,6 +349,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/Donate/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/Donate/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/en/Pricing/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/Pricing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/Pricing/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/en/PrivacyPolicy/</loc>
