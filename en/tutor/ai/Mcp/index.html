@@ -1983,7 +1983,7 @@
 <ul>
 <li>Install uv: <code>winget install --id astral-sh.uv -e</code> (close and reopen PowerShell afterwards so PATH takes effect), then verify with <code>uvx finmind-mcp --help</code>.</li>
 <li>Set the token: <code>$env:FINMIND_TOKEN = "your_token_here"</code> (current window only) or <code>setx FINMIND_TOKEN "your_token_here"</code> (persistent; restart apps to pick it up) — or simply put it in the config file's <code>env</code> block above, which is the most reliable option.</li>
-<li>If your tool (e.g. Claude Desktop) reports the command not found or fails to connect: GUI apps see a different PATH than your terminal. Run <code>where.exe uvx</code> to find the full path (usually <code>C:\Users\&lt;name&gt;\.local\bin\uvx.exe</code>) and use it as <code>command</code> in the config; escape backslashes as <code>\\</code> in JSON.</li>
+<li>If your tool (e.g. Claude Desktop) reports the command not found or fails to connect: GUI apps see a different PATH than your terminal. Run <code>where.exe uvx</code> to find the full path (for a winget install, typically <code>C:\Users\&lt;name&gt;\AppData\Local\Microsoft\WinGet\Links\uvx.exe</code>; use the first line it prints) and use it as <code>command</code> in the config. In JSON, write every backslash as <code>\\</code> (or use forward slashes <code>/</code>) — pasting single backslashes makes the config file invalid JSON.</li>
 </ul>
 <p>For the full walkthrough (pipx route, per-host Windows config paths, troubleshooting), see the <a href="https://github.com/FinMind/FinMind-MCP/blob/master/install/windows.md">Windows installation guide</a>.</p>
 </div>
