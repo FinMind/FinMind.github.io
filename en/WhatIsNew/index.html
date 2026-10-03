@@ -3920,6 +3920,20 @@
 <h4 id="2026-10-04">2026-10-04<a class="headerlink" href="#2026-10-04" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#block-trade-daily-transactions-taiwanstockblocktrade-only-available-for-sponsor-members">Block Trade Daily Transactions TaiwanStockBlockTrade</a> now includes TWSE "stock portfolio" block trades, with historical data backfilled to 2005-04-04; multiple block trades of the same stock on the same day with the same price and volume are now each listed, so identical rows each represent an actual trade</li>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Stock Historical Tick Data Table TaiwanStockPriceTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-minute-k-table-taiwanstockkbar-available-only-to-sponsor-members">Taiwan Stock Minute K Table TaiwanStockKBar</a>: the following issues have been corrected and the data regenerated (both the API and whole-day download files are updated); the minute K has been recalculated accordingly. <strong>If you downloaded or queried data for the dates below, please fetch it again</strong><ul>
+<li><strong>2025-10-01 ~ 2026-07-15</strong>: for some stocks that moved from the emerging market to TWSE/TPEx, the intraday ticks of a day were recorded twice (about 420,000 extra records in the 2025-10 ~ 2026-03 whole-day files); only one copy is now kept. 14:30:00 records of the same stocks that duplicated the 13:30:00 closing row (not actual after-hours fixed-price trades) were removed as well</li>
+<li><strong>2020-02-25 ~ 2020-02-27</strong>: the same trade appeared twice because of different floating-point representations of the price (e.g. 3.47 and 3.4699999999999998); removed</li>
+<li><strong>2019-10-01 ~ 2020-03-20</strong>: some trades were recorded twice (the duplicate placed at the end of the stock's rows); removed</li>
+<li><strong>2022-07-20 ~ 2022-10-18</strong>: mainly TPEx stocks, about 165 per day had an extra non-trade 13:30:00 closing row (price equal to the close, volume copied from the last intraday trade), plus a few 13:30:00 rows with price 0; removed</li>
+<li><strong>13:33:00 delayed-close trades</strong>: on 99 trading days, including 2020-03 ~ 2020-04 and 2022-07 ~ 2022-10, the same delayed-close trade of some stocks appeared multiple times; only one is now kept</li>
+</ul>
+</li>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#index-statistics-every-5-seconds-taiwanstockevery5secondsindex-available-only-to-backer-sponsor-members">Index Statistics Every 5 Seconds TaiwanStockEvery5SecondsIndex</a>: the following issues have been corrected. <strong>If you downloaded or queried the data below, please fetch it again</strong><ul>
+<li>TPEx chemical industry index: named <code>ChemicalEngineering</code> from 2007-07-02 to 2025-09-12, and from 2014-10-01 to 2025-09-12 it coexisted with <code>Chemical</code> (identical values). It is now <code>Chemical</code> for the full history; <strong><code>ChemicalEngineering</code> is no longer provided, please use <code>Chemical</code></strong></li>
+<li><strong>2005-01-03 ~ 2006-12-29</strong> TPEx indices: the frozen pre-close values at 13:31 ~ 13:34 were removed, so the last point of each day is the 13:30:00 close, consistent with 2007 onwards</li>
+<li><strong>2005-03-01 ~ 2005-12-30</strong> <code>NonFinanceNonElectronicsSubIndex</code>: the raw data was published at 100 times the value; divided by 100 so it connects with adjacent trading days</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-10-01">2026-10-01<a class="headerlink" href="#2026-10-01" title="Permanent link">&para;</a></h4>
 <ul>
