@@ -5633,6 +5633,14 @@
 <li>To get the day's regular trading volume (excluding block trades), use <code>Trading_Volume</code> from <code>TaiwanStockPrice</code> minus the block trade volume from <a href="#block-trade-daily-transactions-taiwanstockblocktrade-only-available-for-sponsor-members">TaiwanStockBlockTrade</a>, rather than deriving it from branch totals.</li>
 </ul>
 </details>
+<details class="note">
+<summary>Emerging stocks: total buy and sell value of regular branches may not equal the day's trading value</summary>
+<p>When checking an emerging-board (興櫃) stock's daily trading value against "buy value + sell value of regular branches (excluding recommending securities dealers)", the two match on most trading days, but differ in the two cases below. FinMind's data matches the emerging-stock daily broker report published by TPEx, so this is <strong>not missing data</strong>.</p>
+<ul>
+<li><strong>Trades between recommending securities dealers</strong> (regular-branch total is lower than the trading value): when both sides of a trade are recommending dealers, the trade does not appear in any regular branch. "Recommending dealers' buy shares + sell shares − daily trading volume" equals the shares traded between recommending dealers, e.g. 6,000 shares for 6696 on 2026-06-26 (at 397, a difference of 2,382,000).</li>
+<li><strong>Off-system negotiated trades</strong> (regular-branch total is higher than the trading value): besides trades on the computerized negotiation system, the daily broker report also includes "off-system negotiated trades" (系統外議價交易). These appear in the branch data but are not counted in the daily trading value of <code>TaiwanStockPrice</code>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="37:4"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><input id="__tabbed_37_3" name="__tabbed_37" type="radio" /><input id="__tabbed_37_4" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">Package</label><label for="__tabbed_37_2">Package-Async</label><label for="__tabbed_37_3">Python-request</label><label for="__tabbed_37_4">R</label></div>
