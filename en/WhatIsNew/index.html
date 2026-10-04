@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-10-04" class="md-skip">
+        <a href="#2026-10-05" class="md-skip">
           Skip to content
         </a>
       
@@ -1482,6 +1482,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-10-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-10-05
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-10-04" class="md-nav__link">
     <span class="md-ellipsis">
       2026-10-04
@@ -2842,6 +2851,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-10-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-10-05
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-10-04" class="md-nav__link">
     <span class="md-ellipsis">
       2026-10-04
@@ -3917,6 +3935,17 @@
 
   <h1>What's New</h1>
 
+<h4 id="2026-10-05">2026-10-05<a class="headerlink" href="#2026-10-05" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Data correction notice</strong>: <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Stock Historical Tick Data Table TaiwanStockPriceTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-minute-k-table-taiwanstockkbar-available-only-to-sponsor-members">Taiwan Stock Minute K Table TaiwanStockKBar</a>: the following issues have been corrected and the data regenerated (both the API and whole-day download files are updated); the minute K has been recalculated accordingly. <strong>If you downloaded or queried data for the dates below, please fetch it again</strong><ul>
+<li><strong>2020-03-24 ~ 2023-03-01</strong>: some trades were inserted a second time (the inserted copy placed at the end of the stock's rows, with a time earlier than the preceding rows), on 194 trading days and 1,874 stock-days; removed</li>
+<li><strong>2020-03-02 ~ 2020-04-30</strong>: TWSE/TPEx stocks (mostly ETFs) with no after-hours fixed-price trade on the day had a 14:30:00 record (a copy of the closing row or the last intraday trade), 653 records on 35 trading days; removed</li>
+<li><strong>2020-03-06, 2021-07-27</strong>: for 14 stocks, a block of non-trade records was appended after the complete intraday ticks (the first one with a negative volume, prices possibly outside the day's high/low, e.g. 2939 on 2021-07-27); removed, and the volume of each stock now matches the exchange</li>
+<li><strong>2020-03-06</strong>: 29 stocks had one extra non-trade record (mostly the last record of the day, e.g. 0052, 2429, 4555); removed</li>
+<li><strong>2021-11-15</strong>: an erroneous 2303 record with price 68.8, above the day's high; removed</li>
+</ul>
+</li>
+</ul>
 <h4 id="2026-10-04">2026-10-04<a class="headerlink" href="#2026-10-04" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#block-trade-daily-transactions-taiwanstockblocktrade-only-available-for-sponsor-members">Block Trade Daily Transactions TaiwanStockBlockTrade</a> now includes TWSE "stock portfolio" block trades, with historical data backfilled to 2005-04-04; multiple block trades of the same stock on the same day with the same price and volume are now each listed, so identical rows each represent an actual trade</li>
