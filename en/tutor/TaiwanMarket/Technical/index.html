@@ -4259,29 +4259,11 @@
 <td style="text-align: right;">2330</td>
 <td style="text-align: right;">332.5</td>
 <td style="text-align: right;">520</td>
-<td style="text-align: left;">09:00:00.000</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2020-01-02</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">332.5</td>
-<td style="text-align: right;">520</td>
 <td style="text-align: left;">09:00:00.646</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">2020-01-02</td>
-<td style="text-align: right;">2330</td>
-<td style="text-align: right;">333</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: left;">09:00:05.000</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr>
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-01-02</td>
 <td style="text-align: right;">2330</td>
 <td style="text-align: right;">333</td>
@@ -4290,13 +4272,31 @@
 <td style="text-align: right;">0</td>
 </tr>
 <tr>
-<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: left;">2020-01-02</td>
 <td style="text-align: right;">2330</td>
 <td style="text-align: right;">333</td>
 <td style="text-align: right;">22</td>
-<td style="text-align: left;">09:00:10.000</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: left;">09:00:10.672</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2020-01-02</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">333</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">09:00:15.686</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2020-01-02</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: right;">333.5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">09:00:20.700</td>
+<td style="text-align: right;">1</td>
 </tr>
 </tbody>
 </table>
@@ -4338,6 +4338,10 @@
 <details class="note">
 <summary>Row order of the whole-day files</summary>
 <p>The whole-day files are sorted by <code>stock_id</code> and <code>Time</code>; when several trades share the same time, they are ordered by actual execution sequence. You can take each stock's first row (the open) or its last trade before a given time directly in file order.</p>
+</details>
+<details class="note">
+<summary>Multiple rows with the same time, price and volume are not duplicates</summary>
+<p>Under continuous trading, a stock can have several rows with identical time, deal price and volume. These are usually separate real trades from one large order being matched in several fills, not duplicate data, so please do not deduplicate them. You can reconcile them against the daily trade count (<code>Trading_turnover</code>) and volume in <code>TaiwanStockPrice</code>.</p>
 </details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
