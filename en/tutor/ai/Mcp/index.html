@@ -2020,7 +2020,7 @@
 <p>Expected result: the tool queries today's institutional trading data, sorts it, and returns the top 5 stocks by net-buy value.</p>
 </blockquote>
 <h2 id="caveats">Data field caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
-<p>The following are common field-definition differences to keep in mind when an AI agent interprets query results (Taiwan stock prices, futures ticks). They are not data errors:</p>
+<p>The following are common field-definition differences to keep in mind when an AI agent interprets query results (Taiwan stock prices, futures / options ticks). They are not data errors:</p>
 <details class="warning">
 <summary>Emerging stocks: <code>open</code> is the <em>previous-day average price</em>, and may fall outside the day's high/low (not a data error)</summary>
 <p>Emerging-board stocks trade by negotiation and <strong>have no opening price</strong>. For emerging stocks this table therefore fills <code>open</code> with the <strong>previous-day average price</strong>, not an opening price; <code>max</code> / <code>min</code> / <code>close</code> are still the day's high / low / last traded price and are correct.</p>
@@ -2044,6 +2044,17 @@
 <li><strong>00:00–05:00</strong> ticks belong to the after-hours (after_market) session of <strong>trading day D</strong> in TaiwanFuturesDaily.</li>
 <li><strong>08:45–13:45</strong> ticks belong to the regular session (position) of trading day D.</li>
 <li><strong>15:00–24:00</strong> ticks belong to the after-hours session of the <strong>next trading day</strong>.</li>
+</ul>
+</details>
+<details class="note">
+<summary>Options ticks (TaiwanOptionTick): how volume is counted</summary>
+<p>As with futures ticks, options tick volume is counted on a <strong>double-sided</strong> basis: each matched trade records both the buy side and the sell side once, typically appearing as two identical rows; these are not duplicates. The summed tick volume is about <strong>2×</strong> the (single-side) volume in the daily data TaiwanOptionDaily.</p>
+<p><strong>Per-series reconciliation</strong>: for a given series (same contract_date, strike and call/put) within the same trading session,</p>
+<p><code>sum of tick volume of that series = 2 × TaiwanOptionDaily volume of that series − 2 × negotiated block-trade lots of that series</code></p>
+<ul>
+<li>Negotiated block trades are not included in tick data, but are included in daily volume; this is not missing tick data.</li>
+<li>Tick data has <strong>no buy/sell-initiated (aggressor side) field</strong>.</li>
+<li>Trading-day attribution of after-hours ticks is the same as for futures: 00:00–05:00 belongs to trading day D's after-hours session (after_market), 15:00–24:00 to the next trading day's after-hours session.</li>
 </ul>
 </details>
 
