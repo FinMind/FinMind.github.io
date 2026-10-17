@@ -784,6 +784,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pdf-taiwanstockfinancialreportfile-sponsorpro" class="md-nav__link">
+    <span class="md-ellipsis">
+      台股財報與年報 PDF TaiwanStockFinancialReportFile (只限 sponsorpro 會員使用)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2149,6 +2158,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pdf-taiwanstockfinancialreportfile-sponsorpro" class="md-nav__link">
+    <span class="md-ellipsis">
+      台股財報與年報 PDF TaiwanStockFinancialReportFile (只限 sponsorpro 會員使用)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2169,7 +2187,7 @@
 
   <h1>基本面</h1>
 
-<p>在台股基本面，我們擁有 12 種資料集，如下:</p>
+<p>在台股基本面，我們擁有 13 種資料集，如下:</p>
 <ul>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockbalancesheet">資產負債表 TaiwanStockBalanceSheet</a></li>
@@ -2183,6 +2201,7 @@
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockmarketvalueweight-backersponsor">台股市值比重表 TaiwanStockMarketValueWeight</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstocksplitprice">台股分割後參考價 TaiwanStockSplitPrice</a></li>
 <li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockparvaluechange">台灣股票變更面額恢復買賣參考價格 TaiwanStockParValueChange</a></li>
+<li><a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#pdf-taiwanstockfinancialreportfile-sponsorpro">台股財報與年報 PDF TaiwanStockFinancialReportFile</a></li>
 </ul>
 <hr />
 <h4 id="taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements<a class="headerlink" href="#taiwanstockfinancialstatements" title="Permanent link">&para;</a></h4>
@@ -5138,6 +5157,189 @@
 <a id="__codelineno-84-8" name="__codelineno-84-8" href="#__codelineno-84-8"></a>    after_ref_min: float64, # 跌停價格
 <a id="__codelineno-84-9" name="__codelineno-84-9" href="#__codelineno-84-9"></a>    after_ref_open: float64 # 開盤競價基準
 <a id="__codelineno-84-10" name="__codelineno-84-10" href="#__codelineno-84-10"></a>}
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="pdf-taiwanstockfinancialreportfile-sponsorpro">台股財報與年報 PDF TaiwanStockFinancialReportFile (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> 會員使用)<a class="headerlink" href="#pdf-taiwanstockfinancialreportfile-sponsorpro" title="Permanent link">&para;</a></h4>
+<ul>
+<li>提供上市、上櫃、興櫃公司財務報告書與股東會年報的完整 PDF 檔案下載連結。</li>
+<li>資料區間：財務報告書 2013-03-31 ~ now（2013 年第一季起，每季一份）；股東會年報 2013-12-31 ~ now（2013 年度起，每年一份）</li>
+<li><code>data_id</code>（股票代號）為必填，不提供不帶股票代號的全市場查詢。</li>
+</ul>
+<details class="note">
+<summary>回傳的是 PDF 下載連結，不是財報數字</summary>
+<p>本資料集回傳的是報告 PDF 檔的下載連結（<code>url</code>）。如需損益、資產負債、現金流量等財報數字，請使用 <a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockfinancialstatements">綜合損益表 TaiwanStockFinancialStatements</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockbalancesheet">資產負債表 TaiwanStockBalanceSheet</a>、<a href="https://finmind.github.io/tutor/TaiwanMarket/Fundamental/#taiwanstockcashflowsstatement">現金流量表 TaiwanStockCashFlowsStatement</a>。</p>
+</details>
+<details class="note">
+<summary>下載連結 1 小時內有效</summary>
+<p><code>url</code> 為暫時下載連結，<strong>有效期 1 小時</strong>，過期後無法下載，需要重新查詢以取得新的連結。請勿將連結保存後重複使用。</p>
+</details>
+<details class="note">
+<summary>收錄範圍</summary>
+<ul>
+<li>財務報告書（<code>financial_report</code>）每期一份中文版報告，以合併財務報告為主；沒有合併財務報告時，依序收錄個別、重編、個體財務報告。不含英文版。</li>
+<li>少數 2013 年財務報告來源僅提供 Word 檔，下載連結為 .doc 檔。</li>
+<li>股東會年報（<code>annual_report</code>）收錄中文版年報。</li>
+<li>部分年報 PDF 的文字層可能為亂碼或殘缺（來源檔本身如此），如需擷取文字可能需要使用 OCR。</li>
+</ul>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="40:4"><input checked="checked" id="__tabbed_40_1" name="__tabbed_40" type="radio" /><input id="__tabbed_40_2" name="__tabbed_40" type="radio" /><input id="__tabbed_40_3" name="__tabbed_40" type="radio" /><input id="__tabbed_40_4" name="__tabbed_40" type="radio" /><div class="tabbed-labels"><label for="__tabbed_40_1">Package</label><label for="__tabbed_40_2">Python-request</label><label for="__tabbed_40_3">R</label><label for="__tabbed_40_4">下載 PDF</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">FinMind.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>
+<a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">()</span>
+<a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a><span class="c1"># api.login_by_token(api_token=&#39;token&#39;)</span>
+<a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_financial_report_file</span><span class="p">(</span>
+<a id="__codelineno-85-6" name="__codelineno-85-6" href="#__codelineno-85-6"></a>    <span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span>
+<a id="__codelineno-85-7" name="__codelineno-85-7" href="#__codelineno-85-7"></a>    <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2025-01-01&#39;</span><span class="p">,</span>
+<a id="__codelineno-85-8" name="__codelineno-85-8" href="#__codelineno-85-8"></a>    <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2026-10-16&#39;</span><span class="p">,</span>
+<a id="__codelineno-85-9" name="__codelineno-85-9" href="#__codelineno-85-9"></a><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-86-3" name="__codelineno-86-3" href="#__codelineno-86-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-86-4" name="__codelineno-86-4" href="#__codelineno-86-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-86-5" name="__codelineno-86-5" href="#__codelineno-86-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-86-6" name="__codelineno-86-6" href="#__codelineno-86-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-86-7" name="__codelineno-86-7" href="#__codelineno-86-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockFinancialReportFile&quot;</span><span class="p">,</span>
+<a id="__codelineno-86-8" name="__codelineno-86-8" href="#__codelineno-86-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-86-9" name="__codelineno-86-9" href="#__codelineno-86-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-86-10" name="__codelineno-86-10" href="#__codelineno-86-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-10-16&quot;</span><span class="p">,</span>
+<a id="__codelineno-86-11" name="__codelineno-86-11" href="#__codelineno-86-11"></a><span class="p">}</span>
+<a id="__codelineno-86-12" name="__codelineno-86-12" href="#__codelineno-86-12"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-86-13" name="__codelineno-86-13" href="#__codelineno-86-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-86-14" name="__codelineno-86-14" href="#__codelineno-86-14"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-86-15" name="__codelineno-86-15" href="#__codelineno-86-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<a id="__codelineno-87-3" name="__codelineno-87-3" href="#__codelineno-87-3"></a><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<a id="__codelineno-87-4" name="__codelineno-87-4" href="#__codelineno-87-4"></a><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://api.finmindtrade.com/api/v4/data&#39;</span>
+<a id="__codelineno-87-5" name="__codelineno-87-5" href="#__codelineno-87-5"></a><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-87-6" name="__codelineno-87-6" href="#__codelineno-87-6"></a><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">GET</span><span class="p">(</span>
+<a id="__codelineno-87-7" name="__codelineno-87-7" href="#__codelineno-87-7"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">,</span>
+<a id="__codelineno-87-8" name="__codelineno-87-8" href="#__codelineno-87-8"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<a id="__codelineno-87-9" name="__codelineno-87-9" href="#__codelineno-87-9"></a><span class="w">        </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;TaiwanStockFinancialReportFile&quot;</span><span class="p">,</span>
+<a id="__codelineno-87-10" name="__codelineno-87-10" href="#__codelineno-87-10"></a><span class="w">        </span><span class="n">data_id</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-87-11" name="__codelineno-87-11" href="#__codelineno-87-11"></a><span class="w">        </span><span class="n">start_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-87-12" name="__codelineno-87-12" href="#__codelineno-87-12"></a><span class="w">        </span><span class="n">end_date</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2026-10-16&quot;</span>
+<a id="__codelineno-87-13" name="__codelineno-87-13" href="#__codelineno-87-13"></a><span class="w">    </span><span class="p">),</span>
+<a id="__codelineno-87-14" name="__codelineno-87-14" href="#__codelineno-87-14"></a><span class="w">    </span><span class="nf">add_headers</span><span class="p">(</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">))</span>
+<a id="__codelineno-87-15" name="__codelineno-87-15" href="#__codelineno-87-15"></a><span class="p">)</span>
+<a id="__codelineno-87-16" name="__codelineno-87-16" href="#__codelineno-87-16"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-87-17" name="__codelineno-87-17" href="#__codelineno-87-17"></a><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<a id="__codelineno-87-18" name="__codelineno-87-18" href="#__codelineno-87-18"></a><span class="nf">do.call</span><span class="p">(</span><span class="s">&#39;rbind&#39;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<a id="__codelineno-87-19" name="__codelineno-87-19" href="#__codelineno-87-19"></a><span class="n">data.table</span>
+<a id="__codelineno-87-20" name="__codelineno-87-20" href="#__codelineno-87-20"></a><span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.finmindtrade.com/api/v4/data&quot;</span>
+<a id="__codelineno-88-4" name="__codelineno-88-4" href="#__codelineno-88-4"></a><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># 參考登入，獲取金鑰</span>
+<a id="__codelineno-88-5" name="__codelineno-88-5" href="#__codelineno-88-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<a id="__codelineno-88-6" name="__codelineno-88-6" href="#__codelineno-88-6"></a><span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-88-7" name="__codelineno-88-7" href="#__codelineno-88-7"></a>    <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;TaiwanStockFinancialReportFile&quot;</span><span class="p">,</span>
+<a id="__codelineno-88-8" name="__codelineno-88-8" href="#__codelineno-88-8"></a>    <span class="s2">&quot;data_id&quot;</span><span class="p">:</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span>
+<a id="__codelineno-88-9" name="__codelineno-88-9" href="#__codelineno-88-9"></a>    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-88-10" name="__codelineno-88-10" href="#__codelineno-88-10"></a>    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-10-16&quot;</span><span class="p">,</span>
+<a id="__codelineno-88-11" name="__codelineno-88-11" href="#__codelineno-88-11"></a><span class="p">}</span>
+<a id="__codelineno-88-12" name="__codelineno-88-12" href="#__codelineno-88-12"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameter</span><span class="p">)</span>
+<a id="__codelineno-88-13" name="__codelineno-88-13" href="#__codelineno-88-13"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+<a id="__codelineno-88-14" name="__codelineno-88-14" href="#__codelineno-88-14"></a><span class="c1"># 下載連結 1 小時內有效，取得後請盡快下載</span>
+<a id="__codelineno-88-15" name="__codelineno-88-15" href="#__codelineno-88-15"></a><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+<a id="__codelineno-88-16" name="__codelineno-88-16" href="#__codelineno-88-16"></a>    <span class="n">file</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">])</span>
+<a id="__codelineno-88-17" name="__codelineno-88-17" href="#__codelineno-88-17"></a>    <span class="n">file</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-88-18" name="__codelineno-88-18" href="#__codelineno-88-18"></a>    <span class="c1"># 少數 2013 年財務報告為 Word 檔（.doc），其餘為 PDF</span>
+<a id="__codelineno-88-19" name="__codelineno-88-19" href="#__codelineno-88-19"></a>    <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;doc&quot;</span> <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;application/msword&quot;</span> <span class="k">else</span> <span class="s2">&quot;pdf&quot;</span>
+<a id="__codelineno-88-20" name="__codelineno-88-20" href="#__codelineno-88-20"></a>    <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;stock_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;report_category&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-88-21" name="__codelineno-88-21" href="#__codelineno-88-21"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-88-22" name="__codelineno-88-22" href="#__codelineno-88-22"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-88-23" name="__codelineno-88-23" href="#__codelineno-88-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="41:2"><input checked="checked" id="__tabbed_41_1" name="__tabbed_41" type="radio" /><input id="__tabbed_41_2" name="__tabbed_41" type="radio" /><div class="tabbed-labels"><label for="__tabbed_41_1">DataFrame</label><label for="__tabbed_41_2">Schema</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: left;">report_category</th>
+<th style="text-align: right;">file_size</th>
+<th style="text-align: left;">url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">2025-03-31</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">financial_report</td>
+<td style="text-align: right;">5715493</td>
+<td style="text-align: left;">https://...</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2025-06-30</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">financial_report</td>
+<td style="text-align: right;">5771204</td>
+<td style="text-align: left;">https://...</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2025-09-30</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">financial_report</td>
+<td style="text-align: right;">5345863</td>
+<td style="text-align: left;">https://...</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2025-12-31</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">annual_report</td>
+<td style="text-align: right;">7006132</td>
+<td style="text-align: left;">https://...</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2025-12-31</td>
+<td style="text-align: right;">2330</td>
+<td style="text-align: left;">financial_report</td>
+<td style="text-align: right;">10175740</td>
+<td style="text-align: left;">https://...</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>{
+<a id="__codelineno-89-2" name="__codelineno-89-2" href="#__codelineno-89-2"></a>    date: str, # 期間截止日（財報為季底，年報為年度末）
+<a id="__codelineno-89-3" name="__codelineno-89-3" href="#__codelineno-89-3"></a>    stock_id: str, # 股票代號
+<a id="__codelineno-89-4" name="__codelineno-89-4" href="#__codelineno-89-4"></a>    report_category: str, # 報告類別：financial_report（財務報告書）/ annual_report（股東會年報）
+<a id="__codelineno-89-5" name="__codelineno-89-5" href="#__codelineno-89-5"></a>    file_size: int, # 檔案大小（位元組）
+<a id="__codelineno-89-6" name="__codelineno-89-6" href="#__codelineno-89-6"></a>    url: str # 下載連結（1 小時內有效）
+<a id="__codelineno-89-7" name="__codelineno-89-7" href="#__codelineno-89-7"></a>}
 </code></pre></div>
 </div>
 </div>
