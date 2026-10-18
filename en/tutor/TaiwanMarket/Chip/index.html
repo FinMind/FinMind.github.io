@@ -6875,6 +6875,7 @@
 <li>Provides Taiwan stock trading by branch information for listed (TWSE), OTC, and emerging stocks!</li>
 <li>Data range: 2021-06-30 ~ now</li>
 <li>Data update time <strong>Monday to Friday 18:30</strong>, the actual update time is based on the API data.</li>
+<li>Both data_id (stock code) and securities_trader_id (securities trader branch code) are required, along with start_date and end_date. If either id is missing, the API returns HTTP 400 and the reason is given in the <code>detail</code> field of the response.</li>
 <li>To get all stocks and all securities trader branches for a day at once, use <a href="#taiwanstocktradingdailyreportsecidagg-sponsorpro">Fetch all data for a specific date at once</a>.</li>
 </ul>
 <div class="admonition example">
