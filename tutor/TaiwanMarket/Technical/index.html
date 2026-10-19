@@ -5754,9 +5754,9 @@
 <h4 id="k-taiwanstockkbar-sponsor">台股分 K 資料表 TaiwanStockKBar (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> 會員使用)<a class="headerlink" href="#k-taiwanstockkbar-sponsor" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <ul>
-<li>資料區間：個股 2019-01-01 ~ now；<strong>加權指數（<code>data_id="TAIEX"</code>）2005-01-03 ~ now</strong></li>
+<li>資料區間：個股 2018-12-07 ~ now；<strong>加權指數（<code>data_id="TAIEX"</code>）2005-01-03 ~ now</strong></li>
 <li>資料更新時間 <strong>星期一至五 15:50</strong>，實際更新時間以 API 資料為主</li>
-<li>部分資料缺失，缺失日期為：2019-02-20、2019-02-21、2019-02-22（這三天僅有加權指數 TAIEX 分 K，無個股資料）；另 2019-05-16 個股僅有少數 ETF 的資料。</li>
+<li>部分資料缺失，缺失日期為：2018-12-22、2019-02-20、2019-02-21、2019-02-22（這四天僅有加權指數 TAIEX 分 K，無個股資料）；另 2019-05-16 個股僅有少數 ETF 的資料。</li>
 <li>部分時段上市股票的逐筆成交缺漏，無法補齊：2022-03-01 ~ 2022-03-10 開盤後數段（最長約 2 分鐘）、2024-07-02 09:38:25 ~ 09:38:40、2024-07-03 09:00:11 ~ 09:00:22、2024-07-18 12:12:32 ~ 12:12:45、2026-03-10 11:19:45 ~ 11:19:55。</li>
 <li>開啟 Async 功能，可大幅縮短資料更新時間，colab 實測 2175 檔股票，只需 2 分 31 秒即可完成下載。</li>
 </ul>
@@ -5766,7 +5766,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_kbar</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;TAIEX&quot;</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s2">&quot;2026-08-19&quot;</span><span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>資料區間 <strong>2005-01-03 ~ now</strong>，比個股分 K（2019-01-01 起）更長</li>
+<li>資料區間 <strong>2005-01-03 ~ now</strong>，比個股分 K（2018-12-07 起）更長</li>
 <li>每個交易日 <strong>271 筆</strong>，涵蓋 <code>09:00:00</code> ~ <code>13:30:00</code> 每分鐘一筆</li>
 <li>指數本身沒有成交量，因此 <code>volume</code> <strong>固定為 0</strong>；<code>open</code> / <code>high</code> / <code>low</code> / <code>close</code> 為該分鐘內的指數值</li>
 <li>補行交易的星期六同樣有資料</li>
@@ -5980,7 +5980,7 @@
 <h4 id="sponsorpro_1">一次拿特定日期，所有資料 (只限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> 會員使用)<a class="headerlink" href="#sponsorpro_1" title="Permanent link">&para;</a></h4>
 <p>(由於資料量過大，單次請求只提供一天資料)</p>
 <ul>
-<li>資料區間：2019-01-02 ~ now，逐交易日提供。</li>
+<li>資料區間：2018-12-07 ~ now，逐交易日提供。</li>
 <li>輸入 dataset、date 參數，回傳該日全市場資料。</li>
 <li>透過 signed URL 下載整日 parquet，免逐檔查詢。</li>
 </ul>

@@ -5754,9 +5754,9 @@
 <h4 id="taiwan-stock-minute-k-table-taiwanstockkbar-available-only-to-sponsor-members">Taiwan Stock Minute K Table TaiwanStockKBar (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsor</a> members)<a class="headerlink" href="#taiwan-stock-minute-k-table-taiwanstockkbar-available-only-to-sponsor-members" title="Permanent link">&para;</a></h4>
 <p>(Due to the large data volume, each request only provides one day's data.)</p>
 <ul>
-<li>Data range: individual stocks 2019-01-01 ~ now; <strong>TAIEX index (<code>data_id="TAIEX"</code>) 2005-01-03 ~ now</strong></li>
+<li>Data range: individual stocks 2018-12-07 ~ now; <strong>TAIEX index (<code>data_id="TAIEX"</code>) 2005-01-03 ~ now</strong></li>
 <li>Data update time: <strong>Monday to Friday 15:50</strong>. The actual update time is based on the API data.</li>
-<li>Some data is missing on these dates: 2019-02-20, 2019-02-21, 2019-02-22 (only the TAIEX index minute K is available on these three days; there is no individual-stock data). In addition, on 2019-05-16 only a small number of ETFs have individual-stock data.</li>
+<li>Some data is missing on these dates: 2018-12-22, 2019-02-20, 2019-02-21, 2019-02-22 (only the TAIEX index minute K is available on these four days; there is no individual-stock data). In addition, on 2019-05-16 only a small number of ETFs have individual-stock data.</li>
 <li>Ticks of TWSE-listed stocks are missing in some periods and cannot be filled in: several periods after the open on 2022-03-01 ~ 2022-03-10 (up to about 2 minutes), 2024-07-02 09:38:25 ~ 09:38:40, 2024-07-03 09:00:11 ~ 09:00:22, 2024-07-18 12:12:32 ~ 12:12:45, 2026-03-10 11:19:45 ~ 11:19:55.</li>
 <li>Enabling Async significantly reduces the data update time. In a Colab test, downloading 2,175 stocks took only 2 minutes 31 seconds.</li>
 </ul>
@@ -5766,7 +5766,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_kbar</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;TAIEX&quot;</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s2">&quot;2026-08-19&quot;</span><span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>Data range <strong>2005-01-03 ~ now</strong>, longer than the individual-stock minute K (which starts 2019-01-01)</li>
+<li>Data range <strong>2005-01-03 ~ now</strong>, longer than the individual-stock minute K (which starts 2018-12-07)</li>
 <li><strong>271 rows</strong> per trading day, covering <code>09:00:00</code> ~ <code>13:30:00</code>, one row per minute</li>
 <li>An index has no trading volume, so <code>volume</code> is <strong>always 0</strong>; <code>open</code> / <code>high</code> / <code>low</code> / <code>close</code> are index values within that minute</li>
 <li>Make-up trading Saturdays are covered as well</li>
@@ -5980,7 +5980,7 @@
 <h4 id="fetch-all-data-for-a-specific-date-at-once-available-only-to-sponsorpro-members_1">Fetch all data for a specific date at once (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> members)<a class="headerlink" href="#fetch-all-data-for-a-specific-date-at-once-available-only-to-sponsorpro-members_1" title="Permanent link">&para;</a></h4>
 <p>(Due to the large data volume, each request only provides one day's data.)</p>
 <ul>
-<li>Data range: 2019-01-02 ~ now, one trading day at a time.</li>
+<li>Data range: 2018-12-07 ~ now, one trading day at a time.</li>
 <li>Providing the dataset and date parameters returns all market data for that day.</li>
 <li>Downloads the whole-day parquet via a signed URL — no need to query stock by stock.</li>
 </ul>
