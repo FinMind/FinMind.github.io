@@ -3172,6 +3172,7 @@
 <ul>
 <li>Data range: 2005-01-01 ~ now</li>
 <li>Coverage: listed (TWSE), OTC (TPEx) and emerging market companies, distinguished by <code>stock_id</code> (use <code>TaiwanStockInfo</code> to look up market type)</li>
+<li>Warrants: institutional investors' buy/sell for warrants is included (<code>stock_id</code> is the warrant code) — TWSE-listed warrants from 2012-05-02, TPEx-listed warrants from 2021-01-04</li>
 <li>Data update time <strong>Monday to Friday 20:00</strong>, the actual update time is based on the API data.</li>
 </ul>
 <details class="note">
@@ -3517,6 +3518,7 @@
 <li>Same source data as <code>TaiwanStockInstitutionalInvestorsBuySell</code>, but in <strong>wide format</strong>: one row per trading day, with each institutional investor's buy/sell flattened into its own column — no manual pivot needed.</li>
 <li>Data range: 2005-01-01 ~ now</li>
 <li>Coverage: listed (TWSE), OTC (TPEx) and emerging market companies, distinguished by <code>stock_id</code> (use <code>TaiwanStockInfo</code> to look up market type)</li>
+<li>Warrants: institutional investors' buy/sell for warrants is included (<code>stock_id</code> is the warrant code) — TWSE-listed warrants from 2012-05-02, TPEx-listed warrants from 2021-01-04</li>
 <li>Data update time <strong>Monday to Friday 20:00</strong>, the actual update time is based on the API data.</li>
 </ul>
 <details class="note">
