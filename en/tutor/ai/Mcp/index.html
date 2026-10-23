@@ -1322,6 +1322,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -1362,6 +1371,24 @@
   <a href="#conditional-screening" class="md-nav__link">
     <span class="md-ellipsis">
       Conditional Screening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-aggregate-statistics-sponsor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch Aggregate Statistics (Sponsor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whole-day-market-wide-download-sponsor-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Whole-Day Market-Wide Download (Sponsor Pro)
     </span>
   </a>
   
@@ -1872,6 +1899,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -1912,6 +1948,24 @@
   <a href="#conditional-screening" class="md-nav__link">
     <span class="md-ellipsis">
       Conditional Screening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-aggregate-statistics-sponsor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch Aggregate Statistics (Sponsor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whole-day-market-wide-download-sponsor-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Whole-Day Market-Wide Download (Sponsor Pro)
     </span>
   </a>
   
@@ -1989,6 +2043,56 @@
 <p>For the full walkthrough (pipx route, per-host Windows config paths, troubleshooting), see the <a href="https://github.com/FinMind/FinMind-MCP/blob/master/install/windows.md">Windows installation guide</a>.</p>
 </div>
 <p>For per-host config file locations, the <code>claude mcp add</code> / <code>gemini mcp add</code> / <code>codex mcp add</code> one-liners, and verification steps, see the <a href="https://github.com/FinMind/FinMind-MCP/tree/master/install">FinMind-MCP install guides</a>.</p>
+<h2 id="tools">Available tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
+<p>Since version 0.1.0, the MCP server can access all public FinMind data and endpoints, including whole-day, market-wide downloads (storage_objects). It provides 7 tools, which your AI tool picks automatically based on your question:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query_dataset</code></td>
+<td>General query by dataset, ID and date range (every dataset on <code>/api/v4/data</code>)</td>
+</tr>
+<tr>
+<td><code>list_datasets</code></td>
+<td>List all datasets with the required membership tier and descriptions (no token needed)</td>
+</tr>
+<tr>
+<td><code>get_stock_info</code></td>
+<td>Taiwan stock IDs, names and industries</td>
+</tr>
+<tr>
+<td><code>query_trading_daily_report</code></td>
+<td>Single-day branch trading, by stock or by securities trader branch</td>
+</tr>
+<tr>
+<td><code>query_endpoint</code></td>
+<td>Other dedicated endpoints: daily branch aggregate statistics (SecIdAgg), warrant branch reports, real-time stock / futures / options snapshots, <code>datalist</code>, <code>translation</code></td>
+</tr>
+<tr>
+<td><code>download_storage_object</code></td>
+<td>Download whole-day, market-wide data (ticks, minute K, branch reports, etc.) to your machine; returns the file path, row count, columns and first rows, with optional filtering by ID / branch</td>
+</tr>
+<tr>
+<td><code>get_pricing</code></td>
+<td>Membership plan prices and licensing (no token needed)</td>
+</tr>
+</tbody>
+</table>
+<p>Access depends on your membership tier. When a query exceeds your plan, the tool tells you which plan is required (Backer / Sponsor / Sponsor Pro) and links to the <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">upgrade page</a>.</p>
+<details class="note">
+<summary>Whole-day downloads (<code>download_storage_object</code>)</summary>
+<ul>
+<li>Whole-day downloads are available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> members.</li>
+<li>Whole-day files are often tens of MB, so the tool returns only a summary (up to 500 rows); the full file is saved locally and can be read with <code>pandas.read_parquet(path)</code>.</li>
+<li>Files are saved under <code>finmind-mcp/storage_objects/</code> in your user cache directory by default; set the <code>FINMIND_DOWNLOAD_DIR</code> environment variable to change the location. Repeated queries for the same dataset and day reuse the local file.</li>
+<li>The summary requires <code>pyarrow</code>. The Claude Desktop one-click install already includes it; other tools do not install it by default (the file is still downloaded and its path returned). To get summaries, change <code>args</code> in your config to <code>["--from", "finmind-mcp[parquet]", "finmind-mcp"]</code>.</li>
+</ul>
+</details>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>MCP is called automatically by the tool, so just ask in natural language — <strong>no <code>/finmind</code> prefix needed</strong>. It is best for follow-up questions and cross-dataset agentic analysis.</p>
@@ -1997,7 +2101,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>How have TSMC&#39;s stock prices trended over the past month?
 </code></pre></div>
 <blockquote>
-<p>Expected result: the tool automatically calls <code>taiwan_stock_daily</code>, returns TSMC (2330) daily prices for the past month, and summarizes the trend.</p>
+<p>Expected result: the tool automatically calls <code>query_dataset</code> (TaiwanStockPrice), returns TSMC (2330) daily prices for the past month, and summarizes the trend.</p>
 </blockquote>
 <p><img alt="TSMC stock prices for the past month" src="../../../../img/tsmc_1m_price.png" /></p>
 <h3 id="multi-turn-follow-up">Multi-Turn Follow-Up<a class="headerlink" href="#multi-turn-follow-up" title="Permanent link">&para;</a></h3>
@@ -2018,6 +2122,18 @@
 </code></pre></div>
 <blockquote>
 <p>Expected result: the tool queries today's institutional trading data, sorts it, and returns the top 5 stocks by net-buy value.</p>
+</blockquote>
+<h3 id="branch-aggregate-statistics-sponsor">Branch Aggregate Statistics (Sponsor)<a class="headerlink" href="#branch-aggregate-statistics-sponsor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>How many shares of TSMC did 合庫 (1020) buy and sell each day from 7/1 to 7/5?
+</code></pre></div>
+<blockquote>
+<p>Expected result: the tool calls <code>query_endpoint</code> (TaiwanStockTradingDailyReportSecIdAgg) and returns 合庫's daily buy/sell shares and average prices for TSMC over that period.</p>
+</blockquote>
+<h3 id="whole-day-market-wide-download-sponsor-pro">Whole-Day Market-Wide Download (Sponsor Pro)<a class="headerlink" href="#whole-day-market-wide-download-sponsor-pro" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Download the whole-day minute K file for 10/16 and give me the TSMC part.
+</code></pre></div>
+<blockquote>
+<p>Expected result: the tool calls <code>download_storage_object</code> to save the whole-day file locally, returns the file path, and filters out TSMC's minute K bars.</p>
 </blockquote>
 <h2 id="caveats">Data field caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
 <p>The following are common field-definition differences to keep in mind when an AI agent interprets query results (Taiwan stock prices, futures / options ticks). They are not data errors:</p>
