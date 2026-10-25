@@ -5519,6 +5519,16 @@
 <ul>
 <li>提供證券商相關資訊，用於台股分點資料表(TaiwanStockTradingDailyReport )，使用卷商代碼，查詢特定卷商所有股票進出。</li>
 </ul>
+<details class="note">
+<summary>分點名稱可能與證券商資訊表不同，請以 <code>securities_trader_id</code> 對應</summary>
+<p>上市、上櫃股票在分點資料表的 <code>securities_trader</code> 沿用每日買賣日報表上的分點簡稱（興櫃股票則與證券商資訊表相同），證券商資訊表則採證交所券商名錄的正式名稱。兩者更新時點不同，分點更名或遷址後，日報表可能仍沿用舊名；上市與上櫃的日報表簡稱也可能不同。</p>
+<ul>
+<li>例：<code>9853</code> 在證券商資訊表為「元大-市府」，在分點資料表為「元大南屯」。</li>
+<li>例：分點資料表的「元大高雄」，在上市股票是 <code>989F</code>（證券商資訊表為「元大-三民」），在上櫃股票是 <code>981m</code>（證券商資訊表為「元大-高雄」）。</li>
+<li>因此同一分點代號在同一天的不同股票上，可能出現不同名稱。</li>
+<li>請一律以 <code>securities_trader_id</code> 查詢與對應，不要用名稱比對。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="35:3"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><input id="__tabbed_35_3" name="__tabbed_35" type="radio" /><div class="tabbed-labels"><label for="__tabbed_35_1">Package</label><label for="__tabbed_35_2">Python-request</label><label for="__tabbed_35_3">R</label></div>
@@ -5678,6 +5688,16 @@
 <ul>
 <li><strong>推薦證券商之間互相成交</strong>（一般分點合計少於成交金額）：買賣雙方都是推薦證券商時，這筆成交不會出現在一般分點。「推薦證券商買進股數＋賣出股數－當日成交量」即為推薦證券商之間互相成交的股數，例如 6696 在 2026-06-26 為 6,000 股（以 397 元成交，差額 2,382,000 元）。</li>
 <li><strong>系統外議價交易</strong>（一般分點合計多於成交金額）：買賣日報表除了電腦議價點選系統的成交，也包含「系統外議價交易」。這類成交會列在分點資料中，但不計入 <code>TaiwanStockPrice</code> 的當日成交金額。</li>
+</ul>
+</details>
+<details class="note">
+<summary>分點名稱可能與證券商資訊表不同，請以 <code>securities_trader_id</code> 對應</summary>
+<p>上市、上櫃股票在分點資料表的 <code>securities_trader</code> 沿用每日買賣日報表上的分點簡稱（興櫃股票則與證券商資訊表相同），證券商資訊表則採證交所券商名錄的正式名稱。兩者更新時點不同，分點更名或遷址後，日報表可能仍沿用舊名；上市與上櫃的日報表簡稱也可能不同。</p>
+<ul>
+<li>例：<code>9853</code> 在證券商資訊表為「元大-市府」，在分點資料表為「元大南屯」。</li>
+<li>例：分點資料表的「元大高雄」，在上市股票是 <code>989F</code>（證券商資訊表為「元大-三民」），在上櫃股票是 <code>981m</code>（證券商資訊表為「元大-高雄」）。</li>
+<li>因此同一分點代號在同一天的不同股票上，可能出現不同名稱。</li>
+<li>請一律以 <code>securities_trader_id</code> 查詢與對應，不要用名稱比對。</li>
 </ul>
 </details>
 <div class="admonition example">
@@ -5855,6 +5875,16 @@
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 <li>部分資料缺失，缺失日期為：2022-10-31~2022-11-03（上櫃不完整）</li>
 </ul>
+<details class="note">
+<summary>分點名稱可能與證券商資訊表不同，請以 <code>securities_trader_id</code> 對應</summary>
+<p>上市、上櫃股票在分點資料表的 <code>securities_trader</code> 沿用每日買賣日報表上的分點簡稱（興櫃股票則與證券商資訊表相同），證券商資訊表則採證交所券商名錄的正式名稱。兩者更新時點不同，分點更名或遷址後，日報表可能仍沿用舊名；上市與上櫃的日報表簡稱也可能不同。</p>
+<ul>
+<li>例：<code>9853</code> 在證券商資訊表為「元大-市府」，在分點資料表為「元大南屯」。</li>
+<li>例：分點資料表的「元大高雄」，在上市股票是 <code>989F</code>（證券商資訊表為「元大-三民」），在上櫃股票是 <code>981m</code>（證券商資訊表為「元大-高雄」）。</li>
+<li>因此同一分點代號在同一天的不同股票上，可能出現不同名稱。</li>
+<li>請一律以 <code>securities_trader_id</code> 查詢與對應，不要用名稱比對。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="39:3"><input checked="checked" id="__tabbed_39_1" name="__tabbed_39" type="radio" /><input id="__tabbed_39_2" name="__tabbed_39" type="radio" /><input id="__tabbed_39_3" name="__tabbed_39" type="radio" /><div class="tabbed-labels"><label for="__tabbed_39_1">Package</label><label for="__tabbed_39_2">Python-request</label><label for="__tabbed_39_3">R</label></div>

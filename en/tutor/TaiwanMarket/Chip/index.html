@@ -5519,6 +5519,16 @@
 <ul>
 <li>Provides securities trader related information, used with the Taiwan Stock Trading Daily Report by Branch (TaiwanStockTradingDailyReport). Use the securities_trader_id to query all stock transactions of a particular securities trader.</li>
 </ul>
+<details class="note">
+<summary>Branch names may differ from Securities Trader Information; match by <code>securities_trader_id</code></summary>
+<p>For listed and OTC stocks, <code>securities_trader</code> in the Trading Daily Report follows the short branch name printed on the daily broker trading report (for emerging stocks it matches Securities Trader Information), while Securities Trader Information uses the official name from the TWSE broker directory. The two are updated at different times: after a branch is renamed or relocated, the daily report may keep the old name, and the short names used for listed (TWSE) and OTC (TPEx) stocks may also differ.</p>
+<ul>
+<li>Example: <code>9853</code> is "元大-市府" in Securities Trader Information but "元大南屯" in the Trading Daily Report.</li>
+<li>Example: "元大高雄" in the Trading Daily Report is <code>989F</code> for listed stocks (Securities Trader Information: "元大-三民") but <code>981m</code> for OTC stocks (Securities Trader Information: "元大-高雄").</li>
+<li>As a result, the same <code>securities_trader_id</code> may appear with different names across stocks on the same day.</li>
+<li>Always query and match by <code>securities_trader_id</code>, not by name.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="35:3"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><input id="__tabbed_35_3" name="__tabbed_35" type="radio" /><div class="tabbed-labels"><label for="__tabbed_35_1">Package</label><label for="__tabbed_35_2">Python-request</label><label for="__tabbed_35_3">R</label></div>
@@ -5678,6 +5688,16 @@
 <ul>
 <li><strong>Trades between recommending securities dealers</strong> (regular-branch total is lower than the trading value): when both sides of a trade are recommending dealers, the trade does not appear in any regular branch. "Recommending dealers' buy shares + sell shares − daily trading volume" equals the shares traded between recommending dealers, e.g. 6,000 shares for 6696 on 2026-06-26 (at 397, a difference of 2,382,000).</li>
 <li><strong>Off-system negotiated trades</strong> (regular-branch total is higher than the trading value): besides trades on the computerized negotiation system, the daily broker report also includes "off-system negotiated trades" (系統外議價交易). These appear in the branch data but are not counted in the daily trading value of <code>TaiwanStockPrice</code>.</li>
+</ul>
+</details>
+<details class="note">
+<summary>Branch names may differ from Securities Trader Information; match by <code>securities_trader_id</code></summary>
+<p>For listed and OTC stocks, <code>securities_trader</code> in the Trading Daily Report follows the short branch name printed on the daily broker trading report (for emerging stocks it matches Securities Trader Information), while Securities Trader Information uses the official name from the TWSE broker directory. The two are updated at different times: after a branch is renamed or relocated, the daily report may keep the old name, and the short names used for listed (TWSE) and OTC (TPEx) stocks may also differ.</p>
+<ul>
+<li>Example: <code>9853</code> is "元大-市府" in Securities Trader Information but "元大南屯" in the Trading Daily Report.</li>
+<li>Example: "元大高雄" in the Trading Daily Report is <code>989F</code> for listed stocks (Securities Trader Information: "元大-三民") but <code>981m</code> for OTC stocks (Securities Trader Information: "元大-高雄").</li>
+<li>As a result, the same <code>securities_trader_id</code> may appear with different names across stocks on the same day.</li>
+<li>Always query and match by <code>securities_trader_id</code>, not by name.</li>
 </ul>
 </details>
 <div class="admonition example">
@@ -5855,6 +5875,16 @@
 <li>Data update time <strong>Monday to Friday 18:00</strong>, the actual update time is based on the API data.</li>
 <li>Some data is missing on the following dates: 2022-10-31~2022-11-03 (TPEx-listed stocks incomplete).</li>
 </ul>
+<details class="note">
+<summary>Branch names may differ from Securities Trader Information; match by <code>securities_trader_id</code></summary>
+<p>For listed and OTC stocks, <code>securities_trader</code> in the Trading Daily Report follows the short branch name printed on the daily broker trading report (for emerging stocks it matches Securities Trader Information), while Securities Trader Information uses the official name from the TWSE broker directory. The two are updated at different times: after a branch is renamed or relocated, the daily report may keep the old name, and the short names used for listed (TWSE) and OTC (TPEx) stocks may also differ.</p>
+<ul>
+<li>Example: <code>9853</code> is "元大-市府" in Securities Trader Information but "元大南屯" in the Trading Daily Report.</li>
+<li>Example: "元大高雄" in the Trading Daily Report is <code>989F</code> for listed stocks (Securities Trader Information: "元大-三民") but <code>981m</code> for OTC stocks (Securities Trader Information: "元大-高雄").</li>
+<li>As a result, the same <code>securities_trader_id</code> may appear with different names across stocks on the same day.</li>
+<li>Always query and match by <code>securities_trader_id</code>, not by name.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="39:3"><input checked="checked" id="__tabbed_39_1" name="__tabbed_39" type="radio" /><input id="__tabbed_39_2" name="__tabbed_39" type="radio" /><input id="__tabbed_39_3" name="__tabbed_39" type="radio" /><div class="tabbed-labels"><label for="__tabbed_39_1">Package</label><label for="__tabbed_39_2">Python-request</label><label for="__tabbed_39_3">R</label></div>
