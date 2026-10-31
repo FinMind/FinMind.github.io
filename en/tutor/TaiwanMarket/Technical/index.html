@@ -7114,10 +7114,11 @@
 <summary>Note</summary>
 <p>When <code>limit_up</code> and <code>limit_down</code> are <strong>0</strong>, this means the instrument has no price-limit, including:</p>
 <ul>
-<li>Leveraged ETFs (e.g., 00631L)</li>
-<li>Inverse ETFs (e.g., 00632R)</li>
 <li>Emerging stocks</li>
+<li>Newly listed stocks during their first 5 trading days</li>
+<li>ETFs tracking foreign underlyings (e.g., 00646, 00647L, 00648R)</li>
 </ul>
+<p>For all other stocks and ETFs, the limit prices are the values published by the exchange; leveraged and inverse ETFs tracking domestic underlyings (e.g., 00631L, 00632R) also have price limits.</p>
 </details>
 <h4 id="fetch-all-data-for-a-specific-date-at-once-available-only-to-backer-sponsor-members_8">Fetch all data for a specific date at once (available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">backer, sponsor</a> members)<a class="headerlink" href="#fetch-all-data-for-a-specific-date-at-once-available-only-to-backer-sponsor-members_8" title="Permanent link">&para;</a></h4>
 <div class="admonition example">

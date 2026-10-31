@@ -4220,6 +4220,11 @@
 <h4 id="2026-10-31">2026-10-31<a class="headerlink" href="#2026-10-31" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/ai/Mcp/#tools">MCP Server</a> version 0.1.1: new tool <code>download_financial_report</code> reads the table of contents, specific pages, or pages containing a keyword in <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Fundamental/#taiwan-stock-financial-report-and-annual-report-pdf-taiwanstockfinancialreportfile-available-only-to-sponsorpro-members">Taiwan stock financial report and annual report PDFs</a> (e.g. revenue breakdowns or inventory composition in the notes), with no download code needed (sponsorpro members only). Please update to the latest version (<code>uvx</code> picks it up automatically; Claude Desktop users should download finmind.mcpb again)</li>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#daily-price-limit-taiwanstockpricelimit-available-only-to-backer-sponsor-members">Daily Price Limit TaiwanStockPriceLimit</a> now uses the price limits published by the exchanges as its data source (TWSE from 2005-12-19, TPEx from 2007-04-23; earlier dates are calculated using the rules in effect at the time, 7% before 2015-06-01). All historical data has been updated; if you downloaded this data before, you can fetch it again<ul>
+<li>Leveraged and inverse ETFs tracking domestic underlyings (e.g. 00631L) have price limits; ETFs tracking foreign underlyings (e.g. 00646, 00647L) and newly listed stocks during their first 5 trading days are 0 (no price limit)</li>
+<li>Added data for delisted TPEx stocks (e.g. 1333 on 2015-01-05); periods before listing (e.g. 2633 in 2015) are 0</li>
+</ul>
+</li>
 </ul>
 <h4 id="2026-10-24">2026-10-24<a class="headerlink" href="#2026-10-24" title="Permanent link">&para;</a></h4>
 <ul>
