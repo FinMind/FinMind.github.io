@@ -2128,7 +2128,7 @@
 </div>
 <p>各 host 的設定檔位置、<code>claude mcp add</code> / <code>gemini mcp add</code> / <code>codex mcp add</code> 指令與驗證方式，詳見 <a href="https://github.com/FinMind/FinMind-MCP/tree/master/install">FinMind-MCP 安裝指南</a>。</p>
 <h2 id="tools">可用工具<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
-<p>自 0.1.0 版起，MCP server 可存取 FinMind 所有公開資料與 endpoint，包含整日全市場下載（storage_objects）。共 8 個工具，由 AI 工具依問題自動選用：</p>
+<p>自 0.1.0 版起，MCP server 可存取 FinMind 所有公開資料與 endpoint，包含整日全市場下載（storage_objects）；0.1.1 版新增財報與年報 PDF（<code>download_financial_report</code>）。共 8 個工具，由 AI 工具依問題自動選用：</p>
 <table>
 <thead>
 <tr>
@@ -2184,6 +2184,7 @@
 <details class="note">
 <summary>財報 PDF（<code>download_financial_report</code>）注意事項</summary>
 <ul>
+<li>請更新至 0.1.1 版以上（<code>uvx</code> 會自動取得新版，Claude Desktop 請重新下載 finmind.mcpb）。</li>
 <li>限 <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> 會員使用。</li>
 <li>不用自己下載檔案或另外安裝讀 PDF 的工具：工具會先回封面與目錄，AI 再依頁次讀附註，或用關鍵字找頁面。</li>
 <li>一次最多回傳約 30,000 字；檔案存在本機快取，同一份再查不會重新下載。</li>

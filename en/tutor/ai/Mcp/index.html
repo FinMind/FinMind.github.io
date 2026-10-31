@@ -2128,7 +2128,7 @@
 </div>
 <p>For per-host config file locations, the <code>claude mcp add</code> / <code>gemini mcp add</code> / <code>codex mcp add</code> one-liners, and verification steps, see the <a href="https://github.com/FinMind/FinMind-MCP/tree/master/install">FinMind-MCP install guides</a>.</p>
 <h2 id="tools">Available tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
-<p>Since version 0.1.0, the MCP server can access all public FinMind data and endpoints, including whole-day, market-wide downloads (storage_objects). It provides 8 tools, which your AI tool picks automatically based on your question:</p>
+<p>Since version 0.1.0, the MCP server can access all public FinMind data and endpoints, including whole-day, market-wide downloads (storage_objects); version 0.1.1 adds financial report and annual report PDFs (<code>download_financial_report</code>). It provides 8 tools, which your AI tool picks automatically based on your question:</p>
 <table>
 <thead>
 <tr>
@@ -2184,6 +2184,7 @@
 <details class="note">
 <summary>Financial report PDFs (<code>download_financial_report</code>)</summary>
 <ul>
+<li>Requires version 0.1.1 or later (<code>uvx</code> picks it up automatically; Claude Desktop users should download finmind.mcpb again).</li>
 <li>Available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> members.</li>
 <li>No need to download files yourself or install a PDF reader: the tool first returns the cover and table of contents, then the AI reads the notes by page number or finds pages by keyword.</li>
 <li>Each call returns up to about 30,000 characters; files are cached locally, so the same report is not downloaded again.</li>
