@@ -1460,6 +1460,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#read-financial-report-notes-sponsor-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read Financial Report Notes (Sponsor Pro)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2037,6 +2046,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#read-financial-report-notes-sponsor-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read Financial Report Notes (Sponsor Pro)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2110,7 +2128,7 @@
 </div>
 <p>For per-host config file locations, the <code>claude mcp add</code> / <code>gemini mcp add</code> / <code>codex mcp add</code> one-liners, and verification steps, see the <a href="https://github.com/FinMind/FinMind-MCP/tree/master/install">FinMind-MCP install guides</a>.</p>
 <h2 id="tools">Available tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
-<p>Since version 0.1.0, the MCP server can access all public FinMind data and endpoints, including whole-day, market-wide downloads (storage_objects). It provides 7 tools, which your AI tool picks automatically based on your question:</p>
+<p>Since version 0.1.0, the MCP server can access all public FinMind data and endpoints, including whole-day, market-wide downloads (storage_objects). It provides 8 tools, which your AI tool picks automatically based on your question:</p>
 <table>
 <thead>
 <tr>
@@ -2144,6 +2162,10 @@
 <td>Download whole-day, market-wide data (ticks, minute K, branch reports, etc.) to your machine; returns the file path, row count, columns and first rows, with optional filtering by ID / branch</td>
 </tr>
 <tr>
+<td><code>download_financial_report</code></td>
+<td>Download a listed company's <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Fundamental/#taiwan-stock-financial-report-and-annual-report-pdf-taiwanstockfinancialreportfile-available-only-to-sponsorpro-members">financial report or annual report PDF</a> and read its table of contents, specific pages, or pages containing a keyword (e.g. revenue breakdowns or inventory composition in the notes)</td>
+</tr>
+<tr>
 <td><code>get_pricing</code></td>
 <td>Membership plan prices and licensing (no token needed)</td>
 </tr>
@@ -2157,6 +2179,15 @@
 <li>Whole-day files are often tens of MB, so the tool returns only a summary (up to 500 rows); the full file is saved locally and can be read with <code>pandas.read_parquet(path)</code>.</li>
 <li>Files are saved under <code>finmind-mcp/storage_objects/</code> in your user cache directory by default; set the <code>FINMIND_DOWNLOAD_DIR</code> environment variable to change the location. Repeated queries for the same dataset and day reuse the local file.</li>
 <li>The summary requires <code>pyarrow</code>. The Claude Desktop one-click install already includes it; other tools do not install it by default (the file is still downloaded and its path returned). To get summaries, change <code>args</code> in your config to <code>["--from", "finmind-mcp[parquet]", "finmind-mcp"]</code>.</li>
+</ul>
+</details>
+<details class="note">
+<summary>Financial report PDFs (<code>download_financial_report</code>)</summary>
+<ul>
+<li>Available only to <a href="https://finmindtrade.com/analysis/#/Sponsor/sponsor">sponsorpro</a> members.</li>
+<li>No need to download files yourself or install a PDF reader: the tool first returns the cover and table of contents, then the AI reads the notes by page number or finds pages by keyword.</li>
+<li>Each call returns up to about 30,000 characters; files are cached locally, so the same report is not downloaded again.</li>
+<li>In some PDFs the main statement pages are images, and some annual reports have a corrupted text layer; the tool flags these pages instead of returning garbled text. For income statement, balance sheet and cash flow figures, query the three financial statement datasets instead.</li>
 </ul>
 </details>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
@@ -2200,6 +2231,12 @@
 </code></pre></div>
 <blockquote>
 <p>Expected result: the tool calls <code>download_storage_object</code> to save the whole-day file locally, returns the file path, and filters out TSMC's minute K bars.</p>
+</blockquote>
+<h3 id="read-financial-report-notes-sponsor-pro">Read Financial Report Notes (Sponsor Pro)<a class="headerlink" href="#read-financial-report-notes-sponsor-pro" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>TSMC&#39;s inventory jumped in Q2 2026. Is it unsold finished goods? Check the notes in the financial report.
+</code></pre></div>
+<blockquote>
+<p>Expected result: the tool first calls <code>query_dataset</code> on the balance sheet to confirm the inventory change, then calls <code>download_financial_report</code> to find the inventory note in the financial report and answers based on the split between finished goods, work in process and raw materials.</p>
 </blockquote>
 <h2 id="caveats">Data field caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
 <p>The following are common field-definition differences to keep in mind when an AI agent interprets query results (Taiwan stock prices, futures / options ticks). They are not data errors:</p>
