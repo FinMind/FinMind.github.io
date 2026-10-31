@@ -5663,6 +5663,15 @@
 <li>開啟 Async 功能，可大幅縮短資料更新時間，colab 實測 2175 檔股票，只需 4 分 20 秒即可完成下載。</li>
 </ul>
 <details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
+<details class="note">
 <summary>興櫃自營商分點的 <code>price</code> 為 0 屬正常現象，非資料缺失</summary>
 <p>興櫃股票（<code>stock_id</code> 可用 <code>TaiwanStockInfo</code> 查為 <code>emerging</code>）採「推薦證券商報價驅動之議價交易」，與上市櫃的集中撮合不同。推薦證券商身兼造市，<strong>以自有資金及庫存（即自營商，券商代碼結尾為 <code>T</code>）連續報出買價與賣價並履行成交義務</strong>；其當日造市部位買賣雙向、橫跨多個價位，無單一代表成交均價，因此該分點列的 <code>price</code> 會顯示為 <code>0</code>（<code>buy</code>／<code>sell</code> 股數仍為正確值）。</p>
 <ul>
@@ -5875,6 +5884,15 @@
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 <li>部分資料缺失，缺失日期為：2022-10-31~2022-11-03（上櫃不完整）</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <details class="note">
 <summary>分點名稱可能與證券商資訊表不同，請以 <code>securities_trader_id</code> 對應</summary>
 <p>上市、上櫃股票在分點資料表的 <code>securities_trader</code> 沿用每日買賣日報表上的分點簡稱（興櫃股票則與證券商資訊表相同），證券商資訊表則採證交所券商名錄的正式名稱。兩者更新時點不同，分點更名或遷址後，日報表可能仍沿用舊名；上市與上櫃的日報表簡稱也可能不同。</p>
@@ -6099,6 +6117,15 @@
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 <li>部分資料缺失，缺失日期為：2022-10-31~2022-11-03（上櫃不完整）</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="41:3"><input checked="checked" id="__tabbed_41_1" name="__tabbed_41" type="radio" /><input id="__tabbed_41_2" name="__tabbed_41" type="radio" /><input id="__tabbed_41_3" name="__tabbed_41" type="radio" /><div class="tabbed-labels"><label for="__tabbed_41_1">Package</label><label for="__tabbed_41_2">Python-request</label><label for="__tabbed_41_3">R</label></div>
@@ -6250,6 +6277,15 @@
 <li>由於資料量過大，單次請求只提供一天資料</li>
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="43:4"><input checked="checked" id="__tabbed_43_1" name="__tabbed_43" type="radio" /><input id="__tabbed_43_2" name="__tabbed_43" type="radio" /><input id="__tabbed_43_3" name="__tabbed_43" type="radio" /><input id="__tabbed_43_4" name="__tabbed_43" type="radio" /><div class="tabbed-labels"><label for="__tabbed_43_1">Package</label><label for="__tabbed_43_2">Python-request</label><label for="__tabbed_43_3">R</label><label for="__tabbed_43_4">Package-Async</label></div>
@@ -6390,6 +6426,15 @@
 <li>由於資料量過大，單次請求只提供一天資料)</li>
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="45:2"><input checked="checked" id="__tabbed_45_1" name="__tabbed_45" type="radio" /><input id="__tabbed_45_2" name="__tabbed_45" type="radio" /><div class="tabbed-labels"><label for="__tabbed_45_1">Python-request</label><label for="__tabbed_45_2">R</label></div>
@@ -6521,6 +6566,15 @@
 <li>透過 signed URL 下載整日 parquet，免逐檔查詢，適合需要全市場權證分點的批次分析</li>
 <li>資料更新時間 <strong>星期一至五 18:00</strong>，實際更新時間以 API 資料為主</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="47:3"><input checked="checked" id="__tabbed_47_1" name="__tabbed_47" type="radio" /><input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><input id="__tabbed_47_3" name="__tabbed_47" type="radio" /><div class="tabbed-labels"><label for="__tabbed_47_1">Package</label><label for="__tabbed_47_2">Python-request</label><label for="__tabbed_47_3">R</label></div>
@@ -6910,6 +6964,15 @@
 <li>必須同時帶 data_id（股票代號）與 securities_trader_id（券商分點代號），以及 start_date、end_date；缺少任一 id 會回傳 HTTP 400，錯誤原因請見回應的 <code>detail</code> 欄位</li>
 <li>如需一次取得當日所有股票、所有券商分點，請使用 <a href="#taiwanstocktradingdailyreportsecidagg-sponsorpro">一次拿特定日期，所有資料</a></li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="53:3"><input checked="checked" id="__tabbed_53_1" name="__tabbed_53" type="radio" /><input id="__tabbed_53_2" name="__tabbed_53" type="radio" /><input id="__tabbed_53_3" name="__tabbed_53" type="radio" /><div class="tabbed-labels"><label for="__tabbed_53_1">Package</label><label for="__tabbed_53_2">Python-request</label><label for="__tabbed_53_3">R</label></div>
@@ -7072,6 +7135,15 @@
 <li>輸入 dataset、date 參數，回傳該日所有股票、所有券商分點的統計。</li>
 <li>透過 signed URL 下載整日 parquet，免逐檔查詢；資料依 stock_id、securities_trader_id 排序。</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="55:3"><input checked="checked" id="__tabbed_55_1" name="__tabbed_55" type="radio" /><input id="__tabbed_55_2" name="__tabbed_55" type="radio" /><input id="__tabbed_55_3" name="__tabbed_55" type="radio" /><div class="tabbed-labels"><label for="__tabbed_55_1">Package</label><label for="__tabbed_55_2">Python-request</label><label for="__tabbed_55_3">R</label></div>
@@ -7228,6 +7300,15 @@
 <li>資料區間：2026-04-28 ~ now</li>
 <li>只需輸入日期，不需股票代碼</li>
 </ul>
+<details class="note">
+<summary>使用範圍：僅供用戶自行使用，不得提供予第三人</summary>
+<p>本資料來源為臺灣證券交易所與證券櫃檯買賣中心，來源機關對其利用另有限制：</p>
+<ul>
+<li>僅供訂閱用戶自行使用（含公司內部研究、分析），<strong>不得以任何形式再傳輸或提供予第三人</strong>，包括展示於對外的 web、App，或提供給付費會員。</li>
+<li>此限制適用於所有方案，<strong>Sponsor Pro 亦同</strong>。</li>
+<li>如需對外展示，請自行向來源機關取得相應授權，詳見<a href="https://finmind.github.io/Disclaimer/">免責聲明與資料授權</a>。</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="57:2"><input checked="checked" id="__tabbed_57_1" name="__tabbed_57" type="radio" /><input id="__tabbed_57_2" name="__tabbed_57" type="radio" /><div class="tabbed-labels"><label for="__tabbed_57_1">Python</label><label for="__tabbed_57_2">R</label></div>

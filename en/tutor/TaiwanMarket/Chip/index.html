@@ -5663,6 +5663,15 @@
 <li>Enabling Async can significantly reduce data fetch time. In Colab tests, downloading 2,175 stocks takes only 4 minutes 20 seconds.</li>
 </ul>
 <details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
+<details class="note">
 <summary>A <code>price</code> of 0 on emerging-stock dealer (自營商) branches is expected, not missing data</summary>
 <p>Emerging stocks (where <code>TaiwanStockInfo</code> reports the <code>stock_id</code> as <code>emerging</code>) trade on a <strong>quote-driven negotiation market run by recommending securities firms</strong>, unlike the central-matching auction used for listed/OTC stocks. The recommending firms act as market makers, <strong>continuously quoting bid/ask and filling orders with their own capital and inventory — i.e. the dealer (自營商) branch, whose <code>securities_trader_id</code> ends in <code>T</code></strong>. Because that daily market-making position trades both sides across many price levels, there is no single representative execution price, so <code>price</code> is reported as <code>0</code> for that branch row (<code>buy</code>/<code>sell</code> share counts are still correct).</p>
 <ul>
@@ -5875,6 +5884,15 @@
 <li>Data update time <strong>Monday to Friday 18:00</strong>, the actual update time is based on the API data.</li>
 <li>Some data is missing on the following dates: 2022-10-31~2022-11-03 (TPEx-listed stocks incomplete).</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <details class="note">
 <summary>Branch names may differ from Securities Trader Information; match by <code>securities_trader_id</code></summary>
 <p>For listed and OTC stocks, <code>securities_trader</code> in the Trading Daily Report follows the short branch name printed on the daily broker trading report (for emerging stocks it matches Securities Trader Information), while Securities Trader Information uses the official name from the TWSE broker directory. The two are updated at different times: after a branch is renamed or relocated, the daily report may keep the old name, and the short names used for listed (TWSE) and OTC (TPEx) stocks may also differ.</p>
@@ -6099,6 +6117,15 @@
 <li>Data update time: <strong>Monday to Friday 18:00</strong>. The actual update time is based on the API data.</li>
 <li>Some data is missing on these dates: 2022-10-31~2022-11-03 (TPEx-listed stocks incomplete).</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="41:3"><input checked="checked" id="__tabbed_41_1" name="__tabbed_41" type="radio" /><input id="__tabbed_41_2" name="__tabbed_41" type="radio" /><input id="__tabbed_41_3" name="__tabbed_41" type="radio" /><div class="tabbed-labels"><label for="__tabbed_41_1">Package</label><label for="__tabbed_41_2">Python-request</label><label for="__tabbed_41_3">R</label></div>
@@ -6250,6 +6277,15 @@
 <li>Due to the large data volume, only one day of data is provided per request.</li>
 <li>Data update time <strong>Monday to Friday 18:00</strong>, the actual update time is based on the API data.</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="43:4"><input checked="checked" id="__tabbed_43_1" name="__tabbed_43" type="radio" /><input id="__tabbed_43_2" name="__tabbed_43" type="radio" /><input id="__tabbed_43_3" name="__tabbed_43" type="radio" /><input id="__tabbed_43_4" name="__tabbed_43" type="radio" /><div class="tabbed-labels"><label for="__tabbed_43_1">Package</label><label for="__tabbed_43_2">Python-request</label><label for="__tabbed_43_3">R</label><label for="__tabbed_43_4">Package-Async</label></div>
@@ -6390,6 +6426,15 @@
 <li>Due to the large data volume, only one day of data is provided per request.</li>
 <li>Data update time <strong>Monday to Friday 18:00</strong>, the actual update time is based on the API data.</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="45:2"><input checked="checked" id="__tabbed_45_1" name="__tabbed_45" type="radio" /><input id="__tabbed_45_2" name="__tabbed_45" type="radio" /><div class="tabbed-labels"><label for="__tabbed_45_1">Python-request</label><label for="__tabbed_45_2">R</label></div>
@@ -6521,6 +6566,15 @@
 <li>Downloads the whole-day parquet via a signed URL, avoiding file-by-file queries — suitable for batch analysis covering all warrants in the market.</li>
 <li>Data update time <strong>Monday to Friday 18:00</strong>, the actual update time is based on the API data.</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="47:3"><input checked="checked" id="__tabbed_47_1" name="__tabbed_47" type="radio" /><input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><input id="__tabbed_47_3" name="__tabbed_47" type="radio" /><div class="tabbed-labels"><label for="__tabbed_47_1">Package</label><label for="__tabbed_47_2">Python-request</label><label for="__tabbed_47_3">R</label></div>
@@ -6910,6 +6964,15 @@
 <li>Both data_id (stock code) and securities_trader_id (securities trader branch code) are required, along with start_date and end_date. If either id is missing, the API returns HTTP 400 and the reason is given in the <code>detail</code> field of the response.</li>
 <li>To get all stocks and all securities trader branches for a day at once, use <a href="#taiwanstocktradingdailyreportsecidagg-sponsorpro">Fetch all data for a specific date at once</a>.</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="53:3"><input checked="checked" id="__tabbed_53_1" name="__tabbed_53" type="radio" /><input id="__tabbed_53_2" name="__tabbed_53" type="radio" /><input id="__tabbed_53_3" name="__tabbed_53" type="radio" /><div class="tabbed-labels"><label for="__tabbed_53_1">Package</label><label for="__tabbed_53_2">Python-request</label><label for="__tabbed_53_3">R</label></div>
@@ -7072,6 +7135,15 @@
 <li>Providing the dataset and date parameters returns the aggregate statistics of all stocks and all securities trader branches for that day.</li>
 <li>Downloads the whole-day parquet via a signed URL — no need to query stock by stock. Rows are sorted by stock_id and securities_trader_id.</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="55:3"><input checked="checked" id="__tabbed_55_1" name="__tabbed_55" type="radio" /><input id="__tabbed_55_2" name="__tabbed_55" type="radio" /><input id="__tabbed_55_3" name="__tabbed_55" type="radio" /><div class="tabbed-labels"><label for="__tabbed_55_1">Package</label><label for="__tabbed_55_2">Python-request</label><label for="__tabbed_55_3">R</label></div>
@@ -7228,6 +7300,15 @@
 <li>Data range: 2026-04-28 ~ now</li>
 <li>Only requires a date input, no stock symbol needed.</li>
 </ul>
+<details class="note">
+<summary>Usage scope: for your own use only, not for third parties</summary>
+<p>This data is sourced from the Taiwan Stock Exchange and the Taipei Exchange, which impose additional restrictions on its use:</p>
+<ul>
+<li>It is for the subscriber's own use only (including internal research and analysis within your company). <strong>It must not be retransmitted or provided to any third party in any form</strong>, including displaying it on public-facing web or app interfaces, or to paying members.</li>
+<li>This restriction applies to every plan, <strong>including Sponsor Pro</strong>.</li>
+<li>If you need to display it externally, please obtain the corresponding authorization from the source institution yourself. See <a href="https://finmind.github.io/en/Disclaimer/">Disclaimer &amp; Data Licensing</a>.</li>
+</ul>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="57:2"><input checked="checked" id="__tabbed_57_1" name="__tabbed_57" type="radio" /><input id="__tabbed_57_2" name="__tabbed_57" type="radio" /><div class="tabbed-labels"><label for="__tabbed_57_1">Python</label><label for="__tabbed_57_2">R</label></div>
