@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-11-08" class="md-skip">
+        <a href="#2026-11-15" class="md-skip">
           Skip to content
         </a>
       
@@ -1546,6 +1546,15 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2026-11-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-11-15
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#2026-11-08" class="md-nav__link">
@@ -3061,6 +3070,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-11-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      2026-11-15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-11-08" class="md-nav__link">
     <span class="md-ellipsis">
       2026-11-08
@@ -4289,6 +4307,10 @@
 
   <h1>What's New</h1>
 
+<h4 id="2026-11-15">2026-11-15<a class="headerlink" href="#2026-11-15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-after-hours-fixed-price-trading-taiwanstockafterhoursfixedpricetrading">Taiwan Stock After-Hours Fixed-Price Trading TaiwanStockAfterHoursFixedPriceTrading</a> is now available to free members (query with data_id; fetching all stocks for a specific date remains limited to backer and sponsor members).</li>
+</ul>
 <h4 id="2026-11-08">2026-11-08<a class="headerlink" href="#2026-11-08" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-historical-tick-data-table-taiwanstockpricetick-available-only-to-backer-sponsor-members">Taiwan Stock Historical Tick Data Table TaiwanStockPriceTick</a>, <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-minute-k-table-taiwanstockkbar-available-only-to-sponsor-members">Taiwan Stock Minute K Table TaiwanStockKBar</a> fill in some previously missing tick and minute K data for emerging-market stocks for 2023-03-13 ~ 2024-04-11 (e.g. 6906 on 2023-12-26), as well as tick and minute K data for the first trading days of some newly listed ETFs and stocks for 2024-04 ~ 2026-07 (e.g. 00400A on 2026-04-09) (available via both the API and whole-day download files; this period was still incomplete when the emerging-market data range was announced on 2026-10-23, and is now complete)</li>
@@ -4317,7 +4339,7 @@
 </ul>
 <h4 id="2026-10-24">2026-10-24<a class="headerlink" href="#2026-10-24" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Added <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-after-hours-fixed-price-trading-taiwanstockafterhoursfixedpricetrading-available-only-to-backer-sponsor-members">Taiwan Stock After-Hours Fixed-Price Trading TaiwanStockAfterHoursFixedPriceTrading</a>: data range 2004-12-24 ~ now</li>
+<li>Added <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Technical/#taiwan-stock-after-hours-fixed-price-trading-taiwanstockafterhoursfixedpricetrading">Taiwan Stock After-Hours Fixed-Price Trading TaiwanStockAfterHoursFixedPriceTrading</a>: data range 2004-12-24 ~ now</li>
 <li><a href="https://finmind.github.io/en/tutor/ai/Mcp/#tools">MCP Server</a> version 0.1.0: access to all public FinMind data and endpoints, with new tools <code>query_endpoint</code> (daily branch aggregate statistics, warrant branch reports, real-time stock / futures / options snapshots, etc.) and <code>download_storage_object</code> (whole-day, market-wide data downloaded to your machine, sponsorpro members only); when a query exceeds your plan, the tool explains which plan is required and links to the upgrade page. Please update to the latest version (<code>uvx</code> picks it up automatically; Claude Desktop users should download finmind.mcpb again)</li>
 <li><a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#taiwan-stock-trading-daily-report-by-branch-query-by-stock_id-taiwanstocktradingdailyreport-only-available-for-sponsor-members">Taiwan Stock Trading Daily Report by Branch TaiwanStockTradingDailyReport</a> adds branch data for REITs (beneficiary securities; e.g. 01010T 京城樂富R1, covering 2026-08-24 to present; available via both the API and whole-day download files); <a href="https://finmind.github.io/en/tutor/TaiwanMarket/Chip/#daily-securities-trader-branch-aggregate-statistics-taiwanstocktradingdailyreportsecidagg-only-available-for-sponsor-members">Daily Securities Trader Branch Aggregate Statistics TaiwanStockTradingDailyReportSecIdAgg</a> is updated accordingly</li>
 <li>FinMind Python package <a href="https://finmind.github.io/en/release/">2.1.0</a>: upgrades dependencies with known security vulnerabilities, and the minimum <code>ipython</code> version is now 8.10.0; code that calls FinMind <strong>needs no changes</strong>. <code>pip install -U FinMind</code> does not upgrade other packages already installed, so upgrade them together: <code>pip install -U FinMind certifi aiohttp urllib3 requests pyarrow numpy</code> (patched releases of some packages no longer support Python 3.8 / 3.9; Python 3.10 or later is recommended)</li>
