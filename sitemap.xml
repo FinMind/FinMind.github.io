@@ -225,13 +225,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFutOptDailyInfo/"/>
     </url>
     <url>
-        <loc>https://finmind.github.io/DataQuality/TaiwanFutOptInstitutionalInvestors/</loc>
-        <lastmod>2026-11-16</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFutOptInstitutionalInvestors/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFutOptInstitutionalInvestors/"/>
-    </url>
-    <url>
         <loc>https://finmind.github.io/DataQuality/TaiwanFutOptTickInfo/</loc>
         <lastmod>2026-11-16</lastmod>
         <changefreq>daily</changefreq>
@@ -265,6 +258,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFuturesInstitutionalInvestorsAfterHours/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFuturesInstitutionalInvestorsAfterHours/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/DataQuality/TaiwanFuturesKBar/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFuturesKBar/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFuturesKBar/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/DataQuality/TaiwanFuturesOpenInterestLargeTraders/</loc>
@@ -386,6 +386,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockActiveETFInfo/"/>
     </url>
     <url>
+        <loc>https://finmind.github.io/DataQuality/TaiwanStockAfterHoursFixedPriceTrading/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockAfterHoursFixedPriceTrading/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockAfterHoursFixedPriceTrading/"/>
+    </url>
+    <url>
         <loc>https://finmind.github.io/DataQuality/TaiwanStockBalanceSheet/</loc>
         <lastmod>2026-11-16</lastmod>
         <changefreq>daily</changefreq>
@@ -405,6 +412,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockBlockTradingDailyReport/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockBlockTradingDailyReport/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/DataQuality/TaiwanStockBrokerDailyConcentration/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockBrokerDailyConcentration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockBrokerDailyConcentration/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/DataQuality/TaiwanStockCapitalReductionReferencePrice/</loc>
@@ -755,6 +769,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockTradingDailyReport/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockTradingDailyReport/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/DataQuality/TaiwanStockTradingDailyReportSecIdAgg/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockTradingDailyReportSecIdAgg/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockTradingDailyReportSecIdAgg/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/DataQuality/TaiwanStockTradingDate/</loc>
@@ -1261,13 +1282,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFutOptDailyInfo/"/>
     </url>
     <url>
-        <loc>https://finmind.github.io/en/DataQuality/TaiwanFutOptInstitutionalInvestors/</loc>
-        <lastmod>2026-11-16</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFutOptInstitutionalInvestors/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFutOptInstitutionalInvestors/"/>
-    </url>
-    <url>
         <loc>https://finmind.github.io/en/DataQuality/TaiwanFutOptTickInfo/</loc>
         <lastmod>2026-11-16</lastmod>
         <changefreq>daily</changefreq>
@@ -1301,6 +1315,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFuturesInstitutionalInvestorsAfterHours/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFuturesInstitutionalInvestorsAfterHours/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/en/DataQuality/TaiwanFuturesKBar/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanFuturesKBar/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanFuturesKBar/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/en/DataQuality/TaiwanFuturesOpenInterestLargeTraders/</loc>
@@ -1422,6 +1443,13 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockActiveETFInfo/"/>
     </url>
     <url>
+        <loc>https://finmind.github.io/en/DataQuality/TaiwanStockAfterHoursFixedPriceTrading/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockAfterHoursFixedPriceTrading/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockAfterHoursFixedPriceTrading/"/>
+    </url>
+    <url>
         <loc>https://finmind.github.io/en/DataQuality/TaiwanStockBalanceSheet/</loc>
         <lastmod>2026-11-16</lastmod>
         <changefreq>daily</changefreq>
@@ -1441,6 +1469,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockBlockTradingDailyReport/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockBlockTradingDailyReport/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/en/DataQuality/TaiwanStockBrokerDailyConcentration/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockBrokerDailyConcentration/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockBrokerDailyConcentration/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/en/DataQuality/TaiwanStockCapitalReductionReferencePrice/</loc>
@@ -1791,6 +1826,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockTradingDailyReport/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockTradingDailyReport/"/>
+    </url>
+    <url>
+        <loc>https://finmind.github.io/en/DataQuality/TaiwanStockTradingDailyReportSecIdAgg/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://finmind.github.io/en/DataQuality/TaiwanStockTradingDailyReportSecIdAgg/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://finmind.github.io/DataQuality/TaiwanStockTradingDailyReportSecIdAgg/"/>
     </url>
     <url>
         <loc>https://finmind.github.io/en/DataQuality/TaiwanStockTradingDate/</loc>
