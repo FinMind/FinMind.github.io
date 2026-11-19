@@ -2368,8 +2368,9 @@
 <li><strong>幣別</strong>：所有公司一律以<strong>新台幣</strong>列示，含 KY 外國公司，沒有其他幣別。</li>
 <li><strong>單位</strong>：<code>value</code> 為<strong>元</strong>。財報原始單位為新台幣千元，本表已乘以 1000 換算成元；<code>EPS</code> 為每股元，不做換算。</li>
 <li><strong>單季值</strong>：<code>date</code> 為季末日，金額科目都是<strong>單季</strong>數字。財報公布的是年初至該季的累計數，本表在同一年度內逐季相減：Q1 = Q1 累計、Q2 = 上半年累計 − Q1 累計、Q3 = 前三季累計 − 上半年累計、Q4 = 全年 − 前三季累計，因此四季相加即為全年數字。以 2330 為例，2024 年四季 <code>Revenue</code> 為 5,926 / 6,735 / 7,597 / 8,685 億元，與各季三個月的 <code>TaiwanStockMonthRevenue</code> 合計一致。</li>
-<li><strong>只公告半年報、年報的公司</strong>（部分興櫃、公開發行公司）：該年度只有 06-30、12-31 兩筆，06-30 為上半年合計、12-31 為下半年合計（全年 − 上半年）。可用該年度是否有 03-31／09-30 兩筆判斷。</li>
+<li><strong>只公告半年報、年報的公司</strong>（大多為興櫃公司）：該年度只有 06-30、12-31 兩筆，06-30 為上半年合計、12-31 為下半年合計（全年 − 上半年）。可用該年度是否有 03-31／09-30 兩筆判斷。</li>
 <li><strong>金融業</strong>：銀行、金控、證券、保險的損益表科目與一般產業不同，例如金控的 <code>Revenue</code> 對應「淨收益」。請以 <code>origin_name</code> 欄位確認每一列對應的原始科目名稱。</li>
+<li><strong>收錄範圍</strong>：臺灣存託憑證（TDR，代號 91 開頭，例如 9105）不在本資料集收錄範圍，查詢會回傳空資料。可用 <code>TaiwanStockInfo</code> 的 <code>industry_category</code>（TDR 為「存託憑證」）先確認標的類型。</li>
 </ul>
 </details>
 <details class="note">
