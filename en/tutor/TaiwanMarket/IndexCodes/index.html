@@ -2494,7 +2494,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_tick_snapshot</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="s2">&quot;001&quot;</span><span class="p">)</span>  <span class="c1"># TAIEX</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Fetch multiple at once (stocks and indices can be mixed)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_tick_snapshot</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="s2">&quot;101&quot;</span><span class="p">,</span> <span class="s2">&quot;2330&quot;</span><span class="p">])</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Fetch all snapshots in one call</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Fetch all snapshots in one call (only until 2027-01-31; per TWSE regulations, max 50 per request from 2027-02-01, so pass stock_id in batches)</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">taiwan_stock_tick_snapshot</span><span class="p">()</span>
 </code></pre></div>
 </div>
