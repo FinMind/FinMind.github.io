@@ -2093,12 +2093,17 @@
 <tr>
 <td>Fields</td>
 <td>Fields in the Schema below that are not marked "Sponsor Pro"</td>
-<td>All fields, including the 11 fields marked "Sponsor Pro" in the Schema: previous close, limit-up / limit-down prices, best 5 bid / ask prices and volumes, inside / outside volume, after-hours fixed-price trading volume, and market close flag</td>
+<td>All fields, including the 24 fields marked "Sponsor Pro" in the Schema: previous close, limit-up / limit-down prices, best 5 bid / ask prices and volumes, inside / outside volume, after-hours fixed-price trading volume, market close flag, and 13 intraday odd-lot fields (<code>odd_lot_*</code>)</td>
 </tr>
 <tr>
 <td>Pre-market trial matching for TWSE / TPEx stocks (08:30 ~ 09:00)</td>
 <td>Not included</td>
 <td>Included; see "Pre-market trial matching" below</td>
+</tr>
+<tr>
+<td>Intraday odd-lot quotes for TWSE / TPEx stocks (09:00 ~ 13:30; from 13:40 includes after-hours odd-lot trading)</td>
+<td>Not included</td>
+<td>Included; see "Intraday odd-lot quotes" below</td>
 </tr>
 </tbody>
 </table>
@@ -2110,6 +2115,17 @@
 <li>From 08:30 to 09:00, TWSE- and TPEx-listed stocks that have not traded yet return pre-market trial matching data: <code>close</code> is the trial matching price, <code>volume</code> and <code>total_volume</code> are the cumulative trial matching volume, the time in <code>date</code> is the trial matching time, and <code>TickType</code> is 0</li>
 <li>From the 09:00 open, data reflects actual trades; stocks that have not traded yet show the previous close as <code>close</code>, with <code>volume</code> and <code>total_volume</code> at 0</li>
 <li>Emerging-market stocks have no pre-market trial matching</li>
+</ul>
+</details>
+<details class="note">
+<summary>Intraday odd-lot quotes for TWSE / TPEx stocks (Sponsor Pro)</summary>
+<ul>
+<li>Each stock row also carries the intraday odd-lot quote for the same stock, in fields prefixed with <code>odd_lot_</code>; see the Schema below</li>
+<li>Intraday odd-lot trading 09:00 ~ 13:30; from 13:40 the values include after-hours odd-lot trading (last price, time and best bid/ask become after-hours values; total volume is intraday + after-hours)</li>
+<li><code>odd_lot_open</code>, <code>odd_lot_high</code> and <code>odd_lot_low</code> are intraday odd-lot values; after the close, the best bid / ask volumes are 0</li>
+<li>Odd-lot volume fields (<code>odd_lot_total_volume</code>, <code>odd_lot_buy_volume</code>, <code>odd_lot_sell_volume</code>) are in shares, while the board-lot volume fields are in lots</li>
+<li>When <code>odd_lot_is_simulated</code> is True, the odd-lot price and volume are trial matching data, not actual trades</li>
+<li>Available for TWSE- and TPEx-listed stocks only; the <code>odd_lot_*</code> fields are null for emerging-market stocks</li>
 </ul>
 </details>
 <details class="note">
@@ -2230,6 +2246,19 @@
 <th style="text-align: right;">outside_volume</th>
 <th style="text-align: right;">after_hours_volume</th>
 <th style="text-align: left;">is_closed</th>
+<th style="text-align: left;">odd_lot_date</th>
+<th style="text-align: right;">odd_lot_open</th>
+<th style="text-align: right;">odd_lot_high</th>
+<th style="text-align: right;">odd_lot_low</th>
+<th style="text-align: right;">odd_lot_close</th>
+<th style="text-align: right;">odd_lot_change_price</th>
+<th style="text-align: right;">odd_lot_change_rate</th>
+<th style="text-align: right;">odd_lot_total_volume</th>
+<th style="text-align: right;">odd_lot_buy_price</th>
+<th style="text-align: right;">odd_lot_buy_volume</th>
+<th style="text-align: right;">odd_lot_sell_price</th>
+<th style="text-align: right;">odd_lot_sell_volume</th>
+<th style="text-align: left;">odd_lot_is_simulated</th>
 </tr>
 </thead>
 <tbody>
@@ -2265,6 +2294,19 @@
 <td style="text-align: right;">4380</td>
 <td style="text-align: right;">4744</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">2021-12-08 10:31:20</td>
+<td style="text-align: right;">613</td>
+<td style="text-align: right;">614</td>
+<td style="text-align: right;">608</td>
+<td style="text-align: right;">610</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.49</td>
+<td style="text-align: right;">152340</td>
+<td style="text-align: right;">609</td>
+<td style="text-align: right;">1520</td>
+<td style="text-align: right;">610</td>
+<td style="text-align: right;">2380</td>
 <td style="text-align: left;">False</td>
 </tr>
 </tbody>
@@ -2302,8 +2344,21 @@
 <a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    inside_volume: int64, # (Sponsor Pro) inside volume (traded at bid)
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    outside_volume: int64, # (Sponsor Pro) outside volume (traded at ask)
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    after_hours_volume: int64, # (Sponsor Pro) after-hours fixed-price trading volume
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    is_closed: bool # (Sponsor Pro) market close flag (True once the stock has closed for the day)
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>}
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    is_closed: bool, # (Sponsor Pro) market close flag (True once the stock has closed for the day)
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    odd_lot_date: str, # (Sponsor Pro) odd-lot last trade time (after-hours odd-lot from 13:40)
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    odd_lot_open: float64, # (Sponsor Pro) odd-lot open price (intraday odd-lot)
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    odd_lot_high: float64, # (Sponsor Pro) odd-lot high price (intraday odd-lot)
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    odd_lot_low: float64, # (Sponsor Pro) odd-lot low price (intraday odd-lot)
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    odd_lot_close: float64, # (Sponsor Pro) odd-lot last price (after-hours odd-lot from 13:40)
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    odd_lot_change_price: float64, # (Sponsor Pro) odd-lot price change
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>    odd_lot_change_rate: float64, # (Sponsor Pro) odd-lot price change (%)
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>    odd_lot_total_volume: int64, # (Sponsor Pro) odd-lot cumulative volume (shares; intraday + after-hours from 13:40)
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>    odd_lot_buy_price: float64, # (Sponsor Pro) odd-lot best bid price (after-hours odd-lot from 13:40)
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>    odd_lot_buy_volume: int64, # (Sponsor Pro) odd-lot best bid volume (shares)
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>    odd_lot_sell_price: float64, # (Sponsor Pro) odd-lot best ask price (after-hours odd-lot from 13:40)
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>    odd_lot_sell_volume: int64, # (Sponsor Pro) odd-lot best ask volume (shares)
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>    odd_lot_is_simulated: bool # (Sponsor Pro) odd-lot trial matching flag (True means trial matching data, not an actual trade)
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>}
 </code></pre></div>
 </div>
 </div>
@@ -2312,7 +2367,9 @@
 <details class="note">
 <summary>Volume units and emerging-market stock fields</summary>
 <ul>
-<li>Volume fields (<code>volume</code>, <code>total_volume</code>, <code>yesterday_volume</code>, <code>buy_volume</code>, <code>sell_volume</code>, <code>buy_volumes</code>, <code>sell_volumes</code>, <code>inside_volume</code>, <code>outside_volume</code>, <code>after_hours_volume</code>) are in lots for TWSE- and TPEx-listed stocks, and in shares for emerging-market stocks</li>
+<li>Board-lot volume fields (<code>volume</code>, <code>total_volume</code>, <code>yesterday_volume</code>, <code>buy_volume</code>, <code>sell_volume</code>, <code>buy_volumes</code>, <code>sell_volumes</code>, <code>inside_volume</code>, <code>outside_volume</code>, <code>after_hours_volume</code>) are in lots for TWSE- and TPEx-listed stocks, and in shares for emerging-market stocks</li>
+<li>Intraday odd-lot volume fields (<code>odd_lot_total_volume</code>, <code>odd_lot_buy_volume</code>, <code>odd_lot_sell_volume</code>) are in shares</li>
+<li>Emerging-market stocks have no intraday odd-lot trading, so the <code>odd_lot_*</code> fields are null</li>
 <li>Emerging-market stocks have no price limits, so <code>limit_up</code> and <code>limit_down</code> are null</li>
 <li>Emerging-market stocks provide only the best bid and ask, so <code>buy_prices</code>, <code>buy_volumes</code>, <code>sell_prices</code> and <code>sell_volumes</code> have a value only at level 1; levels 2 ~ 5 are 0</li>
 </ul>
@@ -2326,7 +2383,7 @@
 <p>Uses the same API as Taiwan Stock Real-Time Information: pass an index code (3 digits) as <code>data_id</code> to get real-time index data, e.g. <code>001</code> = TAIEX, <code>101</code> = OTC index. 91 indices are supported; see the full mapping in <a href="../IndexCodes/">Taiwan Stock Index Codes</a>.</p>
 <details class="note">
 <summary>Indices and stocks return different fields</summary>
-<p>Indices return only the fields listed in the Schema below. They have no stock bid/ask fields (<code>buy_price</code>, <code>buy_volume</code>, <code>sell_price</code>, <code>sell_volume</code>, <code>buy_prices</code>, <code>buy_volumes</code>, <code>sell_prices</code>, <code>sell_volumes</code>), no <code>TickType</code>, and no <code>yesterday_close</code>, <code>limit_up</code>, <code>limit_down</code>, <code>inside_volume</code>, <code>outside_volume</code>, <code>after_hours_volume</code> or <code>is_closed</code>; they additionally return the index name <code>name</code>. Sponsor and Sponsor Pro members receive the same index fields.</p>
+<p>Indices return only the fields listed in the Schema below. They have no stock bid/ask fields (<code>buy_price</code>, <code>buy_volume</code>, <code>sell_price</code>, <code>sell_volume</code>, <code>buy_prices</code>, <code>buy_volumes</code>, <code>sell_prices</code>, <code>sell_volumes</code>), no <code>TickType</code>, and no <code>yesterday_close</code>, <code>limit_up</code>, <code>limit_down</code>, <code>inside_volume</code>, <code>outside_volume</code>, <code>after_hours_volume</code>, <code>is_closed</code> or the intraday odd-lot fields <code>odd_lot_*</code>; they additionally return the index name <code>name</code>. Sponsor and Sponsor Pro members receive the same index fields.</p>
 <p>With an empty <code>data_id</code> (all codes), stocks and indices are returned in the same table; tell them apart by the length of <code>stock_id</code> (3 digits for indices).</p>
 </details>
 <div class="admonition example">

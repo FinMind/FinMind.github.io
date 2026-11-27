@@ -2093,12 +2093,17 @@
 <tr>
 <td>回傳欄位</td>
 <td>下方 Schema 中未標註「Sponsor Pro」的欄位</td>
-<td>全部欄位，另含 Schema 中標註「Sponsor Pro」的 11 個欄位：昨收價、漲跌停價、最佳五檔委買委賣價量、內外盤成交量、盤後定價交易成交量、收盤註記</td>
+<td>全部欄位，另含 Schema 中標註「Sponsor Pro」的 24 個欄位：昨收價、漲跌停價、最佳五檔委買委賣價量、內外盤成交量、盤後定價交易成交量、收盤註記，以及 13 個盤中零股欄位（<code>odd_lot_*</code>）</td>
 </tr>
 <tr>
 <td>上市櫃盤前試撮（08:30 ~ 09:00）</td>
 <td>無</td>
 <td>有，說明見下方「上市櫃盤前試撮」</td>
+</tr>
+<tr>
+<td>上市櫃盤中零股報價（09:00 ~ 13:30，13:40 後含盤後零股）</td>
+<td>無</td>
+<td>有，說明見下方「上市櫃盤中零股報價」</td>
 </tr>
 </tbody>
 </table>
@@ -2110,6 +2115,17 @@
 <li>08:30 ~ 09:00 尚未成交的上市、上櫃股票，回傳盤前試撮資訊：<code>close</code> 為試撮價，<code>volume</code>、<code>total_volume</code> 為試撮累計量，<code>date</code> 的時間為試撮時間，<code>TickType</code> 為 0</li>
 <li>09:00 開盤後以實際成交為準；尚未有成交的股票，<code>close</code> 為昨收價，<code>volume</code>、<code>total_volume</code> 為 0</li>
 <li>興櫃股票沒有盤前試撮</li>
+</ul>
+</details>
+<details class="note">
+<summary>上市櫃盤中零股報價（Sponsor Pro）</summary>
+<ul>
+<li>每列個股另附同一檔股票的盤中零股報價，欄位皆以 <code>odd_lot_</code> 開頭，說明見下方 Schema</li>
+<li>盤中零股 09:00 ~ 13:30；13:40 後含盤後零股（成交價、時間、最佳一檔委買委賣價為盤後零股，累計成交量為盤中＋盤後合計）</li>
+<li><code>odd_lot_open</code>、<code>odd_lot_high</code>、<code>odd_lot_low</code> 為盤中零股的值；收盤後最佳一檔委買委賣量為 0</li>
+<li>零股量相關欄位（<code>odd_lot_total_volume</code>、<code>odd_lot_buy_volume</code>、<code>odd_lot_sell_volume</code>）的單位為股；整股的量相關欄位單位為張</li>
+<li><code>odd_lot_is_simulated</code> 為 True 時，表示零股價量為試撮資訊，不是實際成交</li>
+<li>只有上市、上櫃股票提供；興櫃股票的 <code>odd_lot_*</code> 欄位為 null</li>
 </ul>
 </details>
 <details class="note">
@@ -2230,6 +2246,19 @@
 <th style="text-align: right;">outside_volume</th>
 <th style="text-align: right;">after_hours_volume</th>
 <th style="text-align: left;">is_closed</th>
+<th style="text-align: left;">odd_lot_date</th>
+<th style="text-align: right;">odd_lot_open</th>
+<th style="text-align: right;">odd_lot_high</th>
+<th style="text-align: right;">odd_lot_low</th>
+<th style="text-align: right;">odd_lot_close</th>
+<th style="text-align: right;">odd_lot_change_price</th>
+<th style="text-align: right;">odd_lot_change_rate</th>
+<th style="text-align: right;">odd_lot_total_volume</th>
+<th style="text-align: right;">odd_lot_buy_price</th>
+<th style="text-align: right;">odd_lot_buy_volume</th>
+<th style="text-align: right;">odd_lot_sell_price</th>
+<th style="text-align: right;">odd_lot_sell_volume</th>
+<th style="text-align: left;">odd_lot_is_simulated</th>
 </tr>
 </thead>
 <tbody>
@@ -2265,6 +2294,19 @@
 <td style="text-align: right;">4380</td>
 <td style="text-align: right;">4744</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">2021-12-08 10:31:20</td>
+<td style="text-align: right;">613</td>
+<td style="text-align: right;">614</td>
+<td style="text-align: right;">608</td>
+<td style="text-align: right;">610</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.49</td>
+<td style="text-align: right;">152340</td>
+<td style="text-align: right;">609</td>
+<td style="text-align: right;">1520</td>
+<td style="text-align: right;">610</td>
+<td style="text-align: right;">2380</td>
 <td style="text-align: left;">False</td>
 </tr>
 </tbody>
@@ -2302,8 +2344,21 @@
 <a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    inside_volume: int64, # （Sponsor Pro）內盤成交量
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    outside_volume: int64, # （Sponsor Pro）外盤成交量
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    after_hours_volume: int64, # （Sponsor Pro）盤後定價交易成交量
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    is_closed: bool # （Sponsor Pro）收盤註記（True 表示已收盤）
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>}
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    is_closed: bool, # （Sponsor Pro）收盤註記（True 表示已收盤）
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    odd_lot_date: str, # （Sponsor Pro）零股最近成交時間（13:40 後為盤後零股）
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    odd_lot_open: float64, # （Sponsor Pro）零股開盤價（盤中零股）
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    odd_lot_high: float64, # （Sponsor Pro）零股最高價（盤中零股）
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    odd_lot_low: float64, # （Sponsor Pro）零股最低價（盤中零股）
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    odd_lot_close: float64, # （Sponsor Pro）零股成交價（13:40 後為盤後零股）
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    odd_lot_change_price: float64, # （Sponsor Pro）零股漲跌
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>    odd_lot_change_rate: float64, # （Sponsor Pro）零股漲跌幅（%）
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>    odd_lot_total_volume: int64, # （Sponsor Pro）零股累計成交量（股；13:40 後為盤中＋盤後合計）
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>    odd_lot_buy_price: float64, # （Sponsor Pro）零股最佳委買價（13:40 後為盤後零股）
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>    odd_lot_buy_volume: int64, # （Sponsor Pro）零股最佳委買量（股）
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>    odd_lot_sell_price: float64, # （Sponsor Pro）零股最佳委賣價（13:40 後為盤後零股）
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>    odd_lot_sell_volume: int64, # （Sponsor Pro）零股最佳委賣量（股）
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>    odd_lot_is_simulated: bool # （Sponsor Pro）是否為零股試撮（True 表示為試撮，不是實際成交）
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>}
 </code></pre></div>
 </div>
 </div>
@@ -2312,7 +2367,9 @@
 <details class="note">
 <summary>成交量單位與興櫃股票欄位說明</summary>
 <ul>
-<li>成交量、委買委賣量相關欄位（<code>volume</code>、<code>total_volume</code>、<code>yesterday_volume</code>、<code>buy_volume</code>、<code>sell_volume</code>、<code>buy_volumes</code>、<code>sell_volumes</code>、<code>inside_volume</code>、<code>outside_volume</code>、<code>after_hours_volume</code>）的單位：上市、上櫃股票為張，興櫃股票為股</li>
+<li>整股成交量、委買委賣量相關欄位（<code>volume</code>、<code>total_volume</code>、<code>yesterday_volume</code>、<code>buy_volume</code>、<code>sell_volume</code>、<code>buy_volumes</code>、<code>sell_volumes</code>、<code>inside_volume</code>、<code>outside_volume</code>、<code>after_hours_volume</code>）的單位：上市、上櫃股票為張，興櫃股票為股</li>
+<li>盤中零股量相關欄位（<code>odd_lot_total_volume</code>、<code>odd_lot_buy_volume</code>、<code>odd_lot_sell_volume</code>）的單位為股</li>
+<li>興櫃股票沒有盤中零股，<code>odd_lot_*</code> 欄位為 null</li>
 <li>興櫃股票沒有漲跌停限制，<code>limit_up</code>、<code>limit_down</code> 為 null</li>
 <li>興櫃股票只提供最佳一檔委買委賣，<code>buy_prices</code>、<code>buy_volumes</code>、<code>sell_prices</code>、<code>sell_volumes</code> 僅第 1 檔有值，第 2 ~ 5 檔為 0</li>
 </ul>
@@ -2326,7 +2383,7 @@
 <p>與台股即時資訊使用同一個 API，<code>data_id</code> 帶指數代號（3 碼）即可取得指數即時資訊，例如 <code>001</code> = 加權指數、<code>101</code> = 櫃買指數，共 91 個指數，完整對照表請見 <a href="../IndexCodes/">台股指數代號對照表</a>。</p>
 <details class="note">
 <summary>指數與個股的回傳欄位不同</summary>
-<p>指數只回傳下方 Schema 列出的欄位，沒有個股的委買委賣（<code>buy_price</code>、<code>buy_volume</code>、<code>sell_price</code>、<code>sell_volume</code>、<code>buy_prices</code>、<code>buy_volumes</code>、<code>sell_prices</code>、<code>sell_volumes</code>）、成交種類（<code>TickType</code>），也沒有 <code>yesterday_close</code>、<code>limit_up</code>、<code>limit_down</code>、<code>inside_volume</code>、<code>outside_volume</code>、<code>after_hours_volume</code>、<code>is_closed</code>；另外多了指數名稱 <code>name</code>。Sponsor 與 Sponsor Pro 會員回傳的指數欄位相同。</p>
+<p>指數只回傳下方 Schema 列出的欄位，沒有個股的委買委賣（<code>buy_price</code>、<code>buy_volume</code>、<code>sell_price</code>、<code>sell_volume</code>、<code>buy_prices</code>、<code>buy_volumes</code>、<code>sell_prices</code>、<code>sell_volumes</code>）、成交種類（<code>TickType</code>），也沒有 <code>yesterday_close</code>、<code>limit_up</code>、<code>limit_down</code>、<code>inside_volume</code>、<code>outside_volume</code>、<code>after_hours_volume</code>、<code>is_closed</code> 與盤中零股欄位 <code>odd_lot_*</code>；另外多了指數名稱 <code>name</code>。Sponsor 與 Sponsor Pro 會員回傳的指數欄位相同。</p>
 <p><code>data_id</code> 空值（一次全部）時，個股與指數會在同一張表回傳，可依 <code>stock_id</code> 長度區分（指數為 3 碼）。</p>
 </details>
 <div class="admonition example">
